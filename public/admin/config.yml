@@ -4,9 +4,9 @@ logo_url: /favicon.svg
 
 backend:
   name: github
-  repo: yacosta738/astro-cms
+  repo: jerefrer/ensoleillade
   branch: main
-  base_url: https://sveltia-cms-auth.yunielacosta738.workers.dev/
+  base_url: https://sveltia-cms-auth.ensoleillade.netlify.app/
 
 publish_mode: editorial_workflow
 
