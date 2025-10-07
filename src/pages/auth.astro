@@ -1,0 +1,76 @@
+---
+// OAuth callback page for Sveltia CMS / Netlify CMS
+// This page handles the OAuth callback from GitHub via Netlify
+---
+
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="robots" content="noindex" />
+		<title>Authenticating...</title>
+		<style>
+			body {
+				font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				min-height: 100vh;
+				margin: 0;
+				background: #1a1a1a;
+				color: #fff;
+			}
+			.container {
+				text-align: center;
+			}
+			.spinner {
+				border: 3px solid rgba(255, 255, 255, 0.1);
+				border-top: 3px solid #fff;
+				border-radius: 50%;
+				width: 40px;
+				height: 40px;
+				animation: spin 1s linear infinite;
+				margin: 0 auto 20px;
+			}
+			@keyframes spin {
+				0% { transform: rotate(0deg); }
+				100% { transform: rotate(360deg); }
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<div class="spinner"></div>
+			<p>Authenticating with GitHub...</p>
+		</div>
+		<script is:inline>
+			// This script handles the OAuth callback
+			// It extracts the token from the URL and sends it back to the CMS
+			(function() {
+				function getParameterByName(name) {
+					name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+					var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+						results = regex.exec(location.search);
+					return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+				}
+
+				var content = "authorization:github:" + getParameterByName("code");
+				var message = {
+					type: "authorization:github:success",
+					provider: "github",
+					token: getParameterByName("code")
+				};
+
+				// Post message to the opener window (the CMS)
+				if (window.opener) {
+					window.opener.postMessage(message, location.origin);
+					window.close();
+				} else {
+					// If there's no opener, redirect to admin
+					window.location.href = "/admin";
+				}
+			})();
+		</script>
+	</body>
+</html>

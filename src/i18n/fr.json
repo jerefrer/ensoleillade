@@ -1,0 +1,111 @@
+{
+  "site": {
+    "title": "L'Ensoleillade - Gîte Écologique en Dordogne",
+    "description": "Découvrez L'Ensoleillade, un gîte écologique de 19m² avec terrasse de 18m² au cœur de la Dordogne. Soutient l'association de permaculture locale.",
+    "keywords": "gîte écologique, Dordogne, permaculture, Saint-Léon-sur-Vézère, tiny house, vacances nature"
+  },
+  "nav": {
+    "home": "Accueil",
+    "about": "À propos",
+    "amenities": "Équipements",
+    "location": "Emplacement",
+    "availability": "Disponibilités",
+    "contact": "Contact"
+  },
+  "hero": {
+    "title": "L'Ensoleillade",
+    "subtitle": "Gîte Écologique au Cœur de la Dordogne",
+    "description": "Une tiny house de 19m² avec terrasse de 18m² dans un cadre naturel exceptionnel. Votre séjour contribue au développement de notre association de permaculture.",
+    "cta": "Réserver maintenant"
+  },
+  "about": {
+    "title": "Un Séjour qui a du Sens",
+    "subtitle": "Permaculture & Biodiversité",
+    "description": "L'Ensoleillade est bien plus qu'un simple hébergement. C'est un projet écologique qui soutient et développe notre association de permaculture locale. Construction respectueuse de l'environnement, matériaux locaux et préservation de la biodiversité sont au cœur de notre démarche.",
+    "features": {
+      "eco": "Construction écologique",
+      "wood": "Bois local et isolation dense",
+      "phyto": "Système de phyto-épuration",
+      "permaculture": "Site de permaculture",
+      "biodiversity": "Préservation de la biodiversité"
+    }
+  },
+  "accommodation": {
+    "title": "Votre Hébergement",
+    "size": "19m² + terrasse 18m²",
+    "capacity": "2 personnes",
+    "features": {
+      "kitchenette": "Kitchenette équipée",
+      "private": "Entrée privée",
+      "garden": "Vue sur jardin",
+      "parking": "Parking gratuit",
+      "wifi": "Wi-Fi gratuit"
+    }
+  },
+  "amenities": {
+    "title": "Équipements & Services",
+    "comfort": {
+      "title": "Confort",
+      "heating": "Chauffage",
+      "ac": "Climatisation",
+      "wifi": "Wi-Fi gratuit",
+      "books": "Livres"
+    },
+    "outdoor": {
+      "title": "Extérieur",
+      "terrace": "Terrasse 18m²",
+      "bbq": "Barbecue",
+      "hammock": "Hamac",
+      "garden": "Jardin potager"
+    },
+    "kitchen": {
+      "title": "Cuisine",
+      "equipped": "Kitchenette équipée",
+      "utensils": "Ustensiles fournis",
+      "dining": "Coin repas extérieur"
+    }
+  },
+  "location": {
+    "title": "Emplacement & Activités",
+    "subtitle": "Saint-Léon-sur-Vézère, Dordogne",
+    "description": "Située au cœur du Périgord Noir, L'Ensoleillade vous offre un accès privilégié aux trésors de la Dordogne.",
+    "activities": {
+      "lascaux": "Grottes de Lascaux",
+      "prehistoric": "Sites préhistoriques",
+      "castles": "Châteaux",
+      "gardens": "Jardins remarquables",
+      "canoeing": "Canoë-kayak",
+      "paragliding": "Parapente",
+      "buddhist": "Centres bouddhistes"
+    }
+  },
+  "calendar": {
+    "title": "Disponibilités",
+    "subtitle": "Vérifiez nos disponibilités en temps réel",
+    "loading": "Chargement du calendrier...",
+    "available": "Disponible",
+    "unavailable": "Réservé"
+  },
+  "payment": {
+    "title": "Modes de Paiement",
+    "ancv": "Chèques Vacances ANCV acceptés",
+    "ancv_description": "Nous acceptons les chèques vacances ANCV pour votre séjour."
+  },
+  "contact": {
+    "title": "Réservation & Contact",
+    "subtitle": "Contactez-nous directement pour réserver",
+    "phone": "Téléphone",
+    "email": "Email",
+    "response": "Nous répondons sous 24h",
+    "direct": "Réservation directe uniquement"
+  },
+  "footer": {
+    "permaculture": "Soutient l'association de permaculture locale",
+    "eco": "Hébergement éco-responsable",
+    "local": "Matériaux et produits locaux"
+  },
+  "lang": {
+    "switch": "English",
+    "current": "Français"
+  }
+}

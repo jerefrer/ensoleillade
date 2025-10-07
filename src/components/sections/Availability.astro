@@ -1,0 +1,116 @@
+---
+import { generateCalendarData, MONTH_NAMES, DAY_NAMES, fetchBookedDates } from '../../utils/calendar.js';
+
+interface Props {
+  t: any;
+  locale: string;
+}
+const { t, locale } = Astro.props as Props;
+const today = new Date();
+const bookedDates = await fetchBookedDates();
+const currentMonth = generateCalendarData(bookedDates, today.getFullYear(), today.getMonth());
+const nextMonth = generateCalendarData(bookedDates, today.getFullYear(), today.getMonth() + 1);
+---
+<section id="availability" class="py-20 bg-white">
+  <div class="max-w-4xl mx-auto px-4">
+    <div class="text-center mb-12">
+      <h2 class="text-4xl font-serif font-bold text-earth-800 mb-4">
+        {t.calendar.title}
+      </h2>
+      <p class="text-lg text-earth-700">
+        {t.calendar.subtitle}
+      </p>
+    </div>
+    
+    <div class="bg-white rounded-lg shadow-lg p-6">
+      <div class="grid md:grid-cols-2 gap-8">
+        <!-- Current Month -->
+        <div>
+          <h3 class="text-xl font-semibold text-center mb-4 text-earth-800">
+            {MONTH_NAMES[locale][currentMonth.month]} {currentMonth.year}
+          </h3>
+          <div class="grid grid-cols-7 gap-1 text-sm">
+            <!-- Day headers -->
+            {DAY_NAMES[locale].map(day => (
+              <div class="text-center font-medium text-earth-600 py-2">{day}</div>
+            ))}
+            
+            <!-- Calendar days -->
+            {currentMonth.days.map(({ day, isBooked, isPast, isAvailable }) => (
+              <div class={`
+                aspect-square flex items-center justify-center text-sm rounded-md
+                ${!day ? '' : 
+                  isPast ? 'text-earth-300 cursor-not-allowed' :
+                  isBooked ? 'bg-red-100 text-red-700 cursor-not-allowed' :
+                  isAvailable ? 'bg-sage-100 text-sage-700 hover:bg-sage-200 cursor-pointer' :
+                  'text-earth-400'
+                }
+              `}>
+                {day}
+              </div>
+            ))}
+          </div>
+        </div>
+        
+        <!-- Next Month -->
+        <div>
+          <h3 class="text-xl font-semibold text-center mb-4 text-earth-800">
+            {MONTH_NAMES[locale][nextMonth.month]} {nextMonth.year}
+          </h3>
+          <div class="grid grid-cols-7 gap-1 text-sm">
+            <!-- Day headers -->
+            {DAY_NAMES[locale].map(day => (
+              <div class="text-center font-medium text-earth-600 py-2">{day}</div>
+            ))}
+            
+            <!-- Calendar days -->
+            {nextMonth.days.map(({ day, isBooked, isPast, isAvailable }) => (
+              <div class={`
+                aspect-square flex items-center justify-center text-sm rounded-md
+                ${!day ? '' : 
+                  isPast ? 'text-earth-300 cursor-not-allowed' :
+                  isBooked ? 'bg-red-100 text-red-700 cursor-not-allowed' :
+                  isAvailable ? 'bg-sage-100 text-sage-700 hover:bg-sage-200 cursor-pointer' :
+                  'text-earth-400'
+                }
+              `}>
+                {day}
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+      
+      <!-- Legend -->
+      <div class="flex justify-center mt-6 gap-6 text-sm">
+        <div class="flex items-center gap-2">
+          <div class="w-4 h-4 bg-sage-100 rounded"></div>
+          <span class="text-earth-700">
+            {locale === 'fr' ? 'Disponible' : 'Available'}
+          </span>
+        </div>
+        <div class="flex items-center gap-2">
+          <div class="w-4 h-4 bg-red-100 rounded"></div>
+          <span class="text-earth-700">
+            {locale === 'fr' ? 'Réservé' : 'Booked'}
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  // Add interactivity for available dates
+  document.addEventListener('DOMContentLoaded', () => {
+    const availableDates = document.querySelectorAll('.cursor-pointer');
+    
+    availableDates.forEach(date => {
+      date.addEventListener('click', () => {
+        // Could add date selection functionality here
+        date.classList.toggle('ring-2');
+        date.classList.toggle('ring-sage-500');
+      });
+    });
+  });
+</script>

@@ -1,0 +1,20 @@
+---
+interface Props { t: any }
+const { t } = Astro.props as Props;
+---
+<section class="py-16 bg-sage-50">
+  <div class="max-w-4xl mx-auto px-4 text-center">
+    <div class="bg-white p-8 rounded-lg shadow-sm">
+      <h2 class="text-2xl font-semibold text-earth-800 mb-4">
+        {t.payment.title}
+      </h2>
+      <div class="flex items-center justify-center gap-4 mb-4">
+        <span class="text-4xl">🎟️</span>
+        <div>
+          <h3 class="text-xl font-semibold text-sage-700">{t.payment.ancv}</h3>
+          <p class="text-earth-600">{t.payment.ancv_description}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

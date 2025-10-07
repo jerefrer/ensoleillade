@@ -1,0 +1,236 @@
+---
+interface Props {
+  t: any;
+  locale: string;
+}
+const { t, locale } = Astro.props as Props;
+---
+
+<!-- Modern Story-Driven About Section -->
+<section id="about" class="relative py-32 overflow-hidden">
+  
+  <!-- Background Elements -->
+  <div class="absolute inset-0 bg-gradient-to-br from-sage-50 via-white to-warm-50"></div>
+  <div class="absolute top-0 right-0 w-96 h-96 bg-sage-500/10 rounded-full blur-3xl"></div>
+  <div class="absolute bottom-0 left-0 w-80 h-80 bg-warm-500/10 rounded-full blur-3xl"></div>
+
+  <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <!-- Section Header -->
+    <div class="text-center mb-20 animate-on-scroll">
+      <div class="inline-flex items-center px-4 py-2 bg-sage-100 rounded-full border border-sage-200 mb-6">
+        <span class="text-2xl mr-2">🌱</span>
+        <span class="text-sage-700 font-semibold text-sm">
+          {locale === 'fr' ? 'Notre Mission' : 'Our Mission'}
+        </span>
+      </div>
+      <h2 class="text-4xl lg:text-5xl font-serif font-bold text-forest-800 mb-6">
+        {t.about.title}
+      </h2>
+      <p class="text-xl text-sage-600 max-w-3xl mx-auto leading-relaxed">
+        {t.about.description}
+      </p>
+    </div>
+
+    <!-- Story Grid Layout -->
+    <div class="grid lg:grid-cols-12 gap-8 items-center">
+      
+      <!-- Left Content Column -->
+      <div class="lg:col-span-7 space-y-12">
+        
+        <!-- Feature Story Cards -->
+        <div class="space-y-8 animate-on-scroll">
+          
+          <!-- Eco Construction Card -->
+          <div class="flex items-start space-x-6 group">
+            <div class="flex-shrink-0 w-16 h-16 bg-sage-gradient rounded-2xl flex items-center justify-center shadow-sage group-hover:scale-110 transition-transform duration-300">
+              <span class="text-white text-2xl">🌿</span>
+            </div>
+            <div class="flex-1">
+              <h3 class="text-xl font-semibold text-forest-800 mb-2 group-hover:text-sage-600 transition-colors">
+                {t.about.features.eco}
+              </h3>
+              <p class="text-forest-700 leading-relaxed">
+                {locale === 'fr' 
+                  ? 'Construction respectueuse avec des matériaux naturels et locaux, dans un esprit de développement durable.'
+                  : 'Respectful construction with natural and local materials, in a spirit of sustainable development.'
+                }
+              </p>
+            </div>
+          </div>
+
+          <!-- Local Wood Card -->
+          <div class="flex items-start space-x-6 group">
+            <div class="flex-shrink-0 w-16 h-16 bg-warm-gradient rounded-2xl flex items-center justify-center shadow-warm group-hover:scale-110 transition-transform duration-300">
+              <span class="text-white text-2xl">🪵</span>
+            </div>
+            <div class="flex-1">
+              <h3 class="text-xl font-semibold text-forest-800 mb-2 group-hover:text-sage-600 transition-colors">
+                {t.about.features.wood}
+              </h3>
+              <p class="text-forest-700 leading-relaxed">
+                {locale === 'fr'
+                  ? 'Isolation en laine de bois dense et bardage en bois local, pour un confort thermique optimal.'
+                  : 'Dense wood wool insulation and local wood cladding for optimal thermal comfort.'
+                }
+              </p>
+            </div>
+          </div>
+
+          <!-- Phyto-purification Card -->
+          <div class="flex items-start space-x-6 group">
+            <div class="flex-shrink-0 w-16 h-16 bg-forest-gradient rounded-2xl flex items-center justify-center shadow-medium group-hover:scale-110 transition-transform duration-300">
+              <span class="text-white text-2xl">💧</span>
+            </div>
+            <div class="flex-1">
+              <h3 class="text-xl font-semibold text-forest-800 mb-2 group-hover:text-sage-600 transition-colors">
+                {t.about.features.phyto}
+              </h3>
+              <p class="text-forest-700 leading-relaxed">
+                {locale === 'fr'
+                  ? 'Traitement naturel des eaux usées par phyto-épuration, pour un impact environnemental minimal.'
+                  : 'Natural wastewater treatment by phyto-purification for minimal environmental impact.'
+                }
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Association Partnership -->
+        <div class="bg-gradient-to-r from-sage-50 to-warm-50 rounded-2xl p-8 border border-sage-200 animate-on-scroll card-hover">
+          <div class="flex items-center space-x-4 mb-6">
+            <div class="w-20 h-20 bg-sage-200 rounded-2xl flex items-center justify-center">
+              <span class="text-3xl">🌱</span>
+            </div>
+            <div>
+              <h3 class="text-2xl font-semibold text-forest-800 mb-2">
+                {locale === 'fr' ? 'Partenariat Permaculture' : 'Permaculture Partnership'}
+              </h3>
+              <p class="text-sage-600 font-medium">
+                {locale === 'fr' ? 'Soutien à l\'association locale' : 'Supporting local association'}
+              </p>
+            </div>
+          </div>
+          <div class="bg-white/80 rounded-xl p-6 backdrop-blur-sm">
+            <p class="text-forest-700 leading-relaxed mb-4">
+              {locale === 'fr'
+                ? 'Votre séjour contribue directement au développement de notre association de permaculture locale, qui œuvre pour la biodiversité et l\'agriculture durable.'
+                : 'Your stay directly contributes to the development of our local permaculture association, which works for biodiversity and sustainable agriculture.'
+              }
+            </p>
+            <div class="inline-flex items-center text-sage-600 font-medium">
+              <span class="mr-2">🏷️</span>
+              <span class="text-sm">
+                {locale === 'fr' ? 'Logo de l\'association à venir' : 'Association logo coming soon'}
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Visual Column -->
+      <div class="lg:col-span-5 animate-on-scroll" data-delay="300">
+        
+        <!-- Main Feature Image -->
+        <div class="relative mb-8">
+          <div class="aspect-[4/5] bg-gradient-to-br from-sage-200 via-earth-200 to-warm-200 rounded-2xl overflow-hidden shadow-large">
+            <div class="w-full h-full flex items-center justify-center text-center text-forest-700 p-8">
+              <div>
+                <div class="w-24 h-24 mx-auto mb-4 bg-white/80 rounded-2xl flex items-center justify-center backdrop-blur-sm">
+                  <span class="text-4xl">🏡</span>
+                </div>
+                <p class="text-lg font-medium mb-2">
+                  {locale === 'fr' ? 'Construction écologique' : 'Eco-friendly construction'}
+                </p>
+                <p class="text-sm opacity-75">
+                  {locale === 'fr' ? 'Photo de la construction' : 'Construction photo'}
+                </p>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Floating Stats Cards -->
+          <div class="absolute -top-4 -right-4 bg-white rounded-xl p-4 shadow-medium animate-float">
+            <div class="text-center">
+              <div class="text-2xl font-bold text-sage-600">100%</div>
+              <div class="text-xs text-forest-600">
+                {locale === 'fr' ? 'Naturel' : 'Natural'}
+              </div>
+            </div>
+          </div>
+          
+          <div class="absolute -bottom-4 -left-4 bg-white rounded-xl p-4 shadow-medium animate-float" style="animation-delay: 1s;">
+            <div class="text-center">
+              <div class="text-2xl font-bold text-warm-600">37m²</div>
+              <div class="text-xs text-forest-600">
+                {locale === 'fr' ? 'Total' : 'Total'}
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Secondary Features Grid -->
+        <div class="grid grid-cols-2 gap-4">
+          <div class="aspect-square bg-gradient-to-br from-sage-100 to-sage-200 rounded-xl flex items-center justify-center shadow-soft card-hover">
+            <div class="text-center">
+              <span class="text-3xl mb-2 block">🌳</span>
+              <span class="text-xs text-forest-700 font-medium">
+                {locale === 'fr' ? 'Environnement' : 'Environment'}
+              </span>
+            </div>
+          </div>
+          <div class="aspect-square bg-gradient-to-br from-warm-100 to-warm-200 rounded-xl flex items-center justify-center shadow-soft card-hover">
+            <div class="text-center">
+              <span class="text-3xl mb-2 block">♻️</span>
+              <span class="text-xs text-forest-700 font-medium">
+                {locale === 'fr' ? 'Durable' : 'Sustainable'}
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Trust & Values Section -->
+    <div class="mt-24 text-center animate-on-scroll">
+      <div class="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+        
+        <div class="p-6">
+          <div class="w-16 h-16 bg-sage-100 rounded-full flex items-center justify-center mx-auto mb-4">
+            <span class="text-2xl">🌱</span>
+          </div>
+          <h3 class="text-lg font-semibold text-forest-800 mb-2">
+            {locale === 'fr' ? 'Écologie' : 'Ecology'}
+          </h3>
+          <p class="text-forest-600 text-sm">
+            {locale === 'fr' ? 'Respect de la nature' : 'Respect for nature'}
+          </p>
+        </div>
+        
+        <div class="p-6">
+          <div class="w-16 h-16 bg-warm-100 rounded-full flex items-center justify-center mx-auto mb-4">
+            <span class="text-2xl">🤝</span>
+          </div>
+          <h3 class="text-lg font-semibold text-forest-800 mb-2">
+            {locale === 'fr' ? 'Communauté' : 'Community'}
+          </h3>
+          <p class="text-forest-600 text-sm">
+            {locale === 'fr' ? 'Soutien local' : 'Local support'}
+          </p>
+        </div>
+        
+        <div class="p-6">
+          <div class="w-16 h-16 bg-forest-100 rounded-full flex items-center justify-center mx-auto mb-4">
+            <span class="text-2xl">💚</span>
+          </div>
+          <h3 class="text-lg font-semibold text-forest-800 mb-2">
+            {locale === 'fr' ? 'Authenticité' : 'Authenticity'}
+          </h3>
+          <p class="text-forest-600 text-sm">
+            {locale === 'fr' ? 'Expérience unique' : 'Unique experience'}
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

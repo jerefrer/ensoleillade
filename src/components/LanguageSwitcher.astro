@@ -1,0 +1,68 @@
+---
+import { getTranslations, getAlternateUrls } from '../utils/i18n.js';
+
+interface Props {
+  locale: string;
+  currentPath: string;
+}
+
+const { locale, currentPath } = Astro.props;
+const t = getTranslations(locale);
+const alternateUrls = getAlternateUrls(currentPath, locale);
+---
+
+<div class="flex items-center gap-2">
+  <div class="relative">
+    <button 
+      id="language-toggle"
+      class="flex items-center gap-2 px-3 py-2 rounded-md bg-white/90 backdrop-blur-sm border border-earth-200 hover:bg-white transition-all duration-200 shadow-sm"
+      aria-label={locale === 'fr' ? 'Changer de langue' : 'Switch language'}
+    >
+      <span class="text-sm font-medium text-earth-800">
+        {locale === 'fr' ? '🇫🇷 FR' : '🇬🇧 EN'}
+      </span>
+      <svg class="w-4 h-4 text-earth-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+      </svg>
+    </button>
+    
+    <div 
+      id="language-menu"
+      class="absolute right-0 top-full mt-1 bg-white border border-earth-200 rounded-md shadow-lg py-1 z-50 hidden min-w-full"
+    >
+      {Object.entries(alternateUrls).map(([lang, url]) => (
+        <a 
+          href={url}
+          class="block px-4 py-2 text-sm text-earth-700 hover:bg-earth-50 transition-colors"
+          hreflang={lang}
+        >
+          {lang === 'fr' ? '🇫🇷 Français' : '🇬🇧 English'}
+        </a>
+      ))}
+    </div>
+  </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const toggle = document.getElementById('language-toggle');
+    const menu = document.getElementById('language-menu');
+    
+    if (toggle && menu) {
+      toggle.addEventListener('click', (e) => {
+        e.stopPropagation();
+        menu.classList.toggle('hidden');
+      });
+      
+      // Close menu when clicking outside
+      document.addEventListener('click', () => {
+        menu.classList.add('hidden');
+      });
+      
+      // Prevent menu close when clicking inside menu
+      menu.addEventListener('click', (e) => {
+        e.stopPropagation();
+      });
+    }
+  });
+</script>

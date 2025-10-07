@@ -1,0 +1,267 @@
+---
+interface Props {
+  t: any;
+  locale: string;
+}
+const { t, locale } = Astro.props as Props;
+---
+
+<!-- Modern Visual Showcase Section -->
+<section id="accommodation" class="relative py-32 overflow-hidden">
+  
+  <!-- Background Elements -->
+  <div class="absolute inset-0 bg-gradient-to-b from-white via-sage-50/30 to-warm-50/30"></div>
+  <div class="absolute top-1/4 left-0 w-72 h-72 bg-sage-300/20 rounded-full blur-3xl"></div>
+  <div class="absolute bottom-1/4 right-0 w-96 h-96 bg-warm-300/20 rounded-full blur-3xl"></div>
+
+  <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <!-- Section Header -->
+    <div class="text-center mb-20 animate-on-scroll">
+      <div class="inline-flex items-center px-4 py-2 bg-sage-100 rounded-full border border-sage-200 mb-6">
+        <span class="text-2xl mr-2">🏠</span>
+        <span class="text-sage-700 font-semibold text-sm">
+          {locale === 'fr' ? 'Votre Hébergement' : 'Your Accommodation'}
+        </span>
+      </div>
+      <h2 class="text-4xl lg:text-5xl font-serif font-bold text-forest-800 mb-6">
+        {t.accommodation.title}
+      </h2>
+      
+      <!-- Key Stats Cards -->
+      <div class="flex flex-wrap justify-center gap-6 mt-8">
+        <div class="bg-white/80 backdrop-blur-sm border border-sage-200 px-6 py-4 rounded-2xl shadow-sage">
+          <div class="flex items-center space-x-3">
+            <div class="w-12 h-12 bg-sage-100 rounded-xl flex items-center justify-center">
+              <span class="text-sage-600 text-lg">📐</span>
+            </div>
+            <div class="text-left">
+              <div class="text-2xl font-bold text-forest-800">{t.accommodation.size}</div>
+              <div class="text-sm text-sage-600">{locale === 'fr' ? 'Surface totale' : 'Total area'}</div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="bg-white/80 backdrop-blur-sm border border-warm-200 px-6 py-4 rounded-2xl shadow-warm">
+          <div class="flex items-center space-x-3">
+            <div class="w-12 h-12 bg-warm-100 rounded-xl flex items-center justify-center">
+              <span class="text-warm-600 text-lg">👥</span>
+            </div>
+            <div class="text-left">
+              <div class="text-2xl font-bold text-forest-800">{t.accommodation.capacity}</div>
+              <div class="text-sm text-warm-600">{locale === 'fr' ? 'Capacité d\'accueil' : 'Guest capacity'}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Visual Gallery Grid -->
+    <div class="mb-20">
+      
+      <!-- Masonry-style Gallery -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 animate-on-scroll">
+        
+        <!-- Featured Large Image -->
+        <div class="md:col-span-2 lg:row-span-2">
+          <div class="relative aspect-[4/3] lg:aspect-[3/2] bg-gradient-to-br from-sage-200 via-earth-200 to-warm-200 rounded-2xl overflow-hidden shadow-large group card-hover">
+            <div class="w-full h-full flex items-center justify-center text-center text-forest-700 p-8">
+              <div>
+                <div class="w-32 h-32 mx-auto mb-6 bg-white/80 rounded-2xl flex items-center justify-center backdrop-blur-sm group-hover:scale-110 transition-transform duration-300">
+                  <span class="text-6xl">🏡</span>
+                </div>
+                <p class="text-xl font-medium mb-2">
+                  {locale === 'fr' ? 'Vue d\'ensemble du gîte' : 'Cottage overview'}
+                </p>
+                <p class="text-sm opacity-75">
+                  {locale === 'fr' ? 'Photo principale' : 'Main photo'}
+                </p>
+              </div>
+            </div>
+            
+            <!-- Overlay Badge -->
+            <div class="absolute top-4 right-4 bg-sage-600 text-white px-3 py-1 rounded-full text-xs font-semibold">
+              {locale === 'fr' ? 'Principal' : 'Featured'}
+            </div>
+          </div>
+        </div>
+        
+        <!-- Interior Photos -->
+        <div class="space-y-6">
+          <div class="aspect-square bg-gradient-to-br from-warm-100 to-warm-200 rounded-xl overflow-hidden shadow-soft group card-hover">
+            <div class="w-full h-full flex items-center justify-center text-center text-forest-700 p-4">
+              <div>
+                <div class="w-16 h-16 mx-auto mb-3 bg-white/80 rounded-xl flex items-center justify-center backdrop-blur-sm group-hover:scale-110 transition-transform duration-300">
+                  <span class="text-3xl">🛏️</span>
+                </div>
+                <p class="text-sm font-medium">
+                  {locale === 'fr' ? 'Espace nuit' : 'Sleeping area'}
+                </p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="aspect-square bg-gradient-to-br from-sage-100 to-sage-200 rounded-xl overflow-hidden shadow-soft group card-hover">
+            <div class="w-full h-full flex items-center justify-center text-center text-forest-700 p-4">
+              <div>
+                <div class="w-16 h-16 mx-auto mb-3 bg-white/80 rounded-xl flex items-center justify-center backdrop-blur-sm group-hover:scale-110 transition-transform duration-300">
+                  <span class="text-3xl">🍳</span>
+                </div>
+                <p class="text-sm font-medium">
+                  {locale === 'fr' ? 'Kitchenette' : 'Kitchenette'}
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Additional Photos Row -->
+        <div class="md:col-span-2 lg:col-span-3">
+          <div class="grid grid-cols-2 lg:grid-cols-4 gap-4">
+            <div class="aspect-[4/3] bg-gradient-to-br from-forest-100 to-forest-200 rounded-xl overflow-hidden shadow-soft group card-hover">
+              <div class="w-full h-full flex items-center justify-center text-center text-forest-700">
+                <div>
+                  <div class="w-12 h-12 mx-auto mb-2 bg-white/80 rounded-lg flex items-center justify-center backdrop-blur-sm group-hover:scale-110 transition-transform duration-300">
+                    <span class="text-2xl">🚿</span>
+                  </div>
+                  <p class="text-xs font-medium">
+                    {locale === 'fr' ? 'Salle de bain' : 'Bathroom'}
+                  </p>
+                </div>
+              </div>
+            </div>
+            
+            <div class="aspect-[4/3] bg-gradient-to-br from-warm-100 to-warm-200 rounded-xl overflow-hidden shadow-soft group card-hover">
+              <div class="w-full h-full flex items-center justify-center text-center text-forest-700">
+                <div>
+                  <div class="w-12 h-12 mx-auto mb-2 bg-white/80 rounded-lg flex items-center justify-center backdrop-blur-sm group-hover:scale-110 transition-transform duration-300">
+                    <span class="text-2xl">🌿</span>
+                  </div>
+                  <p class="text-xs font-medium">
+                    {locale === 'fr' ? 'Terrasse' : 'Terrace'}
+                  </p>
+                </div>
+              </div>
+            </div>
+            
+            <div class="aspect-[4/3] bg-gradient-to-br from-sage-100 to-sage-200 rounded-xl overflow-hidden shadow-soft group card-hover">
+              <div class="w-full h-full flex items-center justify-center text-center text-forest-700">
+                <div>
+                  <div class="w-12 h-12 mx-auto mb-2 bg-white/80 rounded-lg flex items-center justify-center backdrop-blur-sm group-hover:scale-110 transition-transform duration-300">
+                    <span class="text-2xl">🌳</span>
+                  </div>
+                  <p class="text-xs font-medium">
+                    {locale === 'fr' ? 'Extérieur' : 'Outdoor'}
+                  </p>
+                </div>
+              </div>
+            </div>
+            
+            <div class="aspect-[4/3] bg-gradient-to-br from-earth-100 to-earth-200 rounded-xl overflow-hidden shadow-soft group card-hover">
+              <div class="w-full h-full flex items-center justify-center text-center text-forest-700">
+                <div>
+                  <div class="w-12 h-12 mx-auto mb-2 bg-white/80 rounded-lg flex items-center justify-center backdrop-blur-sm group-hover:scale-110 transition-transform duration-300">
+                    <span class="text-2xl">🌅</span>
+                  </div>
+                  <p class="text-xs font-medium">
+                    {locale === 'fr' ? 'Vue' : 'View'}
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Key Features Highlight -->
+    <div class="grid md:grid-cols-2 gap-8 animate-on-scroll">
+      
+      <!-- Space Details -->
+      <div class="bg-gradient-to-br from-white via-sage-50/50 to-transparent rounded-2xl p-8 border border-sage-200 shadow-soft">
+        <div class="flex items-center space-x-4 mb-6">
+          <div class="w-16 h-16 bg-sage-gradient rounded-2xl flex items-center justify-center shadow-sage">
+            <span class="text-white text-2xl">🏠</span>
+          </div>
+          <div>
+            <h3 class="text-2xl font-semibold text-forest-800">
+              {locale === 'fr' ? 'Espace & Confort' : 'Space & Comfort'}
+            </h3>
+            <p class="text-sage-600 font-medium">
+              {locale === 'fr' ? 'Aménagement optimisé' : 'Optimized layout'}
+            </p>
+          </div>
+        </div>
+        <div class="space-y-4">
+          <div class="flex items-center space-x-3">
+            <span class="text-sage-600">✓</span>
+            <span class="text-forest-700">
+              {locale === 'fr' ? '19m² d\'espace de vie' : '19m² living space'}
+            </span>
+          </div>
+          <div class="flex items-center space-x-3">
+            <span class="text-sage-600">✓</span>
+            <span class="text-forest-700">
+              {locale === 'fr' ? '18m² de terrasse couverte' : '18m² covered terrace'}
+            </span>
+          </div>
+          <div class="flex items-center space-x-3">
+            <span class="text-sage-600">✓</span>
+            <span class="text-forest-700">
+              {locale === 'fr' ? 'Lit double confortable' : 'Comfortable double bed'}
+            </span>
+          </div>
+          <div class="flex items-center space-x-3">
+            <span class="text-sage-600">✓</span>
+            <span class="text-forest-700">
+              {locale === 'fr' ? 'Salle de bain privative' : 'Private bathroom'}
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Eco Features -->
+      <div class="bg-gradient-to-br from-white via-warm-50/50 to-transparent rounded-2xl p-8 border border-warm-200 shadow-soft">
+        <div class="flex items-center space-x-4 mb-6">
+          <div class="w-16 h-16 bg-warm-gradient rounded-2xl flex items-center justify-center shadow-warm">
+            <span class="text-white text-2xl">🌱</span>
+          </div>
+          <div>
+            <h3 class="text-2xl font-semibold text-forest-800">
+              {locale === 'fr' ? 'Construction Écologique' : 'Eco Construction'}
+            </h3>
+            <p class="text-warm-600 font-medium">
+              {locale === 'fr' ? 'Matériaux naturels' : 'Natural materials'}
+            </p>
+          </div>
+        </div>
+        <div class="space-y-4">
+          <div class="flex items-center space-x-3">
+            <span class="text-warm-600">✓</span>
+            <span class="text-forest-700">
+              {locale === 'fr' ? 'Isolation laine de bois' : 'Wood wool insulation'}
+            </span>
+          </div>
+          <div class="flex items-center space-x-3">
+            <span class="text-warm-600">✓</span>
+            <span class="text-forest-700">
+              {locale === 'fr' ? 'Bardage bois local' : 'Local wood cladding'}
+            </span>
+          </div>
+          <div class="flex items-center space-x-3">
+            <span class="text-warm-600">✓</span>
+            <span class="text-forest-700">
+              {locale === 'fr' ? 'Chauffage écologique' : 'Eco-friendly heating'}
+            </span>
+          </div>
+          <div class="flex items-center space-x-3">
+            <span class="text-warm-600">✓</span>
+            <span class="text-forest-700">
+              {locale === 'fr' ? 'Gestion eau durable' : 'Sustainable water'}
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

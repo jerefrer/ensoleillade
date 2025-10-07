@@ -1,0 +1,14 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import HomePage from '../../components/HomePage.astro';
+
+const locale = 'en';
+
+---
+
+<Layout locale={locale}>
+  <HomePage 
+    locale={locale} 
+    currentPath={Astro.url.pathname} 
+  />
+</Layout>
