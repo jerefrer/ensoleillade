@@ -208,9 +208,57 @@ collections:
               - { label: 'Switch To', name: 'switch', widget: 'string', i18n: true }
               - { label: 'Current Language', name: 'current', widget: 'string', i18n: true }
 
-  # Media Gallery
+  # Site Images
+  - name: 'site_images'
+    label: 'Site Images'
+    files:
+      - name: 'images'
+        label: 'All Images'
+        file: 'src/data/images.json'
+        fields:
+          - label: 'Hero Section'
+            name: 'hero'
+            widget: 'object'
+            fields:
+              - { label: 'Main Image', name: 'main', widget: 'image', required: false, hint: 'Main hero image for the homepage' }
+              - { label: 'Secondary Image 1', name: 'secondary1', widget: 'image', required: false }
+              - { label: 'Secondary Image 2', name: 'secondary2', widget: 'image', required: false }
+          
+          - label: 'About Section'
+            name: 'about'
+            widget: 'object'
+            fields:
+              - { label: 'Feature Image', name: 'feature', widget: 'image', required: false }
+          
+          - label: 'Accommodation'
+            name: 'accommodation'
+            widget: 'object'
+            fields:
+              - { label: 'Interior Photos', name: 'interior', widget: 'list', required: false, field: { label: 'Image', name: 'image', widget: 'image' } }
+              - { label: 'Exterior Photos', name: 'exterior', widget: 'list', required: false, field: { label: 'Image', name: 'image', widget: 'image' } }
+              - { label: 'Terrace Photos', name: 'terrace', widget: 'list', required: false, field: { label: 'Image', name: 'image', widget: 'image' } }
+          
+          - label: 'Location'
+            name: 'location'
+            widget: 'object'
+            fields:
+              - { label: 'Map/Location Image', name: 'map', widget: 'image', required: false }
+              - { label: 'Area Photos', name: 'area', widget: 'list', required: false, field: { label: 'Image', name: 'image', widget: 'image' } }
+          
+          - label: 'Gallery'
+            name: 'gallery'
+            widget: 'list'
+            required: false
+            fields:
+              - { label: 'Image', name: 'image', widget: 'image' }
+              - { label: 'Caption (French)', name: 'caption_fr', widget: 'string', required: false }
+              - { label: 'Caption (English)', name: 'caption_en', widget: 'string', required: false }
+              - { label: 'Alt Text (French)', name: 'alt_fr', widget: 'string', required: false }
+              - { label: 'Alt Text (English)', name: 'alt_en', widget: 'string', required: false }
+
+  # Media Library
   - name: 'media'
-    label: 'Media Gallery'
+    label: 'Media Library'
     label_singular: 'Image'
     folder: 'src/assets/images'
     create: true

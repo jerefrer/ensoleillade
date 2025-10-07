@@ -1,0 +1,80 @@
+{
+  "hero": {
+    "main": "/src/assets/images/hero.jpg",
+    "secondary1": "/src/assets/images/1.jpg",
+    "secondary2": "/src/assets/images/2.jpg"
+  },
+  "about": {
+    "feature": "/src/assets/images/3.jpg"
+  },
+  "accommodation": {
+    "interior": [
+      "/src/assets/images/4.jpg",
+      "/src/assets/images/5.jpg"
+    ],
+    "exterior": [
+      "/src/assets/images/6.jpg"
+    ],
+    "terrace": [
+      "/src/assets/images/1.jpg"
+    ]
+  },
+  "location": {
+    "map": "/src/assets/images/2.jpg",
+    "area": [
+      "/src/assets/images/3.jpg",
+      "/src/assets/images/hero.jpg"
+    ]
+  },
+  "gallery": [
+    {
+      "image": "/src/assets/images/hero.jpg",
+      "caption_fr": "Vue principale de L'Ensoleillade",
+      "caption_en": "Main view of L'Ensoleillade",
+      "alt_fr": "Gîte écologique L'Ensoleillade",
+      "alt_en": "L'Ensoleillade eco-friendly cottage"
+    },
+    {
+      "image": "/src/assets/images/1.jpg",
+      "caption_fr": "Terrasse et extérieur",
+      "caption_en": "Terrace and exterior",
+      "alt_fr": "Terrasse du gîte",
+      "alt_en": "Cottage terrace"
+    },
+    {
+      "image": "/src/assets/images/2.jpg",
+      "caption_fr": "Environnement naturel",
+      "caption_en": "Natural environment",
+      "alt_fr": "Nature autour du gîte",
+      "alt_en": "Nature around the cottage"
+    },
+    {
+      "image": "/src/assets/images/3.jpg",
+      "caption_fr": "Espace de vie",
+      "caption_en": "Living space",
+      "alt_fr": "Intérieur du gîte",
+      "alt_en": "Cottage interior"
+    },
+    {
+      "image": "/src/assets/images/4.jpg",
+      "caption_fr": "Détails intérieurs",
+      "caption_en": "Interior details",
+      "alt_fr": "Aménagement intérieur",
+      "alt_en": "Interior layout"
+    },
+    {
+      "image": "/src/assets/images/5.jpg",
+      "caption_fr": "Coin repos",
+      "caption_en": "Rest area",
+      "alt_fr": "Espace détente",
+      "alt_en": "Relaxation area"
+    },
+    {
+      "image": "/src/assets/images/6.jpg",
+      "caption_fr": "Vue extérieure",
+      "caption_en": "Exterior view",
+      "alt_fr": "Façade du gîte",
+      "alt_en": "Cottage facade"
+    }
+  ]
+}
