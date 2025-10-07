@@ -6,7 +6,6 @@ backend:
   name: github
   repo: jerefrer/ensoleillade
   branch: main
-  base_url: https://ensoleillade.info/
 
 publish_mode: editorial_workflow
 
