@@ -10,6 +10,14 @@ const today = new Date();
 const bookedDates = await fetchBookedDates();
 const currentMonth = generateCalendarData(bookedDates, today.getFullYear(), today.getMonth());
 const nextMonth = generateCalendarData(bookedDates, today.getFullYear(), today.getMonth() + 1);
+
+// Pass data to client-side script
+const calendarData = {
+  bookedDates,
+  locale,
+  monthNames: MONTH_NAMES,
+  dayNames: DAY_NAMES
+};
 ---
 <section id="availability" class="py-20 bg-white">
   <div class="max-w-4xl mx-auto px-4">
@@ -23,62 +31,8 @@ const nextMonth = generateCalendarData(bookedDates, today.getFullYear(), today.g
     </div>
     
     <div class="bg-white rounded-lg shadow-lg p-6">
-      <div class="grid md:grid-cols-2 gap-8">
-        <!-- Current Month -->
-        <div>
-          <h3 class="text-xl font-semibold text-center mb-4 text-earth-800">
-            {MONTH_NAMES[locale][currentMonth.month]} {currentMonth.year}
-          </h3>
-          <div class="grid grid-cols-7 gap-1 text-sm">
-            <!-- Day headers -->
-            {DAY_NAMES[locale].map(day => (
-              <div class="text-center font-medium text-earth-600 py-2">{day}</div>
-            ))}
-            
-            <!-- Calendar days -->
-            {currentMonth.days.map(({ day, isBooked, isPast, isAvailable }) => (
-              <div class={`
-                aspect-square flex items-center justify-center text-sm rounded-md
-                ${!day ? '' : 
-                  isPast ? 'text-earth-300 cursor-not-allowed' :
-                  isBooked ? 'bg-red-100 text-red-700 cursor-not-allowed' :
-                  isAvailable ? 'bg-sage-100 text-sage-700 hover:bg-sage-200 cursor-pointer' :
-                  'text-earth-400'
-                }
-              `}>
-                {day}
-              </div>
-            ))}
-          </div>
-        </div>
-        
-        <!-- Next Month -->
-        <div>
-          <h3 class="text-xl font-semibold text-center mb-4 text-earth-800">
-            {MONTH_NAMES[locale][nextMonth.month]} {nextMonth.year}
-          </h3>
-          <div class="grid grid-cols-7 gap-1 text-sm">
-            <!-- Day headers -->
-            {DAY_NAMES[locale].map(day => (
-              <div class="text-center font-medium text-earth-600 py-2">{day}</div>
-            ))}
-            
-            <!-- Calendar days -->
-            {nextMonth.days.map(({ day, isBooked, isPast, isAvailable }) => (
-              <div class={`
-                aspect-square flex items-center justify-center text-sm rounded-md
-                ${!day ? '' : 
-                  isPast ? 'text-earth-300 cursor-not-allowed' :
-                  isBooked ? 'bg-red-100 text-red-700 cursor-not-allowed' :
-                  isAvailable ? 'bg-sage-100 text-sage-700 hover:bg-sage-200 cursor-pointer' :
-                  'text-earth-400'
-                }
-              `}>
-                {day}
-              </div>
-            ))}
-          </div>
-        </div>
+      <div id="calendar-grid" class="grid md:grid-cols-2 gap-8">
+        <!-- Will be populated by JavaScript -->
       </div>
       
       <!-- Legend -->
@@ -100,17 +54,183 @@ const nextMonth = generateCalendarData(bookedDates, today.getFullYear(), today.g
   </div>
 </section>
 
-<script>
-  // Add interactivity for available dates
-  document.addEventListener('DOMContentLoaded', () => {
-    const availableDates = document.querySelectorAll('.cursor-pointer');
+<script define:vars={{ calendarData }}>
+  // Dynamic calendar with month navigation
+  class AvailabilityCalendar {
+    constructor(data) {
+      this.bookedDates = data.bookedDates;
+      this.locale = data.locale;
+      this.monthNames = data.monthNames;
+      this.dayNames = data.dayNames;
+      this.selectedDates = new Set();
+      
+      const today = new Date();
+      this.currentYear = today.getFullYear();
+      this.currentMonth = today.getMonth();
+      
+      this.init();
+    }
+
+    init() {
+      this.render();
+      this.setupNavigation();
+    }
+
+    setupNavigation() {
+      // Navigation will be set up after render with inline buttons
+    }
     
-    availableDates.forEach(date => {
-      date.addEventListener('click', () => {
-        // Could add date selection functionality here
-        date.classList.toggle('ring-2');
-        date.classList.toggle('ring-sage-500');
-      });
-    });
+    navigatePrev() {
+      const today = new Date();
+      const currentYear = today.getFullYear();
+      const currentMonth = today.getMonth();
+      
+      // Don't go back before current month
+      if (this.currentYear === currentYear && this.currentMonth === currentMonth) {
+        return;
+      }
+      
+      this.currentMonth--;
+      if (this.currentMonth < 0) {
+        this.currentMonth = 11;
+        this.currentYear--;
+      }
+      this.render();
+    }
+    
+    navigateNext() {
+      this.currentMonth++;
+      if (this.currentMonth > 11) {
+        this.currentMonth = 0;
+        this.currentYear++;
+      }
+      this.render();
+    }
+
+    generateCalendarData(year, month) {
+      const firstDay = new Date(year, month, 1);
+      const lastDay = new Date(year, month + 1, 0);
+      const daysInMonth = lastDay.getDate();
+      const startingDayOfWeek = firstDay.getDay();
+      const calendarDays = [];
+
+      // Add empty cells for days before month starts
+      for (let i = 0; i < startingDayOfWeek; i++) {
+        calendarDays.push({ day: null, isBooked: false, isPast: false });
+      }
+
+      // Add days of the month
+      const today = new Date();
+      today.setHours(0, 0, 0, 0);
+
+      for (let day = 1; day <= daysInMonth; day++) {
+        const date = new Date(year, month, day);
+        const dateString = date.toISOString().split('T')[0];
+        const isPast = date < today;
+        const isBooked = this.bookedDates.includes(dateString);
+
+        calendarDays.push({
+          day,
+          date: dateString,
+          isBooked,
+          isPast,
+          isAvailable: !isBooked && !isPast,
+        });
+      }
+
+      return {
+        year,
+        month,
+        days: calendarDays,
+      };
+    }
+
+    renderMonth(monthData, isFirst) {
+      const daysHtml = monthData.days.map(({ day, isBooked, isPast, isAvailable }) => {
+        if (!day) return '<div></div>';
+        
+        let classes = 'aspect-square flex items-center justify-center text-sm rounded-md ';
+        
+        if (isPast) {
+          classes += 'text-earth-300';
+        } else if (isBooked) {
+          classes += 'bg-red-100 text-red-700';
+        } else if (isAvailable) {
+          classes += 'bg-sage-100 text-sage-700';
+        } else {
+          classes += 'text-earth-400';
+        }
+        
+        return `<div class="${classes}">${day}</div>`;
+      }).join('');
+
+      const dayHeaders = this.dayNames[this.locale].map(day => 
+        `<div class="text-center font-medium text-earth-600 py-2">${day}</div>`
+      ).join('');
+
+      // Check if we're at the current month
+      const today = new Date();
+      const isCurrentMonth = this.currentYear === today.getFullYear() && this.currentMonth === today.getMonth();
+
+      const prevButton = isFirst ? (
+        isCurrentMonth ? 
+          '<div class="w-7"></div>' : 
+          `<button 
+            onclick="window.availabilityCalendar.navigatePrev()"
+            class="p-1 hover:bg-sage-50 rounded transition-all duration-200"
+            aria-label="${this.locale === 'fr' ? 'Mois précédent' : 'Previous month'}"
+          >
+            <svg class="w-5 h-5 text-sage-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+            </svg>
+          </button>`
+      ) : '<div class="w-7"></div>';
+
+      const nextButton = !isFirst ? `
+        <button 
+          onclick="window.availabilityCalendar.navigateNext()"
+          class="p-1 hover:bg-sage-50 rounded transition-all duration-200"
+          aria-label="${this.locale === 'fr' ? 'Mois suivant' : 'Next month'}"
+        >
+          <svg class="w-5 h-5 text-sage-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+          </svg>
+        </button>
+      ` : '<div class="w-7"></div>';
+
+      return `
+        <div>
+          <div class="flex items-center justify-between mb-4">
+            ${prevButton}
+            <h3 class="text-xl font-semibold text-earth-800">
+              ${this.monthNames[this.locale][monthData.month]} ${monthData.year}
+            </h3>
+            ${nextButton}
+          </div>
+          <div class="grid grid-cols-7 gap-1 text-sm">
+            ${dayHeaders}
+            ${daysHtml}
+          </div>
+        </div>
+      `;
+    }
+
+    render() {
+      const month1 = this.generateCalendarData(this.currentYear, this.currentMonth);
+      const month2 = this.generateCalendarData(
+        this.currentMonth === 11 ? this.currentYear + 1 : this.currentYear,
+        this.currentMonth === 11 ? 0 : this.currentMonth + 1
+      );
+
+      const grid = document.getElementById('calendar-grid');
+      if (grid) {
+        grid.innerHTML = this.renderMonth(month1, true) + this.renderMonth(month2, false);
+      }
+    }
+  }
+
+  // Initialize when DOM is loaded
+  document.addEventListener('DOMContentLoaded', () => {
+    window.availabilityCalendar = new AvailabilityCalendar(calendarData);
   });
 </script>
