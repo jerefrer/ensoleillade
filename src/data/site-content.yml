@@ -101,6 +101,35 @@ amenities:
     books:
       fr: "Livres"
       en: "Books"
+  outdoor:
+    title:
+      fr: "Extérieur"
+      en: "Outdoor"
+    terrace:
+      fr: "Terrasse 18m²"
+      en: "18m² terrace"
+    bbq:
+      fr: "Barbecue"
+      en: "Barbecue"
+    hammock:
+      fr: "Hamac"
+      en: "Hammock"
+    garden:
+      fr: "Jardin potager"
+      en: "Vegetable garden"
+  kitchen:
+    title:
+      fr: "Cuisine"
+      en: "Kitchen"
+    equipped:
+      fr: "Kitchenette équipée"
+      en: "Equipped kitchenette"
+    utensils:
+      fr: "Ustensiles fournis"
+      en: "Utensils provided"
+    dining:
+      fr: "Coin repas extérieur"
+      en: "Outdoor dining area"
 
 location:
   title:
