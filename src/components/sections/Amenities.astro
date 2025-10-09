@@ -1,5 +1,5 @@
 ---
-interface Props { 
+interface Props {
   t: any;
   locale: string;
 }
@@ -8,78 +8,123 @@ const { t, locale } = Astro.props as Props;
 
 <!-- Modern Interactive Amenities Section -->
 <section id="amenities" class="relative py-32 overflow-hidden">
-  
   <!-- Background Elements -->
-  <div class="absolute inset-0 bg-gradient-to-br from-warm-50 via-white to-sage-50"></div>
-  <div class="absolute top-0 left-1/3 w-96 h-96 bg-warm-400/10 rounded-full blur-3xl"></div>
-  <div class="absolute bottom-0 right-1/4 w-72 h-72 bg-sage-400/10 rounded-full blur-3xl"></div>
+  <div
+    class="absolute inset-0 bg-gradient-to-br from-warm-50 via-white to-sage-50"
+  >
+  </div>
+  <div
+    class="absolute top-0 left-1/3 w-96 h-96 bg-warm-400/10 rounded-full blur-3xl"
+  >
+  </div>
+  <div
+    class="absolute bottom-0 right-1/4 w-72 h-72 bg-sage-400/10 rounded-full blur-3xl"
+  >
+  </div>
 
   <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    
     <!-- Section Header -->
     <div class="text-center mb-20 animate-on-scroll">
-      <h2 class="text-4xl lg:text-5xl font-serif font-bold text-forest-800 mb-6">
+      <h2
+        class="text-4xl lg:text-5xl font-serif font-bold text-forest-800 mb-6"
+      >
         {t.amenities.title}
       </h2>
       <p class="text-xl text-sage-600 max-w-3xl mx-auto leading-relaxed">
-        {locale === 'fr' 
-          ? 'Tout le confort moderne dans un cadre écologique exceptionnel'
-          : 'All modern comforts in an exceptional ecological setting'
+        {
+          locale === "fr"
+            ? "Tout le confort moderne dans un cadre écologique exceptionnel"
+            : "All modern comforts in an exceptional ecological setting"
         }
       </p>
     </div>
 
     <!-- Interactive Feature Grid -->
     <div class="grid lg:grid-cols-3 gap-8 mb-20">
-      
       <!-- Comfort & Technology -->
       <div class="group animate-on-scroll">
-        <div class="relative bg-gradient-to-br from-white via-sage-50/50 to-transparent rounded-2xl p-8 border border-sage-200 shadow-soft card-hover">
+        <div
+          class="relative bg-gradient-to-br from-white via-sage-50/50 to-transparent rounded-2xl p-8 border border-sage-200 shadow-soft card-hover"
+        >
           <!-- Floating Icon -->
           <div class="absolute -top-6 left-8">
-            <div class="w-16 h-16 bg-sage-gradient rounded-2xl flex items-center justify-center shadow-sage group-hover:scale-110 transition-transform duration-300">
+            <div
+              class="w-16 h-16 bg-sage-gradient rounded-2xl flex items-center justify-center shadow-sage group-hover:scale-110 transition-transform duration-300"
+            >
               <span class="text-white text-2xl">🏠</span>
             </div>
           </div>
-          
+
           <div class="pt-6">
-            <h3 class="text-2xl font-semibold text-forest-800 mb-4 group-hover:text-sage-600 transition-colors">
+            <h3
+              class="text-2xl font-semibold text-forest-800 mb-4 group-hover:text-sage-600 transition-colors"
+            >
               {t.amenities.comfort.title}
             </h3>
-            
+
             <div class="space-y-4">
-              <div class="flex items-center space-x-4 p-3 bg-white/60 rounded-xl backdrop-blur-sm group-hover:bg-sage-50/80 transition-all duration-300">
-                <div class="w-10 h-10 bg-sage-100 rounded-lg flex items-center justify-center">
+              <div
+                class="flex items-center space-x-4 p-3 bg-white/60 rounded-xl backdrop-blur-sm group-hover:bg-sage-50/80 transition-all duration-300"
+              >
+                <div
+                  class="w-10 h-10 bg-sage-100 rounded-lg flex items-center justify-center"
+                >
                   <span class="text-sage-600 text-lg">🌡️</span>
                 </div>
                 <div class="flex-1">
-                  <div class="font-medium text-forest-800">{t.amenities.comfort.heating}</div>
+                  <div class="font-medium text-forest-800">
+                    {t.amenities.comfort.heating}
+                  </div>
                   <div class="text-sm text-sage-600">
-                    {locale === 'fr' ? 'Confort toute l\'année' : 'Year-round comfort'}
+                    {
+                      locale === "fr"
+                        ? "Confort toute l'année"
+                        : "Year-round comfort"
+                    }
                   </div>
                 </div>
               </div>
-              
-              <div class="flex items-center space-x-4 p-3 bg-white/60 rounded-xl backdrop-blur-sm group-hover:bg-sage-50/80 transition-all duration-300">
-                <div class="w-10 h-10 bg-sage-100 rounded-lg flex items-center justify-center">
+
+              <div
+                class="flex items-center space-x-4 p-3 bg-white/60 rounded-xl backdrop-blur-sm group-hover:bg-sage-50/80 transition-all duration-300"
+              >
+                <div
+                  class="w-10 h-10 bg-sage-100 rounded-lg flex items-center justify-center"
+                >
                   <span class="text-sage-600 text-lg">📶</span>
                 </div>
                 <div class="flex-1">
-                  <div class="font-medium text-forest-800">{t.amenities.comfort.wifi}</div>
+                  <div class="font-medium text-forest-800">
+                    {t.amenities.comfort.wifi}
+                  </div>
                   <div class="text-sm text-sage-600">
-                    {locale === 'fr' ? 'Connexion haut débit' : 'High-speed connection'}
+                    {
+                      locale === "fr"
+                        ? "Connexion haut débit"
+                        : "High-speed connection"
+                    }
                   </div>
                 </div>
               </div>
-              
-              <div class="flex items-center space-x-4 p-3 bg-white/60 rounded-xl backdrop-blur-sm group-hover:bg-sage-50/80 transition-all duration-300">
-                <div class="w-10 h-10 bg-sage-100 rounded-lg flex items-center justify-center">
+
+              <div
+                class="flex items-center space-x-4 p-3 bg-white/60 rounded-xl backdrop-blur-sm group-hover:bg-sage-50/80 transition-all duration-300"
+              >
+                <div
+                  class="w-10 h-10 bg-sage-100 rounded-lg flex items-center justify-center"
+                >
                   <span class="text-sage-600 text-lg">📚</span>
                 </div>
                 <div class="flex-1">
-                  <div class="font-medium text-forest-800">{t.amenities.comfort.books}</div>
+                  <div class="font-medium text-forest-800">
+                    {t.amenities.comfort.books}
+                  </div>
                   <div class="text-sm text-sage-600">
-                    {locale === 'fr' ? 'Détente & culture' : 'Relaxation & culture'}
+                    {
+                      locale === "fr"
+                        ? "Détente & culture"
+                        : "Relaxation & culture"
+                    }
                   </div>
                 </div>
               </div>
@@ -90,52 +135,76 @@ const { t, locale } = Astro.props as Props;
 
       <!-- Outdoor Living -->
       <div class="group animate-on-scroll" data-delay="200">
-        <div class="relative bg-gradient-to-br from-white via-warm-50/50 to-transparent rounded-2xl p-8 border border-warm-200 shadow-soft card-hover">
+        <div
+          class="relative bg-gradient-to-br from-white via-warm-50/50 to-transparent rounded-2xl p-8 border border-warm-200 shadow-soft card-hover"
+        >
           <!-- Floating Icon -->
           <div class="absolute -top-6 left-8">
-            <div class="w-16 h-16 bg-warm-gradient rounded-2xl flex items-center justify-center shadow-warm group-hover:scale-110 transition-transform duration-300">
+            <div
+              class="w-16 h-16 bg-warm-gradient rounded-2xl flex items-center justify-center shadow-warm group-hover:scale-110 transition-transform duration-300"
+            >
               <span class="text-white text-2xl">🌳</span>
             </div>
           </div>
-          
+
           <div class="pt-6">
-            <h3 class="text-2xl font-semibold text-forest-800 mb-4 group-hover:text-warm-600 transition-colors">
+            <h3
+              class="text-2xl font-semibold text-forest-800 mb-4 group-hover:text-warm-600 transition-colors"
+            >
               {t.amenities.outdoor.title}
             </h3>
-            
+
             <div class="space-y-4">
-              <div class="flex items-center space-x-4 p-3 bg-white/60 rounded-xl backdrop-blur-sm group-hover:bg-warm-50/80 transition-all duration-300">
-                <div class="w-10 h-10 bg-warm-100 rounded-lg flex items-center justify-center">
+              <div
+                class="flex items-center space-x-4 p-3 bg-white/60 rounded-xl backdrop-blur-sm group-hover:bg-warm-50/80 transition-all duration-300"
+              >
+                <div
+                  class="w-10 h-10 bg-warm-100 rounded-lg flex items-center justify-center"
+                >
                   <span class="text-warm-600 text-lg">🏡</span>
                 </div>
                 <div class="flex-1">
-                  <div class="font-medium text-forest-800">{t.amenities.outdoor.terrace}</div>
+                  <div class="font-medium text-forest-800">
+                    {t.amenities.outdoor.terrace}
+                  </div>
                   <div class="text-sm text-warm-600">
-                    {locale === 'fr' ? '18m² couverte' : '18m² covered'}
+                    {locale === "fr" ? "18m² couverte" : "18m² covered"}
                   </div>
                 </div>
               </div>
-              
-              <div class="flex items-center space-x-4 p-3 bg-white/60 rounded-xl backdrop-blur-sm group-hover:bg-warm-50/80 transition-all duration-300">
-                <div class="w-10 h-10 bg-warm-100 rounded-lg flex items-center justify-center">
+
+              <div
+                class="flex items-center space-x-4 p-3 bg-white/60 rounded-xl backdrop-blur-sm group-hover:bg-warm-50/80 transition-all duration-300"
+              >
+                <div
+                  class="w-10 h-10 bg-warm-100 rounded-lg flex items-center justify-center"
+                >
                   <span class="text-warm-600 text-lg">🔥</span>
                 </div>
                 <div class="flex-1">
-                  <div class="font-medium text-forest-800">{t.amenities.outdoor.bbq}</div>
+                  <div class="font-medium text-forest-800">
+                    {t.amenities.outdoor.bbq}
+                  </div>
                   <div class="text-sm text-warm-600">
-                    {locale === 'fr' ? 'Repas en plein air' : 'Outdoor dining'}
+                    {locale === "fr" ? "Repas en plein air" : "Outdoor dining"}
                   </div>
                 </div>
               </div>
-              
-              <div class="flex items-center space-x-4 p-3 bg-white/60 rounded-xl backdrop-blur-sm group-hover:bg-warm-50/80 transition-all duration-300">
-                <div class="w-10 h-10 bg-warm-100 rounded-lg flex items-center justify-center">
+
+              <div
+                class="flex items-center space-x-4 p-3 bg-white/60 rounded-xl backdrop-blur-sm group-hover:bg-warm-50/80 transition-all duration-300"
+              >
+                <div
+                  class="w-10 h-10 bg-warm-100 rounded-lg flex items-center justify-center"
+                >
                   <span class="text-warm-600 text-lg">🌿</span>
                 </div>
                 <div class="flex-1">
-                  <div class="font-medium text-forest-800">{t.amenities.outdoor.garden}</div>
+                  <div class="font-medium text-forest-800">
+                    {t.amenities.outdoor.garden}
+                  </div>
                   <div class="text-sm text-warm-600">
-                    {locale === 'fr' ? 'Vue sur nature' : 'Nature views'}
+                    {locale === "fr" ? "Vue sur nature" : "Nature views"}
                   </div>
                 </div>
               </div>
@@ -146,52 +215,80 @@ const { t, locale } = Astro.props as Props;
 
       <!-- Kitchen & Dining -->
       <div class="group animate-on-scroll" data-delay="400">
-        <div class="relative bg-gradient-to-br from-white via-forest-50/50 to-transparent rounded-2xl p-8 border border-forest-200 shadow-soft card-hover">
+        <div
+          class="relative bg-gradient-to-br from-white via-forest-50/50 to-transparent rounded-2xl p-8 border border-forest-200 shadow-soft card-hover"
+        >
           <!-- Floating Icon -->
           <div class="absolute -top-6 left-8">
-            <div class="w-16 h-16 bg-forest-gradient rounded-2xl flex items-center justify-center shadow-medium group-hover:scale-110 transition-transform duration-300">
+            <div
+              class="w-16 h-16 bg-forest-gradient rounded-2xl flex items-center justify-center shadow-medium group-hover:scale-110 transition-transform duration-300"
+            >
               <span class="text-white text-2xl">🍽️</span>
             </div>
           </div>
-          
+
           <div class="pt-6">
-            <h3 class="text-2xl font-semibold text-forest-800 mb-4 group-hover:text-forest-600 transition-colors">
+            <h3
+              class="text-2xl font-semibold text-forest-800 mb-4 group-hover:text-forest-600 transition-colors"
+            >
               {t.amenities.kitchen.title}
             </h3>
-            
+
             <div class="space-y-4">
-              <div class="flex items-center space-x-4 p-3 bg-white/60 rounded-xl backdrop-blur-sm group-hover:bg-forest-50/80 transition-all duration-300">
-                <div class="w-10 h-10 bg-forest-100 rounded-lg flex items-center justify-center">
+              <div
+                class="flex items-center space-x-4 p-3 bg-white/60 rounded-xl backdrop-blur-sm group-hover:bg-forest-50/80 transition-all duration-300"
+              >
+                <div
+                  class="w-10 h-10 bg-forest-100 rounded-lg flex items-center justify-center"
+                >
                   <span class="text-forest-600 text-lg">🔧</span>
                 </div>
                 <div class="flex-1">
-                  <div class="font-medium text-forest-800">{t.amenities.kitchen.equipped}</div>
+                  <div class="font-medium text-forest-800">
+                    {t.amenities.kitchen.equipped}
+                  </div>
                   <div class="text-sm text-forest-600">
-                    {locale === 'fr' ? 'Tout l\'équipement' : 'Full equipment'}
+                    {locale === "fr" ? "Tout l'équipement" : "Full equipment"}
                   </div>
                 </div>
               </div>
-              
-              <div class="flex items-center space-x-4 p-3 bg-white/60 rounded-xl backdrop-blur-sm group-hover:bg-forest-50/80 transition-all duration-300">
-                <div class="w-10 h-10 bg-forest-100 rounded-lg flex items-center justify-center">
+
+              <div
+                class="flex items-center space-x-4 p-3 bg-white/60 rounded-xl backdrop-blur-sm group-hover:bg-forest-50/80 transition-all duration-300"
+              >
+                <div
+                  class="w-10 h-10 bg-forest-100 rounded-lg flex items-center justify-center"
+                >
                   <span class="text-forest-600 text-lg">🥄</span>
                 </div>
                 <div class="flex-1">
-                  <div class="font-medium text-forest-800">{t.amenities.kitchen.utensils}</div>
+                  <div class="font-medium text-forest-800">
+                    {t.amenities.kitchen.utensils}
+                  </div>
                   <div class="text-sm text-forest-600">
-                    {locale === 'fr' ? 'Ustensiles complets' : 'Complete utensils'}
+                    {
+                      locale === "fr"
+                        ? "Ustensiles complets"
+                        : "Complete utensils"
+                    }
                   </div>
                 </div>
               </div>
-              
-              <div class="flex items-center space-x-4 p-3 bg-white/60 rounded-xl backdrop-blur-sm group-hover:bg-forest-50/80 transition-all duration-300">
-                <div class="w-10 h-10 bg-forest-100 rounded-lg flex items-center justify-center">
+
+              <div
+                class="flex items-center space-x-4 p-3 bg-white/60 rounded-xl backdrop-blur-sm group-hover:bg-forest-50/80 transition-all duration-300"
+              >
+                <div
+                  class="w-10 h-10 bg-forest-100 rounded-lg flex items-center justify-center"
+                >
                   <span class="text-forest-600 text-lg">🪑</span>
                 </div>
                 <div class="flex-1">
-                  <div class="font-medium text-forest-800">{t.amenities.kitchen.dining}</div>
+                  <div class="font-medium text-forest-800">
+                    {t.amenities.kitchen.dining}
+                  </div>
                   <div class="text-sm text-forest-600">
-                    {locale === 'fr' ? 'Espace repas' : 'Dining space'}
+                    {locale === "fr" ? "Espace repas" : "Dining space"}
                   </div>
                 </div>
               </div>
@@ -202,53 +299,69 @@ const { t, locale } = Astro.props as Props;
     </div>
 
     <!-- Additional Services Highlight -->
-    <div class="bg-gradient-to-r from-sage-50 via-white to-warm-50 rounded-2xl p-8 border border-sage-200 shadow-large animate-on-scroll">
+    <div
+      class="bg-gradient-to-r from-sage-50 via-white to-warm-50 rounded-2xl p-8 border border-sage-200 shadow-large animate-on-scroll"
+    >
       <div class="text-center mb-8">
-        <div class="w-20 h-20 bg-sage-200 rounded-2xl flex items-center justify-center mx-auto mb-4">
+        <div
+          class="w-20 h-20 bg-sage-200 rounded-2xl flex items-center justify-center mx-auto mb-4"
+        >
           <span class="text-3xl">🎁</span>
         </div>
         <h3 class="text-2xl font-semibold text-forest-800 mb-2">
-          {locale === 'fr' ? 'Services Inclus' : 'Included Services'}
+          {locale === "fr" ? "Services Inclus" : "Included Services"}
         </h3>
         <p class="text-sage-600">
-          {locale === 'fr' ? 'Tout est prévu pour votre confort' : 'Everything is provided for your comfort'}
+          {
+            locale === "fr"
+              ? "Tout est prévu pour votre confort"
+              : "Everything is provided for your comfort"
+          }
         </p>
       </div>
-      
+
       <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
         <div class="text-center group">
-          <div class="w-12 h-12 bg-sage-100 rounded-xl flex items-center justify-center mx-auto mb-3 group-hover:bg-sage-200 transition-colors">
+          <div
+            class="w-12 h-12 bg-sage-100 rounded-xl flex items-center justify-center mx-auto mb-3 group-hover:bg-sage-200 transition-colors"
+          >
             <span class="text-sage-600 text-xl">🚗</span>
           </div>
           <h4 class="font-medium text-forest-800">
-            {locale === 'fr' ? 'Parking Gratuit' : 'Free Parking'}
+            {locale === "fr" ? "Parking Gratuit" : "Free Parking"}
           </h4>
         </div>
-        
+
         <div class="text-center group">
-          <div class="w-12 h-12 bg-warm-100 rounded-xl flex items-center justify-center mx-auto mb-3 group-hover:bg-warm-200 transition-colors">
+          <div
+            class="w-12 h-12 bg-warm-100 rounded-xl flex items-center justify-center mx-auto mb-3 group-hover:bg-warm-200 transition-colors"
+          >
             <span class="text-warm-600 text-xl">🧺</span>
           </div>
           <h4 class="font-medium text-forest-800">
-            {locale === 'fr' ? 'Linge Fourni' : 'Linens Provided'}
+            {locale === "fr" ? "Linge Fourni" : "Linens Provided"}
           </h4>
         </div>
-        
+
         <div class="text-center group">
-          <div class="w-12 h-12 bg-forest-100 rounded-xl flex items-center justify-center mx-auto mb-3 group-hover:bg-forest-200 transition-colors">
+          <div
+            class="w-12 h-12 bg-forest-100 rounded-xl flex items-center justify-center mx-auto mb-3 group-hover:bg-forest-200 transition-colors"
+          >
             <span class="text-forest-600 text-xl">🧹</span>
           </div>
           <h4 class="font-medium text-forest-800">
-            {locale === 'fr' ? 'Ménage Final' : 'Final Cleaning'}
+            {locale === "fr" ? "Ménage Final" : "Final Cleaning"}
           </h4>
         </div>
-        
+
         <div class="text-center group">
-          <div class="w-12 h-12 bg-sage-100 rounded-xl flex items-center justify-center mx-auto mb-3 group-hover:bg-sage-200 transition-colors">
+          <div
+            class="w-12 h-12 bg-sage-100 rounded-xl flex items-center justify-center mx-auto mb-3 group-hover:bg-sage-200 transition-colors"
+          >
             <span class="text-sage-600 text-xl">🎫</span>
           </div>
           <h4 class="font-medium text-forest-800">
-            {locale === 'fr' ? 'Chèques ANCV' : 'ANCV Vouchers'}
+            {locale === "fr" ? "Chèques ANCV" : "ANCV Vouchers"}
           </h4>
         </div>
       </div>
