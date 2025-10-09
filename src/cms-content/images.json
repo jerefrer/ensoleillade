@@ -1,0 +1,14 @@
+{
+  "hero": {
+    "main": "/src/assets/images/1.jpg"
+  },
+  "accommodation": {
+    "interior": [],
+    "exterior": [],
+    "terrace": []
+  },
+  "location": {
+    "area": []
+  },
+  "gallery": []
+}
