@@ -1,4 +1,6 @@
 ---
+import images from '../../data/images.json';
+
 interface Props { 
   t: any;
   locale: string;
@@ -76,20 +78,12 @@ const { t, locale } = Astro.props as Props;
         </div>
 
         <!-- Map Placeholder -->
-        <div class="aspect-[4/3] bg-gradient-to-br from-forest-200 via-sage-200 to-earth-200 rounded-2xl overflow-hidden shadow-large">
-          <div class="w-full h-full flex items-center justify-center text-center text-forest-700 p-8">
-            <div>
-              <div class="w-24 h-24 mx-auto mb-4 bg-white/80 rounded-2xl flex items-center justify-center backdrop-blur-sm">
-                <span class="text-4xl">🗺️</span>
-              </div>
-              <p class="text-lg font-medium mb-2">
-                {locale === 'fr' ? 'Carte de localisation' : 'Location map'}
-              </p>
-              <p class="text-sm opacity-75">
-                {locale === 'fr' ? 'Plan interactif à intégrer' : 'Interactive map to integrate'}
-              </p>
-            </div>
-          </div>
+        <div class="aspect-[4/3] rounded-2xl overflow-hidden shadow-large">
+          <img 
+            src={images.location.map}
+            alt={locale === 'fr' ? 'Carte de localisation - Saint-Léon-sur-Vézère' : 'Location map - Saint-Léon-sur-Vézère'}
+            class="w-full h-full object-cover"
+          />
         </div>
       </div>
     </div>
@@ -120,15 +114,14 @@ const { t, locale } = Astro.props as Props;
               </div>
             </div>
             
-            <div class="aspect-[4/3] bg-gradient-to-br from-sage-100 to-sage-200 rounded-xl mb-4 overflow-hidden">
-              <div class="w-full h-full flex items-center justify-center">
-                <div class="text-center">
-                  <span class="text-4xl mb-2 block">🏛️</span>
-                  <p class="text-sm font-medium text-forest-700">
-                    {locale === 'fr' ? 'Patrimoine' : 'Heritage'}
-                  </p>
-                </div>
-              </div>
+            <div class="aspect-[4/3] rounded-xl mb-4 overflow-hidden">
+              {images.location.area[0] && (
+                <img 
+                  src={images.location.area[0]}
+                  alt={locale === 'fr' ? 'Patrimoine de la région' : 'Regional heritage'}
+                  class="w-full h-full object-cover"
+                />
+              )}
             </div>
             
             <h4 class="text-xl font-semibold text-forest-800 mb-2 group-hover:text-sage-600 transition-colors">
@@ -152,15 +145,14 @@ const { t, locale } = Astro.props as Props;
               </div>
             </div>
             
-            <div class="aspect-[4/3] bg-gradient-to-br from-warm-100 to-warm-200 rounded-xl mb-4 overflow-hidden">
-              <div class="w-full h-full flex items-center justify-center">
-                <div class="text-center">
-                  <span class="text-4xl mb-2 block">🛶</span>
-                  <p class="text-sm font-medium text-forest-700">
-                    {locale === 'fr' ? 'Aventure' : 'Adventure'}
-                  </p>
-                </div>
-              </div>
+            <div class="aspect-[4/3] rounded-xl mb-4 overflow-hidden">
+              {images.location.area[1] && (
+                <img 
+                  src={images.location.area[1]}
+                  alt={locale === 'fr' ? 'Activités dans la région' : 'Regional activities'}
+                  class="w-full h-full object-cover"
+                />
+              )}
             </div>
             
             <h4 class="text-xl font-semibold text-forest-800 mb-2 group-hover:text-warm-600 transition-colors">
@@ -184,15 +176,14 @@ const { t, locale } = Astro.props as Props;
               </div>
             </div>
             
-            <div class="aspect-[4/3] bg-gradient-to-br from-forest-100 to-forest-200 rounded-xl mb-4 overflow-hidden">
-              <div class="w-full h-full flex items-center justify-center">
-                <div class="text-center">
-                  <span class="text-4xl mb-2 block">🏰</span>
-                  <p class="text-sm font-medium text-forest-700">
-                    {locale === 'fr' ? 'Châteaux' : 'Castles'}
-                  </p>
-                </div>
-              </div>
+            <div class="aspect-[4/3] rounded-xl mb-4 overflow-hidden">
+              {images.gallery[3] && (
+                <img 
+                  src={images.gallery[3].image}
+                  alt={locale === 'fr' ? images.gallery[3].alt_fr : images.gallery[3].alt_en}
+                  class="w-full h-full object-cover"
+                />
+              )}
             </div>
             
             <h4 class="text-xl font-semibold text-forest-800 mb-2 group-hover:text-forest-600 transition-colors">

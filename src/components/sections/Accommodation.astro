@@ -1,4 +1,6 @@
 ---
+import images from '../../data/images.json';
+
 interface Props {
   t: any;
   locale: string;
@@ -64,20 +66,12 @@ const { t, locale } = Astro.props as Props;
         
         <!-- Featured Large Image -->
         <div class="md:col-span-2 lg:row-span-2">
-          <div class="relative aspect-[4/3] lg:aspect-[3/2] bg-gradient-to-br from-sage-200 via-earth-200 to-warm-200 rounded-2xl overflow-hidden shadow-large group card-hover">
-            <div class="w-full h-full flex items-center justify-center text-center text-forest-700 p-8">
-              <div>
-                <div class="w-32 h-32 mx-auto mb-6 bg-white/80 rounded-2xl flex items-center justify-center backdrop-blur-sm group-hover:scale-110 transition-transform duration-300">
-                  <span class="text-6xl">🏡</span>
-                </div>
-                <p class="text-xl font-medium mb-2">
-                  {locale === 'fr' ? 'Vue d\'ensemble du gîte' : 'Cottage overview'}
-                </p>
-                <p class="text-sm opacity-75">
-                  {locale === 'fr' ? 'Photo principale' : 'Main photo'}
-                </p>
-              </div>
-            </div>
+          <div class="relative aspect-[4/3] lg:aspect-[3/2] rounded-2xl overflow-hidden shadow-large group card-hover">
+            <img 
+              src={images.accommodation.interior[0]}
+              alt={locale === 'fr' ? 'Intérieur du gîte' : 'Cottage interior'}
+              class="w-full h-full object-cover"
+            />
             
             <!-- Overlay Badge -->
             <div class="absolute top-4 right-4 bg-sage-600 text-white px-3 py-1 rounded-full text-xs font-semibold">
@@ -88,87 +82,69 @@ const { t, locale } = Astro.props as Props;
         
         <!-- Interior Photos -->
         <div class="space-y-6">
-          <div class="aspect-square bg-gradient-to-br from-warm-100 to-warm-200 rounded-xl overflow-hidden shadow-soft group card-hover">
-            <div class="w-full h-full flex items-center justify-center text-center text-forest-700 p-4">
-              <div>
-                <div class="w-16 h-16 mx-auto mb-3 bg-white/80 rounded-xl flex items-center justify-center backdrop-blur-sm group-hover:scale-110 transition-transform duration-300">
-                  <span class="text-3xl">🛏️</span>
-                </div>
-                <p class="text-sm font-medium">
-                  {locale === 'fr' ? 'Espace nuit' : 'Sleeping area'}
-                </p>
-              </div>
+          {images.accommodation.interior[1] && (
+            <div class="aspect-square rounded-xl overflow-hidden shadow-soft group card-hover">
+              <img 
+                src={images.accommodation.interior[1]}
+                alt={locale === 'fr' ? 'Espace nuit' : 'Sleeping area'}
+                class="w-full h-full object-cover"
+              />
             </div>
-          </div>
+          )}
           
-          <div class="aspect-square bg-gradient-to-br from-sage-100 to-sage-200 rounded-xl overflow-hidden shadow-soft group card-hover">
-            <div class="w-full h-full flex items-center justify-center text-center text-forest-700 p-4">
-              <div>
-                <div class="w-16 h-16 mx-auto mb-3 bg-white/80 rounded-xl flex items-center justify-center backdrop-blur-sm group-hover:scale-110 transition-transform duration-300">
-                  <span class="text-3xl">🍳</span>
-                </div>
-                <p class="text-sm font-medium">
-                  {locale === 'fr' ? 'Kitchenette' : 'Kitchenette'}
-                </p>
-              </div>
+          {images.accommodation.exterior[0] && (
+            <div class="aspect-square rounded-xl overflow-hidden shadow-soft group card-hover">
+              <img 
+                src={images.accommodation.exterior[0]}
+                alt={locale === 'fr' ? 'Extérieur du gîte' : 'Cottage exterior'}
+                class="w-full h-full object-cover"
+              />
             </div>
-          </div>
+          )}
         </div>
         
         <!-- Additional Photos Row -->
         <div class="md:col-span-2 lg:col-span-3">
           <div class="grid grid-cols-2 lg:grid-cols-4 gap-4">
-            <div class="aspect-[4/3] bg-gradient-to-br from-forest-100 to-forest-200 rounded-xl overflow-hidden shadow-soft group card-hover">
-              <div class="w-full h-full flex items-center justify-center text-center text-forest-700">
-                <div>
-                  <div class="w-12 h-12 mx-auto mb-2 bg-white/80 rounded-lg flex items-center justify-center backdrop-blur-sm group-hover:scale-110 transition-transform duration-300">
-                    <span class="text-2xl">🚿</span>
-                  </div>
-                  <p class="text-xs font-medium">
-                    {locale === 'fr' ? 'Salle de bain' : 'Bathroom'}
-                  </p>
-                </div>
+            {images.accommodation.terrace[0] && (
+              <div class="aspect-[4/3] rounded-xl overflow-hidden shadow-soft group card-hover">
+                <img 
+                  src={images.accommodation.terrace[0]}
+                  alt={locale === 'fr' ? 'Terrasse' : 'Terrace'}
+                  class="w-full h-full object-cover"
+                />
               </div>
-            </div>
+            )}
             
-            <div class="aspect-[4/3] bg-gradient-to-br from-warm-100 to-warm-200 rounded-xl overflow-hidden shadow-soft group card-hover">
-              <div class="w-full h-full flex items-center justify-center text-center text-forest-700">
-                <div>
-                  <div class="w-12 h-12 mx-auto mb-2 bg-white/80 rounded-lg flex items-center justify-center backdrop-blur-sm group-hover:scale-110 transition-transform duration-300">
-                    <span class="text-2xl">🌿</span>
-                  </div>
-                  <p class="text-xs font-medium">
-                    {locale === 'fr' ? 'Terrasse' : 'Terrace'}
-                  </p>
-                </div>
+            {images.gallery[0] && (
+              <div class="aspect-[4/3] rounded-xl overflow-hidden shadow-soft group card-hover">
+                <img 
+                  src={images.gallery[0].image}
+                  alt={locale === 'fr' ? images.gallery[0].alt_fr : images.gallery[0].alt_en}
+                  class="w-full h-full object-cover"
+                />
               </div>
-            </div>
+            )}
             
-            <div class="aspect-[4/3] bg-gradient-to-br from-sage-100 to-sage-200 rounded-xl overflow-hidden shadow-soft group card-hover">
-              <div class="w-full h-full flex items-center justify-center text-center text-forest-700">
-                <div>
-                  <div class="w-12 h-12 mx-auto mb-2 bg-white/80 rounded-lg flex items-center justify-center backdrop-blur-sm group-hover:scale-110 transition-transform duration-300">
-                    <span class="text-2xl">🌳</span>
-                  </div>
-                  <p class="text-xs font-medium">
-                    {locale === 'fr' ? 'Extérieur' : 'Outdoor'}
-                  </p>
-                </div>
+            {images.gallery[1] && (
+              <div class="aspect-[4/3] rounded-xl overflow-hidden shadow-soft group card-hover">
+                <img 
+                  src={images.gallery[1].image}
+                  alt={locale === 'fr' ? images.gallery[1].alt_fr : images.gallery[1].alt_en}
+                  class="w-full h-full object-cover"
+                />
               </div>
-            </div>
+            )}
             
-            <div class="aspect-[4/3] bg-gradient-to-br from-earth-100 to-earth-200 rounded-xl overflow-hidden shadow-soft group card-hover">
-              <div class="w-full h-full flex items-center justify-center text-center text-forest-700">
-                <div>
-                  <div class="w-12 h-12 mx-auto mb-2 bg-white/80 rounded-lg flex items-center justify-center backdrop-blur-sm group-hover:scale-110 transition-transform duration-300">
-                    <span class="text-2xl">🌅</span>
-                  </div>
-                  <p class="text-xs font-medium">
-                    {locale === 'fr' ? 'Vue' : 'View'}
-                  </p>
-                </div>
+            {images.gallery[2] && (
+              <div class="aspect-[4/3] rounded-xl overflow-hidden shadow-soft group card-hover">
+                <img 
+                  src={images.gallery[2].image}
+                  alt={locale === 'fr' ? images.gallery[2].alt_fr : images.gallery[2].alt_en}
+                  class="w-full h-full object-cover"
+                />
               </div>
-            </div>
+            )}
           </div>
         </div>
       </div>

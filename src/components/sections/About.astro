@@ -1,4 +1,6 @@
 ---
+import images from '../../data/images.json';
+
 interface Props {
   t: any;
   locale: string;
@@ -133,20 +135,12 @@ const { t, locale } = Astro.props as Props;
         
         <!-- Main Feature Image -->
         <div class="relative mb-8">
-          <div class="aspect-[4/5] bg-gradient-to-br from-sage-200 via-earth-200 to-warm-200 rounded-2xl overflow-hidden shadow-large">
-            <div class="w-full h-full flex items-center justify-center text-center text-forest-700 p-8">
-              <div>
-                <div class="w-24 h-24 mx-auto mb-4 bg-white/80 rounded-2xl flex items-center justify-center backdrop-blur-sm">
-                  <span class="text-4xl">🏡</span>
-                </div>
-                <p class="text-lg font-medium mb-2">
-                  {locale === 'fr' ? 'Construction écologique' : 'Eco-friendly construction'}
-                </p>
-                <p class="text-sm opacity-75">
-                  {locale === 'fr' ? 'Photo de la construction' : 'Construction photo'}
-                </p>
-              </div>
-            </div>
+          <div class="aspect-[4/5] rounded-2xl overflow-hidden shadow-large">
+            <img 
+              src={images.about.feature}
+              alt={locale === 'fr' ? 'Construction écologique du gîte' : 'Eco-friendly cottage construction'}
+              class="w-full h-full object-cover"
+            />
           </div>
           
           <!-- Floating Stats Cards -->
