@@ -1,6 +1,6 @@
 // i18n utilities
-import enTranslations from "../i18n/en.json";
-import frTranslations from "../i18n/fr.json";
+import enTranslations from "../cms-content/en/site-content.json";
+import frTranslations from "../cms-content/fr/site-content.json";
 
 const translations = {
   fr: frTranslations,
