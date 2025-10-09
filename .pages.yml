@@ -271,7 +271,7 @@ content:
   - title: Site Images
     name: site_images
     type: file
-    file: src/data/images.json
+    file: src/data/images.yml
     fields:
       - label: Hero Section
         name: hero

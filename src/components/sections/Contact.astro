@@ -1,6 +1,9 @@
 ---
-interface Props { t: any }
-const { t } = Astro.props as Props;
+interface Props { 
+  t: any;
+  locale: string;
+}
+const { t, locale } = Astro.props as Props;
 ---
 <section id="contact" class="py-20 bg-forest-700 text-white">
   <div class="max-w-4xl mx-auto px-4 text-center">

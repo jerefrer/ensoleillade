@@ -1,0 +1,47 @@
+hero:
+  main: /src/assets/images/hero-main.jpg
+  secondary1: /src/assets/images/hero-secondary-1.jpg
+  secondary2: /src/assets/images/hero-secondary-2.jpg
+
+about:
+  feature: /src/assets/images/about-feature.jpg
+
+accommodation:
+  interior:
+    - /src/assets/images/interior-1.jpg
+    - /src/assets/images/interior-2.jpg
+    - /src/assets/images/interior-3.jpg
+  exterior:
+    - /src/assets/images/exterior-1.jpg
+    - /src/assets/images/exterior-2.jpg
+  terrace:
+    - /src/assets/images/terrace-1.jpg
+    - /src/assets/images/terrace-2.jpg
+
+location:
+  map: /src/assets/images/location-map.jpg
+  area:
+    - /src/assets/images/area-1.jpg
+    - /src/assets/images/area-2.jpg
+
+gallery:
+  - image: /src/assets/images/gallery-1.jpg
+    caption_fr: "Vue du jardin"
+    caption_en: "Garden view"
+    alt_fr: "Vue panoramique du jardin en permaculture"
+    alt_en: "Panoramic view of the permaculture garden"
+  - image: /src/assets/images/gallery-2.jpg
+    caption_fr: "Intérieur cosy"
+    caption_en: "Cozy interior"
+    alt_fr: "Intérieur chaleureux du gîte"
+    alt_en: "Warm interior of the cottage"
+  - image: /src/assets/images/gallery-3.jpg
+    caption_fr: "Terrasse ensoleillée"
+    caption_en: "Sunny terrace"
+    alt_fr: "Grande terrasse avec vue sur la nature"
+    alt_en: "Large terrace with nature view"
+  - image: /src/assets/images/gallery-4.jpg
+    caption_fr: "Château local"
+    caption_en: "Local castle"
+    alt_fr: "Château médiéval à proximité"
+    alt_en: "Nearby medieval castle"
