@@ -298,7 +298,8 @@ content:
           - { label: Area Photos, name: area, type: image, list: true }
       - label: Gallery
         name: gallery
-        type: list
+        type: object
+        list: true
         fields:
           - { label: Image, name: image, type: image }
           - { label: Caption (French), name: caption_fr, type: string }
