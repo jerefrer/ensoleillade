@@ -1,14 +1,12 @@
-title: L'Ensoleillade CMS
-
 media:
   input: src/assets/images
-  output: src/assets/images
+  output: /src/assets/images
 
 content:
-  - title: Site Content
-    name: site_content
+  - name: site_content
+    label: Site Content
     type: file
-    file: src/data/site-content.yml
+    path: src/data/site-content.yml
     fields:
       - label: Site Information
         name: site
@@ -268,10 +266,10 @@ content:
               - { label: French, name: fr, type: string }
               - { label: English, name: en, type: string }
 
-  - title: Site Images
-    name: site_images
+  - name: site_images
+    label: Site Images
     type: file
-    file: src/data/images.yml
+    path: src/data/images.yml
     fields:
       - label: Hero Section
         name: hero
