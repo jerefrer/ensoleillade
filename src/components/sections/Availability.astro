@@ -19,8 +19,12 @@ const calendarData = {
   dayNames: DAY_NAMES
 };
 ---
-<section id="availability" class="py-20 bg-white">
-  <div class="max-w-4xl mx-auto px-4">
+<section id="availability" class="py-20 bg-gradient-to-br from-sage-50 via-warm-50 to-earth-50 relative overflow-hidden">
+  <!-- Background decoration -->
+  <div class="absolute top-0 right-0 w-96 h-96 bg-sage-300/20 rounded-full blur-3xl"></div>
+  <div class="absolute bottom-0 left-0 w-80 h-80 bg-warm-300/20 rounded-full blur-3xl"></div>
+  
+  <div class="max-w-4xl mx-auto px-4 relative z-10">
     <div class="text-center mb-12">
       <h2 class="text-4xl font-serif font-bold text-earth-800 mb-4">
         {t.calendar.title}
