@@ -287,24 +287,21 @@ content:
         name: accommodation
         type: object
         fields:
-          - label: Interior Photos
-            name: interior
-            type: list
-            item_type: string
-          - label: Exterior Photos
-            name: exterior
-            type: list
-            item_type: string
-          - label: Terrace Photos
-            name: terrace
-            type: list
-            item_type: string
+          - { label: Interior Photos, name: interior, type: image, list: true }
+          - { label: Exterior Photos, name: exterior, type: image, list: true }
+          - { label: Terrace Photos, name: terrace, type: image, list: true }
       - label: Location
         name: location
         type: object
         fields:
           - { label: Map Image, name: map, type: image }
-          - label: Area Photos
-            name: area
-            type: list
-            item_type: string
+          - { label: Area Photos, name: area, type: image, list: true }
+      - label: Gallery
+        name: gallery
+        type: list
+        fields:
+          - { label: Image, name: image, type: image }
+          - { label: Caption (French), name: caption_fr, type: string }
+          - { label: Caption (English), name: caption_en, type: string }
+          - { label: Alt Text (French), name: alt_fr, type: string }
+          - { label: Alt Text (English), name: alt_en, type: string }
