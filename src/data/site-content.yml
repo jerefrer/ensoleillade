@@ -112,6 +112,56 @@ location:
   description:
     fr: "Située au cœur du Périgord Noir, L'Ensoleillade vous offre un accès privilégié aux trésors de la Dordogne."
     en: "Located in the heart of Périgord Noir, L'Ensoleillade offers privileged access to Dordogne's treasures."
+  activities:
+    lascaux:
+      fr: "Grottes de Lascaux"
+      en: "Lascaux Caves"
+    prehistoric:
+      fr: "Sites préhistoriques"
+      en: "Prehistoric sites"
+    castles:
+      fr: "Châteaux"
+      en: "Castles"
+    gardens:
+      fr: "Jardins remarquables"
+      en: "Remarkable gardens"
+    canoeing:
+      fr: "Canoë-kayak"
+      en: "Canoeing"
+    paragliding:
+      fr: "Parapente"
+      en: "Paragliding"
+    buddhist:
+      fr: "Centres bouddhistes"
+      en: "Buddhist centers"
+
+calendar:
+  title:
+    fr: "Disponibilités"
+    en: "Availability"
+  subtitle:
+    fr: "Vérifiez nos disponibilités en temps réel"
+    en: "Check our real-time availability"
+  loading:
+    fr: "Chargement du calendrier..."
+    en: "Loading calendar..."
+  available:
+    fr: "Disponible"
+    en: "Available"
+  unavailable:
+    fr: "Réservé"
+    en: "Booked"
+
+payment:
+  title:
+    fr: "Modes de Paiement"
+    en: "Payment Methods"
+  ancv:
+    fr: "Chèques Vacances ANCV acceptés"
+    en: "ANCV Holiday Vouchers accepted"
+  ancv_description:
+    fr: "Nous acceptons les chèques vacances ANCV pour votre séjour."
+    en: "We accept ANCV holiday vouchers for your stay."
 
 contact:
   title:
@@ -120,3 +170,22 @@ contact:
   subtitle:
     fr: "Contactez-nous directement pour réserver"
     en: "Contact us directly to book"
+
+footer:
+  permaculture:
+    fr: "Soutient l'association de permaculture locale"
+    en: "Supports local permaculture association"
+  eco:
+    fr: "Hébergement éco-responsable"
+    en: "Eco-responsible accommodation"
+  local:
+    fr: "Matériaux et produits locaux"
+    en: "Local materials and products"
+
+lang:
+  switch:
+    fr: "English"
+    en: "Français"
+  current:
+    fr: "Français"
+    en: "English"
