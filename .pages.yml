@@ -1,0 +1,312 @@
+title: L'Ensoleillade CMS
+
+media:
+  input: src/assets/images
+  output: src/assets/images
+
+content:
+  - title: Site Content
+    name: site_content
+    type: file
+    file: src/data/site-content.yml
+    fields:
+      - label: Site Information
+        name: site
+        type: object
+        fields:
+          - label: Title
+            name: title
+            type: object
+            fields:
+              - { label: French, name: fr, type: string }
+              - { label: English, name: en, type: string }
+          - label: Description
+            name: description
+            type: object
+            fields:
+              - { label: French, name: fr, type: text }
+              - { label: English, name: en, type: text }
+          - label: Keywords
+            name: keywords
+            type: object
+            fields:
+              - { label: French, name: fr, type: string }
+              - { label: English, name: en, type: string }
+
+      - label: Navigation
+        name: nav
+        type: object
+        fields:
+          - label: Home
+            name: home
+            type: object
+            fields:
+              - { label: French, name: fr, type: string }
+              - { label: English, name: en, type: string }
+          - label: About
+            name: about
+            type: object
+            fields:
+              - { label: French, name: fr, type: string }
+              - { label: English, name: en, type: string }
+          - label: Amenities
+            name: amenities
+            type: object
+            fields:
+              - { label: French, name: fr, type: string }
+              - { label: English, name: en, type: string }
+          - label: Location
+            name: location
+            type: object
+            fields:
+              - { label: French, name: fr, type: string }
+              - { label: English, name: en, type: string }
+          - label: Availability
+            name: availability
+            type: object
+            fields:
+              - { label: French, name: fr, type: string }
+              - { label: English, name: en, type: string }
+          - label: Contact
+            name: contact
+            type: object
+            fields:
+              - { label: French, name: fr, type: string }
+              - { label: English, name: en, type: string }
+
+      - label: Hero Section
+        name: hero
+        type: object
+        fields:
+          - label: Title
+            name: title
+            type: object
+            fields:
+              - { label: French, name: fr, type: string }
+              - { label: English, name: en, type: string }
+          - label: Subtitle
+            name: subtitle
+            type: object
+            fields:
+              - { label: French, name: fr, type: string }
+              - { label: English, name: en, type: string }
+          - label: Description
+            name: description
+            type: object
+            fields:
+              - { label: French, name: fr, type: text }
+              - { label: English, name: en, type: text }
+          - label: Call to Action
+            name: cta
+            type: object
+            fields:
+              - { label: French, name: fr, type: string }
+              - { label: English, name: en, type: string }
+
+      - label: About Section
+        name: about
+        type: object
+        fields:
+          - label: Title
+            name: title
+            type: object
+            fields:
+              - { label: French, name: fr, type: string }
+              - { label: English, name: en, type: string }
+          - label: Subtitle
+            name: subtitle
+            type: object
+            fields:
+              - { label: French, name: fr, type: string }
+              - { label: English, name: en, type: string }
+          - label: Description
+            name: description
+            type: object
+            fields:
+              - { label: French, name: fr, type: text }
+              - { label: English, name: en, type: text }
+          - label: Features
+            name: features
+            type: object
+            fields:
+              - label: Eco Construction
+                name: eco
+                type: object
+                fields:
+                  - { label: French, name: fr, type: string }
+                  - { label: English, name: en, type: string }
+              - label: Wood & Insulation
+                name: wood
+                type: object
+                fields:
+                  - { label: French, name: fr, type: string }
+                  - { label: English, name: en, type: string }
+              - label: Phyto-purification
+                name: phyto
+                type: object
+                fields:
+                  - { label: French, name: fr, type: string }
+                  - { label: English, name: en, type: string }
+              - label: Permaculture
+                name: permaculture
+                type: object
+                fields:
+                  - { label: French, name: fr, type: string }
+                  - { label: English, name: en, type: string }
+              - label: Biodiversity
+                name: biodiversity
+                type: object
+                fields:
+                  - { label: French, name: fr, type: string }
+                  - { label: English, name: en, type: string }
+
+      - label: Accommodation Section
+        name: accommodation
+        type: object
+        fields:
+          - label: Title
+            name: title
+            type: object
+            fields:
+              - { label: French, name: fr, type: string }
+              - { label: English, name: en, type: string }
+          - label: Size
+            name: size
+            type: object
+            fields:
+              - { label: French, name: fr, type: string }
+              - { label: English, name: en, type: string }
+          - label: Capacity
+            name: capacity
+            type: object
+            fields:
+              - { label: French, name: fr, type: string }
+              - { label: English, name: en, type: string }
+
+      - label: Amenities Section
+        name: amenities
+        type: object
+        fields:
+          - label: Title
+            name: title
+            type: object
+            fields:
+              - { label: French, name: fr, type: string }
+              - { label: English, name: en, type: string }
+          - label: Comfort
+            name: comfort
+            type: object
+            fields:
+              - label: Title
+                name: title
+                type: object
+                fields:
+                  - { label: French, name: fr, type: string }
+                  - { label: English, name: en, type: string }
+              - label: Heating
+                name: heating
+                type: object
+                fields:
+                  - { label: French, name: fr, type: string }
+                  - { label: English, name: en, type: string }
+              - label: Air Conditioning
+                name: ac
+                type: object
+                fields:
+                  - { label: French, name: fr, type: string }
+                  - { label: English, name: en, type: string }
+              - label: WiFi
+                name: wifi
+                type: object
+                fields:
+                  - { label: French, name: fr, type: string }
+                  - { label: English, name: en, type: string }
+              - label: Books
+                name: books
+                type: object
+                fields:
+                  - { label: French, name: fr, type: string }
+                  - { label: English, name: en, type: string }
+
+      - label: Location Section
+        name: location
+        type: object
+        fields:
+          - label: Title
+            name: title
+            type: object
+            fields:
+              - { label: French, name: fr, type: string }
+              - { label: English, name: en, type: string }
+          - label: Subtitle
+            name: subtitle
+            type: object
+            fields:
+              - { label: French, name: fr, type: string }
+              - { label: English, name: en, type: string }
+          - label: Description
+            name: description
+            type: object
+            fields:
+              - { label: French, name: fr, type: text }
+              - { label: English, name: en, type: text }
+
+      - label: Contact Section
+        name: contact
+        type: object
+        fields:
+          - label: Title
+            name: title
+            type: object
+            fields:
+              - { label: French, name: fr, type: string }
+              - { label: English, name: en, type: string }
+          - label: Subtitle
+            name: subtitle
+            type: object
+            fields:
+              - { label: French, name: fr, type: string }
+              - { label: English, name: en, type: string }
+
+  - title: Site Images
+    name: site_images
+    type: file
+    file: src/data/images.json
+    fields:
+      - label: Hero Section
+        name: hero
+        type: object
+        fields:
+          - { label: Main Image, name: main, type: image }
+          - { label: Secondary Image 1, name: secondary1, type: image }
+          - { label: Secondary Image 2, name: secondary2, type: image }
+      - label: About Section
+        name: about
+        type: object
+        fields:
+          - { label: Feature Image, name: feature, type: image }
+      - label: Accommodation
+        name: accommodation
+        type: object
+        fields:
+          - label: Interior Photos
+            name: interior
+            type: list
+            item_type: string
+          - label: Exterior Photos
+            name: exterior
+            type: list
+            item_type: string
+          - label: Terrace Photos
+            name: terrace
+            type: list
+            item_type: string
+      - label: Location
+        name: location
+        type: object
+        fields:
+          - { label: Map Image, name: map, type: image }
+          - label: Area Photos
+            name: area
+            type: list
+            item_type: string

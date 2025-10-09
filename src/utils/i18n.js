@@ -1,14 +1,27 @@
 // i18n utilities
-import enTranslations from "../cms-content/en/site-content.json";
-import frTranslations from "../cms-content/fr/site-content.json";
+import siteContent from "../data/site-content.yml";
 
-const translations = {
-  fr: frTranslations,
-  en: enTranslations,
-};
+// Helper function to extract locale-specific values from nested objects
+function extractLocale(obj, locale) {
+  if (!obj) return obj;
+  
+  if (typeof obj !== 'object') return obj;
+  
+  // If this object has locale keys (fr/en), return the specific locale
+  if (obj.hasOwnProperty('fr') && obj.hasOwnProperty('en')) {
+    return obj[locale] || obj['fr'];
+  }
+  
+  // Otherwise, recursively process nested objects
+  const result = {};
+  for (const [key, value] of Object.entries(obj)) {
+    result[key] = extractLocale(value, locale);
+  }
+  return result;
+}
 
 export function getTranslations(locale = "fr") {
-  return translations[locale] || translations["fr"];
+  return extractLocale(siteContent, locale);
 }
 
 export function t(key, locale = "fr") {
