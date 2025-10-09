@@ -201,77 +201,8 @@ const { t, locale } = Astro.props as Props;
           </div>
         </div>
 
-        <!-- Secondary Features Grid -->
-        <div class="grid grid-cols-2 gap-4">
-          <div
-            class="aspect-square bg-gradient-to-br from-sage-100 to-sage-200 rounded-xl flex items-center justify-center shadow-soft card-hover"
-          >
-            <div class="text-center">
-              <span class="text-3xl mb-2 block">🌳</span>
-              <span class="text-xs text-forest-700 font-medium">
-                {locale === "fr" ? "Environnement" : "Environment"}
-              </span>
-            </div>
-          </div>
-          <div
-            class="aspect-square bg-gradient-to-br from-warm-100 to-warm-200 rounded-xl flex items-center justify-center shadow-soft card-hover"
-          >
-            <div class="text-center">
-              <span class="text-3xl mb-2 block">♻️</span>
-              <span class="text-xs text-forest-700 font-medium">
-                {locale === "fr" ? "Durable" : "Sustainable"}
-              </span>
-            </div>
-          </div>
-        </div>
       </div>
     </div>
 
-    <!-- Trust & Values Section -->
-    <div class="mt-24 text-center animate-on-scroll">
-      <div class="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
-        <div class="p-6">
-          <div
-            class="w-16 h-16 bg-sage-100 rounded-full flex items-center justify-center mx-auto mb-4"
-          >
-            <span class="text-2xl">🌱</span>
-          </div>
-          <h3 class="text-lg font-semibold text-forest-800 mb-2">
-            {locale === "fr" ? "Écologie" : "Ecology"}
-          </h3>
-          <p class="text-forest-600 text-sm">
-            {locale === "fr" ? "Respect de la nature" : "Respect for nature"}
-          </p>
-        </div>
-
-        <div class="p-6">
-          <div
-            class="w-16 h-16 bg-warm-100 rounded-full flex items-center justify-center mx-auto mb-4"
-          >
-            <span class="text-2xl">🤝</span>
-          </div>
-          <h3 class="text-lg font-semibold text-forest-800 mb-2">
-            {locale === "fr" ? "Communauté" : "Community"}
-          </h3>
-          <p class="text-forest-600 text-sm">
-            {locale === "fr" ? "Soutien local" : "Local support"}
-          </p>
-        </div>
-
-        <div class="p-6">
-          <div
-            class="w-16 h-16 bg-forest-100 rounded-full flex items-center justify-center mx-auto mb-4"
-          >
-            <span class="text-2xl">💚</span>
-          </div>
-          <h3 class="text-lg font-semibold text-forest-800 mb-2">
-            {locale === "fr" ? "Authenticité" : "Authenticity"}
-          </h3>
-          <p class="text-forest-600 text-sm">
-            {locale === "fr" ? "Expérience unique" : "Unique experience"}
-          </p>
-        </div>
-      </div>
-    </div>
   </div>
 </section>

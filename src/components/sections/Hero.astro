@@ -30,20 +30,6 @@ const { locale, t } = Astro.props as Props;
     >
       <!-- Left Content Column -->
       <div class="space-y-8 animate-on-scroll">
-        <!-- Hero Badge -->
-        <div
-          class="inline-flex items-center px-4 py-2 bg-sage-100 rounded-full border border-sage-200"
-        >
-          <span class="text-2xl mr-2">🌿</span>
-          <span class="text-sage-700 font-semibold text-sm">
-            {
-              locale === "fr"
-                ? "Gîte Écologique Certifié"
-                : "Certified Eco Lodge"
-            }
-          </span>
-        </div>
-
         <!-- Main Heading -->
         <div class="space-y-4">
           <h1
@@ -216,46 +202,6 @@ const { locale, t } = Astro.props as Props;
                 : "L'Ensoleillade - Eco-friendly cottage in Dordogne"}
               class="w-full h-full object-cover"
             />
-
-            <!-- Floating Feature Cards -->
-            <div
-              class="absolute -top-4 -left-4 bg-white p-4 rounded-xl shadow-medium animate-float"
-            >
-              <div class="flex items-center space-x-3">
-                <div
-                  class="w-10 h-10 bg-sage-100 rounded-lg flex items-center justify-center"
-                >
-                  <span class="text-sage-600">🌿</span>
-                </div>
-                <div>
-                  <div class="font-semibold text-forest-800 text-sm">
-                    Éco-responsable
-                  </div>
-                  <div class="text-xs text-forest-600">
-                    Construction naturelle
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div
-              class="absolute -bottom-4 -right-4 bg-white p-4 rounded-xl shadow-medium animate-float"
-              style="animation-delay: 1s;"
-            >
-              <div class="flex items-center space-x-3">
-                <div
-                  class="w-10 h-10 bg-warm-100 rounded-lg flex items-center justify-center"
-                >
-                  <span class="text-warm-600">📍</span>
-                </div>
-                <div>
-                  <div class="font-semibold text-forest-800 text-sm">
-                    Dordogne
-                  </div>
-                  <div class="text-xs text-forest-600">Périgord Noir</div>
-                </div>
-              </div>
-            </div>
           </div>
 
           <!-- Secondary Images Grid -->
