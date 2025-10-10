@@ -239,11 +239,11 @@ amenities:
       fr: Tout l'équipement
       en: Full equipment
     utensils:
-      fr: Ustensiles fournis
-      en: Utensils provided
+      fr: Vaisselle & couverts
+      en: Dishes & cutlery
     utensils_desc:
-      fr: Ustensiles complets
-      en: Complete utensils
+      fr: Équipement complet
+      en: Complete set
     dining:
       fr: Coin repas extérieur
       en: Outdoor dining area
