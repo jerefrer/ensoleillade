@@ -1,6 +1,5 @@
 ---
 import images from "../../data/images.yml";
-import { sanitizeHTML } from "../../utils/sanitize";
 
 interface Props {
   t: any;
@@ -257,7 +256,7 @@ const { t, locale } = Astro.props as Props;
           <h4 class="font-semibold text-forest-800 mb-2">
             {t.accommodation.ducks_title}
           </h4>
-          <p class="text-forest-700 text-sm leading-relaxed" set:html={sanitizeHTML(t.accommodation.ducks_message)}>
+          <p class="text-forest-700 text-sm leading-relaxed" set:html={t.accommodation.ducks_message}>
           </p>
         </div>
       </div>
