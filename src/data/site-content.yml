@@ -288,8 +288,12 @@ location:
       fr: Grottes de Lascaux
       en: Lascaux Caves
     prehistoric:
-      fr: Sites préhistoriques
-      en: Prehistoric sites
+      title:
+        fr: Sites préhistoriques
+        en: Prehistoric sites
+      items:
+        fr: Grotte de Rouffignac, Musée National de la Préhistoire, Grotte Font de Gaume
+        en: Rouffignac Cave, National Museum of Prehistory, Font de Gaume Cave
     castles:
       fr: Châteaux
       en: Castles
@@ -305,6 +309,27 @@ location:
     buddhist:
       fr: Centres bouddhistes
       en: Buddhist centers
+    gastronomy:
+      title:
+        fr: Gastronomie
+        en: Gastronomy
+      items:
+        fr: Truffes, foie gras, noix
+        en: Truffles, foie gras, walnuts
+    vineyards:
+      title:
+        fr: Vignobles
+        en: Vineyards
+      items:
+        fr: Bergerac, Monbazillac
+        en: Bergerac, Monbazillac
+    villages:
+      title:
+        fr: Villages
+        en: Villages
+      items:
+        fr: Plus beaux villages de France
+        en: Most beautiful villages of France
 calendar:
   title:
     fr: Disponibilités

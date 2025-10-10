@@ -20,8 +20,8 @@ accommodation:
 location:
   map: /src/assets/images/hero.jpg
   lascaux: /src/assets/images/lascaux.jpg
-  canoeing: /src/assets/images/5.jpg
-  castles: /src/assets/images/6.jpg
+  canoeing: /src/assets/images/canoe.jpg
+  castles: /src/assets/images/chateau.jpg
 
 gallery:
   - image: /src/assets/images/1.jpg

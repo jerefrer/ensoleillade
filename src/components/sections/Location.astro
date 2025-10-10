@@ -210,7 +210,7 @@ const { t, locale } = Astro.props as Props;
 
       <!-- Additional Activities Grid -->
       <div
-        class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-6 animate-on-scroll"
+        class="grid grid-cols-2 md:grid-cols-4 gap-6 animate-on-scroll"
       >
         <div class="group text-center">
           <div
@@ -218,9 +218,12 @@ const { t, locale } = Astro.props as Props;
           >
             <span class="text-sage-600 text-2xl">🦕</span>
           </div>
-          <h5 class="font-medium text-forest-800 text-sm">
-            {t.location.activities.prehistoric}
+          <h5 class="font-medium text-forest-800 text-sm mb-2">
+            {t.location.activities.prehistoric.title}
           </h5>
+          <p class="text-xs text-forest-600 leading-relaxed">
+            {t.location.activities.prehistoric.items}
+          </p>
         </div>
 
         <div class="group text-center">
@@ -266,78 +269,46 @@ const { t, locale } = Astro.props as Props;
             {locale === "fr" ? "Permaculture" : "Permaculture"}
           </h5>
         </div>
-      </div>
-    </div>
 
-    <!-- Regional Highlights -->
-    <div
-      class="bg-gradient-to-r from-forest-50 via-white to-sage-50 rounded-2xl p-8 border border-forest-200 shadow-large animate-on-scroll"
-    >
-      <div class="text-center mb-8">
-        <h3 class="text-2xl font-semibold text-forest-800 mb-2">
-          {locale === "fr" ? "À Découvrir Autour" : "Discover Around"}
-        </h3>
-        <p class="text-sage-600">
-          {
-            locale === "fr"
-              ? "Les incontournables du Périgord"
-              : "Must-see attractions in Périgord"
-          }
-        </p>
-      </div>
-
-      <div class="grid md:grid-cols-3 gap-6">
-        <div class="text-center">
+        <div class="group text-center">
           <div
-            class="w-12 h-12 bg-sage-100 rounded-xl flex items-center justify-center mx-auto mb-3"
+            class="w-16 h-16 bg-sage-100 rounded-2xl flex items-center justify-center mx-auto mb-3 group-hover:bg-sage-200 group-hover:scale-110 transition-all duration-300"
           >
-            <span class="text-sage-600 text-xl">🍄</span>
+            <span class="text-sage-600 text-2xl">🍄</span>
           </div>
-          <h4 class="font-medium text-forest-800 mb-1">
-            {locale === "fr" ? "Gastronomie" : "Gastronomy"}
-          </h4>
-          <p class="text-sm text-forest-600">
-            {
-              locale === "fr"
-                ? "Truffes, foie gras, noix"
-                : "Truffles, foie gras, walnuts"
-            }
+          <h5 class="font-medium text-forest-800 text-sm mb-2">
+            {t.location.activities.gastronomy.title}
+          </h5>
+          <p class="text-xs text-forest-600 leading-relaxed">
+            {t.location.activities.gastronomy.items}
           </p>
         </div>
 
-        <div class="text-center">
+        <div class="group text-center">
           <div
-            class="w-12 h-12 bg-warm-100 rounded-xl flex items-center justify-center mx-auto mb-3"
+            class="w-16 h-16 bg-warm-100 rounded-2xl flex items-center justify-center mx-auto mb-3 group-hover:bg-warm-200 group-hover:scale-110 transition-all duration-300"
           >
-            <span class="text-warm-600 text-xl">🍷</span>
+            <span class="text-warm-600 text-2xl">🍷</span>
           </div>
-          <h4 class="font-medium text-forest-800 mb-1">
-            {locale === "fr" ? "Vignobles" : "Vineyards"}
-          </h4>
-          <p class="text-sm text-forest-600">
-            {
-              locale === "fr"
-                ? "Bergerac, Monbazillac"
-                : "Bergerac, Monbazillac"
-            }
+          <h5 class="font-medium text-forest-800 text-sm mb-2">
+            {t.location.activities.vineyards.title}
+          </h5>
+          <p class="text-xs text-forest-600 leading-relaxed">
+            {t.location.activities.vineyards.items}
           </p>
         </div>
 
-        <div class="text-center">
+        <div class="group text-center">
           <div
-            class="w-12 h-12 bg-forest-100 rounded-xl flex items-center justify-center mx-auto mb-3"
+            class="w-16 h-16 bg-forest-100 rounded-2xl flex items-center justify-center mx-auto mb-3 group-hover:bg-forest-200 group-hover:scale-110 transition-all duration-300"
           >
-            <span class="text-forest-600 text-xl">🏘️</span>
+            <span class="text-forest-600 text-2xl">🏘️</span>
           </div>
-          <h4 class="font-medium text-forest-800 mb-1">
-            {locale === "fr" ? "Villages" : "Villages"}
-          </h4>
-          <p class="text-sm text-forest-600">
-            {
-              locale === "fr"
-                ? "Plus beaux villages de France"
-                : "Most beautiful villages of France"
-            }
+          <h5 class="font-medium text-forest-800 text-sm mb-2">
+            {t.location.activities.villages.title}
+          </h5>
+          <p class="text-xs text-forest-600 leading-relaxed">
+            {t.location.activities.villages.items}
           </p>
         </div>
       </div>
