@@ -49,7 +49,7 @@ const { t, locale } = Astro.props as Props;
                 {t.accommodation.size}
               </div>
               <div class="text-sm text-sage-600">
-                {locale === "fr" ? "Surface totale" : "Total area"}
+                {t.accommodation.total_area}
               </div>
             </div>
           </div>
@@ -69,7 +69,7 @@ const { t, locale } = Astro.props as Props;
                 {t.accommodation.capacity}
               </div>
               <div class="text-sm text-warm-600">
-                {locale === "fr" ? "Capacité d'accueil" : "Guest capacity"}
+                {t.accommodation.guest_capacity}
               </div>
             </div>
           </div>
@@ -85,7 +85,7 @@ const { t, locale } = Astro.props as Props;
           <div class="aspect-[4/3] rounded-2xl overflow-hidden shadow-large group card-hover">
             <img
               src={images.accommodation.terrace[0]}
-              alt={locale === "fr" ? "Terrasse" : "Terrace"}
+              alt={t.accommodation.terrace}
               class="w-full h-full object-cover"
             />
           </div>
@@ -114,7 +114,7 @@ const { t, locale } = Astro.props as Props;
             <div class="aspect-[4/3] rounded-xl overflow-hidden shadow-soft group card-hover">
               <img
                 src={images.accommodation.interior[1]}
-                alt={locale === "fr" ? "Espace nuit" : "Sleeping area"}
+                alt={t.accommodation.sleeping_area}
                 class="w-full h-full object-cover"
               />
             </div>
@@ -158,7 +158,7 @@ const { t, locale } = Astro.props as Props;
             <div class="aspect-[4/3] rounded-xl overflow-hidden shadow-soft group card-hover">
               <img
                 src={images.accommodation.interior[0]}
-                alt={locale === "fr" ? "Intérieur du gîte" : "Cottage interior"}
+                alt={t.accommodation.cottage_interior}
                 class="w-full h-full object-cover"
               />
             </div>
@@ -174,16 +174,16 @@ const { t, locale } = Astro.props as Props;
         <div class="flex items-center space-x-3 mb-4">
           <span class="text-2xl">🕐</span>
           <h3 class="font-semibold text-forest-800">
-            {locale === "fr" ? "Horaires" : "Schedule"}
+            {t.accommodation.schedule}
           </h3>
         </div>
         <div class="space-y-2 text-sm text-forest-700">
           <div>
-            <span class="font-medium">{locale === "fr" ? "Arrivée :" : "Check-in:"}</span>
+            <span class="font-medium">{t.accommodation.checkin}</span>
             <br />17h00 - 21h00
           </div>
           <div>
-            <span class="font-medium">{locale === "fr" ? "Départ :" : "Check-out:"}</span>
+            <span class="font-medium">{t.accommodation.checkout}</span>
             <br />08h00 - 10h00
           </div>
         </div>
@@ -194,21 +194,21 @@ const { t, locale } = Astro.props as Props;
         <div class="flex items-center space-x-3 mb-4">
           <span class="text-2xl">📋</span>
           <h3 class="font-semibold text-forest-800">
-            {locale === "fr" ? "Règlement" : "House Rules"}
+            {t.accommodation.house_rules}
           </h3>
         </div>
         <div class="space-y-2 text-sm text-forest-700">
           <div class="flex items-start space-x-2">
             <span>🚭</span>
-            <span>{locale === "fr" ? "Non fumeur" : "Non-smoking"}</span>
+            <span>{t.accommodation.non_smoking}</span>
           </div>
           <div class="flex items-start space-x-2">
             <span>🐾</span>
-            <span>{locale === "fr" ? "Animaux non acceptés" : "No pets"}</span>
+            <span>{t.accommodation.no_pets}</span>
           </div>
           <div class="flex items-start space-x-2">
             <span>🎉</span>
-            <span>{locale === "fr" ? "Soirées non autorisées" : "No parties"}</span>
+            <span>{t.accommodation.no_parties}</span>
           </div>
         </div>
       </div>
@@ -218,25 +218,25 @@ const { t, locale } = Astro.props as Props;
         <div class="flex items-center space-x-3 mb-4">
           <span class="text-2xl">🌱</span>
           <h3 class="font-semibold text-forest-800">
-            {locale === "fr" ? "Écologie" : "Ecology"}
+            {t.accommodation.ecology_title}
           </h3>
         </div>
         <div class="space-y-2 text-sm text-forest-700">
           <div class="flex items-start space-x-2">
             <span>✓</span>
-            <span>{locale === "fr" ? "Construction auto-construite" : "Self-built"}</span>
+            <span>{t.accommodation.self_built}</span>
           </div>
           <div class="flex items-start space-x-2">
             <span>✓</span>
-            <span>{locale === "fr" ? "Matériaux biologiques" : "Organic materials"}</span>
+            <span>{t.accommodation.organic_materials}</span>
           </div>
           <div class="flex items-start space-x-2">
             <span>✓</span>
-            <span>{locale === "fr" ? "Phytoépuration" : "Phytopurification"}</span>
+            <span>{t.accommodation.phytopurification}</span>
           </div>
           <div class="flex items-start space-x-2">
             <span>✓</span>
-            <span>{locale === "fr" ? "Éclairage LED" : "LED lighting"}</span>
+            <span>{t.accommodation.led_lighting}</span>
           </div>
         </div>
       </div>
@@ -248,12 +248,10 @@ const { t, locale } = Astro.props as Props;
         <span class="text-3xl">🦆</span>
         <div>
           <h4 class="font-semibold text-forest-800 mb-2">
-            {locale === "fr" ? "À propos de nos amis à plumes" : "About our feathered friends"}
+            {t.accommodation.ducks_title}
           </h4>
           <p class="text-forest-700 text-sm leading-relaxed">
-            {locale === "fr" 
-              ? "Nous ne pouvons pas accueillir nos amies les animaux, présence de 3 canards coureurs indiens en liberté : Igor, Plume et Cachou. Merci de votre compréhension."
-              : "We cannot welcome pets due to the presence of 3 free-roaming Indian Runner ducks: Igor, Plume, and Cachou. Thank you for your understanding."}
+            {t.accommodation.ducks_message}
           </p>
         </div>
       </div>
@@ -270,7 +268,7 @@ const { t, locale } = Astro.props as Props;
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
         </svg>
         <span>
-          {locale === "fr" ? "Télécharger le contrat de location" : "Download rental contract"}
+          {t.accommodation.download_contract}
         </span>
       </a>
     </div>

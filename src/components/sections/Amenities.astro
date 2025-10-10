@@ -31,11 +31,7 @@ const { t, locale } = Astro.props as Props;
         {t.amenities.title}
       </h2>
       <p class="text-xl text-sage-600 max-w-3xl mx-auto leading-relaxed">
-        {
-          locale === "fr"
-            ? "Tout le confort moderne dans un cadre écologique exceptionnel"
-            : "All modern comforts in an exceptional ecological setting"
-        }
+        {t.amenities.subtitle}
       </p>
     </div>
 
@@ -76,11 +72,7 @@ const { t, locale } = Astro.props as Props;
                     {t.amenities.comfort.heating}
                   </div>
                   <div class="text-sm text-sage-600">
-                    {
-                      locale === "fr"
-                        ? "Confort toute l'année"
-                        : "Year-round comfort"
-                    }
+                    {t.amenities.comfort.heating_desc}
                   </div>
                 </div>
               </div>
@@ -98,11 +90,7 @@ const { t, locale } = Astro.props as Props;
                     {t.amenities.comfort.wifi}
                   </div>
                   <div class="text-sm text-sage-600">
-                    {
-                      locale === "fr"
-                        ? "Connexion haut débit"
-                        : "High-speed connection"
-                    }
+                    {t.amenities.comfort.wifi_desc}
                   </div>
                 </div>
               </div>
@@ -120,11 +108,7 @@ const { t, locale } = Astro.props as Props;
                     {t.amenities.comfort.books}
                   </div>
                   <div class="text-sm text-sage-600">
-                    {
-                      locale === "fr"
-                        ? "Détente & culture"
-                        : "Relaxation & culture"
-                    }
+                    {t.amenities.comfort.books_desc}
                   </div>
                 </div>
               </div>
@@ -168,7 +152,7 @@ const { t, locale } = Astro.props as Props;
                     {t.amenities.outdoor.terrace}
                   </div>
                   <div class="text-sm text-warm-600">
-                    {locale === "fr" ? "18m² couverte" : "18m² covered"}
+                    {t.amenities.outdoor.terrace_covered}
                   </div>
                 </div>
               </div>
@@ -186,7 +170,7 @@ const { t, locale } = Astro.props as Props;
                     {t.amenities.outdoor.bbq}
                   </div>
                   <div class="text-sm text-warm-600">
-                    {locale === "fr" ? "Repas en plein air" : "Outdoor dining"}
+                    {t.amenities.outdoor.bbq_desc}
                   </div>
                 </div>
               </div>
@@ -204,7 +188,7 @@ const { t, locale } = Astro.props as Props;
                     {t.amenities.outdoor.garden}
                   </div>
                   <div class="text-sm text-warm-600">
-                    {locale === "fr" ? "Vue sur nature" : "Nature views"}
+                    {t.amenities.outdoor.garden_desc}
                   </div>
                 </div>
               </div>
@@ -248,7 +232,7 @@ const { t, locale } = Astro.props as Props;
                     {t.amenities.kitchen.equipped}
                   </div>
                   <div class="text-sm text-forest-600">
-                    {locale === "fr" ? "Tout l'équipement" : "Full equipment"}
+                    {t.amenities.kitchen.equipped_desc}
                   </div>
                 </div>
               </div>
@@ -266,11 +250,7 @@ const { t, locale } = Astro.props as Props;
                     {t.amenities.kitchen.utensils}
                   </div>
                   <div class="text-sm text-forest-600">
-                    {
-                      locale === "fr"
-                        ? "Ustensiles complets"
-                        : "Complete utensils"
-                    }
+                    {t.amenities.kitchen.utensils_desc}
                   </div>
                 </div>
               </div>
@@ -288,7 +268,7 @@ const { t, locale } = Astro.props as Props;
                     {t.amenities.kitchen.dining}
                   </div>
                   <div class="text-sm text-forest-600">
-                    {locale === "fr" ? "Espace repas" : "Dining space"}
+                    {t.amenities.kitchen.dining_desc}
                   </div>
                 </div>
               </div>
@@ -309,14 +289,10 @@ const { t, locale } = Astro.props as Props;
           <span class="text-3xl">🎁</span>
         </div>
         <h3 class="text-2xl font-semibold text-forest-800 mb-2">
-          {locale === "fr" ? "Services Inclus" : "Included Services"}
+          {t.amenities.services.title}
         </h3>
         <p class="text-sage-600">
-          {
-            locale === "fr"
-              ? "Tout est prévu pour votre confort"
-              : "Everything is provided for your comfort"
-          }
+          {t.amenities.services.subtitle}
         </p>
       </div>
 
@@ -328,7 +304,7 @@ const { t, locale } = Astro.props as Props;
             <span class="text-sage-600 text-xl">🚗</span>
           </div>
           <h4 class="font-medium text-forest-800">
-            {locale === "fr" ? "Parking Gratuit" : "Free Parking"}
+            {t.amenities.services.parking}
           </h4>
         </div>
 
@@ -339,7 +315,7 @@ const { t, locale } = Astro.props as Props;
             <span class="text-warm-600 text-xl">🧺</span>
           </div>
           <h4 class="font-medium text-forest-800">
-            {locale === "fr" ? "Linge Fourni" : "Linens Provided"}
+            {t.amenities.services.linens}
           </h4>
         </div>
 
@@ -350,7 +326,7 @@ const { t, locale } = Astro.props as Props;
             <span class="text-forest-600 text-xl">🧹</span>
           </div>
           <h4 class="font-medium text-forest-800">
-            {locale === "fr" ? "Ménage Final" : "Final Cleaning"}
+            {t.amenities.services.cleaning}
           </h4>
         </div>
 
@@ -361,7 +337,7 @@ const { t, locale } = Astro.props as Props;
             <span class="text-sage-600 text-xl">🎫</span>
           </div>
           <h4 class="font-medium text-forest-800">
-            {locale === "fr" ? "Chèques ANCV" : "ANCV Vouchers"}
+            {t.amenities.services.ancv}
           </h4>
         </div>
       </div>

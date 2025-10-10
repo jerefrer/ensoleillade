@@ -145,11 +145,7 @@ const { t, locale } = Astro.props as Props;
                 images.location.area[0] && (
                   <img
                     src={images.location.area[0]}
-                    alt={
-                      locale === "fr"
-                        ? "Patrimoine de la région"
-                        : "Regional heritage"
-                    }
+                    alt={t.location.heritage_alt}
                     class="w-full h-full object-cover"
                   />
                 )
@@ -162,11 +158,7 @@ const { t, locale } = Astro.props as Props;
               {t.location.activities.lascaux}
             </h4>
             <p class="text-forest-600 text-sm">
-              {
-                locale === "fr"
-                  ? "Art pariétal et sites préhistoriques exceptionnels"
-                  : "Exceptional cave art and prehistoric sites"
-              }
+              {t.location.heritage_desc}
             </p>
           </div>
         </div>
@@ -181,11 +173,7 @@ const { t, locale } = Astro.props as Props;
                 images.location.area[1] && (
                   <img
                     src={images.location.area[1]}
-                    alt={
-                      locale === "fr"
-                        ? "Activités dans la région"
-                        : "Regional activities"
-                    }
+                    alt={t.location.activities_alt}
                     class="w-full h-full object-cover"
                   />
                 )
@@ -198,11 +186,7 @@ const { t, locale } = Astro.props as Props;
               {t.location.activities.canoeing}
             </h4>
             <p class="text-forest-600 text-sm">
-              {
-                locale === "fr"
-                  ? "Descentes en canoë sur la Vézère et randonnées"
-                  : "Canoeing on the Vézère river and hiking trails"
-              }
+              {t.location.activities_desc}
             </p>
           </div>
         </div>
@@ -217,11 +201,7 @@ const { t, locale } = Astro.props as Props;
                 images.gallery[3] && (
                   <img
                     src={images.gallery[3].image}
-                    alt={
-                      locale === "fr"
-                        ? images.gallery[3].alt_fr
-                        : images.gallery[3].alt_en
-                    }
+                    alt={t.location.castles_alt}
                     class="w-full h-full object-cover"
                   />
                 )
@@ -234,11 +214,7 @@ const { t, locale } = Astro.props as Props;
               {t.location.activities.castles}
             </h4>
             <p class="text-forest-600 text-sm">
-              {
-                locale === "fr"
-                  ? "Châteaux médiévaux et jardins remarquables"
-                  : "Medieval castles and remarkable gardens"
-              }
+              {t.location.castles_desc}
             </p>
           </div>
         </div>
