@@ -332,9 +332,13 @@ const { t, locale } = Astro.props as Props;
 
         <div class="text-center group">
           <div
-            class="w-12 h-12 bg-sage-100 rounded-xl flex items-center justify-center mx-auto mb-3 group-hover:bg-sage-200 transition-colors"
+            class="w-20 h-20 bg-white rounded-xl flex items-center justify-center mx-auto mb-3 group-hover:shadow-md transition-all overflow-hidden border border-sage-200"
           >
-            <span class="text-sage-600 text-xl">🎫</span>
+            <img 
+              src="/src/assets/images/cheque-vacance.jpg" 
+              alt="Chèques Vacances ANCV"
+              class="w-full h-full object-contain p-1"
+            />
           </div>
           <h4 class="font-medium text-forest-800">
             {t.amenities.services.ancv}
