@@ -171,72 +171,78 @@ const { t, locale } = Astro.props as Props;
     <div class="grid md:grid-cols-3 gap-6 mb-12 animate-on-scroll">
       <!-- Check-in/out -->
       <div class="bg-white rounded-xl p-6 border border-sage-200 shadow-soft">
-        <div class="flex items-center space-x-3 mb-4">
-          <span class="text-2xl">🕐</span>
-          <h3 class="font-semibold text-forest-800">
+        <div class="flex items-center space-x-3 mb-6">
+          <div class="w-12 h-12 bg-sage-100 rounded-xl flex items-center justify-center flex-shrink-0">
+            <span class="text-2xl">🕐</span>
+          </div>
+          <h3 class="font-semibold text-lg text-forest-800">
             {t.accommodation.schedule}
           </h3>
         </div>
-        <div class="space-y-2 text-sm text-forest-700">
+        <div class="space-y-4 text-forest-700">
           <div>
-            <span class="font-medium">{t.accommodation.checkin}</span>
-            <br />17h00 - 21h00
+            <div class="font-semibold text-base mb-1">{t.accommodation.checkin}</div>
+            <div class="text-base">17h00 - 21h00</div>
           </div>
           <div>
-            <span class="font-medium">{t.accommodation.checkout}</span>
-            <br />08h00 - 10h00
+            <div class="font-semibold text-base mb-1">{t.accommodation.checkout}</div>
+            <div class="text-base">08h00 - 10h00</div>
           </div>
         </div>
       </div>
 
       <!-- House Rules -->
       <div class="bg-white rounded-xl p-6 border border-sage-200 shadow-soft">
-        <div class="flex items-center space-x-3 mb-4">
-          <span class="text-2xl">📋</span>
-          <h3 class="font-semibold text-forest-800">
+        <div class="flex items-center space-x-3 mb-6">
+          <div class="w-12 h-12 bg-warm-100 rounded-xl flex items-center justify-center flex-shrink-0">
+            <span class="text-2xl">📋</span>
+          </div>
+          <h3 class="font-semibold text-lg text-forest-800">
             {t.accommodation.house_rules}
           </h3>
         </div>
-        <div class="space-y-2 text-sm text-forest-700">
-          <div class="flex items-start space-x-2">
-            <span>🚭</span>
-            <span>{t.accommodation.non_smoking}</span>
+        <div class="space-y-3 text-forest-700">
+          <div class="flex items-center space-x-3">
+            <span class="text-xl">🚭</span>
+            <span class="text-base">{t.accommodation.non_smoking}</span>
           </div>
-          <div class="flex items-start space-x-2">
-            <span>🐾</span>
-            <span>{t.accommodation.no_pets}</span>
+          <div class="flex items-center space-x-3">
+            <span class="text-xl">🐾</span>
+            <span class="text-base">{t.accommodation.no_pets}</span>
           </div>
-          <div class="flex items-start space-x-2">
-            <span>🎉</span>
-            <span>{t.accommodation.no_parties}</span>
+          <div class="flex items-center space-x-3">
+            <span class="text-xl">🎉</span>
+            <span class="text-base">{t.accommodation.no_parties}</span>
           </div>
         </div>
       </div>
 
       <!-- Eco Construction -->
       <div class="bg-white rounded-xl p-6 border border-sage-200 shadow-soft">
-        <div class="flex items-center space-x-3 mb-4">
-          <span class="text-2xl">🌱</span>
-          <h3 class="font-semibold text-forest-800">
+        <div class="flex items-center space-x-3 mb-6">
+          <div class="w-12 h-12 bg-forest-100 rounded-xl flex items-center justify-center flex-shrink-0">
+            <span class="text-2xl">🌱</span>
+          </div>
+          <h3 class="font-semibold text-lg text-forest-800">
             {t.accommodation.ecology_title}
           </h3>
         </div>
-        <div class="space-y-2 text-sm text-forest-700">
-          <div class="flex items-start space-x-2">
-            <span>✓</span>
-            <span>{t.accommodation.self_built}</span>
+        <div class="space-y-3 text-forest-700">
+          <div class="flex items-center space-x-3">
+            <span class="text-lg text-forest-600">✓</span>
+            <span class="text-base">{t.accommodation.self_built}</span>
           </div>
-          <div class="flex items-start space-x-2">
-            <span>✓</span>
-            <span>{t.accommodation.organic_materials}</span>
+          <div class="flex items-center space-x-3">
+            <span class="text-lg text-forest-600">✓</span>
+            <span class="text-base">{t.accommodation.organic_materials}</span>
           </div>
-          <div class="flex items-start space-x-2">
-            <span>✓</span>
-            <span>{t.accommodation.phytopurification}</span>
+          <div class="flex items-center space-x-3">
+            <span class="text-lg text-forest-600">✓</span>
+            <span class="text-base">{t.accommodation.phytopurification}</span>
           </div>
-          <div class="flex items-start space-x-2">
-            <span>✓</span>
-            <span>{t.accommodation.led_lighting}</span>
+          <div class="flex items-center space-x-3">
+            <span class="text-lg text-forest-600">✓</span>
+            <span class="text-base">{t.accommodation.led_lighting}</span>
           </div>
         </div>
       </div>
