@@ -18,19 +18,17 @@ const { t, locale } = Astro.props as Props;
       <div class="bg-forest-600 p-8 rounded-lg border border-forest-500/20">
         <div class="text-3xl mb-4">📞</div>
         <h3 class="text-xl font-semibold mb-2">{t.contact.phone}</h3>
-        <a href={`tel:${t.contact.phone_number.replace(/\s/g, '')}`} class="text-warm-200 hover:text-warm-100 transition-colors">
+        <a href={`tel:${t.contact.phone_number.replace(/\s/g, '')}`} class="text-warm-200 hover:text-warm-100 transition-colors text-lg">
           {t.contact.phone_number}
         </a>
-        <p class="text-sm opacity-75 mt-2">{t.contact.response}</p>
       </div>
       
       <div class="bg-forest-600 p-8 rounded-lg border border-forest-500/20">
         <div class="text-3xl mb-4">✉️</div>
         <h3 class="text-xl font-semibold mb-2">{t.contact.email}</h3>
-        <a href={`mailto:${t.contact.email_address}`} class="text-warm-200 hover:text-warm-100 transition-colors">
+        <a href={`mailto:${t.contact.email_address}`} class="text-warm-200 hover:text-warm-100 transition-colors break-all">
           {t.contact.email_address}
         </a>
-        <p class="text-sm opacity-75 mt-2">{t.contact.direct}</p>
       </div>
     </div>
 

@@ -346,22 +346,6 @@ contact:
     fr: Email
     en: Email
   email_address: lumieredanslecorps@laposte.net
-  response:
-    fr: Réponse rapide garantie
-    en: Quick response guaranteed
-  direct:
-    fr: Contact direct
-    en: Direct contact
-footer:
-  permaculture:
-    fr: Soutient l'association de permaculture locale
-    en: Supports local permaculture association
-  eco:
-    fr: Hébergement éco-responsable
-    en: Eco-responsible accommodation
-  local:
-    fr: Matériaux et produits locaux
-    en: Local materials and products
 lang:
   switch:
     fr: English
