@@ -265,6 +265,36 @@ content:
             fields:
               - { label: Français, name: fr, type: string }
               - { label: Anglais, name: en, type: string }
+          - label: Téléphone (label)
+            name: phone
+            type: object
+            fields:
+              - { label: Français, name: fr, type: string }
+              - { label: Anglais, name: en, type: string }
+          - label: Numéro de téléphone
+            name: phone_number
+            type: string
+          - label: Email (label)
+            name: email
+            type: object
+            fields:
+              - { label: Français, name: fr, type: string }
+              - { label: Anglais, name: en, type: string }
+          - label: Adresse email
+            name: email_address
+            type: string
+          - label: Message réponse rapide
+            name: response
+            type: object
+            fields:
+              - { label: Français, name: fr, type: string }
+              - { label: Anglais, name: en, type: string }
+          - label: Message contact direct
+            name: direct
+            type: object
+            fields:
+              - { label: Français, name: fr, type: string }
+              - { label: Anglais, name: en, type: string }
 
   - name: site_images
     label: Images du Site

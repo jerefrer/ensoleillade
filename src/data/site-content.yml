@@ -329,6 +329,20 @@ contact:
   subtitle:
     fr: "Contactez-nous directement pour réserver"
     en: "Contact us directly to book"
+  phone:
+    fr: "Téléphone"
+    en: "Phone"
+  phone_number: "+33 1 23 45 67 89"
+  email:
+    fr: "Email"
+    en: "Email"
+  email_address: "contact@ensoleillade.com"
+  response:
+    fr: "Réponse rapide garantie"
+    en: "Quick response guaranteed"
+  direct:
+    fr: "Contact direct"
+    en: "Direct contact"
 
 footer:
   permaculture:

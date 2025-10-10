@@ -18,8 +18,8 @@ const { t, locale } = Astro.props as Props;
       <div class="bg-forest-600 p-8 rounded-lg border border-forest-500/20">
         <div class="text-3xl mb-4">📞</div>
         <h3 class="text-xl font-semibold mb-2">{t.contact.phone}</h3>
-        <a href="tel:+33123456789" class="text-warm-200 hover:text-warm-100 transition-colors">
-          +33 1 23 45 67 89
+        <a href={`tel:${t.contact.phone_number.replace(/\s/g, '')}`} class="text-warm-200 hover:text-warm-100 transition-colors">
+          {t.contact.phone_number}
         </a>
         <p class="text-sm opacity-75 mt-2">{t.contact.response}</p>
       </div>
@@ -27,8 +27,8 @@ const { t, locale } = Astro.props as Props;
       <div class="bg-forest-600 p-8 rounded-lg border border-forest-500/20">
         <div class="text-3xl mb-4">✉️</div>
         <h3 class="text-xl font-semibold mb-2">{t.contact.email}</h3>
-        <a href="mailto:contact@ensoleillade.com" class="text-warm-200 hover:text-warm-100 transition-colors">
-          contact@ensoleillade.com
+        <a href={`mailto:${t.contact.email_address}`} class="text-warm-200 hover:text-warm-100 transition-colors">
+          {t.contact.email_address}
         </a>
         <p class="text-sm opacity-75 mt-2">{t.contact.direct}</p>
       </div>
