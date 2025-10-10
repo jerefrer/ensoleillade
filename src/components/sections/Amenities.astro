@@ -293,24 +293,35 @@ const { t, locale } = Astro.props as Props;
       </div>
     </div>
 
-    <!-- Basic Services -->
+    <!-- Important Information -->
     <div
-      class="bg-gradient-to-br from-white via-sage-50/50 to-transparent rounded-2xl p-8 border border-sage-200 shadow-soft animate-on-scroll"
+      class="bg-gradient-to-br from-warm-50 via-white to-sage-50 rounded-2xl p-8 border-2 border-warm-200 shadow-large animate-on-scroll"
     >
-      <h3 class="text-2xl font-semibold text-forest-800 mb-6">
-        {t.amenities.basic_services.title}
-      </h3>
-      <div class="space-y-4">
+      <div class="text-center mb-8">
         <div
-          class="flex items-center space-x-4 p-3 bg-white/60 rounded-xl backdrop-blur-sm"
+          class="w-16 h-16 bg-warm-200 rounded-2xl flex items-center justify-center mx-auto mb-4"
+        >
+          <span class="text-3xl">ℹ️</span>
+        </div>
+        <h3 class="text-2xl font-semibold text-forest-800 mb-2">
+          {t.amenities.basic_services.title}
+        </h3>
+        <p class="text-sage-600">
+          {t.amenities.basic_services.subtitle}
+        </p>
+      </div>
+
+      <div class="max-w-2xl mx-auto space-y-4">
+        <div
+          class="flex items-center space-x-4 p-4 bg-white rounded-xl border border-sage-200"
         >
           <div
-            class="w-10 h-10 bg-forest-100 rounded-lg flex items-center justify-center flex-shrink-0"
+            class="w-12 h-12 bg-forest-100 rounded-lg flex items-center justify-center flex-shrink-0"
           >
-            <span class="text-forest-600 text-lg">🧹</span>
+            <span class="text-forest-600 text-xl">🧹</span>
           </div>
           <div class="flex-1">
-            <div class="font-medium text-forest-800">
+            <div class="font-semibold text-forest-800">
               {t.amenities.basic_services.cleaning}
             </div>
             <div class="text-sm text-forest-600">
@@ -318,32 +329,44 @@ const { t, locale } = Astro.props as Props;
             </div>
           </div>
         </div>
+
         <div
-          class="flex items-center space-x-4 p-3 bg-white/60 rounded-xl backdrop-blur-sm"
+          class="flex items-center space-x-4 p-4 bg-white rounded-xl border border-sage-200"
         >
           <div
-            class="w-10 h-10 bg-forest-100 rounded-lg flex items-center justify-center flex-shrink-0"
+            class="w-12 h-12 bg-warm-100 rounded-lg flex items-center justify-center flex-shrink-0"
           >
-            <span class="text-forest-600 text-lg">🛏️</span>
+            <span class="text-warm-600 text-xl">🛏️</span>
           </div>
           <div class="flex-1">
             <div class="font-medium text-forest-800">
               {t.amenities.basic_services.bed_linen}
             </div>
           </div>
+          <div
+            class="px-3 py-1 bg-warm-100 text-warm-700 rounded-lg font-semibold text-sm"
+          >
+            {t.amenities.basic_services.bed_linen_note}
+          </div>
         </div>
+
         <div
-          class="flex items-center space-x-4 p-3 bg-white/60 rounded-xl backdrop-blur-sm"
+          class="flex items-center space-x-4 p-4 bg-white rounded-xl border border-sage-200"
         >
           <div
-            class="w-10 h-10 bg-forest-100 rounded-lg flex items-center justify-center flex-shrink-0"
+            class="w-12 h-12 bg-warm-100 rounded-lg flex items-center justify-center flex-shrink-0"
           >
-            <span class="text-forest-600 text-lg">🧺</span>
+            <span class="text-warm-600 text-xl">🧺</span>
           </div>
           <div class="flex-1">
             <div class="font-medium text-forest-800">
               {t.amenities.basic_services.towels}
             </div>
+          </div>
+          <div
+            class="px-3 py-1 bg-warm-100 text-warm-700 rounded-lg font-semibold text-sm"
+          >
+            {t.amenities.basic_services.towels_note}
           </div>
         </div>
       </div>

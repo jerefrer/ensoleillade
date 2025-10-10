@@ -239,8 +239,11 @@ amenities:
       en: Dining space
   basic_services:
     title:
-      fr: Services de base
-      en: Basic Services
+      fr: À Prévoir
+      en: Please Note
+    subtitle:
+      fr: Informations importantes pour votre séjour
+      en: Important information for your stay
     cleaning:
       fr: Ménage
       en: Cleaning
@@ -248,11 +251,17 @@ amenities:
       fr: supplément obligatoire de 30 € par séjour
       en: mandatory supplement of €30 per stay
     bed_linen:
-      fr: Linge de lit non fourni
-      en: Bed linen not provided
+      fr: Linge de lit
+      en: Bed linen
+    bed_linen_note:
+      fr: non fourni
+      en: not provided
     towels:
-      fr: Linge de toilette non fourni
-      en: Towels not provided
+      fr: Linge de toilette
+      en: Towels
+    towels_note:
+      fr: non fourni
+      en: not provided
   ancv:
     title:
       fr: Chèques Vacances ANCV
