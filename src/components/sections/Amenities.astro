@@ -220,7 +220,7 @@ const { t, locale } = Astro.props as Props;
           <!-- Floating Icon -->
           <div class="absolute -top-6 left-8">
             <div
-              class="w-16 h-16 bg-forest-gradient rounded-2xl flex items-center justify-center shadow-medium group-hover:scale-110 transition-transform duration-300"
+              class="w-16 h-16 bg-amber-300 rounded-2xl flex items-center justify-center shadow-medium group-hover:scale-110 transition-transform duration-300"
             >
               <span class="text-white text-2xl">🍽️</span>
             </div>
@@ -228,61 +228,61 @@ const { t, locale } = Astro.props as Props;
 
           <div class="pt-6">
             <h3
-              class="text-2xl font-semibold text-forest-800 mb-4 group-hover:text-forest-600 transition-colors"
+              class="text-2xl font-semibold text-amber-800 mb-4 group-hover:text-amber-600 transition-colors"
             >
               {t.amenities.kitchen.title}
             </h3>
 
             <div class="space-y-4">
               <div
-                class="flex items-center space-x-4 p-3 bg-white/60 rounded-xl backdrop-blur-sm group-hover:bg-forest-50/80 transition-all duration-300"
+                class="flex items-center space-x-4 p-3 bg-white/60 rounded-xl backdrop-blur-sm group-hover:bg-amber-50/80 transition-all duration-300"
               >
                 <div
-                  class="w-10 h-10 bg-forest-100 rounded-lg flex items-center justify-center"
+                  class="w-10 h-10 bg-amber-100 rounded-lg flex items-center justify-center"
                 >
-                  <span class="text-forest-600 text-lg">🔧</span>
+                  <span class="text-amber-600 text-lg">🔧</span>
                 </div>
                 <div class="flex-1">
-                  <div class="font-medium text-forest-800">
+                  <div class="font-medium text-amber-800">
                     {t.amenities.kitchen.equipped}
                   </div>
-                  <div class="text-sm text-forest-600">
+                  <div class="text-sm text-amber-600">
                     {t.amenities.kitchen.equipped_desc}
                   </div>
                 </div>
               </div>
 
               <div
-                class="flex items-center space-x-4 p-3 bg-white/60 rounded-xl backdrop-blur-sm group-hover:bg-forest-50/80 transition-all duration-300"
+                class="flex items-center space-x-4 p-3 bg-white/60 rounded-xl backdrop-blur-sm group-hover:bg-amber-50/80 transition-all duration-300"
               >
                 <div
-                  class="w-10 h-10 bg-forest-100 rounded-lg flex items-center justify-center"
+                  class="w-10 h-10 bg-amber-100 rounded-lg flex items-center justify-center"
                 >
-                  <span class="text-forest-600 text-lg">🥄</span>
+                  <span class="text-amber-600 text-lg">🥄</span>
                 </div>
                 <div class="flex-1">
-                  <div class="font-medium text-forest-800">
+                  <div class="font-medium text-amber-800">
                     {t.amenities.kitchen.utensils}
                   </div>
-                  <div class="text-sm text-forest-600">
+                  <div class="text-sm text-amber-600">
                     {t.amenities.kitchen.utensils_desc}
                   </div>
                 </div>
               </div>
 
               <div
-                class="flex items-center space-x-4 p-3 bg-white/60 rounded-xl backdrop-blur-sm group-hover:bg-forest-50/80 transition-all duration-300"
+                class="flex items-center space-x-4 p-3 bg-white/60 rounded-xl backdrop-blur-sm group-hover:bg-amber-50/80 transition-all duration-300"
               >
                 <div
-                  class="w-10 h-10 bg-forest-100 rounded-lg flex items-center justify-center"
+                  class="w-10 h-10 bg-amber-100 rounded-lg flex items-center justify-center"
                 >
-                  <span class="text-forest-600 text-lg">🪑</span>
+                  <span class="text-amber-600 text-lg">🪑</span>
                 </div>
                 <div class="flex-1">
-                  <div class="font-medium text-forest-800">
+                  <div class="font-medium text-amber-800">
                     {t.amenities.kitchen.dining}
                   </div>
-                  <div class="text-sm text-forest-600">
+                  <div class="text-sm text-amber-600">
                     {t.amenities.kitchen.dining_desc}
                   </div>
                 </div>
@@ -301,8 +301,14 @@ const { t, locale } = Astro.props as Props;
         <div
           class="w-16 h-16 bg-warm-200 rounded-2xl flex items-center justify-center mx-auto mb-4"
         >
-          <svg class="w-8 h-8 text-warm-700" fill="currentColor" viewBox="0 0 24 24">
-            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/>
+          <svg
+            class="w-8 h-8 text-warm-700"
+            fill="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"
+            ></path>
           </svg>
         </div>
         <h3 class="text-2xl font-semibold text-forest-800 mb-2">
@@ -373,6 +379,5 @@ const { t, locale } = Astro.props as Props;
         </div>
       </div>
     </div>
-
   </div>
 </section>

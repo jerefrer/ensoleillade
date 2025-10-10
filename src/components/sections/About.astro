@@ -30,10 +30,11 @@ const { t, locale } = Astro.props as Props;
       <h2
         class="text-4xl lg:text-5xl font-serif font-bold text-forest-800 mb-6"
         set:html={t.about.title}
-      >
-      </h2>
-      <p class="text-xl text-sage-600 max-w-3xl mx-auto leading-relaxed" set:html={t.about.description}>
-      </p>
+      />
+      <p
+        class="text-xl text-sage-600 max-w-3xl mx-auto leading-relaxed"
+        set:html={t.about.description}
+      />
     </div>
 
     <!-- Story Grid Layout -->
@@ -147,16 +148,6 @@ const { t, locale } = Astro.props as Props;
                   : "Your stay directly contributes to the development of our local permaculture association, which works for biodiversity and sustainable agriculture."
               }
             </p>
-            <div class="inline-flex items-center text-sage-600 font-medium">
-              <span class="mr-2">🏷️</span>
-              <span class="text-sm">
-                {
-                  locale === "fr"
-                    ? "Logo de l'association à venir"
-                    : "Association logo coming soon"
-                }
-              </span>
-            </div>
           </div>
         </div>
       </div>
@@ -199,9 +190,7 @@ const { t, locale } = Astro.props as Props;
             </div>
           </div>
         </div>
-
       </div>
     </div>
-
   </div>
 </section>
