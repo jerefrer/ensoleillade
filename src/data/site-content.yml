@@ -147,11 +147,11 @@ accommodation:
     fr: À propos de nos amis à plumes
     en: About our feathered friends
   ducks_message:
-    fr: "<strong>Nous ne pouvons pas accueillir nos amis les animaux</strong>, présence de 3 canards
+    fr: "<u>Nous ne pouvons pas accueillir nos amis les animaux</u> puisque nous avons 3 canards
       coureurs indiens en liberté : Igor, Plume et Cachou. Merci de votre
       compréhension."
-    en: We cannot welcome pets due to the presence of 3 free-roaming Indian Runner
-      ducks Igor, Plume, and Cachou. Thank you for your understanding.
+    en: "<u>We cannot welcome pets</u> due to the presence of 3 free-roaming Indian Runner
+      ducks Igor, Plume, and Cachou. Thank you for your understanding."
   download_contract:
     fr: Télécharger le contrat de location
     en: Download rental contract
