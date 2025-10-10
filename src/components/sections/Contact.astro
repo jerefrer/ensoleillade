@@ -32,27 +32,6 @@ const { t, locale } = Astro.props as Props;
       </div>
     </div>
 
-    <!-- ANCV Badge -->
-    <div class="flex justify-center mb-8">
-      <div class="inline-flex items-center px-5 py-3 bg-gradient-to-r from-blue-50 to-blue-100 border-2 border-blue-200 rounded-xl shadow-sm">
-        <div class="w-12 h-12 mr-3 flex items-center justify-center">
-          <img 
-            src="/src/assets/images/cheque-vacance-logo.webp" 
-            alt="ANCV Chèques Vacances"
-            class="w-full h-full object-contain"
-          />
-        </div>
-        <div>
-          <div class="font-bold text-blue-900 text-sm">
-            {t.amenities.ancv.title}
-          </div>
-          <div class="text-xs text-blue-700">
-            {t.amenities.ancv.accepted}
-          </div>
-        </div>
-      </div>
-    </div>
-
     <!-- Rental Contract Download -->
     <div class="text-center">
       <a
