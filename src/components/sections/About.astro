@@ -29,11 +29,10 @@ const { t, locale } = Astro.props as Props;
     <div class="text-center mb-20 animate-on-scroll">
       <h2
         class="text-4xl lg:text-5xl font-serif font-bold text-forest-800 mb-6"
+        set:html={t.about.title}
       >
-        {t.about.title}
       </h2>
-      <p class="text-xl text-sage-600 max-w-3xl mx-auto leading-relaxed">
-        {t.about.description}
+      <p class="text-xl text-sage-600 max-w-3xl mx-auto leading-relaxed" set:html={t.about.description}>
       </p>
     </div>
 
