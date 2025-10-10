@@ -57,9 +57,10 @@ about:
   description:
     fr: L'Ensoleillade est bien plus qu'un simple hébergement. C'est un projet
       écologique qui soutient et développe notre association de permaculture
-      locale.
+      locale "Lumière dans le Corps".
     en: L'Ensoleillade is much more than just accommodation. It's an ecological
-      project that supports and develops our local permaculture association.
+      project that supports and develops our local permaculture association
+      "Lumière dans le Corps".
   features:
     eco:
       fr: Construction écologique
@@ -172,6 +173,21 @@ amenities:
     ac:
       fr: Climatisation
       en: Air conditioning
+    ac_desc:
+      fr: Confort en été
+      en: Summer comfort
+    beds:
+      fr: 2 lits 190x90
+      en: 2 beds 190x90
+    beds_desc:
+      fr: Couchage confortable
+      en: Comfortable sleeping
+    tv:
+      fr: TV avec lecteur DVD
+      en: TV with DVD player
+    tv_desc:
+      fr: Divertissement
+      en: Entertainment
     wifi:
       fr: Wi-Fi gratuit
       en: Free Wi-Fi
@@ -192,8 +208,8 @@ amenities:
       fr: Terrasse 18m²
       en: 18m² terrace
     terrace_covered:
-      fr: 18m² couverte
-      en: 18m² covered
+      fr: Non couverte
+      en: Uncovered
     bbq:
       fr: Barbecue
       en: Barbecue
@@ -359,13 +375,6 @@ location:
           - Dhagpo Kagyu Ling
           - Chanteloube
           - Marfond
-    permaculture:
-      title:
-        fr: Permaculture
-        en: Permaculture
-      items:
-        fr: []
-        en: []
     gastronomy:
       title:
         fr: Gastronomie

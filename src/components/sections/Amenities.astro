@@ -65,14 +65,50 @@ const { t, locale } = Astro.props as Props;
                 <div
                   class="w-10 h-10 bg-sage-100 rounded-lg flex items-center justify-center"
                 >
-                  <span class="text-sage-600 text-lg">🌡️</span>
+                  <span class="text-sage-600 text-lg">🛏️</span>
                 </div>
                 <div class="flex-1">
                   <div class="font-medium text-forest-800">
-                    {t.amenities.comfort.heating}
+                    {t.amenities.comfort.beds}
                   </div>
                   <div class="text-sm text-sage-600">
-                    {t.amenities.comfort.heating_desc}
+                    {t.amenities.comfort.beds_desc}
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="flex items-center space-x-4 p-3 bg-white/60 rounded-xl backdrop-blur-sm group-hover:bg-sage-50/80 transition-all duration-300"
+              >
+                <div
+                  class="w-10 h-10 bg-sage-100 rounded-lg flex items-center justify-center"
+                >
+                  <span class="text-sage-600 text-lg">❄️</span>
+                </div>
+                <div class="flex-1">
+                  <div class="font-medium text-forest-800">
+                    {t.amenities.comfort.ac}
+                  </div>
+                  <div class="text-sm text-sage-600">
+                    {t.amenities.comfort.ac_desc}
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="flex items-center space-x-4 p-3 bg-white/60 rounded-xl backdrop-blur-sm group-hover:bg-sage-50/80 transition-all duration-300"
+              >
+                <div
+                  class="w-10 h-10 bg-sage-100 rounded-lg flex items-center justify-center"
+                >
+                  <span class="text-sage-600 text-lg">📺</span>
+                </div>
+                <div class="flex-1">
+                  <div class="font-medium text-forest-800">
+                    {t.amenities.comfort.tv}
+                  </div>
+                  <div class="text-sm text-sage-600">
+                    {t.amenities.comfort.tv_desc}
                   </div>
                 </div>
               </div>
@@ -91,24 +127,6 @@ const { t, locale } = Astro.props as Props;
                   </div>
                   <div class="text-sm text-sage-600">
                     {t.amenities.comfort.wifi_desc}
-                  </div>
-                </div>
-              </div>
-
-              <div
-                class="flex items-center space-x-4 p-3 bg-white/60 rounded-xl backdrop-blur-sm group-hover:bg-sage-50/80 transition-all duration-300"
-              >
-                <div
-                  class="w-10 h-10 bg-sage-100 rounded-lg flex items-center justify-center"
-                >
-                  <span class="text-sage-600 text-lg">📚</span>
-                </div>
-                <div class="flex-1">
-                  <div class="font-medium text-forest-800">
-                    {t.amenities.comfort.books}
-                  </div>
-                  <div class="text-sm text-sage-600">
-                    {t.amenities.comfort.books_desc}
                   </div>
                 </div>
               </div>

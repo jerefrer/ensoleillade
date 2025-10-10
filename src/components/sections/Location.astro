@@ -49,8 +49,14 @@ const { t, locale } = Astro.props as Props;
               class="w-16 h-16 rounded-2xl flex items-center justify-center shadow-medium"
               style="background-color: #efce44;"
             >
-              <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+              <svg
+                class="w-8 h-8 text-white"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"
+                ></path>
               </svg>
             </div>
             <div>
@@ -297,29 +303,6 @@ const { t, locale } = Astro.props as Props;
                   {t.location.activities.buddhist.items.map((item: string) => (
                     <li>{item}</li>
                   ))}
-                </ul>
-              )
-          }
-        </div>
-
-        <div class="group text-center">
-          <div
-            class="w-16 h-16 bg-warm-100 rounded-2xl flex items-center justify-center mx-auto mb-3 group-hover:bg-warm-200 group-hover:scale-110 transition-all duration-300"
-          >
-            <span class="text-warm-600 text-2xl">🌿</span>
-          </div>
-          <h5 class="font-medium text-forest-800 text-sm mb-2">
-            {t.location.activities.permaculture.title}
-          </h5>
-          {
-            t.location.activities.permaculture.items &&
-              t.location.activities.permaculture.items.length > 0 && (
-                <ul class="text-xs text-forest-600 leading-relaxed space-y-1">
-                  {t.location.activities.permaculture.items.map(
-                    (item: string) => (
-                      <li>{item}</li>
-                    )
-                  )}
                 </ul>
               )
           }
