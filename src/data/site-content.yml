@@ -265,16 +265,16 @@ location:
       privilégié aux trésors de la Dordogne.
     en: Located in the heart of Périgord Noir, L'Ensoleillade offers privileged
       access to Dordogne's treasures.
-  heritage_alt:
-    fr: Patrimoine de la région
-    en: Regional heritage
-  heritage_desc:
+  lascaux_alt:
+    fr: Grottes de Lascaux
+    en: Lascaux Caves
+  lascaux_desc:
     fr: Art pariétal et sites préhistoriques exceptionnels
     en: Exceptional cave art and prehistoric sites
-  activities_alt:
-    fr: Activités dans la région
-    en: Regional activities
-  activities_desc:
+  canoeing_alt:
+    fr: Canoë-kayak sur la Vézère
+    en: Canoeing on the Vézère
+  canoeing_desc:
     fr: Descentes en canoë sur la Vézère et randonnées
     en: Canoeing down the Vézère and hiking
   castles_alt:

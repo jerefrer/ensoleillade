@@ -135,21 +135,17 @@ const { t, locale } = Astro.props as Props;
       <div
         class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12 animate-on-scroll"
       >
-        <!-- Cultural Heritage -->
+        <!-- Lascaux Caves -->
         <div class="group">
           <div
             class="relative bg-gradient-to-br from-white via-sage-50/50 to-transparent rounded-2xl p-6 border border-sage-200 shadow-soft card-hover"
           >
             <div class="aspect-[4/3] rounded-xl mb-4 overflow-hidden">
-              {
-                images.location.area[0] && (
-                  <img
-                    src={images.location.area[0]}
-                    alt={t.location.heritage_alt}
-                    class="w-full h-full object-cover"
-                  />
-                )
-              }
+              <img
+                src={images.location.lascaux}
+                alt={t.location.lascaux_alt}
+                class="w-full h-full object-cover"
+              />
             </div>
 
             <h4
@@ -158,26 +154,22 @@ const { t, locale } = Astro.props as Props;
               {t.location.activities.lascaux}
             </h4>
             <p class="text-forest-600 text-sm">
-              {t.location.heritage_desc}
+              {t.location.lascaux_desc}
             </p>
           </div>
         </div>
 
-        <!-- Outdoor Adventures -->
+        <!-- Canoeing -->
         <div class="group">
           <div
             class="relative bg-gradient-to-br from-white via-warm-50/50 to-transparent rounded-2xl p-6 border border-warm-200 shadow-soft card-hover"
           >
             <div class="aspect-[4/3] rounded-xl mb-4 overflow-hidden">
-              {
-                images.location.area[1] && (
-                  <img
-                    src={images.location.area[1]}
-                    alt={t.location.activities_alt}
-                    class="w-full h-full object-cover"
-                  />
-                )
-              }
+              <img
+                src={images.location.canoeing}
+                alt={t.location.canoeing_alt}
+                class="w-full h-full object-cover"
+              />
             </div>
 
             <h4
@@ -186,7 +178,7 @@ const { t, locale } = Astro.props as Props;
               {t.location.activities.canoeing}
             </h4>
             <p class="text-forest-600 text-sm">
-              {t.location.activities_desc}
+              {t.location.canoeing_desc}
             </p>
           </div>
         </div>
@@ -197,15 +189,11 @@ const { t, locale } = Astro.props as Props;
             class="relative bg-gradient-to-br from-white via-forest-50/50 to-transparent rounded-2xl p-6 border border-forest-200 shadow-soft card-hover"
           >
             <div class="aspect-[4/3] rounded-xl mb-4 overflow-hidden">
-              {
-                images.gallery[3] && (
-                  <img
-                    src={images.gallery[3].image}
-                    alt={t.location.castles_alt}
-                    class="w-full h-full object-cover"
-                  />
-                )
-              }
+              <img
+                src={images.location.castles}
+                alt={t.location.castles_alt}
+                class="w-full h-full object-cover"
+              />
             </div>
 
             <h4

@@ -313,7 +313,9 @@ content:
         type: object
         fields:
           - { label: Image carte, name: map, type: image }
-          - { label: Photos région, name: area, type: image, list: true }
+          - { label: Photo Lascaux, name: lascaux, type: image }
+          - { label: Photo Canoë, name: canoeing, type: image }
+          - { label: Photo Châteaux, name: castles, type: image }
       - label: Galerie
         name: gallery
         type: object
