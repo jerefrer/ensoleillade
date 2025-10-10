@@ -167,115 +167,94 @@ const { t, locale } = Astro.props as Props;
       </div>
     </div>
 
-    <!-- Key Features Highlight -->
-    <div class="grid md:grid-cols-2 gap-8 animate-on-scroll">
-      <!-- Space Details -->
-      <div
-        class="bg-gradient-to-br from-white via-sage-50/50 to-transparent rounded-2xl p-8 border border-sage-200 shadow-soft"
-      >
-        <div class="flex items-center space-x-4 mb-6">
-          <div
-            class="w-16 h-16 bg-sage-gradient rounded-2xl flex items-center justify-center shadow-sage"
-          >
-            <span class="text-white text-2xl">🏠</span>
+    <!-- Practical Information -->
+    <div class="grid md:grid-cols-3 gap-6 mb-12 animate-on-scroll">
+      <!-- Check-in/out -->
+      <div class="bg-white rounded-xl p-6 border border-sage-200 shadow-soft">
+        <div class="flex items-center space-x-3 mb-4">
+          <span class="text-2xl">🕐</span>
+          <h3 class="font-semibold text-forest-800">
+            {locale === "fr" ? "Horaires" : "Schedule"}
+          </h3>
+        </div>
+        <div class="space-y-2 text-sm text-forest-700">
+          <div>
+            <span class="font-medium">{locale === "fr" ? "Arrivée :" : "Check-in:"}</span>
+            <br />17h00 - 21h00
           </div>
           <div>
-            <h3 class="text-2xl font-semibold text-forest-800">
-              {locale === "fr" ? "Espace & Confort" : "Space & Comfort"}
-            </h3>
-            <p class="text-sage-600 font-medium">
-              {locale === "fr" ? "Aménagement optimisé" : "Optimized layout"}
-            </p>
-          </div>
-        </div>
-        <div class="space-y-4">
-          <div class="flex items-center space-x-3">
-            <span class="text-sage-600">✓</span>
-            <span class="text-forest-700">
-              {locale === "fr" ? "19m² d'espace de vie" : "19m² living space"}
-            </span>
-          </div>
-          <div class="flex items-center space-x-3">
-            <span class="text-sage-600">✓</span>
-            <span class="text-forest-700">
-              {
-                locale === "fr"
-                  ? "18m² de terrasse couverte"
-                  : "18m² covered terrace"
-              }
-            </span>
-          </div>
-          <div class="flex items-center space-x-3">
-            <span class="text-sage-600">✓</span>
-            <span class="text-forest-700">
-              {
-                locale === "fr"
-                  ? "Lit double confortable"
-                  : "Comfortable double bed"
-              }
-            </span>
-          </div>
-          <div class="flex items-center space-x-3">
-            <span class="text-sage-600">✓</span>
-            <span class="text-forest-700">
-              {locale === "fr" ? "Salle de bain privative" : "Private bathroom"}
-            </span>
+            <span class="font-medium">{locale === "fr" ? "Départ :" : "Check-out:"}</span>
+            <br />08h00 - 10h00
           </div>
         </div>
       </div>
 
-      <!-- Eco Features -->
-      <div
-        class="bg-gradient-to-br from-white via-warm-50/50 to-transparent rounded-2xl p-8 border border-warm-200 shadow-soft"
-      >
-        <div class="flex items-center space-x-4 mb-6">
-          <div
-            class="w-16 h-16 bg-warm-gradient rounded-2xl flex items-center justify-center shadow-warm"
-          >
-            <span class="text-white text-2xl">🌱</span>
+      <!-- House Rules -->
+      <div class="bg-white rounded-xl p-6 border border-sage-200 shadow-soft">
+        <div class="flex items-center space-x-3 mb-4">
+          <span class="text-2xl">📋</span>
+          <h3 class="font-semibold text-forest-800">
+            {locale === "fr" ? "Règlement" : "House Rules"}
+          </h3>
+        </div>
+        <div class="space-y-2 text-sm text-forest-700">
+          <div class="flex items-start space-x-2">
+            <span>🚭</span>
+            <span>{locale === "fr" ? "Non fumeur" : "Non-smoking"}</span>
           </div>
-          <div>
-            <h3 class="text-2xl font-semibold text-forest-800">
-              {locale === "fr" ? "Construction Écologique" : "Eco Construction"}
-            </h3>
-            <p class="text-warm-600 font-medium">
-              {locale === "fr" ? "Matériaux naturels" : "Natural materials"}
-            </p>
+          <div class="flex items-start space-x-2">
+            <span>🐾</span>
+            <span>{locale === "fr" ? "Animaux non acceptés" : "No pets"}</span>
+          </div>
+          <div class="flex items-start space-x-2">
+            <span>🎉</span>
+            <span>{locale === "fr" ? "Soirées non autorisées" : "No parties"}</span>
           </div>
         </div>
-        <div class="space-y-4">
-          <div class="flex items-center space-x-3">
-            <span class="text-warm-600">✓</span>
-            <span class="text-forest-700">
-              {
-                locale === "fr"
-                  ? "Isolation laine de bois"
-                  : "Wood wool insulation"
-              }
-            </span>
+      </div>
+
+      <!-- Eco Construction -->
+      <div class="bg-white rounded-xl p-6 border border-sage-200 shadow-soft">
+        <div class="flex items-center space-x-3 mb-4">
+          <span class="text-2xl">🌱</span>
+          <h3 class="font-semibold text-forest-800">
+            {locale === "fr" ? "Écologie" : "Ecology"}
+          </h3>
+        </div>
+        <div class="space-y-2 text-sm text-forest-700">
+          <div class="flex items-start space-x-2">
+            <span>✓</span>
+            <span>{locale === "fr" ? "Construction auto-construite" : "Self-built"}</span>
           </div>
-          <div class="flex items-center space-x-3">
-            <span class="text-warm-600">✓</span>
-            <span class="text-forest-700">
-              {locale === "fr" ? "Bardage bois local" : "Local wood cladding"}
-            </span>
+          <div class="flex items-start space-x-2">
+            <span>✓</span>
+            <span>{locale === "fr" ? "Matériaux biologiques" : "Organic materials"}</span>
           </div>
-          <div class="flex items-center space-x-3">
-            <span class="text-warm-600">✓</span>
-            <span class="text-forest-700">
-              {
-                locale === "fr"
-                  ? "Chauffage écologique"
-                  : "Eco-friendly heating"
-              }
-            </span>
+          <div class="flex items-start space-x-2">
+            <span>✓</span>
+            <span>{locale === "fr" ? "Phytoépuration" : "Phytopurification"}</span>
           </div>
-          <div class="flex items-center space-x-3">
-            <span class="text-warm-600">✓</span>
-            <span class="text-forest-700">
-              {locale === "fr" ? "Gestion eau durable" : "Sustainable water"}
-            </span>
+          <div class="flex items-start space-x-2">
+            <span>✓</span>
+            <span>{locale === "fr" ? "Éclairage LED" : "LED lighting"}</span>
           </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Special Note about Ducks -->
+    <div class="bg-gradient-to-r from-warm-50 to-sage-50 rounded-xl p-6 border border-warm-200 animate-on-scroll">
+      <div class="flex items-start space-x-4">
+        <span class="text-3xl">🦆</span>
+        <div>
+          <h4 class="font-semibold text-forest-800 mb-2">
+            {locale === "fr" ? "À propos de nos amis à plumes" : "About our feathered friends"}
+          </h4>
+          <p class="text-forest-700 text-sm leading-relaxed">
+            {locale === "fr" 
+              ? "Nous ne pouvons pas accueillir nos amies les animaux, présence de 3 canards coureurs indiens en liberté : Igor, Plume et Cachou. Merci de votre compréhension."
+              : "We cannot welcome pets due to the presence of 3 free-roaming Indian Runner ducks: Igor, Plume, and Cachou. Thank you for your understanding."}
+          </p>
         </div>
       </div>
     </div>
