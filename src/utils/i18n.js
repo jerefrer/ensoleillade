@@ -4,9 +4,16 @@ import siteContent from "../data/site-content.yml";
 /**
  * Sanitizes HTML to only allow safe inline formatting tags
  * Allowed tags: strong, b, i, u, em
+ * Only sanitizes if the string contains HTML tags
  */
 function sanitizeHTML(html) {
   if (!html || typeof html !== 'string') return html;
+  
+  // Check if the string contains any HTML tags
+  if (!/<[^>]+>/.test(html)) {
+    // No HTML tags found, return as-is
+    return html;
+  }
   
   // Remove all HTML tags except the allowed ones
   const allowedTags = ['strong', 'b', 'i', 'u', 'em'];
@@ -16,8 +23,7 @@ function sanitizeHTML(html) {
     .replace(/&/g, '&amp;')
     .replace(/</g, '&lt;')
     .replace(/>/g, '&gt;')
-    .replace(/"/g, '&quot;')
-    .replace(/'/g, '&#039;');
+    .replace(/"/g, '&quot;');
   
   // Then, restore only the allowed tags
   allowedTags.forEach(tag => {
