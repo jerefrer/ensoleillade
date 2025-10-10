@@ -212,6 +212,9 @@ amenities:
     garden_desc:
       fr: Vue sur nature
       en: Nature views
+    parking:
+      fr: Parking Gratuit
+      en: Free Parking
   kitchen:
     title:
       fr: Cuisine
@@ -234,25 +237,29 @@ amenities:
     dining_desc:
       fr: Espace repas
       en: Dining space
-  services:
+  basic_services:
     title:
-      fr: Services Inclus
-      en: Included Services
-    subtitle:
-      fr: Tout est prévu pour votre confort
-      en: Everything is provided for your comfort
-    parking:
-      fr: Parking Gratuit
-      en: Free Parking
-    linens:
-      fr: Linge Fourni
-      en: Linens Provided
+      fr: Services de base
+      en: Basic Services
     cleaning:
-      fr: Ménage Final
-      en: Final Cleaning
-    ancv:
-      fr: Chèques ANCV
-      en: ANCV Vouchers
+      fr: Ménage
+      en: Cleaning
+    cleaning_fee:
+      fr: supplément obligatoire de 30 € par séjour
+      en: mandatory supplement of €30 per stay
+    bed_linen:
+      fr: Linge de lit non fourni
+      en: Bed linen not provided
+    towels:
+      fr: Linge de toilette non fourni
+      en: Towels not provided
+  ancv:
+    title:
+      fr: Chèques Vacances ANCV
+      en: ANCV Holiday Vouchers
+    accepted:
+      fr: Acceptés
+      en: Accepted
 location:
   title:
     fr: Emplacement & Activités
@@ -265,6 +272,16 @@ location:
       privilégié aux trésors de la Dordogne.
     en: Located in the heart of Périgord Noir, L'Ensoleillade offers privileged
       access to Dordogne's treasures.
+  map_url: https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2853.5!2d1.095!3d45.015!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDXCsDAwJzU0LjAiTiAxwrAwNScNDIuMCJF!5e0!3m2!1sfr!2sfr!4v1234567890
+  nearest_station:
+    fr: Gare la plus proche
+    en: Nearest train station
+  station_name:
+    fr: Les Eyzies - 12 km
+    en: Les Eyzies - 12 km
+  pickup_service:
+    fr: Possibilité d'aller vous chercher à la gare
+    en: Possibility to pick you up at the station
   lascaux_alt:
     fr: Grottes de Lascaux
     en: Lascaux Caves
@@ -284,13 +301,6 @@ location:
     fr: Châteaux médiévaux et jardins remarquables
     en: Medieval castles and remarkable gardens
   activities:
-    lascaux:
-      title:
-        fr: Grottes de Lascaux
-        en: Lascaux Caves
-      items:
-        fr: []
-        en: []
     prehistoric:
       title:
         fr: Sites préhistoriques
@@ -304,41 +314,45 @@ location:
           - Rouffignac Cave
           - National Museum of Prehistory
           - Font de Gaume Cave
-    castles:
-      title:
-        fr: Châteaux
-        en: Castles
-      items:
-        fr: []
-        en: []
     gardens:
       title:
         fr: Jardins remarquables
         en: Remarkable gardens
       items:
-        fr: []
-        en: []
-    canoeing:
-      title:
-        fr: Canoë-kayak
-        en: Canoeing
-      items:
-        fr: []
-        en: []
+        fr:
+          - Les Jardins D'eau
+          - Les Jardins De Marqueyssac
+          - Les Jardins Panoramiques De Limeuil
+        en:
+          - The Water Gardens
+          - Marqueyssac Gardens
+          - Limeuil Panoramic Gardens
     paragliding:
       title:
         fr: Parapente
         en: Paragliding
       items:
-        fr: []
-        en: []
+        fr:
+          - Côte de Jor
+          - Le Roc
+          - Et bien d'autres
+        en:
+          - Côte de Jor
+          - Le Roc
+          - And many more
     buddhist:
       title:
         fr: Centres bouddhistes
         en: Buddhist centers
       items:
-        fr: []
-        en: []
+        fr:
+          - Dhagpo Kagyu Ling
+          - Chanteloube
+          - Marfond
+        en:
+          - Dhagpo Kagyu Ling
+          - Chanteloube
+          - Marfond
     permaculture:
       title:
         fr: Permaculture
@@ -372,13 +386,17 @@ location:
           - Monbazillac
     villages:
       title:
-        fr: Villages
-        en: Villages
+        fr: Plus beaux villages de France
+        en: Most beautiful villages of France
       items:
         fr:
-          - Plus beaux villages de France
+          - Saint-Léon-sur-Vézère
+          - La Roque-Gageac
+          - Domme
         en:
-          - Most beautiful villages of France
+          - Saint-Léon-sur-Vézère
+          - La Roque-Gageac
+          - Domme
 calendar:
   title:
     fr: Disponibilités
