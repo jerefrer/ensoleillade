@@ -93,13 +93,6 @@ const { t, locale } = Astro.props as Props;
               alt={locale === "fr" ? "Intérieur du gîte" : "Cottage interior"}
               class="w-full h-full object-cover"
             />
-
-            <!-- Overlay Badge -->
-            <div
-              class="absolute top-4 right-4 bg-sage-600 text-white px-3 py-1 rounded-full text-xs font-semibold"
-            >
-              {locale === "fr" ? "Principal" : "Featured"}
-            </div>
           </div>
         </div>
 
