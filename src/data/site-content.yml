@@ -25,6 +25,9 @@ nav:
   location:
     fr: Emplacement
     en: Location
+  activities:
+    fr: Activités
+    en: Activities
   availability:
     fr: Disponibilités
     en: Availability
@@ -284,8 +287,8 @@ amenities:
       en: Accepted
 location:
   title:
-    fr: Emplacement & Activités
-    en: Location & Activities
+    fr: Emplacement
+    en: Location
   subtitle:
     fr: Saint-Léon-sur-Vézère, Dordogne
     en: Saint-Léon-sur-Vézère, Dordogne
@@ -322,7 +325,14 @@ location:
   castles_desc:
     fr: Châteaux médiévaux et jardins remarquables
     en: Medieval castles and remarkable gardens
-  activities:
+activities:
+  title:
+    fr: Activités
+    en: Activities
+  description:
+    fr: Découvrez les richesses culturelles et naturelles du Périgord Noir
+    en: Discover the cultural and natural treasures of Périgord Noir
+  items:
     prehistoric:
       title:
         fr: Sites préhistoriques

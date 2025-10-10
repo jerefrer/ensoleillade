@@ -64,6 +64,14 @@ const t = getTranslations(locale);
         </a>
         
         <a 
+          href="#activities" 
+          class="nav-link relative px-3 py-2 text-forest-700 hover:text-sage-600 font-medium transition-all duration-300 group"
+        >
+          <span class="relative z-10">{t.nav.activities}</span>
+          <div class="absolute inset-0 bg-sage-100 rounded-lg scale-0 group-hover:scale-100 transition-transform duration-300 origin-center"></div>
+        </a>
+        
+        <a 
           href="#availability" 
           class="nav-link relative px-3 py-2 text-forest-700 hover:text-sage-600 font-medium transition-all duration-300 group"
         >
@@ -115,6 +123,9 @@ const t = getTranslations(locale);
       </a>
       <a href="#location" class="block py-3 px-4 text-forest-700 hover:text-sage-600 hover:bg-sage-50 rounded-lg transition-all duration-300 font-medium">
         {t.nav.location}
+      </a>
+      <a href="#activities" class="block py-3 px-4 text-forest-700 hover:text-sage-600 hover:bg-sage-50 rounded-lg transition-all duration-300 font-medium">
+        {t.nav.activities}
       </a>
       <a href="#availability" class="block py-3 px-4 text-forest-700 hover:text-sage-600 hover:bg-sage-50 rounded-lg transition-all duration-300 font-medium">
         {t.nav.availability}
