@@ -327,11 +327,11 @@ location:
     en: Medieval castles and remarkable gardens
 activities:
   title:
-    fr: Activités
-    en: Activities
+    fr: Activités & Découvertes
+    en: Activities & Discoveries
   description:
-    fr: Découvrez les richesses culturelles et naturelles du Périgord Noir
-    en: Discover the cultural and natural treasures of Périgord Noir
+    fr: Une région riche en histoire, culture et aventures naturelles
+    en: A region rich in history, culture and natural adventures
   items:
     prehistoric:
       title:
