@@ -301,9 +301,15 @@ const { t, locale } = Astro.props as Props;
         {t.amenities.basic_services.title}
       </h3>
       <div class="space-y-4">
-        <div class="flex items-start space-x-3">
-          <span class="text-forest-600 text-lg mt-1">🧹</span>
-          <div>
+        <div
+          class="flex items-center space-x-4 p-3 bg-white/60 rounded-xl backdrop-blur-sm"
+        >
+          <div
+            class="w-10 h-10 bg-forest-100 rounded-lg flex items-center justify-center flex-shrink-0"
+          >
+            <span class="text-forest-600 text-lg">🧹</span>
+          </div>
+          <div class="flex-1">
             <div class="font-medium text-forest-800">
               {t.amenities.basic_services.cleaning}
             </div>
@@ -312,16 +318,32 @@ const { t, locale } = Astro.props as Props;
             </div>
           </div>
         </div>
-        <div class="flex items-start space-x-3">
-          <span class="text-forest-600 text-lg mt-1">🛏️</span>
-          <div class="font-medium text-forest-800">
-            {t.amenities.basic_services.bed_linen}
+        <div
+          class="flex items-center space-x-4 p-3 bg-white/60 rounded-xl backdrop-blur-sm"
+        >
+          <div
+            class="w-10 h-10 bg-forest-100 rounded-lg flex items-center justify-center flex-shrink-0"
+          >
+            <span class="text-forest-600 text-lg">🛏️</span>
+          </div>
+          <div class="flex-1">
+            <div class="font-medium text-forest-800">
+              {t.amenities.basic_services.bed_linen}
+            </div>
           </div>
         </div>
-        <div class="flex items-start space-x-3">
-          <span class="text-forest-600 text-lg mt-1">🧺</span>
-          <div class="font-medium text-forest-800">
-            {t.amenities.basic_services.towels}
+        <div
+          class="flex items-center space-x-4 p-3 bg-white/60 rounded-xl backdrop-blur-sm"
+        >
+          <div
+            class="w-10 h-10 bg-forest-100 rounded-lg flex items-center justify-center flex-shrink-0"
+          >
+            <span class="text-forest-600 text-lg">🧺</span>
+          </div>
+          <div class="flex-1">
+            <div class="font-medium text-forest-800">
+              {t.amenities.basic_services.towels}
+            </div>
           </div>
         </div>
       </div>
