@@ -47,7 +47,7 @@ const { t, locale } = Astro.props as Props;
         <div>
           <div class="flex items-center space-x-4 mb-6">
             <div
-              class="w-16 h-16 bg-forest-gradient rounded-2xl flex items-center justify-center shadow-medium"
+              class="w-16 h-16 bg-red-500 rounded-2xl flex items-center justify-center shadow-medium"
             >
               <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
@@ -55,14 +55,10 @@ const { t, locale } = Astro.props as Props;
             </div>
             <div>
               <h3 class="text-2xl font-semibold text-forest-800">
-                Saint-Léon-sur-Vézère
+                L'Ensoleillade
               </h3>
               <p class="text-sage-600 font-medium">
-                {
-                  locale === "fr"
-                    ? "Au cœur du Périgord Noir"
-                    : "Heart of Black Périgord"
-                }
+                {t.location.subtitle}
               </p>
             </div>
           </div>
