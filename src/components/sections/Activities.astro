@@ -1,4 +1,6 @@
 ---
+import images from "../../data/images.yml";
+
 interface Props {
   t: any;
   locale: string;
@@ -33,6 +35,83 @@ const { t, locale } = Astro.props as Props;
       <p class="text-lg text-forest-700 max-w-xl mx-auto leading-relaxed">
         {t.activities.description}
       </p>
+    </div>
+
+    <!-- Featured Activities Grid -->
+    <div
+      class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20 animate-on-scroll"
+    >
+      <!-- Lascaux Caves -->
+      <div class="group">
+        <div
+          class="relative bg-gradient-to-br from-white via-sage-50/50 to-transparent rounded-2xl p-6 border border-sage-200 shadow-soft card-hover"
+        >
+          <div class="aspect-[4/3] rounded-xl mb-4 overflow-hidden">
+            <img
+              src={images.location.lascaux}
+              alt={t.location.lascaux_alt}
+              class="w-full h-full object-cover"
+            />
+          </div>
+
+          <h4
+            class="text-xl font-semibold text-forest-800 mb-2 group-hover:text-sage-600 transition-colors"
+          >
+            {t.location.lascaux_alt}
+          </h4>
+          <p class="text-forest-600 text-sm">
+            {t.location.lascaux_desc}
+          </p>
+        </div>
+      </div>
+
+      <!-- Canoeing -->
+      <div class="group">
+        <div
+          class="relative bg-gradient-to-br from-white via-warm-50/50 to-transparent rounded-2xl p-6 border border-warm-200 shadow-soft card-hover"
+        >
+          <div class="aspect-[4/3] rounded-xl mb-4 overflow-hidden">
+            <img
+              src={images.location.canoeing}
+              alt={t.location.canoeing_alt}
+              class="w-full h-full object-cover"
+            />
+          </div>
+
+          <h4
+            class="text-xl font-semibold text-forest-800 mb-2 group-hover:text-warm-600 transition-colors"
+          >
+            {t.location.canoeing_alt}
+          </h4>
+          <p class="text-forest-600 text-sm">
+            {t.location.canoeing_desc}
+          </p>
+        </div>
+      </div>
+
+      <!-- Castles & Gardens -->
+      <div class="group">
+        <div
+          class="relative bg-gradient-to-br from-white via-forest-50/50 to-transparent rounded-2xl p-6 border border-forest-200 shadow-soft card-hover"
+        >
+          <div class="aspect-[4/3] rounded-xl mb-4 overflow-hidden">
+            <img
+              src={images.location.castles}
+              alt={t.location.castles_alt}
+              class="w-full h-full object-cover"
+            />
+          </div>
+
+          <h4
+            class="text-xl font-semibold text-forest-800 mb-2 group-hover:text-forest-600 transition-colors"
+          >
+            {t.location.castles_alt}
+          </h4>
+          <p class="text-forest-600 text-sm">
+            {t.location.castles_desc}
+          </p>
+        </div>
+      </div>
     </div>
 
     <!-- Activities Grid -->
