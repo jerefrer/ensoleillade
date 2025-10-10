@@ -422,16 +422,6 @@ calendar:
   unavailable:
     fr: Réservé
     en: Booked
-payment:
-  title:
-    fr: Modes de Paiement
-    en: Payment Methods
-  ancv:
-    fr: Chèques Vacances ANCV acceptés
-    en: ANCV Holiday Vouchers accepted
-  ancv_description:
-    fr: Nous acceptons les chèques vacances ANCV pour votre séjour.
-    en: We accept ANCV holiday vouchers for your stay.
 contact:
   title:
     fr: Réservation & Contact
