@@ -221,9 +221,13 @@ const { t, locale } = Astro.props as Props;
           <h5 class="font-medium text-forest-800 text-sm mb-2">
             {t.location.activities.prehistoric.title}
           </h5>
-          <p class="text-xs text-forest-600 leading-relaxed">
-            {t.location.activities.prehistoric.items}
-          </p>
+          {t.location.activities.prehistoric.items && t.location.activities.prehistoric.items.length > 0 && (
+            <ul class="text-xs text-forest-600 leading-relaxed space-y-1">
+              {t.location.activities.prehistoric.items.map((item: string) => (
+                <li>{item}</li>
+              ))}
+            </ul>
+          )}
         </div>
 
         <div class="group text-center">
@@ -232,9 +236,16 @@ const { t, locale } = Astro.props as Props;
           >
             <span class="text-warm-600 text-2xl">🌺</span>
           </div>
-          <h5 class="font-medium text-forest-800 text-sm">
-            {t.location.activities.gardens}
+          <h5 class="font-medium text-forest-800 text-sm mb-2">
+            {t.location.activities.gardens.title}
           </h5>
+          {t.location.activities.gardens.items && t.location.activities.gardens.items.length > 0 && (
+            <ul class="text-xs text-forest-600 leading-relaxed space-y-1">
+              {t.location.activities.gardens.items.map((item: string) => (
+                <li>{item}</li>
+              ))}
+            </ul>
+          )}
         </div>
 
         <div class="group text-center">
@@ -243,9 +254,16 @@ const { t, locale } = Astro.props as Props;
           >
             <span class="text-forest-600 text-2xl">🪂</span>
           </div>
-          <h5 class="font-medium text-forest-800 text-sm">
-            {t.location.activities.paragliding}
+          <h5 class="font-medium text-forest-800 text-sm mb-2">
+            {t.location.activities.paragliding.title}
           </h5>
+          {t.location.activities.paragliding.items && t.location.activities.paragliding.items.length > 0 && (
+            <ul class="text-xs text-forest-600 leading-relaxed space-y-1">
+              {t.location.activities.paragliding.items.map((item: string) => (
+                <li>{item}</li>
+              ))}
+            </ul>
+          )}
         </div>
 
         <div class="group text-center">
@@ -254,9 +272,16 @@ const { t, locale } = Astro.props as Props;
           >
             <span class="text-sage-600 text-2xl">🧘</span>
           </div>
-          <h5 class="font-medium text-forest-800 text-sm">
-            {t.location.activities.buddhist}
+          <h5 class="font-medium text-forest-800 text-sm mb-2">
+            {t.location.activities.buddhist.title}
           </h5>
+          {t.location.activities.buddhist.items && t.location.activities.buddhist.items.length > 0 && (
+            <ul class="text-xs text-forest-600 leading-relaxed space-y-1">
+              {t.location.activities.buddhist.items.map((item: string) => (
+                <li>{item}</li>
+              ))}
+            </ul>
+          )}
         </div>
 
         <div class="group text-center">
@@ -265,9 +290,16 @@ const { t, locale } = Astro.props as Props;
           >
             <span class="text-warm-600 text-2xl">🌿</span>
           </div>
-          <h5 class="font-medium text-forest-800 text-sm">
-            {locale === "fr" ? "Permaculture" : "Permaculture"}
+          <h5 class="font-medium text-forest-800 text-sm mb-2">
+            {t.location.activities.permaculture.title}
           </h5>
+          {t.location.activities.permaculture.items && t.location.activities.permaculture.items.length > 0 && (
+            <ul class="text-xs text-forest-600 leading-relaxed space-y-1">
+              {t.location.activities.permaculture.items.map((item: string) => (
+                <li>{item}</li>
+              ))}
+            </ul>
+          )}
         </div>
 
         <div class="group text-center">
@@ -279,9 +311,13 @@ const { t, locale } = Astro.props as Props;
           <h5 class="font-medium text-forest-800 text-sm mb-2">
             {t.location.activities.gastronomy.title}
           </h5>
-          <p class="text-xs text-forest-600 leading-relaxed">
-            {t.location.activities.gastronomy.items}
-          </p>
+          {t.location.activities.gastronomy.items && t.location.activities.gastronomy.items.length > 0 && (
+            <ul class="text-xs text-forest-600 leading-relaxed space-y-1">
+              {t.location.activities.gastronomy.items.map((item: string) => (
+                <li>{item}</li>
+              ))}
+            </ul>
+          )}
         </div>
 
         <div class="group text-center">
@@ -293,9 +329,13 @@ const { t, locale } = Astro.props as Props;
           <h5 class="font-medium text-forest-800 text-sm mb-2">
             {t.location.activities.vineyards.title}
           </h5>
-          <p class="text-xs text-forest-600 leading-relaxed">
-            {t.location.activities.vineyards.items}
-          </p>
+          {t.location.activities.vineyards.items && t.location.activities.vineyards.items.length > 0 && (
+            <ul class="text-xs text-forest-600 leading-relaxed space-y-1">
+              {t.location.activities.vineyards.items.map((item: string) => (
+                <li>{item}</li>
+              ))}
+            </ul>
+          )}
         </div>
 
         <div class="group text-center">
@@ -307,9 +347,13 @@ const { t, locale } = Astro.props as Props;
           <h5 class="font-medium text-forest-800 text-sm mb-2">
             {t.location.activities.villages.title}
           </h5>
-          <p class="text-xs text-forest-600 leading-relaxed">
-            {t.location.activities.villages.items}
-          </p>
+          {t.location.activities.villages.items && t.location.activities.villages.items.length > 0 && (
+            <ul class="text-xs text-forest-600 leading-relaxed space-y-1">
+              {t.location.activities.villages.items.map((item: string) => (
+                <li>{item}</li>
+              ))}
+            </ul>
+          )}
         </div>
       </div>
     </div>

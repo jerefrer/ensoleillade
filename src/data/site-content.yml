@@ -285,51 +285,100 @@ location:
     en: Medieval castles and remarkable gardens
   activities:
     lascaux:
-      fr: Grottes de Lascaux
-      en: Lascaux Caves
+      title:
+        fr: Grottes de Lascaux
+        en: Lascaux Caves
+      items:
+        fr: []
+        en: []
     prehistoric:
       title:
         fr: Sites préhistoriques
         en: Prehistoric sites
       items:
-        fr: Grotte de Rouffignac, Musée National de la Préhistoire, Grotte Font de Gaume
-        en: Rouffignac Cave, National Museum of Prehistory, Font de Gaume Cave
+        fr:
+          - Grotte de Rouffignac
+          - Musée National de la Préhistoire
+          - Grotte Font de Gaume
+        en:
+          - Rouffignac Cave
+          - National Museum of Prehistory
+          - Font de Gaume Cave
     castles:
-      fr: Châteaux
-      en: Castles
+      title:
+        fr: Châteaux
+        en: Castles
+      items:
+        fr: []
+        en: []
     gardens:
-      fr: Jardins remarquables
-      en: Remarkable gardens
+      title:
+        fr: Jardins remarquables
+        en: Remarkable gardens
+      items:
+        fr: []
+        en: []
     canoeing:
-      fr: Canoë-kayak
-      en: Canoeing
+      title:
+        fr: Canoë-kayak
+        en: Canoeing
+      items:
+        fr: []
+        en: []
     paragliding:
-      fr: Parapente
-      en: Paragliding
+      title:
+        fr: Parapente
+        en: Paragliding
+      items:
+        fr: []
+        en: []
     buddhist:
-      fr: Centres bouddhistes
-      en: Buddhist centers
+      title:
+        fr: Centres bouddhistes
+        en: Buddhist centers
+      items:
+        fr: []
+        en: []
+    permaculture:
+      title:
+        fr: Permaculture
+        en: Permaculture
+      items:
+        fr: []
+        en: []
     gastronomy:
       title:
         fr: Gastronomie
         en: Gastronomy
       items:
-        fr: Truffes, foie gras, noix
-        en: Truffles, foie gras, walnuts
+        fr:
+          - Truffes
+          - Foie gras
+          - Noix
+        en:
+          - Truffles
+          - Foie gras
+          - Walnuts
     vineyards:
       title:
         fr: Vignobles
         en: Vineyards
       items:
-        fr: Bergerac, Monbazillac
-        en: Bergerac, Monbazillac
+        fr:
+          - Bergerac
+          - Monbazillac
+        en:
+          - Bergerac
+          - Monbazillac
     villages:
       title:
         fr: Villages
         en: Villages
       items:
-        fr: Plus beaux villages de France
-        en: Most beautiful villages of France
+        fr:
+          - Plus beaux villages de France
+        en:
+          - Most beautiful villages of France
 calendar:
   title:
     fr: Disponibilités
