@@ -1,45 +1,45 @@
 hero:
-  main: /src/assets/images/hero.jpg
-  secondary1: /src/assets/images/1.jpg
-  secondary2: /src/assets/images/2.jpg
+  main: ../../assets/images/hero.jpg
+  secondary1: ../../assets/images/1.jpg
+  secondary2: ../../assets/images/2.jpg
 
 about:
-  feature: /src/assets/images/3.jpg
+  feature: ../../assets/images/3.jpg
 
 accommodation:
   interior:
-    - /src/assets/images/1.jpg
-    - /src/assets/images/2.jpg
+    - ../../assets/images/1.jpg
+    - ../../assets/images/2.jpg
   exterior:
-    - /src/assets/images/3.jpg
-    - /src/assets/images/4.jpg
+    - ../../assets/images/3.jpg
+    - ../../assets/images/4.jpg
   terrace:
-    - /src/assets/images/5.jpg
-    - /src/assets/images/6.jpg
+    - ../../assets/images/5.jpg
+    - ../../assets/images/6.jpg
 
 location:
-  map: /src/assets/images/hero.jpg
-  lascaux: /src/assets/images/lascaux.jpg
-  canoeing: /src/assets/images/canoe.jpg
-  castles: /src/assets/images/chateau.jpg
+  map: ../../assets/images/hero.jpg
+  lascaux: ../../assets/images/lascaux.jpg
+  canoeing: ../../assets/images/canoe.jpg
+  castles: ../../assets/images/chateau.jpg
 
 gallery:
-  - image: /src/assets/images/1.jpg
+  - image: ../../assets/images/1.jpg
     caption_fr: "Vue du jardin"
     caption_en: "Garden view"
     alt_fr: "Vue panoramique du jardin en permaculture"
     alt_en: "Panoramic view of the permaculture garden"
-  - image: /src/assets/images/2.jpg
+  - image: ../../assets/images/2.jpg
     caption_fr: "Intérieur cosy"
     caption_en: "Cozy interior"
     alt_fr: "Intérieur chaleureux du gîte"
     alt_en: "Warm interior of the cottage"
-  - image: /src/assets/images/3.jpg
+  - image: ../../assets/images/3.jpg
     caption_fr: "Terrasse ensoleillée"
     caption_en: "Sunny terrace"
     alt_fr: "Grande terrasse avec vue sur la nature"
     alt_en: "Large terrace with nature view"
-  - image: /src/assets/images/6.jpg
+  - image: ../../assets/images/6.jpg
     caption_fr: "Château local"
     caption_en: "Local castle"
     alt_fr: "Château médiéval à proximité"
