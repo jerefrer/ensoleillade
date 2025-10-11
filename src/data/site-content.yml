@@ -105,6 +105,12 @@ accommodation:
   tourist_tax:
     fr: + taxe de séjour
     en: + tourist tax
+  minimum_stay:
+    fr: Séjour minimum
+    en: Minimum stay
+  minimum_nights:
+    fr: 3 nuits
+    en: 3 nights
   interior:
     fr: Intérieur
     en: Interior
