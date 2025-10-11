@@ -96,6 +96,15 @@ accommodation:
   guest_capacity:
     fr: Capacité d'accueil
     en: Guest capacity
+  pricing:
+    fr: Tarif
+    en: Pricing
+  price_per_night:
+    fr: 65€ / nuit
+    en: €65 / night
+  tourist_tax:
+    fr: + taxe de séjour
+    en: + tourist tax
   interior:
     fr: Intérieur
     en: Interior
