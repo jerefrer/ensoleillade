@@ -77,12 +77,12 @@ const { locale, t } = Astro.props as Props;
           </div>
           <div class="flex items-center space-x-3">
             <div
-              class="w-10 h-10 bg-warm-100 rounded-lg flex items-center justify-center"
+              class="w-10 h-10 bg-warm-100 rounded-lg flex items-center justify-center flex-shrink-0"
             >
               <span class="text-warm-600 text-lg">👥</span>
             </div>
-            <div>
-              <div class="font-semibold text-forest-800">
+            <div class="min-w-0">
+              <div class="font-semibold text-forest-800 whitespace-nowrap">
                 2 {locale === "fr" ? "personnes" : "people"}
               </div>
               <div class="text-sm text-forest-600">
