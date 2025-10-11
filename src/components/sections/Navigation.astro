@@ -1,6 +1,6 @@
 ---
-import LanguageSwitcher from '../LanguageSwitcher.astro';
-import { getTranslations } from '../../utils/i18n.js';
+import LanguageSwitcher from "../LanguageSwitcher.astro";
+import { getTranslations } from "../../utils/i18n.js";
 
 interface Props {
   locale: string;
@@ -11,76 +11,102 @@ const { locale, currentPath } = Astro.props;
 const t = getTranslations(locale);
 ---
 
-<nav 
+<nav
   id="main-navigation"
   class="fixed top-0 left-0 right-0 z-50 transition-all duration-500 ease-out"
   data-nav-state="transparent"
 >
   <!-- Glass morphism background -->
-  <div class="absolute inset-0 bg-white/80 backdrop-blur-lg border-b border-white/20 opacity-0 transition-opacity duration-150" id="nav-bg"></div>
-  
+  <div
+    class="absolute inset-0 bg-white/80 backdrop-blur-lg border-b border-white/20 opacity-0 transition-opacity duration-150"
+    id="nav-bg"
+  >
+  </div>
+
   <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex justify-between items-center py-4">
-      
       <!-- Logo/Brand -->
       <a href="#" class="flex items-center space-x-3 group cursor-pointer">
-        <div class="w-10 h-10 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-          <img src="/logo.png" alt="L'Ensoleillade" class="w-full h-full object-contain" />
+        <div
+          class="w-10 h-10 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300"
+        >
+          <img
+            src="/logo.png"
+            alt="L'Ensoleillade"
+            class="w-full h-full object-contain"
+          />
         </div>
         <div class="flex flex-col">
-          <h1 class="text-xl font-serif font-bold text-forest-800 group-hover:text-sage-600 transition-colors duration-300">
+          <h1
+            class="text-sm md:text-md lg:text-lg xl:text-xl font-serif font-bold text-forest-800 group-hover:text-sage-600 transition-colors duration-300"
+          >
             L'Ensoleillade
           </h1>
-          <span class="text-xs text-forest-600 opacity-75 hidden sm:block">
-            {locale === 'fr' ? 'Gîte Écologique' : 'Eco Lodge'}
+          <span class="text-xs text-forest-600 opacity-75">
+            {locale === "fr" ? "Gîte Écologique" : "Eco Lodge"}
           </span>
         </div>
       </a>
 
       <!-- Desktop Navigation Links -->
-      <div class="hidden lg:flex items-center gap-2 xl:gap-4">
-        <a 
-          href="#about" 
+      <div class="hidden lg:flex items-center gap-2 xl:gap-8">
+        <a
+          href="#about"
           class="nav-link relative px-2 py-2 text-forest-700 hover:text-sage-600 font-medium transition-all duration-300 group"
         >
           <span class="relative z-10">{t.nav.about}</span>
-          <div class="absolute inset-0 bg-sage-100 rounded-lg scale-0 group-hover:scale-100 transition-transform duration-300 origin-center"></div>
+          <div
+            class="absolute inset-0 bg-sage-100 rounded-lg scale-0 group-hover:scale-100 transition-transform duration-300 origin-center"
+          >
+          </div>
         </a>
-        
-        <a 
-          href="#amenities" 
+
+        <a
+          href="#amenities"
           class="nav-link relative px-2 py-2 text-forest-700 hover:text-sage-600 font-medium transition-all duration-300 group"
         >
           <span class="relative z-10">{t.nav.amenities}</span>
-          <div class="absolute inset-0 bg-sage-100 rounded-lg scale-0 group-hover:scale-100 transition-transform duration-300 origin-center"></div>
+          <div
+            class="absolute inset-0 bg-sage-100 rounded-lg scale-0 group-hover:scale-100 transition-transform duration-300 origin-center"
+          >
+          </div>
         </a>
-        
-        <a 
-          href="#location" 
+
+        <a
+          href="#location"
           class="nav-link relative px-2 py-2 text-forest-700 hover:text-sage-600 font-medium transition-all duration-300 group"
         >
           <span class="relative z-10">{t.nav.location}</span>
-          <div class="absolute inset-0 bg-sage-100 rounded-lg scale-0 group-hover:scale-100 transition-transform duration-300 origin-center"></div>
+          <div
+            class="absolute inset-0 bg-sage-100 rounded-lg scale-0 group-hover:scale-100 transition-transform duration-300 origin-center"
+          >
+          </div>
         </a>
-        
-        <a 
-          href="#activities" 
+
+        <a
+          href="#activities"
           class="nav-link relative px-2 py-2 text-forest-700 hover:text-sage-600 font-medium transition-all duration-300 group"
         >
           <span class="relative z-10">{t.nav.activities}</span>
-          <div class="absolute inset-0 bg-sage-100 rounded-lg scale-0 group-hover:scale-100 transition-transform duration-300 origin-center"></div>
+          <div
+            class="absolute inset-0 bg-sage-100 rounded-lg scale-0 group-hover:scale-100 transition-transform duration-300 origin-center"
+          >
+          </div>
         </a>
-        
-        <a 
-          href="#availability" 
+
+        <a
+          href="#availability"
           class="nav-link relative px-2 py-2 text-forest-700 hover:text-sage-600 font-medium transition-all duration-300 group"
         >
           <span class="relative z-10">{t.nav.availability}</span>
-          <div class="absolute inset-0 bg-sage-100 rounded-lg scale-0 group-hover:scale-100 transition-transform duration-300 origin-center"></div>
+          <div
+            class="absolute inset-0 bg-sage-100 rounded-lg scale-0 group-hover:scale-100 transition-transform duration-300 origin-center"
+          >
+          </div>
         </a>
-        
+
         <!-- CTA Button -->
-        <a 
+        <a
           href="#contact"
           class="ml-2 px-4 xl:px-6 py-2.5 bg-sage-gradient text-white rounded-lg font-semibold shadow-sage hover:shadow-lg hover:scale-105 transition-all duration-300"
         >
@@ -91,18 +117,38 @@ const t = getTranslations(locale);
       <!-- Right section: Language switcher + Mobile menu -->
       <div class="flex items-center space-x-4">
         <LanguageSwitcher locale={locale} currentPath={currentPath} />
-        
+
         <!-- Mobile Menu Button -->
-        <button 
+        <button
           id="mobile-menu-button"
           class="lg:hidden p-2 rounded-lg bg-sage-100 text-sage-700 hover:bg-sage-200 transition-colors duration-300"
           aria-label="Toggle mobile menu"
         >
-          <svg class="w-6 h-6 transition-transform duration-300" id="menu-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+          <svg
+            class="w-6 h-6 transition-transform duration-300"
+            id="menu-icon"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16"></path>
           </svg>
-          <svg class="w-6 h-6 transition-transform duration-300 hidden" id="close-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+          <svg
+            class="w-6 h-6 transition-transform duration-300 hidden"
+            id="close-icon"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M6 18L18 6M6 6l12 12"></path>
           </svg>
         </button>
       </div>
@@ -110,27 +156,45 @@ const t = getTranslations(locale);
   </div>
 
   <!-- Mobile Navigation Menu -->
-  <div 
+  <div
     id="mobile-menu"
     class="lg:hidden absolute top-full left-0 right-0 bg-white/95 backdrop-blur-lg border-b border-sage-200 shadow-lg transform -translate-y-full opacity-0 invisible transition-all duration-500 ease-out"
   >
     <div class="px-4 py-6 space-y-4">
-      <a href="#about" class="block py-3 px-4 text-forest-700 hover:text-sage-600 hover:bg-sage-50 rounded-lg transition-all duration-300 font-medium">
+      <a
+        href="#about"
+        class="block py-3 px-4 text-forest-700 hover:text-sage-600 hover:bg-sage-50 rounded-lg transition-all duration-300 font-medium"
+      >
         {t.nav.about}
       </a>
-      <a href="#amenities" class="block py-3 px-4 text-forest-700 hover:text-sage-600 hover:bg-sage-50 rounded-lg transition-all duration-300 font-medium">
+      <a
+        href="#amenities"
+        class="block py-3 px-4 text-forest-700 hover:text-sage-600 hover:bg-sage-50 rounded-lg transition-all duration-300 font-medium"
+      >
         {t.nav.amenities}
       </a>
-      <a href="#location" class="block py-3 px-4 text-forest-700 hover:text-sage-600 hover:bg-sage-50 rounded-lg transition-all duration-300 font-medium">
+      <a
+        href="#location"
+        class="block py-3 px-4 text-forest-700 hover:text-sage-600 hover:bg-sage-50 rounded-lg transition-all duration-300 font-medium"
+      >
         {t.nav.location}
       </a>
-      <a href="#activities" class="block py-3 px-4 text-forest-700 hover:text-sage-600 hover:bg-sage-50 rounded-lg transition-all duration-300 font-medium">
+      <a
+        href="#activities"
+        class="block py-3 px-4 text-forest-700 hover:text-sage-600 hover:bg-sage-50 rounded-lg transition-all duration-300 font-medium"
+      >
         {t.nav.activities}
       </a>
-      <a href="#availability" class="block py-3 px-4 text-forest-700 hover:text-sage-600 hover:bg-sage-50 rounded-lg transition-all duration-300 font-medium">
+      <a
+        href="#availability"
+        class="block py-3 px-4 text-forest-700 hover:text-sage-600 hover:bg-sage-50 rounded-lg transition-all duration-300 font-medium"
+      >
         {t.nav.availability}
       </a>
-      <a href="#contact" class="block mt-4 py-3 px-4 bg-sage-gradient text-white text-center rounded-lg font-semibold shadow-sage hover:shadow-lg transition-all duration-300">
+      <a
+        href="#contact"
+        class="block mt-4 py-3 px-4 bg-sage-gradient text-white text-center rounded-lg font-semibold shadow-sage hover:shadow-lg transition-all duration-300"
+      >
         {t.nav.contact}
       </a>
     </div>
@@ -140,14 +204,14 @@ const t = getTranslations(locale);
 <script>
   class ModernNavigation {
     constructor() {
-      this.nav = document.getElementById('main-navigation');
-      this.navBg = document.getElementById('nav-bg');
-      this.mobileButton = document.getElementById('mobile-menu-button');
-      this.mobileMenu = document.getElementById('mobile-menu');
-      this.menuIcon = document.getElementById('menu-icon');
-      this.closeIcon = document.getElementById('close-icon');
+      this.nav = document.getElementById("main-navigation");
+      this.navBg = document.getElementById("nav-bg");
+      this.mobileButton = document.getElementById("mobile-menu-button");
+      this.mobileMenu = document.getElementById("mobile-menu");
+      this.menuIcon = document.getElementById("menu-icon");
+      this.closeIcon = document.getElementById("close-icon");
       this.isMenuOpen = false;
-      
+
       this.init();
     }
 
@@ -161,17 +225,17 @@ const t = getTranslations(locale);
     setupLogoScroll() {
       // Get all links that should trigger smooth scroll
       const scrollLinks = document.querySelectorAll('a[href^="#"]');
-      
-      scrollLinks.forEach(link => {
-        link.addEventListener('click', (e) => {
-          const href = link.getAttribute('href');
-          
+
+      scrollLinks.forEach((link) => {
+        link.addEventListener("click", (e) => {
+          const href = link.getAttribute("href");
+
           // Handle scroll to top for # or empty href
-          if (href === '#' || href === '') {
+          if (href === "#" || href === "") {
             e.preventDefault();
             window.scrollTo({
               top: 0,
-              behavior: 'smooth'
+              behavior: "smooth",
             });
           } else {
             // Handle scroll to section
@@ -179,8 +243,8 @@ const t = getTranslations(locale);
             if (target) {
               e.preventDefault();
               target.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
+                behavior: "smooth",
+                block: "start",
               });
             }
           }
@@ -189,28 +253,28 @@ const t = getTranslations(locale);
     }
 
     setupScrollBehavior() {
-      window.addEventListener('scroll', () => {
+      window.addEventListener("scroll", () => {
         const currentScrollY = window.scrollY;
-        
+
         // Update background opacity based on scroll position
         if (currentScrollY > 50) {
-          this.navBg.style.opacity = '1';
-          this.nav.dataset.navState = 'scrolled';
+          this.navBg.style.opacity = "1";
+          this.nav.dataset.navState = "scrolled";
         } else {
-          this.navBg.style.opacity = '0';
-          this.nav.dataset.navState = 'transparent';
+          this.navBg.style.opacity = "0";
+          this.nav.dataset.navState = "transparent";
         }
       });
     }
 
     setupMobileMenu() {
-      this.mobileButton.addEventListener('click', () => {
+      this.mobileButton.addEventListener("click", () => {
         this.toggleMobileMenu();
       });
 
       // Close mobile menu when clicking on links
-      this.mobileMenu.querySelectorAll('a').forEach(link => {
-        link.addEventListener('click', () => {
+      this.mobileMenu.querySelectorAll("a").forEach((link) => {
+        link.addEventListener("click", () => {
           if (this.isMenuOpen) {
             this.closeMobileMenu();
           }
@@ -218,7 +282,7 @@ const t = getTranslations(locale);
       });
 
       // Close menu when clicking outside
-      document.addEventListener('click', (e) => {
+      document.addEventListener("click", (e) => {
         if (this.isMenuOpen && !this.nav.contains(e.target)) {
           this.closeMobileMenu();
         }
@@ -235,60 +299,71 @@ const t = getTranslations(locale);
 
     openMobileMenu() {
       this.isMenuOpen = true;
-      this.mobileMenu.classList.remove('invisible', '-translate-y-full', 'opacity-0');
-      this.mobileMenu.classList.add('translate-y-0', 'opacity-100');
-      this.menuIcon.classList.add('hidden');
-      this.closeIcon.classList.remove('hidden');
-      this.mobileButton.setAttribute('aria-expanded', 'true');
-      
+      this.mobileMenu.classList.remove(
+        "invisible",
+        "-translate-y-full",
+        "opacity-0"
+      );
+      this.mobileMenu.classList.add("translate-y-0", "opacity-100");
+      this.menuIcon.classList.add("hidden");
+      this.closeIcon.classList.remove("hidden");
+      this.mobileButton.setAttribute("aria-expanded", "true");
+
       // Prevent nav from hiding when menu is open
-      this.nav.style.transform = 'translateY(0)';
+      this.nav.style.transform = "translateY(0)";
     }
 
     closeMobileMenu() {
       this.isMenuOpen = false;
-      this.mobileMenu.classList.add('invisible', '-translate-y-full', 'opacity-0');
-      this.mobileMenu.classList.remove('translate-y-0', 'opacity-100');
-      this.menuIcon.classList.remove('hidden');
-      this.closeIcon.classList.add('hidden');
-      this.mobileButton.setAttribute('aria-expanded', 'false');
+      this.mobileMenu.classList.add(
+        "invisible",
+        "-translate-y-full",
+        "opacity-0"
+      );
+      this.mobileMenu.classList.remove("translate-y-0", "opacity-100");
+      this.menuIcon.classList.remove("hidden");
+      this.closeIcon.classList.add("hidden");
+      this.mobileButton.setAttribute("aria-expanded", "false");
     }
 
     setupActiveLinks() {
-      const sections = document.querySelectorAll('section[id]');
-      const navLinks = document.querySelectorAll('.nav-link');
+      const sections = document.querySelectorAll("section[id]");
+      const navLinks = document.querySelectorAll(".nav-link");
 
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            const id = entry.target.getAttribute('id');
-            
-            // Remove active class from all links
-            navLinks.forEach(link => {
-              link.classList.remove('text-sage-600', 'bg-sage-100');
-            });
-            
-            // Add active class to current link
-            const activeLink = document.querySelector(`a[href="#${id}"]`);
-            if (activeLink && activeLink.classList.contains('nav-link')) {
-              activeLink.classList.add('text-sage-600');
-              activeLink.querySelector('div').classList.add('scale-100');
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              const id = entry.target.getAttribute("id");
+
+              // Remove active class from all links
+              navLinks.forEach((link) => {
+                link.classList.remove("text-sage-600", "bg-sage-100");
+              });
+
+              // Add active class to current link
+              const activeLink = document.querySelector(`a[href="#${id}"]`);
+              if (activeLink && activeLink.classList.contains("nav-link")) {
+                activeLink.classList.add("text-sage-600");
+                activeLink.querySelector("div").classList.add("scale-100");
+              }
             }
-          }
-        });
-      }, {
-        threshold: 0.3,
-        rootMargin: '-20% 0px -70% 0px'
-      });
+          });
+        },
+        {
+          threshold: 0.3,
+          rootMargin: "-20% 0px -70% 0px",
+        }
+      );
 
-      sections.forEach(section => {
+      sections.forEach((section) => {
         observer.observe(section);
       });
     }
   }
 
   // Initialize navigation when DOM is loaded
-  document.addEventListener('DOMContentLoaded', () => {
+  document.addEventListener("DOMContentLoaded", () => {
     new ModernNavigation();
   });
 </script>
