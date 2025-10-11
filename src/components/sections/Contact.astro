@@ -10,19 +10,11 @@ const { t, locale } = Astro.props as Props;
     <h2 class="text-4xl font-serif font-bold mb-6">
       {t.contact.title}
     </h2>
-    <p class="text-xl mb-4 opacity-90">
+    <p class="text-xl mb-12 opacity-90">
       {t.contact.subtitle}
     </p>
     
-    <!-- Pricing Reminder -->
-    <div class="inline-flex items-center px-4 py-2 bg-forest-600/50 border border-forest-500/30 rounded-full mb-12">
-      <span class="text-warm-200 mr-2">🏷️</span>
-      <span class="text-white font-semibold">
-        65€{locale === "fr" ? "/nuit + taxe de séjour" : "/night + tourist tax"}
-      </span>
-    </div>
-    
-    <div class="grid md:grid-cols-2 gap-8 max-w-2xl mx-auto mb-12">
+    <div class="grid md:grid-cols-2 gap-8 max-w-2xl mx-auto mb-8">
       <div class="bg-forest-600 p-8 rounded-lg border border-forest-500/20">
         <div class="text-3xl mb-4">📞</div>
         <h3 class="text-xl font-semibold mb-2">{t.contact.phone}</h3>
@@ -37,6 +29,15 @@ const { t, locale } = Astro.props as Props;
         <a href={`mailto:${t.contact.email_address}`} class="text-warm-200 hover:text-warm-100 transition-colors break-all">
           {t.contact.email_address}
         </a>
+      </div>
+    </div>
+
+    <!-- Pricing Reminder -->
+    <div class="flex justify-center mb-8">
+      <div class="inline-flex items-center px-4 py-2 bg-forest-600/50 border border-forest-500/30 rounded-full">
+        <span class="text-white font-semibold">
+          65€{locale === "fr" ? "/nuit + taxe de séjour" : "/night + tourist tax"}
+        </span>
       </div>
     </div>
 

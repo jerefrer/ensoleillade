@@ -40,16 +40,6 @@ const { locale, t } = Astro.props as Props;
           <p class="text-2xl lg:text-3xl text-sage-600 font-medium">
             {t.hero.subtitle}
           </p>
-          
-          <!-- Pricing Badge -->
-          <div class="inline-flex items-center px-4 py-2 bg-white/80 backdrop-blur-sm border border-sage-200 rounded-full shadow-sm">
-            <span class="text-sage-600 mr-2">🏷️</span>
-            <span class="font-semibold text-forest-800">
-              {locale === "fr" ? "À partir de " : "From "}
-              <span class="text-sage-600">65€</span>
-              {locale === "fr" ? "/nuit" : "/night"}
-            </span>
-          </div>
         </div>
 
         <!-- Description -->
@@ -100,6 +90,13 @@ const { locale, t } = Astro.props as Props;
               </div>
             </div>
           </div>
+        </div>
+
+        <!-- Pricing Badge -->
+        <div class="inline-flex items-center px-4 py-2 bg-white/80 backdrop-blur-sm border border-sage-200 rounded-full shadow-sm">
+          <span class="font-semibold text-forest-800">
+            65€{locale === "fr" ? "/nuit + taxe de séjour" : "/night + tourist tax"}
+          </span>
         </div>
 
         <!-- Chèque Vacances Badge -->
