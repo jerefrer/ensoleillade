@@ -36,8 +36,9 @@ const { t, locale } = Astro.props as Props;
     <div class="flex justify-center mb-8">
       <div class="inline-flex items-center px-6 py-3 bg-blue-50/90 backdrop-blur-sm border-2 border-blue-200 rounded-xl shadow-sm">
         <span class="font-semibold text-blue-900">
-          65€{locale === "fr" ? "/nuit" : "/night"}<span class="text-sm text-blue-600/70"> {locale === "fr" ? "+ taxe de séjour" : "+ tourist tax"}</span>
+          65€{locale === "fr" ? "/nuit" : "/night"}
         </span>
+        <span class="text-sm text-blue-600/70"> {locale === "fr" ? "+ taxe de séjour" : "+ tourist tax"}</span>
       </div>
     </div>
 
