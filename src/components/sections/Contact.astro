@@ -39,8 +39,8 @@ const { t, locale } = Astro.props as Props;
       </div>
     </div>
 
-    <!-- Pricing Reminder -->
-    <div class="flex justify-center mb-8">
+    <!-- Pricing & Minimum Stay -->
+    <div class="flex flex-wrap justify-center gap-4 mb-8">
       <div
         class="inline-flex items-center px-6 py-3 bg-blue-50/90 backdrop-blur-sm border-2 border-blue-200 rounded-xl shadow-sm"
       >
@@ -51,6 +51,15 @@ const { t, locale } = Astro.props as Props;
           {locale === "fr" ? "+ taxe de séjour" : "+ tourist tax"}</span
         >
       </div>
+      
+      <div
+        class="inline-flex items-center px-6 py-3 bg-white/90 backdrop-blur-sm border-2 border-forest-200 rounded-xl shadow-sm"
+      >
+        <span class="text-forest-600 mr-2">📅</span>
+        <span class="font-semibold text-forest-800">
+          {locale === "fr" ? "3 nuits minimum" : "3 nights minimum"}
+        </span>
+      </div>
     </div>
 
     <!-- ANCV Badge -->
@@ -58,18 +67,18 @@ const { t, locale } = Astro.props as Props;
       <div
         class="inline-flex items-center px-5 py-3 bg-gradient-to-r from-blue-50 to-blue-100 border-2 border-blue-200 rounded-xl shadow-sm"
       >
-        <div class="w-12 h-12 mr-3 flex items-center justify-center">
+        <div class="w-16 h-12 mr-3 flex items-center justify-center">
           <img
             src="/cheque-vacance-logo.webp"
             alt="ANCV Chèques Vacances"
-            class="w-full h-full object-contain"
+            class="w-full object-contain rounded"
           />
         </div>
         <div>
           <div class="font-bold text-blue-900 text-sm">
             {t.amenities.ancv.title}
           </div>
-          <div class="text-xs text-blue-700">
+          <div class="text-left text-xs text-blue-700">
             {t.amenities.ancv.accepted}
           </div>
         </div>

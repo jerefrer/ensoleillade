@@ -48,7 +48,7 @@ const { locale, t } = Astro.props as Props;
         </p>
 
         <!-- Feature Highlights -->
-        <div class="grid grid-cols-2 lg:grid-cols-3 gap-4 max-w-2xl">
+        <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 max-w-3xl">
           <div class="flex items-center space-x-3">
             <div
               class="w-10 h-10 bg-sage-100 rounded-lg flex items-center justify-center"
@@ -90,6 +90,21 @@ const { locale, t } = Astro.props as Props;
               </div>
             </div>
           </div>
+          <div class="flex items-center space-x-3">
+            <div
+              class="w-10 h-10 bg-forest-100 rounded-lg flex items-center justify-center"
+            >
+              <span class="text-forest-600 text-lg">📅</span>
+            </div>
+            <div>
+              <div class="font-semibold text-forest-800">
+                {locale === "fr" ? "3 nuits" : "3 nights"}
+              </div>
+              <div class="text-sm text-forest-600">
+                {locale === "fr" ? "Minimum" : "Minimum"}
+              </div>
+            </div>
+          </div>
         </div>
 
         <!-- Badges Section -->
@@ -113,11 +128,11 @@ const { locale, t } = Astro.props as Props;
             <div
               class="inline-flex items-center px-5 py-3 bg-gradient-to-r from-blue-50 to-blue-100 border-2 border-blue-200 rounded-xl shadow-sm"
             >
-              <div class="w-12 h-12 mr-3 flex items-center justify-center">
+              <div class="w-16 h-12 mr-3 flex items-center justify-center">
                 <img
                   src="/cheque-vacance-logo.webp"
                   alt="ANCV Chèques Vacances"
-                  class="w-full h-full object-contain"
+                  class="w-full object-contain rounded"
                 />
               </div>
               <div>
