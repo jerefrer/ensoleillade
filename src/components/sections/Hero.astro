@@ -30,6 +30,31 @@ const { locale, t } = Astro.props as Props;
     >
       <!-- Left Content Column -->
       <div class="space-y-8 animate-on-scroll">
+        <!-- Association Header -->
+        <div class="flex items-center gap-4 pb-4 border-b border-sage-200">
+          <img
+            src="/logo-asso.jpg"
+            alt="Association Lumière dans le Corps"
+            class="w-20 h-auto rounded-xl border border-sage-200 shadow-sm"
+          />
+          <div>
+            <h2 class="text-xl font-semibold text-forest-800">
+              {
+                locale === "fr"
+                  ? "Association Lumière dans le Corps"
+                  : "Lumière dans le Corps Association"
+              }
+            </h2>
+            <p class="text-sm text-sage-600">
+              {
+                locale === "fr"
+                  ? "Biodiversité en permaculture"
+                  : "Biodiversity in permaculture"
+              }
+            </p>
+          </div>
+        </div>
+
         <!-- Main Heading -->
         <div class="space-y-4">
           <h1
