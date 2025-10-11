@@ -26,14 +26,27 @@ export async function fetchBookedDates() {
 
         Object.values(calendar).forEach((event) => {
           if (event.type === "VEVENT" && event.start && event.end) {
-            // Add all dates between start and end to booked dates
-            const startDate = new Date(event.start);
-            const endDate = new Date(event.end);
+            // Handle both Date objects and date strings
+            let startDate, endDate;
+            
+            if (typeof event.start === 'string') {
+              // Parse date string (format: YYYYMMDD or YYYY-MM-DD)
+              const startStr = event.start.replace(/(\d{4})(\d{2})(\d{2})/, '$1-$2-$3');
+              startDate = new Date(startStr + 'T00:00:00Z');
+            } else {
+              startDate = new Date(event.start);
+              startDate.setUTCHours(0, 0, 0, 0);
+            }
+            
+            if (typeof event.end === 'string') {
+              const endStr = event.end.replace(/(\d{4})(\d{2})(\d{2})/, '$1-$2-$3');
+              endDate = new Date(endStr + 'T00:00:00Z');
+            } else {
+              endDate = new Date(event.end);
+              endDate.setUTCHours(0, 0, 0, 0);
+            }
 
-            // Normalize to avoid timezone issues
-            startDate.setUTCHours(0, 0, 0, 0);
-            endDate.setUTCHours(0, 0, 0, 0);
-
+            // Add all dates between start and end (excluding end date as per iCal spec)
             const currentDate = new Date(startDate);
             while (currentDate < endDate) {
               bookedDates.add(currentDate.toISOString().split("T")[0]);
