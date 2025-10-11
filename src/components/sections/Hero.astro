@@ -93,16 +93,19 @@ const { locale, t } = Astro.props as Props;
         </div>
 
         <!-- Badges Section -->
-        <div class="space-y-3">
+        <div class="flex flex-col gap-3">
           <!-- Pricing Badge -->
-          <div class="inline-flex items-center px-6 py-3 bg-white/80 backdrop-blur-sm border border-sage-200 rounded-full shadow-sm">
-            <span class="font-semibold text-forest-800">
-              65€{locale === "fr" ? "/nuit + taxe de séjour" : "/night + tourist tax"}
-            </span>
+          <div>
+            <div class="inline-flex items-center px-6 py-3 bg-white/80 backdrop-blur-sm border border-sage-200 rounded-full shadow-sm">
+              <span class="font-semibold text-forest-800">
+                65€{locale === "fr" ? "/nuit + taxe de séjour" : "/night + tourist tax"}
+              </span>
+            </div>
           </div>
 
           <!-- Chèque Vacances Badge -->
-          <div class="inline-flex items-center px-5 py-3 bg-gradient-to-r from-blue-50 to-blue-100 border-2 border-blue-200 rounded-xl shadow-sm">
+          <div>
+            <div class="inline-flex items-center px-5 py-3 bg-gradient-to-r from-blue-50 to-blue-100 border-2 border-blue-200 rounded-xl shadow-sm">
           <div class="w-12 h-12 mr-3 flex items-center justify-center">
             <img 
               src="/cheque-vacance-logo.webp"
@@ -117,6 +120,7 @@ const { locale, t } = Astro.props as Props;
             <div class="text-xs text-blue-700">
               {locale === "fr" ? "Acceptés" : "Accepted"}
             </div>
+          </div>
           </div>
           </div>
         </div>
