@@ -181,6 +181,12 @@ accommodation:
       compréhension."
     en: "<u>We cannot welcome pets</u> due to the presence of 2 free-roaming Indian Runner
       ducks: Puce and Bo. Thank you for your understanding."
+  host_proximity_title:
+    fr: Votre hôte à proximité
+    en: Your host nearby
+  host_proximity_message:
+    fr: La propriétaire habite dans la maison voisine et reste disponible pour vous accueillir et répondre à vos questions tout au long de votre séjour.
+    en: The owner lives in the neighboring house and remains available to welcome you and answer your questions throughout your stay.
   download_contract:
     fr: Télécharger le contrat de location
     en: Download rental contract
@@ -386,11 +392,11 @@ activities:
         en: Remarkable gardens
       items:
         fr:
-          - Les Jardins D'eau
+          - Les Jardins D'eau de Carsac
           - Les Jardins De Marqueyssac
           - Les Jardins Panoramiques De Limeuil
         en:
-          - The Water Gardens
+          - The Water Gardens of Carsac
           - Marqueyssac Gardens
           - Limeuil Panoramic Gardens
     paragliding:
@@ -400,11 +406,11 @@ activities:
       items:
         fr:
           - Côte de Jor
-          - Le Roc
+          - La Fleunie
           - Et bien d'autres
         en:
           - Côte de Jor
-          - Le Roc
+          - La Fleunie
           - And many more
     buddhist:
       title:
@@ -412,12 +418,12 @@ activities:
         en: Buddhist centers
       items:
         fr:
-          - Dhagpo Kagyu Ling
           - Chanteloube
+          - Dhagpo Kagyu Ling
           - Marfond
         en:
-          - Dhagpo Kagyu Ling
           - Chanteloube
+          - Dhagpo Kagyu Ling
           - Marfond
     gastronomy:
       title:

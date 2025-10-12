@@ -327,5 +327,22 @@ const { t, locale } = Astro.props as Props;
         </div>
       </div>
     </div>
+
+    <!-- Host Proximity Note -->
+    <div
+      class="bg-gradient-to-r from-sage-50 to-blue-50 rounded-xl p-6 border border-sage-200 mb-8 animate-on-scroll"
+    >
+      <div class="flex items-start space-x-4">
+        <span class="text-3xl">🏡</span>
+        <div>
+          <h4 class="font-semibold text-forest-800 mb-2">
+            {t.accommodation.host_proximity_title}
+          </h4>
+          <p class="text-forest-700 text-sm leading-relaxed">
+            {t.accommodation.host_proximity_message}
+          </p>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
