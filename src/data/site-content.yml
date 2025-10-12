@@ -88,8 +88,8 @@ accommodation:
     fr: 19m² + terrasse 18m²
     en: 19m² + 18m² terrace
   capacity:
-    fr: 2 personnes
-    en: 2 people
+    fr: 1-2 personnes
+    en: 1-2 people
   total_area:
     fr: Surface totale
     en: Total area
@@ -102,6 +102,9 @@ accommodation:
   price_per_night:
     fr: 65€ / nuit
     en: €65 / night
+  price_note:
+    fr: (tarif unique)
+    en: (flat rate)
   tourist_tax:
     fr: + taxe de séjour
     en: + tourist tax

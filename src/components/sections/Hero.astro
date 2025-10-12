@@ -110,7 +110,7 @@ const { locale, t } = Astro.props as Props;
             </div>
             <div>
               <div class="font-semibold text-forest-800">
-                2 {locale === "fr" ? "personnes" : "people"}
+                {locale === "fr" ? "1-2 personnes" : "1-2 people"}
               </div>
               <div class="text-sm text-forest-600">
                 {locale === "fr" ? "Capacité" : "Capacity"}
