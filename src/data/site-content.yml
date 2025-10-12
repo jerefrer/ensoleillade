@@ -257,10 +257,10 @@ amenities:
       fr: Hamac
       en: Hammock
     garden:
-      fr: Jardin potager
-      en: Vegetable garden
+      fr: Jardin privé
+      en: Private garden
     garden_desc:
-      fr: Vue sur nature
+      fr: Vue sur la nature
       en: Nature views
     parking:
       fr: Parking Gratuit

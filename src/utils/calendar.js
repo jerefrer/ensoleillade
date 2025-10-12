@@ -15,9 +15,16 @@ export async function fetchBookedDates() {
   const bookedDates = new Set();
 
   try {
+    // Add cache-busting timestamp to URLs
+    const timestamp = Date.now();
+    const urlsWithCacheBust = Object.values(ICAL_URLS).map(url => {
+      const separator = url.includes('?') ? '&' : '?';
+      return `${url}${separator}_t=${timestamp}`;
+    });
+
     // Fetch calendars from all platforms
     const calendars = await Promise.allSettled(
-      Object.values(ICAL_URLS).map((url) => ical.async.fromURL(url))
+      urlsWithCacheBust.map((url) => ical.async.fromURL(url))
     );
 
     calendars.forEach((result) => {
