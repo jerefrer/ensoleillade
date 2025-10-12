@@ -281,7 +281,9 @@ const { locale, t } = Astro.props as Props;
         >
           <img
             src={images.hero.primary}
-            alt={locale === "fr" ? images.hero.primary_alt.fr : images.hero.primary_alt.en}
+            alt={locale === "fr"
+              ? images.hero.primary_alt.fr
+              : images.hero.primary_alt.en}
             class="w-full h-full object-cover"
             style="object-position: 70%;"
             loading="eager"

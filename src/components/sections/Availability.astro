@@ -120,10 +120,10 @@ const calendarData = {
         // Add timestamp to prevent caching
         const timestamp = Date.now();
         const response = await fetch(`/api/calendar?_t=${timestamp}`, {
-          cache: 'no-store',
+          cache: "no-store",
           headers: {
-            'Cache-Control': 'no-cache'
-          }
+            "Cache-Control": "no-cache",
+          },
         });
         const data = await response.json();
         this.bookedDates = data.bookedDates || [];
