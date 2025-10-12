@@ -49,7 +49,9 @@ const { t, locale } = Astro.props as Props;
           <div class="aspect-[4/3] rounded-xl mb-4 overflow-hidden">
             <img
               src={images.activities.lascaux.image}
-              alt={locale === "fr" ? images.activities.lascaux.alt.fr : images.activities.lascaux.alt.en}
+              alt={locale === "fr"
+                ? images.activities.lascaux.alt.fr
+                : images.activities.lascaux.alt.en}
               class="w-full h-full object-cover"
             />
           </div>
@@ -73,7 +75,9 @@ const { t, locale } = Astro.props as Props;
           <div class="aspect-[4/3] rounded-xl mb-4 overflow-hidden">
             <img
               src={images.activities.canoeing.image}
-              alt={locale === "fr" ? images.activities.canoeing.alt.fr : images.activities.canoeing.alt.en}
+              alt={locale === "fr"
+                ? images.activities.canoeing.alt.fr
+                : images.activities.canoeing.alt.en}
               class="w-full h-full object-cover"
             />
           </div>
@@ -97,7 +101,9 @@ const { t, locale } = Astro.props as Props;
           <div class="aspect-[4/3] rounded-xl mb-4 overflow-hidden">
             <img
               src={images.activities.castles.image}
-              alt={locale === "fr" ? images.activities.castles.alt.fr : images.activities.castles.alt.en}
+              alt={locale === "fr"
+                ? images.activities.castles.alt.fr
+                : images.activities.castles.alt.en}
               class="w-full h-full object-cover"
             />
           </div>
@@ -129,11 +135,9 @@ const { t, locale } = Astro.props as Props;
           t.activities.items.prehistoric.items &&
             t.activities.items.prehistoric.items.length > 0 && (
               <ul class="text-xs text-forest-600 leading-relaxed space-y-1">
-                {t.activities.items.prehistoric.items.map(
-                  (item: string) => (
-                    <li>{item}</li>
-                  )
-                )}
+                {t.activities.items.prehistoric.items.map((item: string) => (
+                  <li>{item}</li>
+                ))}
               </ul>
             )
         }
@@ -173,11 +177,9 @@ const { t, locale } = Astro.props as Props;
           t.activities.items.paragliding.items &&
             t.activities.items.paragliding.items.length > 0 && (
               <ul class="text-xs text-forest-600 leading-relaxed space-y-1">
-                {t.activities.items.paragliding.items.map(
-                  (item: string) => (
-                    <li>{item}</li>
-                  )
-                )}
+                {t.activities.items.paragliding.items.map((item: string) => (
+                  <li>{item}</li>
+                ))}
               </ul>
             )
         }
@@ -217,11 +219,9 @@ const { t, locale } = Astro.props as Props;
           t.activities.items.gastronomy.items &&
             t.activities.items.gastronomy.items.length > 0 && (
               <ul class="text-xs text-forest-600 leading-relaxed space-y-1">
-                {t.activities.items.gastronomy.items.map(
-                  (item: string) => (
-                    <li>{item}</li>
-                  )
-                )}
+                {t.activities.items.gastronomy.items.map((item: string) => (
+                  <li>{item}</li>
+                ))}
               </ul>
             )
         }

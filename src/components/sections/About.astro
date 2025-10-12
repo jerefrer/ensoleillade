@@ -159,7 +159,9 @@ const { t, locale } = Astro.props as Props;
           <div class="aspect-[4/5] rounded-2xl overflow-hidden shadow-large">
             <img
               src={images.about.primary}
-              alt={locale === "fr" ? images.about.primary_alt.fr : images.about.primary_alt.en}
+              alt={locale === "fr"
+                ? images.about.primary_alt.fr
+                : images.about.primary_alt.en}
               class="w-full h-full object-cover"
               loading="lazy"
             />

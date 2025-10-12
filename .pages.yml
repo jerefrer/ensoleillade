@@ -31,6 +31,29 @@ content:
               - { label: Français, name: fr, type: string }
               - { label: Anglais, name: en, type: string }
 
+      - label: Tarifs
+        name: pricing
+        type: object
+        fields:
+          - label: Prix par nuit
+            name: price_per_night
+            type: object
+            fields:
+              - { label: Français, name: fr, type: string }
+              - { label: Anglais, name: en, type: string }
+          - label: Note sur le prix
+            name: price_note
+            type: object
+            fields:
+              - { label: Français, name: fr, type: string }
+              - { label: Anglais, name: en, type: string }
+          - label: Taxe de séjour
+            name: tourist_tax
+            type: object
+            fields:
+              - { label: Français, name: fr, type: string }
+              - { label: Anglais, name: en, type: string }
+
       - label: Navigation
         name: nav
         type: object

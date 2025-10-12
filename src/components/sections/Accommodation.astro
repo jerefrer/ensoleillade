@@ -123,7 +123,9 @@ const { t, locale } = Astro.props as Props;
           >
             <img
               src={images.accommodation.primary}
-              alt={locale === "fr" ? images.accommodation.primary_alt.fr : images.accommodation.primary_alt.en}
+              alt={locale === "fr"
+                ? images.accommodation.primary_alt.fr
+                : images.accommodation.primary_alt.en}
               class="w-full h-full object-cover"
             />
           </div>
@@ -136,7 +138,9 @@ const { t, locale } = Astro.props as Props;
           >
             <img
               src={images.accommodation.secondary}
-              alt={locale === "fr" ? images.accommodation.secondary_alt.fr : images.accommodation.secondary_alt.en}
+              alt={locale === "fr"
+                ? images.accommodation.secondary_alt.fr
+                : images.accommodation.secondary_alt.en}
               class="w-full h-full object-cover"
             />
           </div>
