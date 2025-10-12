@@ -46,8 +46,8 @@ const { t, locale } = Astro.props as Props;
       >
         <span class="font-semibold text-blue-900">
           65€{locale === "fr" ? "/nuit" : "/night"}
-          <span class="text-xs text-blue-700/80 font-medium ml-1">
-            {locale === "fr" ? "(tarif unique)" : "(flat rate)"}
+          <span class="text-xs text-blue-700/80 font-medium ml-1 align-baseline">
+            {locale === "fr" ? "(prix fixe)" : "(flat rate)"}
           </span>
         </span>
         <span class="text-sm text-blue-600/70 pl-1">

@@ -103,7 +103,7 @@ accommodation:
     fr: 65€ / nuit
     en: €65 / night
   price_note:
-    fr: (tarif unique)
+    fr: (prix fixe)
     en: (flat rate)
   tourist_tax:
     fr: + taxe de séjour
