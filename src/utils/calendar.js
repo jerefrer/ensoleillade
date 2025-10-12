@@ -40,33 +40,40 @@ export async function fetchBookedDates() {
               // Parse date string (format: YYYYMMDD)
               startDateStr = event.start.replace(/(\d{4})(\d{2})(\d{2})/, '$1-$2-$3');
             } else {
-              // Convert Date object to YYYY-MM-DD string in UTC
+              // Convert Date object to YYYY-MM-DD string using UTC to avoid timezone shifts
               const d = new Date(event.start);
-              startDateStr = d.toISOString().split('T')[0];
+              const year = d.getUTCFullYear();
+              const month = String(d.getUTCMonth() + 1).padStart(2, '0');
+              const day = String(d.getUTCDate()).padStart(2, '0');
+              startDateStr = `${year}-${month}-${day}`;
             }
             
             if (typeof event.end === 'string') {
               endDateStr = event.end.replace(/(\d{4})(\d{2})(\d{2})/, '$1-$2-$3');
             } else {
+              // Convert Date object to YYYY-MM-DD string using UTC to avoid timezone shifts
               const d = new Date(event.end);
-              endDateStr = d.toISOString().split('T')[0];
+              const year = d.getUTCFullYear();
+              const month = String(d.getUTCMonth() + 1).padStart(2, '0');
+              const day = String(d.getUTCDate()).padStart(2, '0');
+              endDateStr = `${year}-${month}-${day}`;
             }
 
             // Parse dates as simple YYYY-MM-DD strings to avoid timezone issues
             const [startYear, startMonth, startDay] = startDateStr.split('-').map(Number);
             const [endYear, endMonth, endDay] = endDateStr.split('-').map(Number);
             
-            // Create dates in local timezone but treat them as date-only
-            let currentDate = new Date(startYear, startMonth - 1, startDay);
-            const endDate = new Date(endYear, endMonth - 1, endDay);
+            // Create dates in UTC to avoid timezone shifts
+            let currentDate = new Date(Date.UTC(startYear, startMonth - 1, startDay));
+            const endDate = new Date(Date.UTC(endYear, endMonth - 1, endDay));
             
             // Add all dates between start and end (excluding end date as per iCal spec)
             while (currentDate < endDate) {
-              const year = currentDate.getFullYear();
-              const month = String(currentDate.getMonth() + 1).padStart(2, '0');
-              const day = String(currentDate.getDate()).padStart(2, '0');
+              const year = currentDate.getUTCFullYear();
+              const month = String(currentDate.getUTCMonth() + 1).padStart(2, '0');
+              const day = String(currentDate.getUTCDate()).padStart(2, '0');
               bookedDates.add(`${year}-${month}-${day}`);
-              currentDate.setDate(currentDate.getDate() + 1);
+              currentDate.setUTCDate(currentDate.getUTCDate() + 1);
             }
           }
         });
