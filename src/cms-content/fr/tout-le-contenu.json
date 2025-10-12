@@ -161,42 +161,23 @@
       },
       "paragliding": {
         "title": "Parapente",
-        "items": [
-          "Côte de Jor",
-          "La Fleunie",
-          "Et bien d'autres"
-        ]
+        "items": ["Côte de Jor", "La Fleunie", "Et bien d'autres"]
       },
       "buddhist": {
         "title": "Centres bouddhistes",
-        "items": [
-          "Chanteloube",
-          "Dhagpo Kagyu Ling",
-          "Marfond"
-        ]
+        "items": ["Chanteloube", "Dhagpo Kagyu Ling", "Marfond"]
       },
       "gastronomy": {
         "title": "Gastronomie",
-        "items": [
-          "Truffes",
-          "Foie gras",
-          "Noix"
-        ]
+        "items": ["Truffes", "Foie gras", "Noix"]
       },
       "vineyards": {
         "title": "Vignobles",
-        "items": [
-          "Bergerac",
-          "Monbazillac"
-        ]
+        "items": ["Bergerac", "Monbazillac"]
       },
       "villages": {
         "title": "Plus beaux villages de France",
-        "items": [
-          "Saint-Léon-sur-Vézère",
-          "La Roque-Gageac",
-          "Domme"
-        ]
+        "items": ["Saint-Léon-sur-Vézère", "La Roque-Gageac", "Domme"]
       }
     }
   },
