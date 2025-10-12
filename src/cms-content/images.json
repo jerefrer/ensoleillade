@@ -26,17 +26,17 @@
     },
     "gallery": [
       {
-        "image": "/images/img_5742_ytclc3w-1.webp",
-        "alt": {
-          "fr": "Espace intérieur confortable",
-          "en": "Comfortable interior space"
-        }
-      },
-      {
         "image": "/images/IMG_6087-1.webp",
         "alt": {
           "fr": "Coin repos avec vue",
           "en": "Resting area with view"
+        }
+      },
+      {
+        "image": "/images/img_5742_ytclc3w-1.webp",
+        "alt": {
+          "fr": "Espace intérieur confortable",
+          "en": "Comfortable interior space"
         }
       },
       {
