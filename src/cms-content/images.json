@@ -26,17 +26,10 @@
     },
     "gallery": [
       {
-        "image": "/images/IMG_6088.webp",
+        "image": "/images/img_5742_ytclc3w.webp",
         "alt": {
           "fr": "Espace intérieur confortable",
           "en": "Comfortable interior space"
-        }
-      },
-      {
-        "image": "/images/3.jpg",
-        "alt": {
-          "fr": "Espace de vie lumineux",
-          "en": "Bright living space"
         }
       },
       {
@@ -44,6 +37,13 @@
         "alt": {
           "fr": "Coin repos avec vue",
           "en": "Resting area with view"
+        }
+      },
+      {
+        "image": "/images/3.jpg",
+        "alt": {
+          "fr": "Espace de vie lumineux",
+          "en": "Bright living space"
         }
       },
       {
