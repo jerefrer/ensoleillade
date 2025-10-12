@@ -1,11 +1,18 @@
 ---
+import { Image } from 'astro:assets';
 import images from "../../data/images.yml";
+import { getImage } from "../../utils/imageLoader.js";
 
 interface Props {
   t: any;
   locale: string;
 }
 const { t, locale } = Astro.props as Props;
+
+// Load optimized images
+const lascauxImage = getImage(images.location.lascaux);
+const canoeingImage = getImage(images.location.canoeing);
+const castlesImage = getImage(images.location.castles);
 ---
 
 <!-- Activities Section -->
@@ -47,10 +54,14 @@ const { t, locale } = Astro.props as Props;
           class="relative bg-gradient-to-br from-white via-sage-50/50 to-transparent rounded-2xl p-6 border border-sage-200 shadow-soft card-hover"
         >
           <div class="aspect-[4/3] rounded-xl mb-4 overflow-hidden">
-            <img
-              src={images.location.lascaux}
+            <Image
+              src={lascauxImage}
               alt={t.location.lascaux_alt}
               class="w-full h-full object-cover"
+              widths={[400, 600, 800]}
+              sizes="(max-width: 768px) 100vw, 33vw"
+              loading="lazy"
+              quality={80}
             />
           </div>
 
@@ -71,10 +82,14 @@ const { t, locale } = Astro.props as Props;
           class="relative bg-gradient-to-br from-white via-warm-50/50 to-transparent rounded-2xl p-6 border border-warm-200 shadow-soft card-hover"
         >
           <div class="aspect-[4/3] rounded-xl mb-4 overflow-hidden">
-            <img
-              src={images.location.canoeing}
+            <Image
+              src={canoeingImage}
               alt={t.location.canoeing_alt}
               class="w-full h-full object-cover"
+              widths={[400, 600, 800]}
+              sizes="(max-width: 768px) 100vw, 33vw"
+              loading="lazy"
+              quality={80}
             />
           </div>
 
@@ -95,10 +110,14 @@ const { t, locale } = Astro.props as Props;
           class="relative bg-gradient-to-br from-white via-forest-50/50 to-transparent rounded-2xl p-6 border border-forest-200 shadow-soft card-hover"
         >
           <div class="aspect-[4/3] rounded-xl mb-4 overflow-hidden">
-            <img
-              src={images.location.castles}
+            <Image
+              src={castlesImage}
               alt={t.location.castles_alt}
               class="w-full h-full object-cover"
+              widths={[400, 600, 800]}
+              sizes="(max-width: 768px) 100vw, 33vw"
+              loading="lazy"
+              quality={80}
             />
           </div>
 
