@@ -1,0 +1,222 @@
+{
+  "site": {
+    "title": "L'Ensoleillade - Eco-Friendly Cottage in Dordogne",
+    "description": "Discover L'Ensoleillade, a 19m² eco-friendly cottage with 18m² terrace in the heart of Dordogne. Supports the permaculture association.",
+    "keywords": "eco-friendly cottage, Dordogne, permaculture, Saint-Léon-sur-Vézère, tiny house, nature vacation"
+  },
+  "pricing": {
+    "price_per_night": "€65 / night",
+    "price_note": "(flat rate)",
+    "tourist_tax": "+ tourist tax"
+  },
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "amenities": "Amenities",
+    "location": "Location",
+    "activities": "Activities",
+    "availability": "Availability",
+    "contact": "Contact"
+  },
+  "hero": {
+    "title": "L'Ensoleillade",
+    "subtitle": "Eco-Friendly Cottage in the Heart of Dordogne",
+    "description": "A 19m² tiny house with 18m² terrace in an exceptional natural setting. Your stay supports the development of our permaculture association.",
+    "cta": "Book now"
+  },
+  "about": {
+    "title": "A Meaningful Stay",
+    "subtitle": "Permaculture & Biodiversity",
+    "description": "L'Ensoleillade is much more than just accommodation. It's an ecological project that supports and develops our permaculture association \"Lumière dans le Corps\".",
+    "features": {
+      "eco": "Ecological construction",
+      "wood": "Local wood and dense insulation",
+      "phyto": "Phyto-purification system",
+      "permaculture": "Permaculture site",
+      "biodiversity": "Biodiversity preservation"
+    }
+  },
+  "accommodation": {
+    "title": "Your Accommodation",
+    "size": "19m² + 18m² terrace",
+    "capacity": "1-2 people",
+    "total_area": "Total area",
+    "guest_capacity": "Guest capacity",
+    "pricing": "Pricing",
+    "minimum_stay": "Minimum stay",
+    "minimum_nights": "3 nights (low season) · 7 nights (high season)",
+    "minimum_nights_short": "3-7 nights",
+    "interior": "Interior",
+    "terrace": "Terrace",
+    "sleeping_area": "Sleeping area",
+    "cottage_interior": "Cottage interior",
+    "schedule": "Schedule",
+    "checkin": "Check-in:",
+    "checkout": "Check-out:",
+    "house_rules": "House Rules",
+    "non_smoking": "Non-smoking",
+    "no_pets": "No pets",
+    "no_parties": "No parties",
+    "ecology_title": "Ecology",
+    "self_built": "Self-built",
+    "organic_materials": "Organic materials",
+    "phytopurification": "Phytopurification",
+    "led_lighting": "LED lighting",
+    "solar_panels": "Solar panels to offset air conditioning",
+    "ducks_title": "About our feathered friends",
+    "ducks_message": "<u>We cannot welcome pets</u> due to the presence of 2 free-roaming Indian Runner ducks: Puce and Bo. Thank you for your understanding.",
+    "host_proximity_title": "Your host nearby",
+    "host_proximity_message": "The owner lives in the neighboring house and remains available to welcome you and answer your questions throughout your stay.",
+    "download_contract": "Download rental contract"
+  },
+  "amenities": {
+    "title": "Amenities & Services",
+    "subtitle": "All modern comforts in an exceptional ecological setting",
+    "comfort": {
+      "title": "Comfort",
+      "heating": "Heating",
+      "heating_desc": "Year-round comfort",
+      "ac": "Air conditioning",
+      "ac_desc": "Summer comfort",
+      "beds": "2 beds 190x90",
+      "beds_desc": "Comfortable sleeping",
+      "tv": "TV with DVD player",
+      "tv_desc": "Entertainment",
+      "wifi": "Free Wi-Fi",
+      "wifi_desc": "High-speed connection",
+      "books": "Books",
+      "books_desc": "Relaxation & culture"
+    },
+    "outdoor": {
+      "title": "Outdoor",
+      "terrace": "18m² terrace",
+      "terrace_covered": "Uncovered",
+      "bbq": "Barbecue",
+      "bbq_desc": "Outdoor dining",
+      "hammock": "Hammock",
+      "garden": "Private garden",
+      "garden_desc": "Nature views",
+      "parking": "Free Parking"
+    },
+    "kitchen": {
+      "title": "Kitchen",
+      "equipped": "Equipped kitchenette",
+      "equipped_desc": "Full equipment",
+      "utensils": "Dishes & cutlery",
+      "utensils_desc": "Complete set",
+      "dining": "Outdoor dining areas",
+      "dining_desc": "On the terrace and in the garden"
+    },
+    "basic_services": {
+      "title": "Please Note",
+      "subtitle": "Important information for your stay",
+      "cleaning": "Cleaning",
+      "cleaning_fee": "Optional supplement for €40 per stay",
+      "bed_linen": "Bed linen",
+      "bed_linen_label": "On request",
+      "bed_linen_price": "12€ / person",
+      "towels": "Towels",
+      "towels_label": "On request",
+      "towels_price": "10€ / person"
+    },
+    "ancv": {
+      "title": "ANCV Holiday Vouchers",
+      "accepted": "Accepted"
+    }
+  },
+  "location": {
+    "title": "Location",
+    "subtitle": "Saint-Léon-sur-Vézère, Dordogne",
+    "description": "Located in the heart of Périgord Noir, L'Ensoleillade offers privileged access to Périgord's treasures.",
+    "map_url": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2853.5!2d1.064457!3d45.005348!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47ff576265620cb7%3A0xac1b683acce41a52!2sGite%20L'Ensoleillade!5e1!3m2!1sfr!2sfr!4v1234567890",
+    "nearest_station": "Nearest train station",
+    "station_name": "Les Eyzies - 12 km",
+    "pickup_service": "Possibility to pick you up at the station",
+    "lascaux_alt": "Lascaux Caves",
+    "lascaux_desc": "Exceptional cave art and prehistoric sites",
+    "canoeing_alt": "Canoeing on the Vézère",
+    "canoeing_desc": "Canoeing down the Vézère and hiking",
+    "castles_alt": "Regional castles",
+    "castles_desc": "Medieval castles and remarkable gardens"
+  },
+  "activities": {
+    "title": "Activities & Discoveries",
+    "description": "A region rich in history, culture and natural adventures",
+    "items": {
+      "prehistoric": {
+        "title": "Prehistoric sites",
+        "items": [
+          "Rouffignac Cave",
+          "National Museum of Prehistory",
+          "Font de Gaume Cave"
+        ]
+      },
+      "gardens": {
+        "title": "Remarkable gardens",
+        "items": [
+          "The Water Gardens of Carsac",
+          "Marqueyssac Gardens",
+          "Limeuil Panoramic Gardens"
+        ]
+      },
+      "paragliding": {
+        "title": "Paragliding",
+        "items": [
+          "Côte de Jor",
+          "La Fleunie",
+          "And many more"
+        ]
+      },
+      "buddhist": {
+        "title": "Buddhist centers",
+        "items": [
+          "Chanteloube",
+          "Dhagpo Kagyu Ling",
+          "Marfond"
+        ]
+      },
+      "gastronomy": {
+        "title": "Gastronomy",
+        "items": [
+          "Truffles",
+          "Foie gras",
+          "Walnuts"
+        ]
+      },
+      "vineyards": {
+        "title": "Vineyards",
+        "items": [
+          "Bergerac",
+          "Monbazillac"
+        ]
+      },
+      "villages": {
+        "title": "Most beautiful villages of France",
+        "items": [
+          "Saint-Léon-sur-Vézère",
+          "La Roque-Gageac",
+          "Domme"
+        ]
+      }
+    }
+  },
+  "calendar": {
+    "title": "Availability",
+    "subtitle": "Check our real-time availability",
+    "loading": "Loading calendar...",
+    "available": "Available",
+    "unavailable": "Booked"
+  },
+  "contact": {
+    "title": "Booking & Contact",
+    "subtitle": "Contact us directly to book",
+    "phone": "Phone",
+    "phone_number": "+33 (0)6 76 76 78 89",
+    "email": "Email",
+    "email_address": "lumieredanslecorps@laposte.net"
+  },
+  "lang": {
+    "switch": "Français",
+    "current": "English"
+  }
+}
