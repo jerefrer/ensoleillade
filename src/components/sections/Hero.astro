@@ -32,15 +32,17 @@ const { locale, t } = Astro.props as Props;
       <div class="space-y-8 animate-on-scroll">
         <!-- Association Header - PROMINENT -->
         <div class="space-y-6">
-          <div class="flex flex-col md:flex-row items-center md:items-center gap-6">
+          <div
+            class="flex flex-col md:flex-row items-center md:items-center gap-6"
+          >
             <img
               src="/logo-asso.jpg"
               alt="Association Lumière dans le Corps"
-              class="w-40 md:w-48 h-auto rounded-2xl border-2 border-sage-300 shadow-lg"
+              class="w-40 h-auto rounded-2xl border-2 border-sage-300 shadow-lg"
             />
             <div class="text-center md:text-left">
               <h1
-                class="text-2xl md:text-3xl font-serif font-bold text-forest-800 leading-tight"
+                class="text-2xl xl:text-3xl font-serif font-bold text-forest-800 leading-tight"
               >
                 {
                   locale === "fr"
@@ -60,9 +62,9 @@ const { locale, t } = Astro.props as Props;
         </div>
 
         <!-- Rental Name - Secondary -->
-        <div class="space-y-3 pt-6 border-t border-sage-200">
+        <div class="space-y-3 pt-6 border-t border-sage-200 text-center md:text-left">
           <h2
-            class="text-xl md:text-2xl lg:text-3xl font-serif font-semibold text-forest-700 leading-tight"
+            class="text-2xl lg:text-4xl font-serif font-semibold text-forest-700 leading-tight"
           >
             L'Ensoleillade
           </h2>
