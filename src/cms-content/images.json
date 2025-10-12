@@ -14,19 +14,19 @@
     }
   },
   "accommodation": {
-    "primary": "/images/IMG_6096 cropped.webp",
+    "primary": "/images/IMG_6096.webp",
     "primary_alt": {
       "fr": "Terrasse avec vue sur la nature",
       "en": "Terrace with nature view"
     },
-    "secondary": "/images/1.jpg",
+    "secondary": "/images/5.jpg",
     "secondary_alt": {
       "fr": "Vue panoramique du jardin en permaculture",
       "en": "Panoramic view of the permaculture garden"
     },
     "gallery": [
       {
-        "image": "/images/2.jpg",
+        "image": "/images/IMG_6088.webp",
         "alt": {
           "fr": "Espace intérieur confortable",
           "en": "Comfortable interior space"
@@ -40,7 +40,7 @@
         }
       },
       {
-        "image": "/images/4.jpg",
+        "image": "/images/IMG_6087.webp",
         "alt": {
           "fr": "Coin repos avec vue",
           "en": "Resting area with view"
