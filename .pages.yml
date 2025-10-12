@@ -1,6 +1,6 @@
 media:
-  input: src/assets/images
-  output: /src/assets/images
+  input: public/images
+  output: /images
 
 content:
   - name: site_content
