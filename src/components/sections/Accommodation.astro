@@ -81,11 +81,11 @@ const { t, locale } = Astro.props as Props;
           <div class="text-center">
             <div class="text-2xl font-bold text-blue-900">
               {t.accommodation.price_per_night}
+              <span class="text-xs text-blue-700/80 font-medium ml-1">
+                {t.accommodation.price_note}
+              </span>
             </div>
-            <div class="text-xs text-blue-700/80 font-medium">
-              {t.accommodation.price_note}
-            </div>
-            <div class="text-sm text-blue-600/70 mt-1">
+            <div class="text-sm text-blue-600/70">
               {t.accommodation.tourist_tax}
             </div>
           </div>
