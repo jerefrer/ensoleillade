@@ -253,7 +253,8 @@ const t = getTranslations(locale);
     }
 
     setupScrollBehavior() {
-      window.addEventListener("scroll", () => {
+      // Function to update nav background based on scroll position
+      const updateNavBackground = () => {
         const currentScrollY = window.scrollY;
 
         // Update background opacity based on scroll position
@@ -264,7 +265,13 @@ const t = getTranslations(locale);
           this.navBg.style.opacity = "0";
           this.nav.dataset.navState = "transparent";
         }
-      });
+      };
+
+      // Check initial scroll position on page load
+      updateNavBackground();
+
+      // Listen for scroll events
+      window.addEventListener("scroll", updateNavBackground);
     }
 
     setupMobileMenu() {
