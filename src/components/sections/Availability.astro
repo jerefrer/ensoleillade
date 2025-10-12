@@ -1,9 +1,7 @@
 ---
 import {
-  generateCalendarData,
   MONTH_NAMES,
   DAY_NAMES,
-  fetchBookedDates,
 } from "../../utils/calendar.js";
 
 interface Props {
@@ -11,22 +9,9 @@ interface Props {
   locale: string;
 }
 const { t, locale } = Astro.props as Props;
-const today = new Date();
-const bookedDates = await fetchBookedDates();
-const currentMonth = generateCalendarData(
-  bookedDates,
-  today.getFullYear(),
-  today.getMonth()
-);
-const nextMonth = generateCalendarData(
-  bookedDates,
-  today.getFullYear(),
-  today.getMonth() + 1
-);
 
 // Pass data to client-side script
 const calendarData = {
-  bookedDates,
   locale,
   monthNames: MONTH_NAMES,
   dayNames: DAY_NAMES,
@@ -49,12 +34,24 @@ const calendarData = {
     </div>
 
     <div class="bg-white rounded-lg shadow-lg p-6">
-      <div id="calendar-grid" class="grid md:grid-cols-2 gap-8">
+      <!-- Loading State -->
+      <div id="calendar-loading" class="flex flex-col items-center justify-center py-16">
+        <div class="relative w-16 h-16 mb-4">
+          <div class="absolute inset-0 border-4 border-sage-200 rounded-full"></div>
+          <div class="absolute inset-0 border-4 border-sage-600 rounded-full border-t-transparent animate-spin"></div>
+        </div>
+        <p class="text-earth-600 text-lg">
+          {locale === "fr" ? "Chargement du calendrier..." : "Loading calendar..."}
+        </p>
+      </div>
+
+      <!-- Calendar Grid -->
+      <div id="calendar-grid" class="grid md:grid-cols-2 gap-8 hidden">
         <!-- Will be populated by JavaScript -->
       </div>
 
       <!-- Legend -->
-      <div class="flex justify-center mt-6 gap-6 text-sm">
+      <div id="calendar-legend" class="flex justify-center mt-6 gap-6 text-sm hidden">
         <div class="flex items-center gap-2">
           <div class="w-4 h-4 bg-sage-100 rounded"></div>
           <span class="text-earth-700">
@@ -76,11 +73,12 @@ const calendarData = {
   // Dynamic calendar with month navigation
   class AvailabilityCalendar {
     constructor(data) {
-      this.bookedDates = data.bookedDates;
+      this.bookedDates = [];
       this.locale = data.locale;
       this.monthNames = data.monthNames;
       this.dayNames = data.dayNames;
       this.selectedDates = new Set();
+      this.isLoading = true;
 
       const today = new Date();
       this.currentYear = today.getFullYear();
@@ -89,9 +87,32 @@ const calendarData = {
       this.init();
     }
 
-    init() {
+    async init() {
+      await this.fetchCalendarData();
       this.render();
       this.setupNavigation();
+      this.hideLoading();
+    }
+
+    async fetchCalendarData() {
+      try {
+        const response = await fetch('/api/calendar');
+        const data = await response.json();
+        this.bookedDates = data.bookedDates || [];
+      } catch (error) {
+        console.error('Error fetching calendar data:', error);
+        this.bookedDates = [];
+      }
+    }
+
+    hideLoading() {
+      const loading = document.getElementById('calendar-loading');
+      const grid = document.getElementById('calendar-grid');
+      const legend = document.getElementById('calendar-legend');
+      
+      if (loading) loading.classList.add('hidden');
+      if (grid) grid.classList.remove('hidden');
+      if (legend) legend.classList.remove('hidden');
     }
 
     setupNavigation() {
