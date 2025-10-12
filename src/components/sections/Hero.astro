@@ -131,7 +131,7 @@ const { locale, t } = Astro.props as Props;
             </div>
             <div>
               <div class="font-semibold text-forest-800">
-                {locale === "fr" ? "3 nuits" : "3 nights"}
+                {t.accommodation.minimum_nights_short}
               </div>
               <div class="text-sm text-forest-600">
                 {locale === "fr" ? "Minimum" : "Minimum"}

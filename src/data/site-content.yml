@@ -116,8 +116,11 @@ accommodation:
     fr: Séjour minimum
     en: Minimum stay
   minimum_nights:
-    fr: 3 nuits
-    en: 3 nights
+    fr: 3 nuits (basse saison) · 7 nuits (haute saison)
+    en: 3 nights (low season) · 7 nights (high season)
+  minimum_nights_short:
+    fr: 3-7 nuits
+    en: 3-7 nights
   interior:
     fr: Intérieur
     en: Interior

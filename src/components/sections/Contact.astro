@@ -56,12 +56,17 @@ const { t, locale } = Astro.props as Props;
       </div>
 
       <div
-        class="inline-flex items-center px-6 py-3 bg-white/90 backdrop-blur-sm border-2 border-forest-200 rounded-xl shadow-sm"
+        class="inline-block px-6 py-3 bg-white/90 backdrop-blur-sm border-2 border-forest-200 rounded-xl shadow-sm text-center"
       >
-        <span class="text-forest-600 mr-2">🗓️</span>
-        <span class="font-semibold text-forest-800">
-          {locale === "fr" ? "3 nuits minimum" : "3 nights minimum"}
-        </span>
+        <div class="flex items-center justify-center mb-1">
+          <span class="text-forest-600 mr-2">🗓️</span>
+          <span class="font-semibold text-forest-800">
+            {t.accommodation.minimum_stay}
+          </span>
+        </div>
+        <div class="text-sm text-forest-700">
+          {t.accommodation.minimum_nights}
+        </div>
       </div>
     </div>
 
