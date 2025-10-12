@@ -32,15 +32,15 @@ const { locale, t } = Astro.props as Props;
       <div class="space-y-8 animate-on-scroll">
         <!-- Association Header - PROMINENT -->
         <div class="space-y-6">
-          <div class="flex items-center gap-6">
+          <div class="flex flex-col md:flex-row items-center md:items-center gap-6">
             <img
               src="/logo-asso.jpg"
               alt="Association Lumière dans le Corps"
               class="w-40 md:w-48 h-auto rounded-2xl border-2 border-sage-300 shadow-lg"
             />
-            <div>
+            <div class="text-center md:text-left">
               <h1
-                class="text-2xl md:text-3xl lg:text-4xl font-serif font-bold text-forest-800 leading-tight"
+                class="text-2xl md:text-3xl font-serif font-bold text-forest-800 leading-tight"
               >
                 {
                   locale === "fr"
@@ -141,7 +141,7 @@ const { locale, t } = Astro.props as Props;
           <!-- Pricing Badge -->
           <div>
             <div
-              class="inline-flex items-center px-6 py-3 bg-blue-50/80 backdrop-blur-sm border-2 border-blue-200 rounded-xl shadow-sm"
+              class="inline-block px-6 py-3 bg-blue-50/80 backdrop-blur-sm border-2 border-blue-200 rounded-xl shadow-sm"
             >
               <span class="font-semibold text-blue-900">
                 {t.pricing.price_per_night}
