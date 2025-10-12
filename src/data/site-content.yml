@@ -279,8 +279,8 @@ amenities:
       fr: Coin repas extérieur
       en: Outdoor dining area
     dining_desc:
-      fr: Espace repas
-      en: Dining space
+      fr: Sur la terrasse et dans le jardin
+      en: On the terrace and in the garden
   basic_services:
     title:
       fr: À Prévoir
