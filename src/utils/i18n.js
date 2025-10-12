@@ -1,5 +1,11 @@
 // i18n utilities
-import siteContent from "../data/site-content.yml";
+import siteContentFr from "../cms-content/fr/tout-le-contenu.json";
+import siteContentEn from "../cms-content/en/tout-le-contenu.json";
+
+const siteContent = {
+  fr: siteContentFr,
+  en: siteContentEn
+};
 
 /**
  * Sanitizes HTML to only allow safe inline formatting tags
@@ -37,8 +43,8 @@ function sanitizeHTML(html) {
   return sanitized;
 }
 
-// Helper function to extract locale-specific values from nested objects
-function extractLocale(obj, locale) {
+// Helper function to sanitize all string values in nested objects
+function sanitizeContent(obj) {
   if (!obj) return obj;
   
   if (typeof obj !== 'object') {
@@ -46,22 +52,22 @@ function extractLocale(obj, locale) {
     return typeof obj === 'string' ? sanitizeHTML(obj) : obj;
   }
   
-  // If this object has locale keys (fr/en), return the specific locale
-  if (obj.hasOwnProperty('fr') && obj.hasOwnProperty('en')) {
-    const value = obj[locale] || obj['fr'];
-    return typeof value === 'string' ? sanitizeHTML(value) : value;
+  // Recursively process nested objects and arrays
+  if (Array.isArray(obj)) {
+    return obj.map(item => sanitizeContent(item));
   }
   
-  // Otherwise, recursively process nested objects
   const result = {};
   for (const [key, value] of Object.entries(obj)) {
-    result[key] = extractLocale(value, locale);
+    result[key] = sanitizeContent(value);
   }
   return result;
 }
 
 export function getTranslations(locale = "fr") {
-  return extractLocale(siteContent, locale);
+  const content = siteContent[locale] || siteContent.fr;
+  // Apply sanitization to all string values
+  return sanitizeContent(content);
 }
 
 export function t(key, locale = "fr") {
