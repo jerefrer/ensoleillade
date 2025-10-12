@@ -44,9 +44,10 @@ collections:
     label: 'Contenu du Site'
     label_singular: 'Contenu'
     folder: 'src/cms-content'
-    slug: 'site-content'
+    slug: 'contenu-du-site'
     extension: json
     i18n: true
+    create: false
     fields:
       - label: 'Informations du Site'
         name: 'site'
