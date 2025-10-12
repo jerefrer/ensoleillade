@@ -36,11 +36,19 @@ export async function fetchBookedDates() {
             // Handle both Date objects and date strings
             let startDateStr, endDateStr;
             
+            // For date-only events (no time component), use the date directly
             if (typeof event.start === 'string') {
               // Parse date string (format: YYYYMMDD)
               startDateStr = event.start.replace(/(\d{4})(\d{2})(\d{2})/, '$1-$2-$3');
+            } else if (event.start.dateOnly || event.start.toISOString().includes('T00:00:00')) {
+              // Date-only event - use local date components to avoid timezone shifts
+              const d = event.start;
+              const year = d.getFullYear();
+              const month = String(d.getMonth() + 1).padStart(2, '0');
+              const day = String(d.getDate()).padStart(2, '0');
+              startDateStr = `${year}-${month}-${day}`;
             } else {
-              // Convert Date object to YYYY-MM-DD string using UTC to avoid timezone shifts
+              // Timed event - use UTC
               const d = new Date(event.start);
               const year = d.getUTCFullYear();
               const month = String(d.getUTCMonth() + 1).padStart(2, '0');
@@ -50,8 +58,15 @@ export async function fetchBookedDates() {
             
             if (typeof event.end === 'string') {
               endDateStr = event.end.replace(/(\d{4})(\d{2})(\d{2})/, '$1-$2-$3');
+            } else if (event.end.dateOnly || event.end.toISOString().includes('T00:00:00')) {
+              // Date-only event - use local date components to avoid timezone shifts
+              const d = event.end;
+              const year = d.getFullYear();
+              const month = String(d.getMonth() + 1).padStart(2, '0');
+              const day = String(d.getDate()).padStart(2, '0');
+              endDateStr = `${year}-${month}-${day}`;
             } else {
-              // Convert Date object to YYYY-MM-DD string using UTC to avoid timezone shifts
+              // Timed event - use UTC
               const d = new Date(event.end);
               const year = d.getUTCFullYear();
               const month = String(d.getUTCMonth() + 1).padStart(2, '0');
