@@ -1,8 +1,5 @@
 ---
-import {
-  MONTH_NAMES,
-  DAY_NAMES,
-} from "../../utils/calendar.js";
+import { MONTH_NAMES, DAY_NAMES } from "../../utils/calendar.js";
 
 interface Props {
   t: any;
@@ -18,11 +15,20 @@ const calendarData = {
 };
 ---
 
-<section id="availability" class="py-20 bg-gradient-to-br from-sage-50 via-warm-50 to-earth-50 relative overflow-hidden">
+<section
+  id="availability"
+  class="py-20 bg-gradient-to-br from-sage-50 via-warm-50 to-earth-50 relative overflow-hidden"
+>
   <!-- Background decoration -->
-  <div class="absolute top-0 right-0 w-96 h-96 bg-sage-300/20 rounded-full blur-3xl"></div>
-  <div class="absolute bottom-0 left-0 w-80 h-80 bg-warm-300/20 rounded-full blur-3xl"></div>
-  
+  <div
+    class="absolute top-0 right-0 w-96 h-96 bg-sage-300/20 rounded-full blur-3xl"
+  >
+  </div>
+  <div
+    class="absolute bottom-0 left-0 w-80 h-80 bg-warm-300/20 rounded-full blur-3xl"
+  >
+  </div>
+
   <div class="max-w-4xl mx-auto px-4 relative z-10">
     <div class="text-center mb-12">
       <h2 class="text-4xl font-serif font-bold text-earth-800 mb-4">
@@ -35,23 +41,38 @@ const calendarData = {
 
     <div class="bg-white rounded-lg shadow-lg p-6">
       <!-- Loading State -->
-      <div id="calendar-loading" class="flex flex-col items-center justify-center py-16">
+      <div
+        id="calendar-loading"
+        class="flex flex-col items-center justify-center"
+        style="min-height: 463px;"
+      >
         <div class="relative w-16 h-16 mb-4">
-          <div class="absolute inset-0 border-4 border-sage-200 rounded-full"></div>
-          <div class="absolute inset-0 border-4 border-sage-600 rounded-full border-t-transparent animate-spin"></div>
+          <div class="absolute inset-0 border-4 border-sage-200 rounded-full">
+          </div>
+          <div
+            class="absolute inset-0 border-4 border-sage-600 rounded-full border-t-transparent animate-spin"
+          >
+          </div>
         </div>
         <p class="text-earth-600 text-lg">
-          {locale === "fr" ? "Chargement du calendrier..." : "Loading calendar..."}
+          {
+            locale === "fr"
+              ? "Chargement du calendrier..."
+              : "Loading calendar..."
+          }
         </p>
       </div>
 
       <!-- Calendar Grid -->
-      <div id="calendar-grid" class="grid md:grid-cols-2 gap-8 hidden">
+      <div id="calendar-grid" class="hidden md:grid-cols-2 gap-8">
         <!-- Will be populated by JavaScript -->
       </div>
 
       <!-- Legend -->
-      <div id="calendar-legend" class="flex justify-center mt-6 gap-6 text-sm hidden">
+      <div
+        id="calendar-legend"
+        class="hidden justify-center mt-6 gap-6 text-sm"
+      >
         <div class="flex items-center gap-2">
           <div class="w-4 h-4 bg-sage-100 rounded"></div>
           <span class="text-earth-700">
@@ -96,23 +117,29 @@ const calendarData = {
 
     async fetchCalendarData() {
       try {
-        const response = await fetch('/api/calendar');
+        const response = await fetch("/api/calendar");
         const data = await response.json();
         this.bookedDates = data.bookedDates || [];
       } catch (error) {
-        console.error('Error fetching calendar data:', error);
+        console.error("Error fetching calendar data:", error);
         this.bookedDates = [];
       }
     }
 
     hideLoading() {
-      const loading = document.getElementById('calendar-loading');
-      const grid = document.getElementById('calendar-grid');
-      const legend = document.getElementById('calendar-legend');
-      
-      if (loading) loading.classList.add('hidden');
-      if (grid) grid.classList.remove('hidden');
-      if (legend) legend.classList.remove('hidden');
+      const loading = document.getElementById("calendar-loading");
+      const grid = document.getElementById("calendar-grid");
+      const legend = document.getElementById("calendar-legend");
+
+      if (loading) loading.classList.add("hidden");
+      if (grid) {
+        grid.classList.remove("hidden");
+        grid.classList.add("grid");
+      }
+      if (legend) {
+        legend.classList.remove("hidden");
+        legend.classList.add("flex");
+      }
     }
 
     setupNavigation() {
