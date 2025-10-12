@@ -1,0 +1,430 @@
+local_backend: true
+
+logo_url: /favicon.svg
+
+backend:
+  name: github
+  repo: jerefrer/ensoleillade
+  branch: main
+
+publish_mode: editorial_workflow
+
+slug:
+  encoding: 'ascii'
+  clean_accents: true
+  sanitize_replacement: '-'
+
+media_folder: "public/images"
+public_folder: "/images"
+
+# Image optimization configuration
+media_library:
+  config:
+    transformations:
+      raster_image:
+        format: webp
+        quality: 85
+        width: 2048
+        height: 2048
+      svg:
+        optimize: true
+
+# i18n configuration - enables side-by-side translation editing
+i18n:
+  structure: single_file
+  locales: [fr, en]
+  default_locale: fr
+
+collections:
+  # Site Content with i18n support
+  - name: 'site_content'
+    label: 'Site Content'
+    files:
+      - name: 'content'
+        label: 'All Content'
+        file: 'src/data/site-content.yml'
+        i18n: true
+        fields:
+          - label: 'Site Information'
+            name: 'site'
+            widget: 'object'
+            i18n: true
+            fields:
+              - { label: 'Title', name: 'title', widget: 'string', i18n: true }
+              - { label: 'Description', name: 'description', widget: 'text', i18n: true }
+              - { label: 'Keywords', name: 'keywords', widget: 'string', i18n: true }
+
+          - label: 'Pricing'
+            name: 'pricing'
+            widget: 'object'
+            i18n: true
+            fields:
+              - { label: 'Price per Night', name: 'price_per_night', widget: 'string', i18n: true }
+              - { label: 'Price Note', name: 'price_note', widget: 'string', i18n: true }
+              - { label: 'Tourist Tax', name: 'tourist_tax', widget: 'string', i18n: true }
+
+          - label: 'Navigation'
+            name: 'nav'
+            widget: 'object'
+            i18n: true
+            fields:
+              - { label: 'Home', name: 'home', widget: 'string', i18n: true }
+              - { label: 'About', name: 'about', widget: 'string', i18n: true }
+              - { label: 'Amenities', name: 'amenities', widget: 'string', i18n: true }
+              - { label: 'Location', name: 'location', widget: 'string', i18n: true }
+              - { label: 'Activities', name: 'activities', widget: 'string', i18n: true }
+              - { label: 'Availability', name: 'availability', widget: 'string', i18n: true }
+              - { label: 'Contact', name: 'contact', widget: 'string', i18n: true }
+
+          - label: 'Hero Section'
+            name: 'hero'
+            widget: 'object'
+            i18n: true
+            fields:
+              - { label: 'Title', name: 'title', widget: 'string', i18n: true }
+              - { label: 'Subtitle', name: 'subtitle', widget: 'string', i18n: true }
+              - { label: 'Description', name: 'description', widget: 'text', i18n: true }
+              - { label: 'Call to Action', name: 'cta', widget: 'string', i18n: true }
+
+          - label: 'About Section'
+            name: 'about'
+            widget: 'object'
+            i18n: true
+            fields:
+              - { label: 'Title', name: 'title', widget: 'string', i18n: true }
+              - { label: 'Subtitle', name: 'subtitle', widget: 'string', i18n: true }
+              - { label: 'Description', name: 'description', widget: 'text', i18n: true }
+              - label: 'Features'
+                name: 'features'
+                widget: 'object'
+                i18n: true
+                fields:
+                  - { label: 'Eco Construction', name: 'eco', widget: 'string', i18n: true }
+                  - { label: 'Wood & Insulation', name: 'wood', widget: 'string', i18n: true }
+                  - { label: 'Phyto-purification', name: 'phyto', widget: 'string', i18n: true }
+                  - { label: 'Permaculture', name: 'permaculture', widget: 'string', i18n: true }
+                  - { label: 'Biodiversity', name: 'biodiversity', widget: 'string', i18n: true }
+
+          - label: 'Accommodation Section'
+            name: 'accommodation'
+            widget: 'object'
+            i18n: true
+            fields:
+              - { label: 'Title', name: 'title', widget: 'string', i18n: true }
+              - { label: 'Size', name: 'size', widget: 'string', i18n: true }
+              - { label: 'Capacity', name: 'capacity', widget: 'string', i18n: true }
+              - { label: 'Total Area', name: 'total_area', widget: 'string', i18n: true }
+              - { label: 'Guest Capacity', name: 'guest_capacity', widget: 'string', i18n: true }
+              - { label: 'Pricing', name: 'pricing', widget: 'string', i18n: true }
+              - { label: 'Minimum Stay', name: 'minimum_stay', widget: 'string', i18n: true }
+              - { label: 'Minimum Nights', name: 'minimum_nights', widget: 'string', i18n: true }
+              - { label: 'Minimum Nights Short', name: 'minimum_nights_short', widget: 'string', i18n: true }
+              - { label: 'Interior', name: 'interior', widget: 'string', i18n: true }
+              - { label: 'Terrace', name: 'terrace', widget: 'string', i18n: true }
+              - { label: 'Sleeping Area', name: 'sleeping_area', widget: 'string', i18n: true }
+              - { label: 'Cottage Interior', name: 'cottage_interior', widget: 'string', i18n: true }
+              - { label: 'Schedule', name: 'schedule', widget: 'string', i18n: true }
+              - { label: 'Check-in', name: 'checkin', widget: 'string', i18n: true }
+              - { label: 'Check-out', name: 'checkout', widget: 'string', i18n: true }
+              - { label: 'House Rules', name: 'house_rules', widget: 'string', i18n: true }
+              - { label: 'Non Smoking', name: 'non_smoking', widget: 'string', i18n: true }
+              - { label: 'No Pets', name: 'no_pets', widget: 'string', i18n: true }
+              - { label: 'No Parties', name: 'no_parties', widget: 'string', i18n: true }
+              - { label: 'Ecology Title', name: 'ecology_title', widget: 'string', i18n: true }
+              - { label: 'Self Built', name: 'self_built', widget: 'string', i18n: true }
+              - { label: 'Organic Materials', name: 'organic_materials', widget: 'string', i18n: true }
+              - { label: 'Phytopurification', name: 'phytopurification', widget: 'string', i18n: true }
+              - { label: 'LED Lighting', name: 'led_lighting', widget: 'string', i18n: true }
+              - { label: 'Solar Panels', name: 'solar_panels', widget: 'string', i18n: true }
+              - { label: 'Ducks Title', name: 'ducks_title', widget: 'string', i18n: true }
+              - { label: 'Ducks Message', name: 'ducks_message', widget: 'text', i18n: true }
+              - { label: 'Host Proximity Title', name: 'host_proximity_title', widget: 'string', i18n: true }
+              - { label: 'Host Proximity Message', name: 'host_proximity_message', widget: 'text', i18n: true }
+              - { label: 'Download Contract', name: 'download_contract', widget: 'string', i18n: true }
+
+          - label: 'Amenities Section'
+            name: 'amenities'
+            widget: 'object'
+            i18n: true
+            fields:
+              - { label: 'Title', name: 'title', widget: 'string', i18n: true }
+              - { label: 'Subtitle', name: 'subtitle', widget: 'string', i18n: true }
+              - label: 'Comfort'
+                name: 'comfort'
+                widget: 'object'
+                i18n: true
+                fields:
+                  - { label: 'Title', name: 'title', widget: 'string', i18n: true }
+                  - { label: 'Heating', name: 'heating', widget: 'string', i18n: true }
+                  - { label: 'Heating Description', name: 'heating_desc', widget: 'string', i18n: true }
+                  - { label: 'Air Conditioning', name: 'ac', widget: 'string', i18n: true }
+                  - { label: 'AC Description', name: 'ac_desc', widget: 'string', i18n: true }
+                  - { label: 'Beds', name: 'beds', widget: 'string', i18n: true }
+                  - { label: 'Beds Description', name: 'beds_desc', widget: 'string', i18n: true }
+                  - { label: 'TV', name: 'tv', widget: 'string', i18n: true }
+                  - { label: 'TV Description', name: 'tv_desc', widget: 'string', i18n: true }
+                  - { label: 'WiFi', name: 'wifi', widget: 'string', i18n: true }
+                  - { label: 'WiFi Description', name: 'wifi_desc', widget: 'string', i18n: true }
+                  - { label: 'Books', name: 'books', widget: 'string', i18n: true }
+                  - { label: 'Books Description', name: 'books_desc', widget: 'string', i18n: true }
+              - label: 'Outdoor'
+                name: 'outdoor'
+                widget: 'object'
+                i18n: true
+                fields:
+                  - { label: 'Title', name: 'title', widget: 'string', i18n: true }
+                  - { label: 'Terrace', name: 'terrace', widget: 'string', i18n: true }
+                  - { label: 'Terrace Covered', name: 'terrace_covered', widget: 'string', i18n: true }
+                  - { label: 'BBQ', name: 'bbq', widget: 'string', i18n: true }
+                  - { label: 'BBQ Description', name: 'bbq_desc', widget: 'string', i18n: true }
+                  - { label: 'Hammock', name: 'hammock', widget: 'string', i18n: true }
+                  - { label: 'Garden', name: 'garden', widget: 'string', i18n: true }
+                  - { label: 'Garden Description', name: 'garden_desc', widget: 'string', i18n: true }
+                  - { label: 'Parking', name: 'parking', widget: 'string', i18n: true }
+              - label: 'Kitchen'
+                name: 'kitchen'
+                widget: 'object'
+                i18n: true
+                fields:
+                  - { label: 'Title', name: 'title', widget: 'string', i18n: true }
+                  - { label: 'Equipped', name: 'equipped', widget: 'string', i18n: true }
+                  - { label: 'Equipped Description', name: 'equipped_desc', widget: 'string', i18n: true }
+                  - { label: 'Utensils', name: 'utensils', widget: 'string', i18n: true }
+                  - { label: 'Utensils Description', name: 'utensils_desc', widget: 'string', i18n: true }
+                  - { label: 'Dining', name: 'dining', widget: 'string', i18n: true }
+                  - { label: 'Dining Description', name: 'dining_desc', widget: 'string', i18n: true }
+              - label: 'Basic Services'
+                name: 'basic_services'
+                widget: 'object'
+                i18n: true
+                fields:
+                  - { label: 'Title', name: 'title', widget: 'string', i18n: true }
+                  - { label: 'Subtitle', name: 'subtitle', widget: 'string', i18n: true }
+                  - { label: 'Cleaning', name: 'cleaning', widget: 'string', i18n: true }
+                  - { label: 'Cleaning Fee', name: 'cleaning_fee', widget: 'string', i18n: true }
+                  - { label: 'Bed Linen', name: 'bed_linen', widget: 'string', i18n: true }
+                  - { label: 'Bed Linen Label', name: 'bed_linen_label', widget: 'string', i18n: true }
+                  - { label: 'Bed Linen Price', name: 'bed_linen_price', widget: 'string', i18n: true }
+                  - { label: 'Towels', name: 'towels', widget: 'string', i18n: true }
+                  - { label: 'Towels Label', name: 'towels_label', widget: 'string', i18n: true }
+                  - { label: 'Towels Price', name: 'towels_price', widget: 'string', i18n: true }
+              - label: 'ANCV'
+                name: 'ancv'
+                widget: 'object'
+                i18n: true
+                fields:
+                  - { label: 'Title', name: 'title', widget: 'string', i18n: true }
+                  - { label: 'Accepted', name: 'accepted', widget: 'string', i18n: true }
+
+          - label: 'Location Section'
+            name: 'location'
+            widget: 'object'
+            i18n: true
+            fields:
+              - { label: 'Title', name: 'title', widget: 'string', i18n: true }
+              - { label: 'Subtitle', name: 'subtitle', widget: 'string', i18n: true }
+              - { label: 'Description', name: 'description', widget: 'text', i18n: true }
+              - { label: 'Map URL', name: 'map_url', widget: 'string', i18n: duplicate }
+              - { label: 'Nearest Station', name: 'nearest_station', widget: 'string', i18n: true }
+              - { label: 'Station Name', name: 'station_name', widget: 'string', i18n: true }
+              - { label: 'Pickup Service', name: 'pickup_service', widget: 'string', i18n: true }
+              - { label: 'Lascaux Alt', name: 'lascaux_alt', widget: 'string', i18n: true }
+              - { label: 'Lascaux Description', name: 'lascaux_desc', widget: 'string', i18n: true }
+              - { label: 'Canoeing Alt', name: 'canoeing_alt', widget: 'string', i18n: true }
+              - { label: 'Canoeing Description', name: 'canoeing_desc', widget: 'string', i18n: true }
+              - { label: 'Castles Alt', name: 'castles_alt', widget: 'string', i18n: true }
+              - { label: 'Castles Description', name: 'castles_desc', widget: 'string', i18n: true }
+
+          - label: 'Activities Section'
+            name: 'activities'
+            widget: 'object'
+            i18n: true
+            fields:
+              - { label: 'Title', name: 'title', widget: 'string', i18n: true }
+              - { label: 'Description', name: 'description', widget: 'string', i18n: true }
+              - label: 'Items'
+                name: 'items'
+                widget: 'object'
+                i18n: true
+                fields:
+                  - label: 'Prehistoric Sites'
+                    name: 'prehistoric'
+                    widget: 'object'
+                    i18n: true
+                    fields:
+                      - { label: 'Title', name: 'title', widget: 'string', i18n: true }
+                      - { label: 'Items', name: 'items', widget: 'list', i18n: true }
+                  - label: 'Gardens'
+                    name: 'gardens'
+                    widget: 'object'
+                    i18n: true
+                    fields:
+                      - { label: 'Title', name: 'title', widget: 'string', i18n: true }
+                      - { label: 'Items', name: 'items', widget: 'list', i18n: true }
+                  - label: 'Paragliding'
+                    name: 'paragliding'
+                    widget: 'object'
+                    i18n: true
+                    fields:
+                      - { label: 'Title', name: 'title', widget: 'string', i18n: true }
+                      - { label: 'Items', name: 'items', widget: 'list', i18n: true }
+                  - label: 'Buddhist Centers'
+                    name: 'buddhist'
+                    widget: 'object'
+                    i18n: true
+                    fields:
+                      - { label: 'Title', name: 'title', widget: 'string', i18n: true }
+                      - { label: 'Items', name: 'items', widget: 'list', i18n: true }
+                  - label: 'Gastronomy'
+                    name: 'gastronomy'
+                    widget: 'object'
+                    i18n: true
+                    fields:
+                      - { label: 'Title', name: 'title', widget: 'string', i18n: true }
+                      - { label: 'Items', name: 'items', widget: 'list', i18n: true }
+                  - label: 'Vineyards'
+                    name: 'vineyards'
+                    widget: 'object'
+                    i18n: true
+                    fields:
+                      - { label: 'Title', name: 'title', widget: 'string', i18n: true }
+                      - { label: 'Items', name: 'items', widget: 'list', i18n: true }
+                  - label: 'Villages'
+                    name: 'villages'
+                    widget: 'object'
+                    i18n: true
+                    fields:
+                      - { label: 'Title', name: 'title', widget: 'string', i18n: true }
+                      - { label: 'Items', name: 'items', widget: 'list', i18n: true }
+
+          - label: 'Calendar Section'
+            name: 'calendar'
+            widget: 'object'
+            i18n: true
+            fields:
+              - { label: 'Title', name: 'title', widget: 'string', i18n: true }
+              - { label: 'Subtitle', name: 'subtitle', widget: 'string', i18n: true }
+              - { label: 'Loading Text', name: 'loading', widget: 'string', i18n: true }
+              - { label: 'Available', name: 'available', widget: 'string', i18n: true }
+              - { label: 'Unavailable', name: 'unavailable', widget: 'string', i18n: true }
+
+          - label: 'Contact Section'
+            name: 'contact'
+            widget: 'object'
+            i18n: true
+            fields:
+              - { label: 'Title', name: 'title', widget: 'string', i18n: true }
+              - { label: 'Subtitle', name: 'subtitle', widget: 'string', i18n: true }
+              - { label: 'Phone Label', name: 'phone', widget: 'string', i18n: true }
+              - { label: 'Phone Number', name: 'phone_number', widget: 'string', i18n: duplicate }
+              - { label: 'Email Label', name: 'email', widget: 'string', i18n: true }
+              - { label: 'Email Address', name: 'email_address', widget: 'string', i18n: duplicate }
+
+          - label: 'Language Switcher'
+            name: 'lang'
+            widget: 'object'
+            i18n: true
+            fields:
+              - { label: 'Switch To', name: 'switch', widget: 'string', i18n: true }
+              - { label: 'Current Language', name: 'current', widget: 'string', i18n: true }
+
+  # Site Images
+  - name: 'site_images'
+    label: 'Site Images'
+    files:
+      - name: 'images'
+        label: 'All Images'
+        file: 'src/data/images.yml'
+        fields:
+          - label: 'Hero Section'
+            name: 'hero'
+            widget: 'object'
+            fields:
+              - { label: 'Primary Image', name: 'primary', widget: 'image', required: false }
+              - label: 'Primary Alt Text'
+                name: 'primary_alt'
+                widget: 'object'
+                fields:
+                  - { label: 'French', name: 'fr', widget: 'string' }
+                  - { label: 'English', name: 'en', widget: 'string' }
+          
+          - label: 'About Section'
+            name: 'about'
+            widget: 'object'
+            fields:
+              - { label: 'Primary Image', name: 'primary', widget: 'image', required: false }
+              - label: 'Primary Alt Text'
+                name: 'primary_alt'
+                widget: 'object'
+                fields:
+                  - { label: 'French', name: 'fr', widget: 'string' }
+                  - { label: 'English', name: 'en', widget: 'string' }
+          
+          - label: 'Accommodation'
+            name: 'accommodation'
+            widget: 'object'
+            fields:
+              - { label: 'Primary Image', name: 'primary', widget: 'image', required: false }
+              - label: 'Primary Alt Text'
+                name: 'primary_alt'
+                widget: 'object'
+                fields:
+                  - { label: 'French', name: 'fr', widget: 'string' }
+                  - { label: 'English', name: 'en', widget: 'string' }
+              - { label: 'Secondary Image', name: 'secondary', widget: 'image', required: false }
+              - label: 'Secondary Alt Text'
+                name: 'secondary_alt'
+                widget: 'object'
+                fields:
+                  - { label: 'French', name: 'fr', widget: 'string' }
+                  - { label: 'English', name: 'en', widget: 'string' }
+              - label: 'Gallery'
+                name: 'gallery'
+                widget: 'list'
+                required: false
+                fields:
+                  - { label: 'Image', name: 'image', widget: 'image' }
+                  - label: 'Alt Text'
+                    name: 'alt'
+                    widget: 'object'
+                    fields:
+                      - { label: 'French', name: 'fr', widget: 'string' }
+                      - { label: 'English', name: 'en', widget: 'string' }
+          
+          - label: 'Activities'
+            name: 'activities'
+            widget: 'object'
+            fields:
+              - label: 'Lascaux'
+                name: 'lascaux'
+                widget: 'object'
+                fields:
+                  - { label: 'Image', name: 'image', widget: 'image', required: false }
+                  - label: 'Alt Text'
+                    name: 'alt'
+                    widget: 'object'
+                    fields:
+                      - { label: 'French', name: 'fr', widget: 'string' }
+                      - { label: 'English', name: 'en', widget: 'string' }
+              - label: 'Canoeing'
+                name: 'canoeing'
+                widget: 'object'
+                fields:
+                  - { label: 'Image', name: 'image', widget: 'image', required: false }
+                  - label: 'Alt Text'
+                    name: 'alt'
+                    widget: 'object'
+                    fields:
+                      - { label: 'French', name: 'fr', widget: 'string' }
+                      - { label: 'English', name: 'en', widget: 'string' }
+              - label: 'Castles'
+                name: 'castles'
+                widget: 'object'
+                fields:
+                  - { label: 'Image', name: 'image', widget: 'image', required: false }
+                  - label: 'Alt Text'
+                    name: 'alt'
+                    widget: 'object'
+                    fields:
+                      - { label: 'French', name: 'fr', widget: 'string' }
+                      - { label: 'English', name: 'en', widget: 'string' }
