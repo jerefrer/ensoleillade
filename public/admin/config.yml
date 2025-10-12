@@ -2,6 +2,8 @@ local_backend: true
 
 logo_url: /favicon.svg
 
+locale: fr
+
 backend:
   name: github
   repo: jerefrer/ensoleillade
@@ -85,7 +87,7 @@ collections:
           - { label: 'Titre', name: 'title', widget: 'string', i18n: true }
           - { label: 'Sous-titre', name: 'subtitle', widget: 'string', i18n: true }
           - { label: 'Description', name: 'description', widget: 'text', i18n: true }
-          - { label: 'Appel à l\'action', name: 'cta', widget: 'string', i18n: true }
+          - { label: "Appel à l'action", name: 'cta', widget: 'string', i18n: true }
 
       - label: 'Section À propos'
         name: 'about'
@@ -116,7 +118,7 @@ collections:
           - { label: 'Taille', name: 'size', widget: 'string', i18n: true }
           - { label: 'Capacité', name: 'capacity', widget: 'string', i18n: true }
           - { label: 'Surface totale', name: 'total_area', widget: 'string', i18n: true }
-          - { label: 'Capacité d\'accueil', name: 'guest_capacity', widget: 'string', i18n: true }
+          - { label: "Capacité d'accueil", name: 'guest_capacity', widget: 'string', i18n: true }
           - { label: 'Tarif', name: 'pricing', widget: 'string', i18n: true }
           - { label: 'Séjour minimum', name: 'minimum_stay', widget: 'string', i18n: true }
           - { label: 'Nuits minimum', name: 'minimum_nights', widget: 'string', i18n: true }
