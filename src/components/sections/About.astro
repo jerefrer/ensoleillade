@@ -165,30 +165,6 @@ const { t, locale } = Astro.props as Props;
               class="w-full h-full object-cover"
             />
           </div>
-
-          <!-- Floating Stats Cards -->
-          <div
-            class="absolute -top-4 -right-4 bg-white rounded-xl p-4 shadow-medium animate-float"
-          >
-            <div class="text-center">
-              <div class="text-2xl font-bold text-sage-600">100%</div>
-              <div class="text-xs text-forest-600">
-                {locale === "fr" ? "Naturel" : "Natural"}
-              </div>
-            </div>
-          </div>
-
-          <div
-            class="absolute -bottom-4 -left-4 bg-white rounded-xl p-4 shadow-medium animate-float"
-            style="animation-delay: 1s;"
-          >
-            <div class="text-center">
-              <div class="text-2xl font-bold text-warm-600">37m²</div>
-              <div class="text-xs text-forest-600">
-                {locale === "fr" ? "Total" : "Total"}
-              </div>
-            </div>
-          </div>
         </div>
       </div>
     </div>
