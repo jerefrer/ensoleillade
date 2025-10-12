@@ -1,7 +1,5 @@
 ---
-import { Image } from 'astro:assets';
 import images from "../../data/images.yml";
-import { getImage } from "../../utils/imageLoader.js";
 
 interface Props {
   locale: string;
@@ -9,9 +7,6 @@ interface Props {
 }
 
 const { locale, t } = Astro.props as Props;
-
-// Load optimized images
-const heroImage = getImage(images.hero.main);
 ---
 
 <!-- Modern Split-Screen Hero Section -->
@@ -284,17 +279,14 @@ const heroImage = getImage(images.hero.main);
         <div
           class="relative h-96 lg:h-full rounded-2xl overflow-hidden shadow-large"
         >
-          <Image
-            src={heroImage}
+          <img
+            src={images.hero.main}
             alt={locale === "fr"
               ? "L'Ensoleillade - Gîte écologique en Dordogne"
               : "L'Ensoleillade - Eco-friendly cottage in Dordogne"}
             class="w-full h-full object-cover"
             style="object-position: 70%;"
-            widths={[400, 800, 1200, 1600]}
-            sizes="(max-width: 768px) 100vw, 50vw"
             loading="eager"
-            quality={85}
           />
         </div>
       </div>
