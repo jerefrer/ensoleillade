@@ -158,10 +158,8 @@ const { t, locale } = Astro.props as Props;
         <div class="relative mb-8">
           <div class="aspect-[4/5] rounded-2xl overflow-hidden shadow-large">
             <img
-              src={images.about.feature}
-              alt={locale === "fr"
-                ? "Construction écologique du gîte"
-                : "Eco-friendly cottage construction"}
+              src={images.about.primary}
+              alt={locale === "fr" ? images.about.primary_alt.fr : images.about.primary_alt.en}
               class="w-full h-full object-cover"
               loading="lazy"
             />

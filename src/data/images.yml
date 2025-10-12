@@ -1,44 +1,55 @@
 hero:
-  main: /images/hero.jpg
+  primary: /images/hero.jpg
+  primary_alt:
+    fr: "L'Ensoleillade - Gîte écologique en Dordogne"
+    en: "L'Ensoleillade - Eco-friendly cottage in Dordogne"
 
 about:
-  feature: /images/3.jpg
+  primary: /images/3.jpg
+  primary_alt:
+    fr: "Construction écologique du gîte"
+    en: "Eco-friendly cottage construction"
 
 accommodation:
-  interior:
-    - /images/1.jpg
-    - /images/2.jpg
-  exterior:
-    - /images/3.jpg
-    - /images/4.jpg
-  terrace:
-    - /images/5.jpg
-    - /images/6.jpg
+  primary: /images/5.jpg
+  primary_alt:
+    fr: "Terrasse avec vue sur la nature"
+    en: "Terrace with nature view"
+  secondary: /images/1.jpg
+  secondary_alt:
+    fr: "Vue panoramique du jardin en permaculture"
+    en: "Panoramic view of the permaculture garden"
+  gallery:
+    - image: /images/2.jpg
+      alt:
+        fr: "Espace intérieur confortable"
+        en: "Comfortable interior space"
+    - image: /images/3.jpg
+      alt:
+        fr: "Espace de vie lumineux"
+        en: "Bright living space"
+    - image: /images/4.jpg
+      alt:
+        fr: "Coin repos avec vue"
+        en: "Resting area with view"
+    - image: /images/6.jpg
+      alt:
+        fr: "Jardin et extérieur"
+        en: "Garden and exterior"
 
-location:
-  map: /images/hero.jpg
-  lascaux: /images/lascaux.jpg
-  canoeing: /images/canoe.jpg
-  castles: /images/chateau.jpg
-
-gallery:
-  - image: /images/1.jpg
-    caption_fr: "Vue du jardin"
-    caption_en: "Garden view"
-    alt_fr: "Vue panoramique du jardin en permaculture"
-    alt_en: "Panoramic view of the permaculture garden"
-  - image: /images/2.jpg
-    caption_fr: "Intérieur cosy"
-    caption_en: "Cozy interior"
-    alt_fr: "Intérieur chaleureux du gîte"
-    alt_en: "Warm interior of the cottage"
-  - image: /images/3.jpg
-    caption_fr: "Terrasse ensoleillée"
-    caption_en: "Sunny terrace"
-    alt_fr: "Grande terrasse avec vue sur la nature"
-    alt_en: "Large terrace with nature view"
-  - image: /images/6.jpg
-    caption_fr: "Château local"
-    caption_en: "Local castle"
-    alt_fr: "Château médiéval à proximité"
-    alt_en: "Nearby medieval castle"
+activities:
+  lascaux:
+    image: /images/lascaux.jpg
+    alt:
+      fr: "Grottes de Lascaux"
+      en: "Lascaux Caves"
+  canoeing:
+    image: /images/canoe.jpg
+    alt:
+      fr: "Canoë sur la Dordogne"
+      en: "Canoeing on the Dordogne"
+  castles:
+    image: /images/chateau.jpg
+    alt:
+      fr: "Châteaux et jardins de la région"
+      en: "Castles and gardens of the region"

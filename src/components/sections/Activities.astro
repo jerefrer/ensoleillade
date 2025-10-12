@@ -48,8 +48,8 @@ const { t, locale } = Astro.props as Props;
         >
           <div class="aspect-[4/3] rounded-xl mb-4 overflow-hidden">
             <img
-              src={images.location.lascaux}
-              alt={t.location.lascaux_alt}
+              src={images.activities.lascaux.image}
+              alt={locale === "fr" ? images.activities.lascaux.alt.fr : images.activities.lascaux.alt.en}
               class="w-full h-full object-cover"
             />
           </div>
@@ -72,8 +72,8 @@ const { t, locale } = Astro.props as Props;
         >
           <div class="aspect-[4/3] rounded-xl mb-4 overflow-hidden">
             <img
-              src={images.location.canoeing}
-              alt={t.location.canoeing_alt}
+              src={images.activities.canoeing.image}
+              alt={locale === "fr" ? images.activities.canoeing.alt.fr : images.activities.canoeing.alt.en}
               class="w-full h-full object-cover"
             />
           </div>
@@ -96,8 +96,8 @@ const { t, locale } = Astro.props as Props;
         >
           <div class="aspect-[4/3] rounded-xl mb-4 overflow-hidden">
             <img
-              src={images.location.castles}
-              alt={t.location.castles_alt}
+              src={images.activities.castles.image}
+              alt={locale === "fr" ? images.activities.castles.alt.fr : images.activities.castles.alt.en}
               class="w-full h-full object-cover"
             />
           </div>

@@ -293,36 +293,100 @@ content:
         name: hero
         type: object
         fields:
-          - { label: Image principale, name: main, type: image }
-          - { label: Image secondaire 1, name: secondary1, type: image }
-          - { label: Image secondaire 2, name: secondary2, type: image }
+          - { label: Image principale, name: primary, type: image }
+          - 
+            label: Texte alternatif
+            name: primary_alt
+            type: object
+            fields:
+              - { label: Français, name: fr, type: string }
+              - { label: Anglais, name: en, type: string }
       - label: Section À propos
         name: about
         type: object
         fields:
-          - { label: Image principale, name: feature, type: image }
+          - { label: Image principale, name: primary, type: image }
+          - 
+            label: Texte alternatif
+            name: primary_alt
+            type: object
+            fields:
+              - { label: Français, name: fr, type: string }
+              - { label: Anglais, name: en, type: string }
       - label: Hébergement
         name: accommodation
         type: object
         fields:
-          - { label: Photos intérieur, name: interior, type: image, list: true }
-          - { label: Photos extérieur, name: exterior, type: image, list: true }
-          - { label: Photos terrasse, name: terrace, type: image, list: true }
-      - label: Emplacement
-        name: location
+          - { label: Image principale, name: primary, type: image }
+          - 
+            label: Texte alternatif principal
+            name: primary_alt
+            type: object
+            fields:
+              - { label: Français, name: fr, type: string }
+              - { label: Anglais, name: en, type: string }
+          - { label: Image secondaire, name: secondary, type: image }
+          - 
+            label: Texte alternatif secondaire
+            name: secondary_alt
+            type: object
+            fields:
+              - { label: Français, name: fr, type: string }
+              - { label: Anglais, name: en, type: string }
+          - 
+            label: Galerie
+            name: gallery
+            type: object
+            list: true
+            fields:
+              - { label: Image, name: image, type: image }
+              - 
+                label: Texte alternatif
+                name: alt
+                type: object
+                fields:
+                  - { label: Français, name: fr, type: string }
+                  - { label: Anglais, name: en, type: string }
+      - label: Activités
+        name: activities
         type: object
         fields:
-          - { label: Image carte, name: map, type: image }
-          - { label: Photo Lascaux, name: lascaux, type: image }
-          - { label: Photo Canoë, name: canoeing, type: image }
-          - { label: Photo Châteaux, name: castles, type: image }
-      - label: Galerie
-        name: gallery
-        type: object
-        list: true
-        fields:
-          - { label: Image, name: image, type: image }
-          - { label: Légende (Français), name: caption_fr, type: string }
-          - { label: Légende (Anglais), name: caption_en, type: string }
-          - { label: Texte alt (Français), name: alt_fr, type: string }
-          - { label: Texte alt (Anglais), name: alt_en, type: string }
+          - 
+            label: Lascaux
+            name: lascaux
+            type: object
+            fields:
+              - { label: Image, name: image, type: image }
+              - 
+                label: Texte alternatif
+                name: alt
+                type: object
+                fields:
+                  - { label: Français, name: fr, type: string }
+                  - { label: Anglais, name: en, type: string }
+          - 
+            label: Canoë
+            name: canoeing
+            type: object
+            fields:
+              - { label: Image, name: image, type: image }
+              - 
+                label: Texte alternatif
+                name: alt
+                type: object
+                fields:
+                  - { label: Français, name: fr, type: string }
+                  - { label: Anglais, name: en, type: string }
+          - 
+            label: Châteaux
+            name: castles
+            type: object
+            fields:
+              - { label: Image, name: image, type: image }
+              - 
+                label: Texte alternatif
+                name: alt
+                type: object
+                fields:
+                  - { label: Français, name: fr, type: string }
+                  - { label: Anglais, name: en, type: string }

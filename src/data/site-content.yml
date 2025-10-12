@@ -13,7 +13,6 @@ site:
     en: eco-friendly cottage, Dordogne, permaculture, Saint-Léon-sur-Vézère, tiny
       house, nature vacation
 
-# PRICING CONFIGURATION - Edit these values to update prices across the entire site
 pricing:
   price_per_night:
     fr: 65€ / nuit

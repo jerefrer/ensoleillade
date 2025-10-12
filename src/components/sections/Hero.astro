@@ -280,10 +280,8 @@ const { locale, t } = Astro.props as Props;
           class="relative h-96 lg:h-full rounded-2xl overflow-hidden shadow-large"
         >
           <img
-            src={images.hero.main}
-            alt={locale === "fr"
-              ? "L'Ensoleillade - Gîte écologique en Dordogne"
-              : "L'Ensoleillade - Eco-friendly cottage in Dordogne"}
+            src={images.hero.primary}
+            alt={locale === "fr" ? images.hero.primary_alt.fr : images.hero.primary_alt.en}
             class="w-full h-full object-cover"
             style="object-position: 70%;"
             loading="eager"
