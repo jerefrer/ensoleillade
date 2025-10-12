@@ -7,14 +7,14 @@
     }
   },
   "about": {
-    "primary": "/images/3.jpg",
+    "primary": "/images/IMG_6095-1.webp",
     "primary_alt": {
       "fr": "Construction écologique du gîte",
       "en": "Eco-friendly cottage construction"
     }
   },
   "accommodation": {
-    "primary": "/images/IMG_6096.webp",
+    "primary": "/images/IMG_6096 cropped.webp",
     "primary_alt": {
       "fr": "Terrasse avec vue sur la nature",
       "en": "Terrace with nature view"
@@ -26,28 +26,28 @@
     },
     "gallery": [
       {
-        "image": "/images/img_5742_ytclc3w.webp",
+        "image": "/images/img_5742_ytclc3w-1.webp",
         "alt": {
           "fr": "Espace intérieur confortable",
           "en": "Comfortable interior space"
         }
       },
       {
-        "image": "/images/IMG_6087.webp",
+        "image": "/images/IMG_6087-1.webp",
         "alt": {
           "fr": "Coin repos avec vue",
           "en": "Resting area with view"
         }
       },
       {
-        "image": "/images/3.jpg",
+        "image": "/images/IMG_6109.webp",
         "alt": {
           "fr": "Espace de vie lumineux",
           "en": "Bright living space"
         }
       },
       {
-        "image": "/images/6.jpg",
+        "image": "/images/IMG_6091-1.webp",
         "alt": {
           "fr": "Jardin et extérieur",
           "en": "Garden and exterior"
