@@ -1,7 +1,5 @@
 hero:
   main: /images/hero.jpg
-  secondary1: /images/1.jpg
-  secondary2: /images/2.jpg
 
 about:
   feature: /images/3.jpg

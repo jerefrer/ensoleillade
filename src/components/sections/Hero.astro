@@ -26,7 +26,7 @@ const { locale, t } = Astro.props as Props;
 
   <div class="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div
-      class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center min-h-screen py-20"
+      class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center min-h-screen mt-6 py-20"
     >
       <!-- Left Content Column -->
       <div class="space-y-8 animate-on-scroll">
@@ -62,7 +62,9 @@ const { locale, t } = Astro.props as Props;
         </div>
 
         <!-- Rental Name - Secondary -->
-        <div class="space-y-3 pt-6 border-t border-sage-200 text-center md:text-left">
+        <div
+          class="space-y-3 pt-6 border-t border-sage-200 text-center md:text-left"
+        >
           <h2
             class="text-2xl lg:text-4xl font-serif font-semibold text-forest-700 leading-tight"
           >
@@ -284,28 +286,6 @@ const { locale, t } = Astro.props as Props;
               : "L'Ensoleillade - Eco-friendly cottage in Dordogne"}
             class="w-full h-full object-cover object-right"
           />
-        </div>
-
-        <!-- Secondary Images Grid -->
-        <div
-          class="grid grid-cols-2 gap-4 mt-6 lg:absolute lg:-bottom-16 lg:-left-8 lg:w-64"
-        >
-          <div class="aspect-square rounded-xl overflow-hidden shadow-soft">
-            <img
-              src={images.hero.secondary1}
-              alt={locale === "fr" ? "Vue du gîte" : "Cottage view"}
-              class="w-full h-full object-cover"
-            />
-          </div>
-          <div class="aspect-square rounded-xl overflow-hidden shadow-soft">
-            <img
-              src={images.hero.secondary2}
-              alt={locale === "fr"
-                ? "Environnement naturel"
-                : "Natural environment"}
-              class="w-full h-full object-cover"
-            />
-          </div>
         </div>
       </div>
     </div>
