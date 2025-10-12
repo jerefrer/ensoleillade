@@ -364,10 +364,17 @@ const { t, locale } = Astro.props as Props;
               {t.amenities.basic_services.bed_linen}
             </div>
           </div>
-          <div
-            class="px-3 py-1 bg-warm-100 text-warm-700 rounded-lg font-semibold text-sm"
-          >
-            {t.amenities.basic_services.bed_linen_note}
+          <div class="flex items-center gap-2">
+            <div
+              class="px-3 py-1 bg-warm-100 text-warm-700 rounded-lg font-semibold text-sm"
+            >
+              {t.amenities.basic_services.bed_linen_label}
+            </div>
+            <div
+              class="px-3 py-1 bg-blue-50 text-blue-900 border border-blue-200 rounded-lg font-semibold text-sm"
+            >
+              {t.amenities.basic_services.bed_linen_price}
+            </div>
           </div>
         </div>
 
@@ -384,10 +391,17 @@ const { t, locale } = Astro.props as Props;
               {t.amenities.basic_services.towels}
             </div>
           </div>
-          <div
-            class="px-3 py-1 bg-warm-100 text-warm-700 rounded-lg font-semibold text-sm"
-          >
-            {t.amenities.basic_services.towels_note}
+          <div class="flex items-center gap-2">
+            <div
+              class="px-3 py-1 bg-warm-100 text-warm-700 rounded-lg font-semibold text-sm"
+            >
+              {t.amenities.basic_services.towels_label}
+            </div>
+            <div
+              class="px-3 py-1 bg-blue-50 text-blue-900 border border-blue-200 rounded-lg font-semibold text-sm"
+            >
+              {t.amenities.basic_services.towels_price}
+            </div>
           </div>
         </div>
       </div>

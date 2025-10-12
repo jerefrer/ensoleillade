@@ -292,20 +292,26 @@ amenities:
       fr: Ménage
       en: Cleaning
     cleaning_fee:
-      fr: supplément obligatoire de 30 € par séjour
-      en: mandatory supplement of €30 per stay
+      fr: En option pour 40 € par séjour
+      en: Optional supplement for €40 per stay
     bed_linen:
       fr: Linge de lit
       en: Bed linen
-    bed_linen_note:
-      fr: non fourni
-      en: not provided
+    bed_linen_label:
+      fr: Sur demande
+      en: On request
+    bed_linen_price:
+      fr: 12€ / personne
+      en: 12€ / person
     towels:
       fr: Linge de toilette
       en: Towels
-    towels_note:
-      fr: non fourni
-      en: not provided
+    towels_label:
+      fr: Sur demande
+      en: On request
+    towels_price:
+      fr: 10€ / personne
+      en: 10€ / person
   ancv:
     title:
       fr: Chèques Vacances ANCV
