@@ -169,15 +169,18 @@ accommodation:
   led_lighting:
     fr: Éclairage LED
     en: LED lighting
+  solar_panels:
+    fr: Panneaux solaires pour compenser la climatisation
+    en: Solar panels to offset air conditioning
   ducks_title:
     fr: À propos de nos amis à plumes
     en: About our feathered friends
   ducks_message:
-    fr: "<u>Nous ne pouvons pas accueillir nos amis les animaux</u> puisque nous avons 3 canards
-      coureurs indiens en liberté : Igor, Plume et Cachou. Merci de votre
+    fr: "<u>Nous ne pouvons pas accueillir nos amis les animaux</u> puisque nous avons 2 canards
+      coureurs indiens en liberté : Puce et Bo. Merci de votre
       compréhension."
-    en: "<u>We cannot welcome pets</u> due to the presence of 3 free-roaming Indian Runner
-      ducks Igor, Plume, and Cachou. Thank you for your understanding."
+    en: "<u>We cannot welcome pets</u> due to the presence of 2 free-roaming Indian Runner
+      ducks: Puce and Bo. Thank you for your understanding."
   download_contract:
     fr: Télécharger le contrat de location
     en: Download rental contract
