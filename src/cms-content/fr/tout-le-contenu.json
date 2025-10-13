@@ -113,6 +113,8 @@
       "equipped_desc": "Tout l'équipement",
       "utensils": "Vaisselle & couverts",
       "utensils_desc": "Équipement complet",
+      "water_filter": "Filtre à eau sur l'évier",
+      "water_filter_desc": "Eau filtrée",
       "dining": "Coins repas extérieurs",
       "dining_desc": "Sur la terrasse et dans le jardin"
     },

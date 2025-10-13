@@ -110,15 +110,16 @@
     "kitchen": {
       "title": "Kitchen",
       "equipped": "Equipped kitchenette",
-      "equipped_desc": "Full equipment",
+      "equipped_desc": "All equipment",
       "utensils": "Dishes & cutlery",
-      "utensils_desc": "Complete set",
+      "utensils_desc": "Complete equipment",
+      "water_filter": "Water filter on sink",
+      "water_filter_desc": "Filtered water",
       "dining": "Outdoor dining areas",
       "dining_desc": "On the terrace and in the garden"
     },
     "basic_services": {
       "title": "Please Note",
-      "subtitle": "Important information for your stay",
       "cleaning": "Cleaning",
       "cleaning_fee": "Optional supplement for €40 per stay",
       "bed_linen": "Bed linen",
