@@ -1,5 +1,7 @@
 import { fetchBookedDates } from '../../utils/calendar.js';
 
+export const prerender = false;
+
 export async function GET() {
   try {
     const bookedDates = await fetchBookedDates();
