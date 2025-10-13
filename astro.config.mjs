@@ -8,7 +8,6 @@ import yaml from '@rollup/plugin-yaml';
 // https://astro.build/config
 export default defineConfig({
   site: 'https://ensoleillade.info',
-  output: 'hybrid',
   adapter: netlify(),
   integrations: [
     tailwind(),
