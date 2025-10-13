@@ -16,13 +16,16 @@
     "location": "Emplacement",
     "activities": "Activités",
     "availability": "Disponibilités",
-    "contact": "Contact"
+    "contact": "Contact",
+    "tagline": "Gîte Écologique"
   },
   "hero": {
     "title": "L'Ensoleillade",
     "subtitle": "Gîte Écologique au Cœur de la Dordogne",
     "description": "Une tiny house de 19m² avec terrasse de 18m² dans un cadre naturel exceptionnel. Votre séjour contribue au développement de notre association de permaculture.",
-    "cta": "Réserver maintenant"
+    "cta": "Réserver maintenant",
+    "association_name": "Association Lumière dans le Corps",
+    "association_tagline": "Biodiversité en permaculture"
   },
   "about": {
     "title": "Un Séjour qui a du Sens",
@@ -34,7 +37,13 @@
       "phyto": "Système de phyto-épuration",
       "permaculture": "Site de permaculture",
       "biodiversity": "Préservation de la biodiversité"
-    }
+    },
+    "eco_description": "Construction respectueuse avec des matériaux naturels et locaux, dans un esprit de développement durable.",
+    "wood_description": "Isolation en laine de bois dense et bardage en bois local, pour un confort thermique optimal.",
+    "phyto_description": "Traitement naturel des eaux usées par phyto-épuration, pour un impact environnemental minimal.",
+    "association_name": "Association Lumière dans le Corps",
+    "association_tagline": "Biodiversité en permaculture",
+    "contribution_message": "Votre séjour contribue directement au développement de notre association de permaculture, qui œuvre pour la biodiversité et l'agriculture durable. Nous vous en remercions."
   },
   "accommodation": {
     "title": "Votre Hébergement",
@@ -129,9 +138,12 @@
     "subtitle": "Saint-Léon-sur-Vézère, Dordogne",
     "description": "Située au cœur du Périgord Noir, L'Ensoleillade vous offre un accès privilégié aux trésors du Périgord.",
     "map_url": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2853.5!2d1.064457!3d45.005348!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47ff576265620cb7%3A0xac1b683acce41a52!2sGite%20L'Ensoleillade!5e1!3m2!1sfr!2sfr!4v1234567890",
+    "map_title": "Carte de localisation",
     "nearest_station": "Gare la plus proche",
     "station_name": "Les Eyzies - 12 km",
     "pickup_service": "Possibilité d'aller vous chercher à la gare",
+    "distance_bordeaux": "2h30 depuis Bordeaux",
+    "distance_paris": "1h depuis Paris (Bergerac)",
     "lascaux_alt": "Grottes de Lascaux",
     "lascaux_desc": "Art pariétal et sites préhistoriques exceptionnels",
     "canoeing_alt": "Canoë-kayak sur la Vézère",
@@ -186,7 +198,9 @@
     "subtitle": "Vérifiez nos disponibilités en temps réel",
     "loading": "Chargement du calendrier...",
     "available": "Disponible",
-    "unavailable": "Réservé"
+    "unavailable": "Réservé",
+    "prev_month": "Mois précédent",
+    "next_month": "Mois suivant"
   },
   "contact": {
     "title": "Réservation & Contact",

@@ -16,13 +16,16 @@
     "location": "Location",
     "activities": "Activities",
     "availability": "Availability",
-    "contact": "Contact"
+    "contact": "Contact",
+    "tagline": "Eco Lodge"
   },
   "hero": {
     "title": "L'Ensoleillade",
     "subtitle": "Eco-Friendly Cottage in the Heart of Dordogne",
     "description": "A 19m² tiny house with 18m² terrace in an exceptional natural setting. Your stay supports the development of our permaculture association.",
-    "cta": "Book now"
+    "cta": "Book now",
+    "association_name": "Lumière dans le Corps Association",
+    "association_tagline": "Biodiversity in permaculture"
   },
   "about": {
     "title": "A Meaningful Stay",
@@ -34,7 +37,13 @@
       "phyto": "Phyto-purification system",
       "permaculture": "Permaculture site",
       "biodiversity": "Biodiversity preservation"
-    }
+    },
+    "eco_description": "Respectful construction with natural and local materials, in a spirit of sustainable development.",
+    "wood_description": "Dense wood wool insulation and local wood cladding for optimal thermal comfort.",
+    "phyto_description": "Natural wastewater treatment by phyto-purification for minimal environmental impact.",
+    "association_name": "Lumière dans le Corps Association",
+    "association_tagline": "Biodiversity in permaculture",
+    "contribution_message": "Your stay directly contributes to the development of our permaculture association, which works for biodiversity and sustainable agriculture. Thank you!"
   },
   "accommodation": {
     "title": "Your Accommodation",
@@ -129,9 +138,12 @@
     "subtitle": "Saint-Léon-sur-Vézère, Dordogne",
     "description": "Located in the heart of Périgord Noir, L'Ensoleillade offers privileged access to Périgord's treasures.",
     "map_url": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2853.5!2d1.064457!3d45.005348!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47ff576265620cb7%3A0xac1b683acce41a52!2sGite%20L'Ensoleillade!5e1!3m2!1sfr!2sfr!4v1234567890",
+    "map_title": "Location map",
     "nearest_station": "Nearest train station",
     "station_name": "Les Eyzies - 12 km",
     "pickup_service": "Possibility to pick you up at the station",
+    "distance_bordeaux": "2h30 from Bordeaux",
+    "distance_paris": "1h from Paris (Bergerac)",
     "lascaux_alt": "Lascaux Caves",
     "lascaux_desc": "Exceptional cave art and prehistoric sites",
     "canoeing_alt": "Canoeing on the Vézère",
@@ -205,7 +217,9 @@
     "subtitle": "Check our real-time availability",
     "loading": "Loading calendar...",
     "available": "Available",
-    "unavailable": "Booked"
+    "unavailable": "Booked",
+    "prev_month": "Previous month",
+    "next_month": "Next month"
   },
   "contact": {
     "title": "Booking & Contact",

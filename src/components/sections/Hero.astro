@@ -44,18 +44,10 @@ const { locale, t } = Astro.props as Props;
               <h1
                 class="text-2xl xl:text-3xl font-serif font-bold text-forest-800 leading-tight"
               >
-                {
-                  locale === "fr"
-                    ? "Association Lumière dans le Corps"
-                    : "Lumière dans le Corps Association"
-                }
+                {t.hero.association_name}
               </h1>
               <p class="text-lg md:text-xl text-sage-600 font-medium mt-2">
-                {
-                  locale === "fr"
-                    ? "Biodiversité en permaculture"
-                    : "Biodiversity in permaculture"
-                }
+                {t.hero.association_tagline}
               </p>
             </div>
           </div>

@@ -12,6 +12,12 @@ const calendarData = {
   locale,
   monthNames: MONTH_NAMES,
   dayNames: DAY_NAMES,
+  t: {
+    calendar: {
+      prev_month: t.calendar.prev_month,
+      next_month: t.calendar.next_month
+    }
+  }
 };
 ---
 
@@ -55,11 +61,7 @@ const calendarData = {
           </div>
         </div>
         <p class="text-earth-600 text-lg">
-          {
-            locale === "fr"
-              ? "Chargement du calendrier..."
-              : "Loading calendar..."
-          }
+          {t.calendar.loading}
         </p>
       </div>
 
@@ -76,13 +78,13 @@ const calendarData = {
         <div class="flex items-center gap-2">
           <div class="w-4 h-4 bg-sage-100 rounded"></div>
           <span class="text-earth-700">
-            {locale === "fr" ? "Disponible" : "Available"}
+            {t.calendar.available}
           </span>
         </div>
         <div class="flex items-center gap-2">
           <div class="w-4 h-4 bg-red-100 rounded"></div>
           <span class="text-earth-700">
-            {locale === "fr" ? "Réservé" : "Booked"}
+            {t.calendar.unavailable}
           </span>
         </div>
       </div>
@@ -262,7 +264,7 @@ const calendarData = {
           : `<button 
             onclick="window.availabilityCalendar.navigatePrev()"
             class="p-1 hover:bg-sage-50 rounded transition-all duration-200"
-            aria-label="${this.locale === "fr" ? "Mois précédent" : "Previous month"}"
+            aria-label="${this.t.calendar.prev_month}"
           >
             <svg class="w-5 h-5 text-sage-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
@@ -275,7 +277,7 @@ const calendarData = {
         <button 
           onclick="window.availabilityCalendar.navigateNext()"
           class="p-1 hover:bg-sage-50 rounded transition-all duration-200"
-          aria-label="${this.locale === "fr" ? "Mois suivant" : "Next month"}"
+          aria-label="${this.t.calendar.next_month}"
         >
           <svg class="w-5 h-5 text-sage-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>

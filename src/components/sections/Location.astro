@@ -71,21 +71,13 @@ const { t, locale } = Astro.props as Props;
             <div class="flex items-center space-x-4">
               <span class="text-sage-600 text-xl">🚗</span>
               <span class="text-forest-700">
-                {
-                  locale === "fr"
-                    ? "2h30 depuis Bordeaux"
-                    : "2h30 from Bordeaux"
-                }
+                {t.location.distance_bordeaux}
               </span>
             </div>
             <div class="flex items-center space-x-4">
               <span class="text-sage-600 text-xl">✈️</span>
               <span class="text-forest-700">
-                {
-                  locale === "fr"
-                    ? "1h depuis Paris (Bergerac)"
-                    : "1h from Paris (Bergerac)"
-                }
+                {t.location.distance_paris}
               </span>
             </div>
             <div class="flex items-start space-x-4">
@@ -114,7 +106,7 @@ const { t, locale } = Astro.props as Props;
             allowfullscreen=""
             loading="lazy"
             referrerpolicy="no-referrer-when-downgrade"
-            title={locale === "fr" ? "Carte de localisation" : "Location map"}
+            title={t.location.map_title}
           ></iframe>
         </div>
       </div>

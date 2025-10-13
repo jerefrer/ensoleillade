@@ -57,11 +57,7 @@ const { t, locale } = Astro.props as Props;
                 {t.about.features.eco}
               </h3>
               <p class="text-forest-700 leading-relaxed">
-                {
-                  locale === "fr"
-                    ? "Construction respectueuse avec des matériaux naturels et locaux, dans un esprit de développement durable."
-                    : "Respectful construction with natural and local materials, in a spirit of sustainable development."
-                }
+                {t.about.eco_description}
               </p>
             </div>
           </div>
@@ -80,11 +76,7 @@ const { t, locale } = Astro.props as Props;
                 {t.about.features.wood}
               </h3>
               <p class="text-forest-700 leading-relaxed">
-                {
-                  locale === "fr"
-                    ? "Isolation en laine de bois dense et bardage en bois local, pour un confort thermique optimal."
-                    : "Dense wood wool insulation and local wood cladding for optimal thermal comfort."
-                }
+                {t.about.wood_description}
               </p>
             </div>
           </div>
@@ -103,11 +95,7 @@ const { t, locale } = Astro.props as Props;
                 {t.about.features.phyto}
               </h3>
               <p class="text-forest-700 leading-relaxed">
-                {
-                  locale === "fr"
-                    ? "Traitement naturel des eaux usées par phyto-épuration, pour un impact environnemental minimal."
-                    : "Natural wastewater treatment by phyto-purification for minimal environmental impact."
-                }
+                {t.about.phyto_description}
               </p>
             </div>
           </div>
@@ -125,28 +113,16 @@ const { t, locale } = Astro.props as Props;
             />
             <div>
               <h3 class="text-2xl font-semibold text-forest-800 mb-2">
-                {
-                  locale === "fr"
-                    ? "Association Lumière dans le Corps"
-                    : "Lumière dans le Corps Association"
-                }
+                {t.about.association_name}
               </h3>
               <p class="text-sage-600 font-medium">
-                {
-                  locale === "fr"
-                    ? "Biodiversité en permaculture"
-                    : "Biodiversity in permaculture"
-                }
+                {t.about.association_tagline}
               </p>
             </div>
           </div>
           <div class="bg-white/80 rounded-xl p-6 backdrop-blur-sm">
             <p class="text-forest-700 leading-relaxed">
-              {
-                locale === "fr"
-                  ? "Votre séjour contribue directement au développement de notre association de permaculture, qui œuvre pour la biodiversité et l'agriculture durable. Nous vous en remercions."
-                  : "Your stay directly contributes to the development of our permaculture association, which works for biodiversity and sustainable agriculture. Thank you!"
-              }
+              {t.about.contribution_message}
             </p>
           </div>
         </div>
