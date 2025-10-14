@@ -266,13 +266,15 @@ const { t, locale } = Astro.props as Props;
           </div>
         </div>
       </div>
+    </div>
 
-      <!-- Important Information Section -->
+    <!-- Important Information Section - Centered -->
+    <div class="max-w-2xl mx-auto grid gap-6 mb-8">
       <!-- Accessibility -->
-      <div class="bg-amber-50 rounded-xl p-6 border border-amber-200 shadow-soft">
+      <div class="bg-gradient-to-br from-amber-100 to-orange-50 rounded-xl p-6 border-2 border-amber-400 shadow-lg">
         <div class="flex items-center space-x-3 mb-4">
           <div
-            class="w-12 h-12 bg-amber-100 rounded-xl flex items-center justify-center flex-shrink-0"
+            class="w-12 h-12 bg-white rounded-xl flex items-center justify-center flex-shrink-0 shadow-md"
           >
             <span class="text-2xl">♿</span>
           </div>
@@ -280,16 +282,16 @@ const { t, locale } = Astro.props as Props;
             {t.accommodation.accessibility_title}
           </h3>
         </div>
-        <p class="text-amber-800 text-base leading-relaxed">
+        <p class="text-amber-900 text-base leading-relaxed font-medium">
           {t.accommodation.accessibility_message}
         </p>
       </div>
 
       <!-- About Our Ducks -->
-      <div class="bg-amber-50 rounded-xl p-6 border border-amber-200 shadow-soft">
+      <div class="bg-gradient-to-br from-amber-100 to-orange-50 rounded-xl p-6 border-2 border-amber-400 shadow-lg">
         <div class="flex items-center space-x-3 mb-4">
           <div
-            class="w-12 h-12 bg-amber-100 rounded-xl flex items-center justify-center flex-shrink-0"
+            class="w-12 h-12 bg-white rounded-xl flex items-center justify-center flex-shrink-0 shadow-md"
           >
             <span class="text-2xl">🦆</span>
           </div>
@@ -298,7 +300,7 @@ const { t, locale } = Astro.props as Props;
           </h3>
         </div>
         <p
-          class="text-amber-800 text-base leading-relaxed"
+          class="text-amber-900 text-base leading-relaxed font-medium"
           set:html={t.accommodation.ducks_message}
         />
       </div>
