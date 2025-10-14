@@ -268,41 +268,43 @@ const { t, locale } = Astro.props as Props;
       </div>
     </div>
 
-    <!-- Important Information Section - Centered -->
-    <div class="max-w-2xl mx-auto grid gap-6 mb-8">
-      <!-- Accessibility -->
-      <div class="bg-gradient-to-br from-amber-100 to-orange-50 rounded-xl p-6 border-2 border-amber-400 shadow-lg">
-        <div class="flex items-center space-x-3 mb-4">
-          <div
-            class="w-12 h-12 bg-white rounded-xl flex items-center justify-center flex-shrink-0 shadow-md"
-          >
-            <span class="text-2xl">♿</span>
+    <!-- Important Information Section - Centered Side by Side -->
+    <div class="flex justify-center mb-8">
+      <div class="grid md:grid-cols-2 gap-6 max-w-5xl">
+        <!-- Accessibility -->
+        <div class="bg-gradient-to-br from-amber-100 to-orange-50 rounded-xl p-6 border-2 border-amber-400 shadow-lg">
+          <div class="flex items-center space-x-3 mb-4">
+            <div
+              class="w-12 h-12 bg-white rounded-xl flex items-center justify-center flex-shrink-0 shadow-md"
+            >
+              <span class="text-2xl">♿</span>
+            </div>
+            <h3 class="font-semibold text-lg text-amber-900">
+              {t.accommodation.accessibility_title}
+            </h3>
           </div>
-          <h3 class="font-semibold text-lg text-amber-900">
-            {t.accommodation.accessibility_title}
-          </h3>
+          <p class="text-amber-900 text-base leading-relaxed font-medium">
+            {t.accommodation.accessibility_message}
+          </p>
         </div>
-        <p class="text-amber-900 text-base leading-relaxed font-medium">
-          {t.accommodation.accessibility_message}
-        </p>
-      </div>
 
-      <!-- About Our Ducks -->
-      <div class="bg-gradient-to-br from-amber-100 to-orange-50 rounded-xl p-6 border-2 border-amber-400 shadow-lg">
-        <div class="flex items-center space-x-3 mb-4">
-          <div
-            class="w-12 h-12 bg-white rounded-xl flex items-center justify-center flex-shrink-0 shadow-md"
-          >
-            <span class="text-2xl">🦆</span>
+        <!-- About Our Ducks -->
+        <div class="bg-gradient-to-br from-amber-100 to-orange-50 rounded-xl p-6 border-2 border-amber-400 shadow-lg">
+          <div class="flex items-center space-x-3 mb-4">
+            <div
+              class="w-12 h-12 bg-white rounded-xl flex items-center justify-center flex-shrink-0 shadow-md"
+            >
+              <span class="text-2xl">🦆</span>
+            </div>
+            <h3 class="font-semibold text-lg text-amber-900">
+              {t.accommodation.ducks_title}
+            </h3>
           </div>
-          <h3 class="font-semibold text-lg text-amber-900">
-            {t.accommodation.ducks_title}
-          </h3>
+          <p
+            class="text-amber-900 text-base leading-relaxed font-medium"
+            set:html={t.accommodation.ducks_message}
+          />
         </div>
-        <p
-          class="text-amber-900 text-base leading-relaxed font-medium"
-          set:html={t.accommodation.ducks_message}
-        />
       </div>
     </div>
 
