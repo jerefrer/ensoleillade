@@ -208,15 +208,15 @@ const { t, locale } = Astro.props as Props;
         <div class="space-y-3 text-forest-700">
           <div class="flex items-center space-x-3">
             <span class="text-xl">🚭</span>
-            <span class="text-base">{t.accommodation.non_smoking}</span>
+            <span class="text-base" set:html={t.accommodation.non_smoking} />
           </div>
           <div class="flex items-center space-x-3">
             <span class="text-xl">🐾</span>
-            <span class="text-base">{t.accommodation.no_pets}</span>
+            <span class="text-base" set:html={t.accommodation.no_pets} />
           </div>
           <div class="flex items-center space-x-3">
             <span class="text-xl">🎉</span>
-            <span class="text-base">{t.accommodation.no_parties}</span>
+            <span class="text-base" set:html={t.accommodation.no_parties} />
           </div>
         </div>
       </div>
@@ -272,7 +272,9 @@ const { t, locale } = Astro.props as Props;
     <div class="flex justify-center mb-8">
       <div class="grid md:grid-cols-2 gap-6 max-w-5xl">
         <!-- Accessibility -->
-        <div class="bg-gradient-to-br from-amber-100 to-orange-50 rounded-xl p-6 border-2 border-amber-400 shadow-lg">
+        <div
+          class="bg-gradient-to-br from-amber-100 to-orange-50 rounded-xl p-6 border-2 border-amber-400 shadow-lg"
+        >
           <div class="flex items-center space-x-3 mb-4">
             <div
               class="w-12 h-12 bg-white rounded-xl flex items-center justify-center flex-shrink-0 shadow-md"
@@ -283,13 +285,16 @@ const { t, locale } = Astro.props as Props;
               {t.accommodation.accessibility_title}
             </h3>
           </div>
-          <p class="text-amber-900 text-base leading-relaxed font-medium">
-            {t.accommodation.accessibility_message}
-          </p>
+          <p
+            class="text-amber-900 text-base leading-relaxed font-medium"
+            set:html={t.accommodation.accessibility_message}
+          />
         </div>
 
         <!-- About Our Ducks -->
-        <div class="bg-gradient-to-br from-amber-100 to-orange-50 rounded-xl p-6 border-2 border-amber-400 shadow-lg">
+        <div
+          class="bg-gradient-to-br from-amber-100 to-orange-50 rounded-xl p-6 border-2 border-amber-400 shadow-lg"
+        >
           <div class="flex items-center space-x-3 mb-4">
             <div
               class="w-12 h-12 bg-white rounded-xl flex items-center justify-center flex-shrink-0 shadow-md"
@@ -310,7 +315,7 @@ const { t, locale } = Astro.props as Props;
 
     <!-- Host Proximity Note -->
     <div
-      class="bg-gradient-to-r from-sage-50 to-blue-50 rounded-xl p-6 border border-sage-200 mb-8 animate-on-scroll"
+      class="mx-auto max-w-2xl bg-gradient-to-r from-sage-50 to-blue-50 rounded-xl p-6 border border-sage-200 mb-8 animate-on-scroll"
     >
       <div class="flex items-start space-x-4">
         <span class="text-3xl">🏡</span>

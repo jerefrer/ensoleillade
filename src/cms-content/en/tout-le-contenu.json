@@ -64,10 +64,10 @@
     "checkout": "Check-out:",
     "house_rules": "House Rules",
     "non_smoking": "Non-smoking",
-    "no_pets": "No pets",
-    "no_parties": "No parties",
+    "no_pets": "<strong>No</strong> pets",
+    "no_parties": "<strong>No</strong> parties",
     "accessibility_title": "Accessibility",
-    "accessibility_message": "The cottage is not suitable for people with reduced mobility (access via 3 exterior steps).",
+    "accessibility_message": "The cottage is <u>not suitable for people with reduced mobility</u> (access via 3 exterior steps).",
     "ecology_title": "Ecology",
     "self_built": "Self-built",
     "organic_materials": "Organic materials",
@@ -176,42 +176,23 @@
       },
       "paragliding": {
         "title": "Paragliding",
-        "items": [
-          "Côte de Jor",
-          "La Fleunie",
-          "And many more"
-        ]
+        "items": ["Côte de Jor", "La Fleunie", "And many more"]
       },
       "buddhist": {
         "title": "Buddhist centers",
-        "items": [
-          "Chanteloube",
-          "Dhagpo Kagyu Ling",
-          "Marfond"
-        ]
+        "items": ["Chanteloube", "Dhagpo Kagyu Ling", "Marfond"]
       },
       "gastronomy": {
         "title": "Gastronomy",
-        "items": [
-          "Truffles",
-          "Foie gras",
-          "Walnuts"
-        ]
+        "items": ["Truffles", "Foie gras", "Walnuts"]
       },
       "vineyards": {
         "title": "Vineyards",
-        "items": [
-          "Bergerac",
-          "Monbazillac"
-        ]
+        "items": ["Bergerac", "Monbazillac"]
       },
       "villages": {
         "title": "Most beautiful villages of France",
-        "items": [
-          "Saint-Léon-sur-Vézère",
-          "La Roque-Gageac",
-          "Domme"
-        ]
+        "items": ["Saint-Léon-sur-Vézère", "La Roque-Gageac", "Domme"]
       }
     }
   },
