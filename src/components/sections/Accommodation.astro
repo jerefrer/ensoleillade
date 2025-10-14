@@ -221,23 +221,6 @@ const { t, locale } = Astro.props as Props;
         </div>
       </div>
 
-      <!-- Accessibility -->
-      <div class="bg-amber-50 rounded-xl p-6 border border-amber-200 shadow-soft">
-        <div class="flex items-center space-x-3 mb-4">
-          <div
-            class="w-12 h-12 bg-amber-100 rounded-xl flex items-center justify-center flex-shrink-0"
-          >
-            <span class="text-2xl">♿</span>
-          </div>
-          <h3 class="font-semibold text-lg text-amber-900">
-            {t.accommodation.accessibility_title}
-          </h3>
-        </div>
-        <p class="text-amber-800 text-base leading-relaxed">
-          {t.accommodation.accessibility_message}
-        </p>
-      </div>
-
       <!-- Eco Construction -->
       <div class="bg-white rounded-xl p-6 border border-sage-200 shadow-soft">
         <div class="flex items-center space-x-3 mb-6">
@@ -283,23 +266,41 @@ const { t, locale } = Astro.props as Props;
           </div>
         </div>
       </div>
-    </div>
 
-    <!-- Special Note about Ducks -->
-    <div
-      class="bg-gradient-to-r from-warm-100 to-amber-50 rounded-xl p-6 border-2 border-warm-300 mb-8 animate-on-scroll"
-    >
-      <div class="flex items-start space-x-4">
-        <span class="text-3xl">🦆</span>
-        <div>
-          <h4 class="font-semibold text-forest-800 mb-2">
-            {t.accommodation.ducks_title}
-          </h4>
-          <p
-            class="text-forest-700 text-sm leading-relaxed"
-            set:html={t.accommodation.ducks_message}
-          />
+      <!-- Important Information Section -->
+      <!-- Accessibility -->
+      <div class="bg-amber-50 rounded-xl p-6 border border-amber-200 shadow-soft">
+        <div class="flex items-center space-x-3 mb-4">
+          <div
+            class="w-12 h-12 bg-amber-100 rounded-xl flex items-center justify-center flex-shrink-0"
+          >
+            <span class="text-2xl">♿</span>
+          </div>
+          <h3 class="font-semibold text-lg text-amber-900">
+            {t.accommodation.accessibility_title}
+          </h3>
         </div>
+        <p class="text-amber-800 text-base leading-relaxed">
+          {t.accommodation.accessibility_message}
+        </p>
+      </div>
+
+      <!-- About Our Ducks -->
+      <div class="bg-amber-50 rounded-xl p-6 border border-amber-200 shadow-soft">
+        <div class="flex items-center space-x-3 mb-4">
+          <div
+            class="w-12 h-12 bg-amber-100 rounded-xl flex items-center justify-center flex-shrink-0"
+          >
+            <span class="text-2xl">🦆</span>
+          </div>
+          <h3 class="font-semibold text-lg text-amber-900">
+            {t.accommodation.ducks_title}
+          </h3>
+        </div>
+        <p
+          class="text-amber-800 text-base leading-relaxed"
+          set:html={t.accommodation.ducks_message}
+        />
       </div>
     </div>
 
