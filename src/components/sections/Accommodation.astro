@@ -221,6 +221,23 @@ const { t, locale } = Astro.props as Props;
         </div>
       </div>
 
+      <!-- Accessibility -->
+      <div class="bg-amber-50 rounded-xl p-6 border border-amber-200 shadow-soft">
+        <div class="flex items-center space-x-3 mb-4">
+          <div
+            class="w-12 h-12 bg-amber-100 rounded-xl flex items-center justify-center flex-shrink-0"
+          >
+            <span class="text-2xl">♿</span>
+          </div>
+          <h3 class="font-semibold text-lg text-amber-900">
+            {t.accommodation.accessibility_title}
+          </h3>
+        </div>
+        <p class="text-amber-800 text-base leading-relaxed">
+          {t.accommodation.accessibility_message}
+        </p>
+      </div>
+
       <!-- Eco Construction -->
       <div class="bg-white rounded-xl p-6 border border-sage-200 shadow-soft">
         <div class="flex items-center space-x-3 mb-6">
