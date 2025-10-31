@@ -1,7 +1,7 @@
 {
   "site": {
     "title": "L'Ensoleillade - Eco-Friendly Cottage in Dordogne",
-    "description": "Discover L'Ensoleillade, a 19m² eco-friendly cottage with 18m² terrace in the heart of Dordogne. Supports the permaculture association.",
+    "description": "L'Ensoleillade, a 19m² eco-friendly cottage with 18m² terrace in the heart of Dordogne.",
     "keywords": "eco-friendly cottage, Dordogne, permaculture, Saint-Léon-sur-Vézère, tiny house, nature vacation"
   },
   "pricing": {
@@ -11,7 +11,7 @@
   },
   "nav": {
     "home": "Home",
-    "about": "About",
+    "accommodation": "Your accommodation",
     "amenities": "Amenities",
     "location": "Location",
     "activities": "Activities",
@@ -22,28 +22,10 @@
   "hero": {
     "title": "L'Ensoleillade",
     "subtitle": "Eco-Friendly Cottage in the Heart of Dordogne",
-    "description": "A 19m² tiny house with 18m² terrace in an exceptional natural setting. Your stay supports the development of our permaculture association.",
-    "cta": "Book now",
+    "description": "A 19m² wooden cottage with 18m² terrace in a natural setting in Dordogne.",
+    "cta": "Book",
     "association_name": "Lumière dans le Corps Association",
     "association_tagline": "Biodiversity in permaculture"
-  },
-  "about": {
-    "title": "A Meaningful Stay",
-    "subtitle": "Permaculture & Biodiversity",
-    "description": "L'Ensoleillade is much more than just accommodation. It's an ecological project that supports and develops our permaculture association \"Lumière dans le Corps\".",
-    "features": {
-      "eco": "Ecological construction",
-      "wood": "Local wood and dense insulation",
-      "phyto": "Phyto-purification system",
-      "permaculture": "Permaculture site",
-      "biodiversity": "Biodiversity preservation"
-    },
-    "eco_description": "Respectful construction with natural and local materials, in a spirit of sustainable development.",
-    "wood_description": "Dense wood wool insulation and local wood cladding for optimal thermal comfort.",
-    "phyto_description": "Natural wastewater treatment by phyto-purification for minimal environmental impact.",
-    "association_name": "Lumière dans le Corps Association",
-    "association_tagline": "Biodiversity in permaculture",
-    "contribution_message": "Your stay directly contributes to the development of our permaculture association, which works for biodiversity and sustainable agriculture. Thank you!"
   },
   "accommodation": {
     "title": "Your Accommodation",
@@ -82,7 +64,7 @@
   },
   "amenities": {
     "title": "Amenities & Services",
-    "subtitle": "All modern comforts in an exceptional ecological setting",
+    "subtitle": "Modern comfort in an ecological setting",
     "comfort": {
       "title": "Comfort",
       "heating": "Heating",
@@ -139,7 +121,7 @@
   "location": {
     "title": "Location",
     "subtitle": "Saint-Léon-sur-Vézère, Dordogne",
-    "description": "Located in the heart of Périgord Noir, L'Ensoleillade offers privileged access to Périgord's treasures.",
+    "description": "In the heart of Périgord Noir, access to prehistoric sites and villages of the region.",
     "map_url": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2853.5!2d1.064457!3d45.005348!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47ff576265620cb7%3A0xac1b683acce41a52!2sGite%20L'Ensoleillade!5e1!3m2!1sfr!2sfr!4v1234567890",
     "map_title": "Location map",
     "nearest_station": "Nearest train station",
@@ -156,7 +138,7 @@
   },
   "activities": {
     "title": "Activities & Discoveries",
-    "description": "A region rich in history, culture and natural adventures",
+    "description": "Region rich in history, culture and nature",
     "items": {
       "prehistoric": {
         "title": "Prehistoric sites",
@@ -198,7 +180,7 @@
   },
   "calendar": {
     "title": "Availability",
-    "subtitle": "Check our real-time availability",
+    "subtitle": "Real-time availability",
     "loading": "Loading calendar...",
     "available": "Available",
     "unavailable": "Booked",

@@ -9,277 +9,176 @@ interface Props {
 const { locale, t } = Astro.props as Props;
 ---
 
-<!-- Modern Split-Screen Hero Section -->
-<section class="relative min-h-screen flex items-center overflow-hidden">
-  <!-- Background Organic Shapes -->
-  <div class="absolute inset-0 overflow-hidden">
+<!-- Hero Section with Horizontal Association Header -->
+<section class="relative min-h-screen flex flex-col overflow-hidden">
+  <!-- Full Background Image -->
+  <div class="absolute inset-0">
+    <img
+      src={images.hero.primary}
+      alt={locale === "fr"
+        ? images.hero.primary_alt.fr
+        : images.hero.primary_alt.en}
+      class="w-full h-full object-cover"
+      loading="eager"
+    />
+    <!-- Gradient overlay for text readability -->
     <div
-      class="absolute top-0 right-0 w-96 h-96 bg-sage-500/20 rounded-full blur-3xl animate-pulse-soft"
-    >
-    </div>
-    <div
-      class="absolute bottom-0 left-0 w-80 h-80 bg-warm-500/20 rounded-full blur-3xl animate-pulse-soft"
-      style="animation-delay: 1s;"
+      class="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-black/50"
     >
     </div>
   </div>
 
-  <div class="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+  <!-- Association Header Bar at Top -->
+  <div class="relative z-10 w-full">
     <div
-      class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center min-h-screen mt-6 py-20"
+      class="bg-gradient-to-b from-white via-white to-transparent pt-24 pb-18"
     >
-      <!-- Left Content Column -->
-      <div class="space-y-8 animate-on-scroll">
-        <!-- Association Header - PROMINENT -->
-        <div class="space-y-6">
-          <div
-            class="flex flex-col md:flex-row items-center md:items-center gap-6"
-          >
-            <img
-              src="/logo-asso.jpg"
-              alt="Association Lumière dans le Corps"
-              class="w-40 h-auto rounded-2xl border-2 border-sage-300 shadow-lg"
-            />
-            <div class="text-center md:text-left">
-              <h1
-                class="text-2xl xl:text-3xl font-serif font-bold text-forest-800 leading-tight"
-              >
-                {t.hero.association_name}
-              </h1>
-              <p class="text-lg md:text-xl text-sage-600 font-medium mt-2">
-                {t.hero.association_tagline}
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Rental Name - Secondary -->
+      <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         <div
-          class="space-y-3 pt-6 border-t border-sage-200 text-center md:text-left"
+          class="flex flex-col md:flex-row items-center justify-center gap-6 md:gap-8 animate-on-scroll"
         >
-          <h2
-            class="text-2xl lg:text-4xl font-serif font-semibold text-forest-700 leading-tight"
-          >
-            L'Ensoleillade
-          </h2>
-          <p class="text-base lg:text-lg text-sage-600">
-            {t.hero.subtitle}
-          </p>
-        </div>
-
-        <!-- Description -->
-        <p class="text-lg text-forest-700 leading-relaxed max-w-xl">
-          {t.hero.description}
-        </p>
-
-        <!-- Feature Highlights -->
-        <div class="flex flex-wrap gap-4 max-w-3xl">
-          <div class="flex items-center space-x-3">
-            <div
-              class="w-10 h-10 bg-sage-100 rounded-lg flex items-center justify-center"
+          <img
+            src="/logo-asso.jpg"
+            alt="Association Lumière dans le Corps"
+            class="w-32 md:w-40 h-auto rounded-2xl border-2 border-sage-300 shadow-lg flex-shrink-0"
+          />
+          <div class="text-center md:text-left">
+            <h1
+              class="text-2xl md:text-3xl lg:text-4xl font-serif font-bold text-forest-800 leading-tight"
             >
-              <span class="text-sage-600 text-lg">🏠</span>
-            </div>
-            <div>
-              <div class="font-semibold text-forest-800">19m²</div>
-              <div class="text-sm text-forest-600">
-                {locale === "fr" ? "Intérieur" : "Interior"}
-              </div>
-            </div>
-          </div>
-          <div class="flex items-center space-x-3">
-            <div
-              class="w-10 h-10 bg-warm-100 rounded-lg flex items-center justify-center"
+              {t.hero.association_name}
+            </h1>
+            <p
+              class="text-base md:text-lg lg:text-xl text-sage-700 font-medium mt-1"
             >
-              <span class="text-warm-600 text-lg">🌿</span>
-            </div>
-            <div>
-              <div class="font-semibold text-forest-800">18m²</div>
-              <div class="text-sm text-forest-600">
-                {locale === "fr" ? "Terrasse" : "Terrace"}
-              </div>
-            </div>
-          </div>
-          <div class="flex items-center space-x-3">
-            <div
-              class="w-10 h-10 bg-warm-100 rounded-lg flex items-center justify-center"
-            >
-              <span class="text-warm-600 text-lg">👥</span>
-            </div>
-            <div>
-              <div class="font-semibold text-forest-800">
-                {locale === "fr" ? "1-2 personnes" : "1-2 people"}
-              </div>
-              <div class="text-sm text-forest-600">
-                {locale === "fr" ? "Capacité" : "Capacity"}
-              </div>
-            </div>
-          </div>
-          <div class="flex items-center space-x-3">
-            <div
-              class="w-10 h-10 bg-forest-100 rounded-lg flex items-center justify-center"
-            >
-              <span class="text-forest-600 text-lg">🗓️</span>
-            </div>
-            <div>
-              <div class="font-semibold text-forest-800">
-                {t.accommodation.minimum_nights_short}
-              </div>
-              <div class="text-sm text-forest-600">
-                {locale === "fr" ? "Minimum" : "Minimum"}
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Badges Section -->
-        <div class="flex flex-col gap-3">
-          <!-- Pricing Badge -->
-          <div>
-            <div
-              class="inline-block px-6 py-3 bg-blue-50/80 backdrop-blur-sm border-2 border-blue-200 rounded-xl shadow-sm"
-            >
-              <span class="font-semibold text-blue-900">
-                {t.pricing.price_per_night}
-              </span>
-              <span
-                class="text-xs text-blue-700/80 font-medium ml-1 align-baseline"
-              >
-                {t.pricing.price_note}
-              </span>
-              <span class="text-sm text-blue-600/70 pl-1">
-                {t.pricing.tourist_tax}</span
-              >
-            </div>
-          </div>
-
-          <!-- Chèque Vacances Badge -->
-          <div>
-            <div
-              class="inline-flex items-center px-5 py-3 bg-gradient-to-r from-blue-50 to-blue-100 border-2 border-blue-200 rounded-xl shadow-sm"
-            >
-              <div class="w-16 h-12 mr-3 flex items-center justify-center">
-                <img
-                  src="/cheque-vacance-logo.webp"
-                  alt="ANCV Chèques Vacances"
-                  class="w-full object-contain rounded"
-                />
-              </div>
-              <div>
-                <div class="font-bold text-blue-900 text-sm">
-                  {
-                    locale === "fr"
-                      ? "Chèques Vacances ANCV"
-                      : "ANCV Holiday Vouchers"
-                  }
-                </div>
-                <div class="text-xs text-blue-700">
-                  {locale === "fr" ? "Acceptés" : "Accepted"}
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- CTA Buttons -->
-        <div class="flex flex-col sm:flex-row gap-4 pt-4">
-          <a
-            href="#contact"
-            class="inline-flex items-center justify-center px-8 py-4 bg-sage-gradient text-white rounded-xl font-semibold shadow-sage hover:shadow-lg hover:scale-105 transition-all duration-300"
-          >
-            <span>{t.hero.cta}</span>
-            <svg
-              class="ml-2 w-5 h-5"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
-            </svg>
-          </a>
-
-          <a
-            href="#availability"
-            class="inline-flex items-center justify-center px-8 py-4 bg-white border-2 border-sage-300 text-sage-700 rounded-xl font-semibold hover:bg-sage-50 hover:border-sage-400 transition-all duration-300"
-          >
-            <svg
-              class="mr-2 w-5 h-5"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
-              ></path>
-            </svg>
-            <span>{locale === "fr" ? "Disponibilités" : "Availability"}</span>
-          </a>
-        </div>
-
-        <!-- Trust Indicators -->
-        <div
-          class="flex items-center space-x-6 pt-6 border-t border-sage-200/50"
-        >
-          <div class="flex items-center space-x-2">
-            <div class="flex -space-x-1">
-              <div
-                class="w-8 h-8 bg-sage-200 rounded-full border-2 border-white flex items-center justify-center"
-              >
-                <span class="text-xs">⭐</span>
-              </div>
-              <div
-                class="w-8 h-8 bg-sage-300 rounded-full border-2 border-white flex items-center justify-center"
-              >
-                <span class="text-xs">⭐</span>
-              </div>
-              <div
-                class="w-8 h-8 bg-sage-400 rounded-full border-2 border-white flex items-center justify-center"
-              >
-                <span class="text-xs">⭐</span>
-              </div>
-            </div>
-            <span class="text-sm text-forest-600">
-              {locale === "fr" ? "Clients satisfaits" : "Happy guests"}
-            </span>
-          </div>
-
-          <div class="h-6 w-px bg-sage-200"></div>
-
-          <div class="flex items-center space-x-2">
-            <span class="text-2xl">🌱</span>
-            <span class="text-sm text-forest-600">
-              {
-                locale === "fr"
-                  ? "Soutient la permaculture"
-                  : "Supports permaculture"
-              }
-            </span>
+              {t.hero.association_tagline}
+            </p>
           </div>
         </div>
       </div>
+    </div>
+  </div>
 
-      <!-- Right Image Column -->
-      <div class="relative lg:h-[80vh] animate-on-scroll" data-delay="200">
-        <!-- Main Property Image -->
+  <!-- Main Hero Content -->
+  <div
+    class="relative z-10 flex-1 flex items-center w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8"
+    style="margin-top: -15em !important;"
+  >
+    <div class="w-full">
+      <div class="grid lg:grid-cols-[auto_1fr] gap-8">
+        <!-- 2-Star Badge - Left Side on Desktop, Top on Mobile -->
         <div
-          class="relative h-96 lg:h-full rounded-2xl overflow-hidden shadow-large"
+          class="flex justify-center lg:justify-start animate-on-scroll"
+          data-delay="100"
         >
           <img
-            src={images.hero.primary}
-            alt={locale === "fr"
-              ? images.hero.primary_alt.fr
-              : images.hero.primary_alt.en}
-            class="w-full h-full object-cover"
-            style="object-position: 70%;"
-            loading="eager"
+            src="/images/meuble-tourisme-deux-etoiles-2025.png"
+            alt="Meublé de tourisme 2 étoiles"
+            class="h-32 md:h-36 lg:h-40 w-auto drop-shadow-2xl"
           />
+        </div>
+
+        <!-- Main Content -->
+        <div class="text-center lg:text-left">
+          <!-- Gite Name and Description -->
+          <div class="space-y-4 animate-on-scroll" data-delay="200">
+            <h2
+              class="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-white leading-tight drop-shadow-[0_4px_12px_rgba(0,0,0,0.8)]"
+            >
+              L'Ensoleillade
+            </h2>
+            <p
+              class="text-xl md:text-2xl text-white font-medium drop-shadow-[0_2px_8px_rgba(0,0,0,0.7)]"
+            >
+              {
+                locale === "fr"
+                  ? "Gîte Écologique au Cœur du Périgord Noir en Dordogne"
+                  : "Eco Lodge in the Heart of Périgord Noir, Dordogne"
+              }
+            </p>
+            <p
+              class="text-lg md:text-xl text-white/95 drop-shadow-[0_2px_8px_rgba(0,0,0,0.7)] leading-relaxed"
+            >
+              {
+                locale === "fr"
+                  ? "Une maisonnette en bois de 19m² avec sa terrasse de 18m² et son jardin"
+                  : "A 19m² wooden cottage with 18m² terrace and garden"
+              }
+            </p>
+          </div>
+
+          <!-- Capacity and Price Info -->
+          <div
+            class="flex flex-wrap justify-center lg:justify-start gap-4 text-white text-base md:text-lg font-semibold drop-shadow-[0_2px_8px_rgba(0,0,0,0.7)] animate-on-scroll"
+            style="margin-top: 5em"
+            data-delay="300"
+          >
+            <span>1-2 {locale === "fr" ? "personnes" : "people"}</span>
+            <span>•</span>
+            <span
+              >65€ / {locale === "fr" ? "nuit" : "night"} (+ {
+                locale === "fr" ? "taxe de séjour" : "tourist tax"
+              })</span
+            >
+          </div>
+
+          <!-- CTA Buttons -->
+          <div
+            class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-4 animate-on-scroll"
+            data-delay="400"
+          >
+            <a
+              href="#contact"
+              class="inline-flex items-center justify-center px-8 py-4 bg-white text-forest-800 rounded-xl font-semibold text-lg shadow-2xl hover:bg-sage-50 hover:scale-105 transition-all duration-300"
+            >
+              <span>{locale === "fr" ? "Réserver" : "Book"}</span>
+              <svg
+                class="ml-2 w-5 h-5"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+              </svg>
+            </a>
+
+            <a
+              href="#availability"
+              class="inline-flex items-center justify-center px-8 py-4 bg-white/10 backdrop-blur-sm border-2 border-white text-white rounded-xl font-semibold text-lg hover:bg-white/20 transition-all duration-300"
+            >
+              <svg
+                class="mr-2 w-5 h-5"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+                ></path>
+              </svg>
+              <span>{locale === "fr" ? "Disponibilités" : "Availability"}</span>
+            </a>
+          </div>
+
+          <!-- Contribution Message -->
+          <div class="pt-4 animate-on-scroll" data-delay="500">
+            <p
+              class="text-white/95 text-base md:text-lg drop-shadow-[0_2px_8px_rgba(0,0,0,0.7)] leading-relaxed text-balance"
+            >
+              {
+                locale === "fr"
+                  ? "Votre séjour contribue directement au développement de notre association de permaculture qui œuvre pour la biodiversité. Nous vous en remercions."
+                  : "Your stay contributes directly to the development of our permaculture association working for biodiversity. Thank you!"
+              }
+            </p>
+          </div>
         </div>
       </div>
     </div>

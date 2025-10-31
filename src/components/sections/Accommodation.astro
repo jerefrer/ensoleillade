@@ -8,108 +8,44 @@ interface Props {
 const { t, locale } = Astro.props as Props;
 ---
 
-<!-- Modern Visual Showcase Section -->
-<section id="accommodation" class="relative py-32 overflow-hidden">
-  <!-- Background Elements -->
-  <div
-    class="absolute inset-0 bg-gradient-to-b from-white via-sage-50/30 to-warm-50/30"
-  >
-  </div>
-  <div
-    class="absolute top-1/4 left-0 w-72 h-72 bg-sage-300/20 rounded-full blur-3xl"
-  >
-  </div>
-  <div
-    class="absolute bottom-1/4 right-0 w-96 h-96 bg-warm-300/20 rounded-full blur-3xl"
-  >
-  </div>
-
+<!-- Simplified Accommodation Section -->
+<section id="accommodation" class="relative py-24 bg-white">
   <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <!-- Section Header -->
-    <div class="text-center mb-20 animate-on-scroll">
+    <div class="text-center mb-16 animate-on-scroll">
       <h2
-        class="text-4xl lg:text-5xl font-serif font-bold text-forest-800 mb-6"
+        class="text-3xl lg:text-4xl font-serif font-bold text-forest-800 mb-4"
       >
         {t.accommodation.title}
       </h2>
+      <p class="text-lg text-forest-700 max-w-2xl mx-auto">
+        {locale === "fr"
+          ? "Une maisonnette en bois de 19m² avec sa terrasse de 18m² et son jardin"
+          : "A 19m² wooden cottage with 18m² terrace and garden"}
+      </p>
+    </div>
 
-      <!-- Key Stats Cards -->
-      <div class="flex flex-wrap justify-center gap-6 mt-8">
-        <div
-          class="bg-white/80 backdrop-blur-sm border border-sage-200 px-6 py-4 rounded-2xl shadow-sage"
-        >
-          <div class="flex items-center space-x-3">
-            <div
-              class="w-12 h-12 bg-sage-100 rounded-xl flex items-center justify-center"
-            >
-              <span class="text-sage-600 text-lg">📐</span>
-            </div>
-            <div class="text-left">
-              <div class="text-2xl font-bold text-forest-800">
-                {t.accommodation.size}
-              </div>
-              <div class="text-sm text-sage-600">
-                {t.accommodation.total_area}
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div
-          class="bg-white/80 backdrop-blur-sm border border-warm-200 px-6 py-4 rounded-2xl shadow-warm"
-        >
-          <div class="flex items-center space-x-3">
-            <div
-              class="w-12 h-12 bg-warm-100 rounded-xl flex items-center justify-center"
-            >
-              <span class="text-warm-600 text-lg">👥</span>
-            </div>
-            <div class="text-left">
-              <div class="text-2xl font-bold text-forest-800">
-                {t.accommodation.capacity}
-              </div>
-              <div class="text-sm text-warm-600">
-                {t.accommodation.guest_capacity}
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div
-          class="bg-blue-50/80 backdrop-blur-sm border-2 border-blue-200 px-6 py-4 rounded-2xl shadow-soft"
-        >
-          <div class="text-center text-2xl font-bold text-blue-900">
-            {t.pricing.price_per_night}
-            <span
-              class="text-xs text-blue-700/80 font-medium ml-1 align-baseline"
-            >
-              {t.pricing.price_note}
-            </span>
-          </div>
-          <div class="text-left text-sm text-blue-600/70">
-            {t.pricing.tourist_tax}
-          </div>
-        </div>
-
-        <div
-          class="bg-white/80 backdrop-blur-sm border border-forest-200 px-6 py-4 rounded-2xl shadow-soft"
-        >
-          <div class="flex items-center space-x-3">
-            <div
-              class="w-12 h-12 bg-forest-100 rounded-xl flex items-center justify-center"
-            >
-              <span class="text-forest-600 text-lg">🗓️</span>
-            </div>
-            <div class="text-left">
-              <div class="text-2xl font-bold text-forest-800">
-                {t.accommodation.minimum_nights}
-              </div>
-              <div class="text-sm text-forest-600">
-                {t.accommodation.minimum_stay}
-              </div>
-            </div>
-          </div>
-        </div>
+    <!-- Key Info Grid -->
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-4 mb-16 animate-on-scroll">
+      <div class="bg-sage-50 rounded-xl p-6 text-center">
+        <div class="text-3xl mb-2">👥</div>
+        <div class="font-semibold text-forest-800">1-2 {locale === "fr" ? "personnes" : "people"}</div>
+        <div class="text-sm text-sage-600">{locale === "fr" ? "Capacité" : "Capacity"}</div>
+      </div>
+      <div class="bg-blue-50 rounded-xl p-6 text-center">
+        <div class="text-3xl mb-2">💶</div>
+        <div class="font-semibold text-forest-800">65€ / {locale === "fr" ? "nuit" : "night"}</div>
+        <div class="text-sm text-sage-600">+ {locale === "fr" ? "taxe de séjour" : "tourist tax"}</div>
+      </div>
+      <div class="bg-warm-50 rounded-xl p-6 text-center">
+        <div class="text-3xl mb-2">🗓️</div>
+        <div class="font-semibold text-forest-800">{locale === "fr" ? "3-7 nuits" : "3-7 nights"}</div>
+        <div class="text-sm text-sage-600">{locale === "fr" ? "Minimum" : "Minimum stay"}</div>
+      </div>
+      <div class="bg-sage-50 rounded-xl p-6 text-center">
+        <div class="text-3xl mb-2">🎫</div>
+        <div class="font-semibold text-forest-800">{locale === "fr" ? "Chèques Vacances" : "Holiday Vouchers"}</div>
+        <div class="text-sm text-sage-600">ANCV</div>
       </div>
     </div>
 
@@ -163,108 +99,113 @@ const { t, locale } = Astro.props as Props;
       </div>
     </div>
 
-    <!-- Practical Information -->
+    <!-- Ecological Construction Section -->
+    <div class="grid lg:grid-cols-2 gap-8 mb-16 animate-on-scroll">
+      <div class="bg-gradient-to-br from-sage-50 to-warm-50 rounded-xl p-8">
+        <h3 class="text-2xl font-serif font-semibold text-forest-800 mb-6">
+          {locale === "fr" ? "Construction écologique" : "Ecological construction"}
+        </h3>
+        <div class="space-y-4 text-forest-700">
+          <p>
+            {locale === "fr"
+              ? "Construis avec des matériaux naturels biologiques et locaux, dans un esprit de développement durable."
+              : "Built with natural, organic and local materials, in a spirit of sustainable development."}
+          </p>
+          <p>
+            {locale === "fr"
+              ? "Isolation en laine de bois haute densité, pour un confort thermique optimal."
+              : "High-density wood wool insulation for optimal thermal comfort."}
+          </p>
+          <p>
+            {locale === "fr"
+              ? "Traitement naturel des eaux usées par phyto-épuration pour un impact environnemental minimal."
+              : "Natural wastewater treatment by phyto-purification for minimal environmental impact."}
+          </p>
+        </div>
+        <div class="grid grid-cols-2 gap-3 mt-6">
+          <div class="flex items-center space-x-2">
+            <span class="text-sage-600">✓</span>
+            <span class="text-sm">{locale === "fr" ? "Filtre à eau sur évier" : "Water filter on sink"}</span>
+          </div>
+          <div class="flex items-center space-x-2">
+            <span class="text-sage-600">✓</span>
+            <span class="text-sm">{locale === "fr" ? "Éclairage LED" : "LED lighting"}</span>
+          </div>
+          <div class="flex items-center space-x-2">
+            <span class="text-sage-600">✓</span>
+            <span class="text-sm">{locale === "fr" ? "Panneaux solaires" : "Solar panels"}</span>
+          </div>
+          <div class="flex items-center space-x-2">
+            <span class="text-sage-600">✓</span>
+            <span class="text-sm">{locale === "fr" ? "Composteur" : "Composter"}</span>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <img
+          src={images.accommodation.secondary}
+          alt={locale === "fr"
+            ? images.accommodation.secondary_alt.fr
+            : images.accommodation.secondary_alt.en}
+          class="w-full h-full object-cover rounded-xl"
+        />
+      </div>
+    </div>
+
+    <!-- Practical Information Grid -->
     <div class="grid md:grid-cols-3 gap-6 mb-12 animate-on-scroll">
       <!-- Check-in/out -->
-      <div class="bg-white rounded-xl p-6 border border-sage-200 shadow-soft">
-        <div class="flex items-center space-x-3 mb-6">
-          <div
-            class="w-12 h-12 bg-sage-100 rounded-xl flex items-center justify-center flex-shrink-0"
-          >
-            <span class="text-2xl">🕐</span>
-          </div>
-          <h3 class="font-semibold text-lg text-forest-800">
-            {t.accommodation.schedule}
-          </h3>
-        </div>
-        <div class="space-y-4 text-forest-700">
+      <div class="bg-sage-50 rounded-xl p-6">
+        <h3 class="font-semibold text-lg text-forest-800 mb-4 flex items-center">
+          <span class="text-2xl mr-2">🕐</span>
+          {t.accommodation.schedule}
+        </h3>
+        <div class="space-y-3 text-forest-700">
           <div>
-            <div class="font-semibold text-base mb-1">
-              {t.accommodation.checkin}
-            </div>
-            <div class="text-base">17h00 - 21h00</div>
+            <div class="font-semibold">{t.accommodation.checkin}</div>
+            <div>17h00 - 21h00</div>
           </div>
           <div>
-            <div class="font-semibold text-base mb-1">
-              {t.accommodation.checkout}
-            </div>
-            <div class="text-base">08h00 - 10h00</div>
+            <div class="font-semibold">{t.accommodation.checkout}</div>
+            <div>08h00 - 10h00</div>
           </div>
         </div>
       </div>
 
       <!-- House Rules -->
-      <div class="bg-white rounded-xl p-6 border border-sage-200 shadow-soft">
-        <div class="flex items-center space-x-3 mb-6">
-          <div
-            class="w-12 h-12 bg-warm-100 rounded-xl flex items-center justify-center flex-shrink-0"
-          >
-            <span class="text-2xl">📋</span>
-          </div>
-          <h3 class="font-semibold text-lg text-forest-800">
-            {t.accommodation.house_rules}
-          </h3>
-        </div>
+      <div class="bg-warm-50 rounded-xl p-6">
+        <h3 class="font-semibold text-lg text-forest-800 mb-4 flex items-center">
+          <span class="text-2xl mr-2">📋</span>
+          {t.accommodation.house_rules}
+        </h3>
         <div class="space-y-3 text-forest-700">
-          <div class="flex items-center space-x-3">
-            <span class="text-xl">🚭</span>
-            <span class="text-base" set:html={t.accommodation.non_smoking} />
+          <div class="flex items-center space-x-2">
+            <span>🚭</span>
+            <span set:html={t.accommodation.non_smoking} />
           </div>
-          <div class="flex items-center space-x-3">
-            <span class="text-xl">🐾</span>
-            <span class="text-base" set:html={t.accommodation.no_pets} />
+          <div class="flex items-center space-x-2">
+            <span>🐾</span>
+            <span set:html={t.accommodation.no_pets} />
           </div>
-          <div class="flex items-center space-x-3">
-            <span class="text-xl">🎉</span>
-            <span class="text-base" set:html={t.accommodation.no_parties} />
+          <div class="flex items-center space-x-2">
+            <span>🎉</span>
+            <span set:html={t.accommodation.no_parties} />
           </div>
         </div>
       </div>
 
-      <!-- Eco Construction -->
-      <div class="bg-white rounded-xl p-6 border border-sage-200 shadow-soft">
-        <div class="flex items-center space-x-3 mb-6">
-          <div
-            class="w-12 h-12 bg-forest-100 rounded-xl flex items-center justify-center flex-shrink-0"
-          >
-            <span class="text-2xl">🌱</span>
-          </div>
-          <h3 class="font-semibold text-lg text-forest-800">
-            {t.accommodation.ecology_title}
-          </h3>
-        </div>
-        <div class="space-y-3 text-forest-700">
-          <div class="flex items-center space-x-3">
-            <span class="text-lg text-forest-600">✓</span>
-            <span class="text-base" style="text-wrap: balance;"
-              >{t.accommodation.self_built}</span
-            >
-          </div>
-          <div class="flex items-center space-x-3">
-            <span class="text-lg text-forest-600">✓</span>
-            <span class="text-base" style="text-wrap: balance;"
-              >{t.accommodation.organic_materials}</span
-            >
-          </div>
-          <div class="flex items-center space-x-3">
-            <span class="text-lg text-forest-600">✓</span>
-            <span class="text-base" style="text-wrap: balance;"
-              >{t.accommodation.phytopurification}</span
-            >
-          </div>
-          <div class="flex items-center space-x-3">
-            <span class="text-lg text-forest-600">✓</span>
-            <span class="text-base" style="text-wrap: balance;"
-              >{t.accommodation.led_lighting}</span
-            >
-          </div>
-          <div class="flex items-center space-x-3">
-            <span class="text-lg text-forest-600">✓</span>
-            <span class="text-base" style="text-wrap: balance;"
-              >{t.accommodation.solar_panels}</span
-            >
-          </div>
-        </div>
+      <!-- Eco Request -->
+      <div class="bg-sage-50 rounded-xl p-6">
+        <h3 class="font-semibold text-lg text-forest-800 mb-4 flex items-center">
+          <span class="text-2xl mr-2">🌿</span>
+          {locale === "fr" ? "Produits d'entretien" : "Cleaning products"}
+        </h3>
+        <p class="text-forest-700">
+          {locale === "fr"
+            ? "Merci d'utilisé des produits d'entretien et d'hygiène biologiques. Notre phyto-épuration vous en remercie."
+            : "Please use organic cleaning and hygiene products. Our phyto-purification system thanks you."}
+        </p>
       </div>
     </div>
 

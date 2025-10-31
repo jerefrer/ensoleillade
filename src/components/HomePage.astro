@@ -1,7 +1,6 @@
 ---
 import Navigation from './sections/Navigation.astro';
 import Hero from './sections/Hero.astro';
-import About from './sections/About.astro';
 import Accommodation from './sections/Accommodation.astro';
 import Amenities from './sections/Amenities.astro';
 import Location from './sections/Location.astro';
@@ -21,7 +20,6 @@ const t = getTranslations(locale);
 
 <Navigation locale={locale} currentPath={currentPath} t={t} />
 <Hero locale={locale} t={t} />
-<About t={t} locale={locale} />
 <Accommodation t={t} locale={locale} />
 <Amenities t={t} locale={locale} />
 <Location t={t} locale={locale} />

@@ -1,7 +1,7 @@
 {
   "site": {
     "title": "L'Ensoleillade - Gîte Écologique en Dordogne",
-    "description": "Découvrez L'Ensoleillade, un gîte écologique de 19m² avec terrasse de 18m² au cœur de la Dordogne. Soutient l'association de permaculture.",
+    "description": "L'Ensoleillade, un gîte écologique de 19m² avec terrasse de 18m² au cœur de la Dordogne.",
     "keywords": "gîte écologique, Dordogne, permaculture, Saint-Léon-sur-Vézère, tiny house, vacances nature"
   },
   "pricing": {
@@ -11,7 +11,7 @@
   },
   "nav": {
     "home": "Accueil",
-    "about": "À propos",
+    "accommodation": "Votre hébergement",
     "amenities": "Équipements",
     "location": "Emplacement",
     "activities": "Activités",
@@ -22,28 +22,10 @@
   "hero": {
     "title": "L'Ensoleillade",
     "subtitle": "Gîte Écologique au Cœur de la Dordogne",
-    "description": "Une tiny house de 19m² avec terrasse de 18m² dans un cadre naturel exceptionnel. Votre séjour contribue au développement de notre association de permaculture.",
-    "cta": "Réserver maintenant",
+    "description": "Une maisonnette en bois de 19m² avec terrasse de 18m² dans un cadre naturel en Dordogne.",
+    "cta": "Réserver",
     "association_name": "Association Lumière dans le Corps",
     "association_tagline": "Biodiversité en permaculture"
-  },
-  "about": {
-    "title": "Un Séjour qui a du Sens",
-    "subtitle": "Permaculture & Biodiversité",
-    "description": "L'Ensoleillade est bien plus qu'un simple hébergement. C'est un projet écologique qui soutient et développe notre association de permaculture locale \"Lumière dans le Corps\".",
-    "features": {
-      "eco": "Construction écologique",
-      "wood": "Bois local et isolation dense",
-      "phyto": "Système de phyto-épuration",
-      "permaculture": "Site de permaculture",
-      "biodiversity": "Préservation de la biodiversité"
-    },
-    "eco_description": "Construction respectueuse avec des matériaux naturels et locaux, dans un esprit de développement durable.",
-    "wood_description": "Isolation en laine de bois dense et bardage en bois local, pour un confort thermique optimal.",
-    "phyto_description": "Traitement naturel des eaux usées par phyto-épuration, pour un impact environnemental minimal.",
-    "association_name": "Association Lumière dans le Corps",
-    "association_tagline": "Biodiversité en permaculture",
-    "contribution_message": "Votre séjour contribue directement au développement de notre association de permaculture, qui œuvre pour la biodiversité et l'agriculture durable. Nous vous en remercions."
   },
   "accommodation": {
     "title": "Votre Hébergement",
@@ -82,7 +64,7 @@
   },
   "amenities": {
     "title": "Équipements & Services",
-    "subtitle": "Tout le confort moderne dans un cadre écologique exceptionnel",
+    "subtitle": "Confort moderne dans un cadre écologique",
     "comfort": {
       "title": "Confort",
       "heating": "Chauffage",
@@ -140,7 +122,7 @@
   "location": {
     "title": "Emplacement",
     "subtitle": "Saint-Léon-sur-Vézère, Dordogne",
-    "description": "Située au cœur du Périgord Noir, L'Ensoleillade vous offre un accès privilégié aux trésors du Périgord.",
+    "description": "Au cœur du Périgord Noir, accès aux sites préhistoriques et aux villages de la région.",
     "map_url": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2853.5!2d1.064457!3d45.005348!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47ff576265620cb7%3A0xac1b683acce41a52!2sGite%20L'Ensoleillade!5e1!3m2!1sfr!2sfr!4v1234567890",
     "map_title": "Carte de localisation",
     "nearest_station": "Gare la plus proche",
@@ -157,7 +139,7 @@
   },
   "activities": {
     "title": "Activités & Découvertes",
-    "description": "Une région riche en histoire, culture et aventures naturelles",
+    "description": "Région riche en histoire, culture et nature",
     "items": {
       "prehistoric": {
         "title": "Sites préhistoriques",
@@ -199,7 +181,7 @@
   },
   "calendar": {
     "title": "Disponibilités",
-    "subtitle": "Vérifiez nos disponibilités en temps réel",
+    "subtitle": "Disponibilités en temps réel",
     "loading": "Chargement du calendrier...",
     "available": "Disponible",
     "unavailable": "Réservé",

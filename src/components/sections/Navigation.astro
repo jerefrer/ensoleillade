@@ -13,16 +13,9 @@ const t = getTranslations(locale);
 
 <nav
   id="main-navigation"
-  class="fixed top-0 left-0 right-0 z-50 transition-all duration-500 ease-out"
+  class="absolute top-0 left-0 right-0 z-50 bg-white/90 border-b border-white/20"
   data-nav-state="transparent"
 >
-  <!-- Glass morphism background -->
-  <div
-    class="absolute inset-0 bg-white/80 backdrop-blur-lg border-b border-white/20 opacity-0 transition-opacity duration-150"
-    id="nav-bg"
-  >
-  </div>
-
   <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex justify-between items-center py-4">
       <!-- Logo/Brand -->
@@ -51,10 +44,10 @@ const t = getTranslations(locale);
       <!-- Desktop Navigation Links -->
       <div class="hidden lg:flex items-center gap-2 xl:gap-8">
         <a
-          href="#about"
+          href="#accommodation"
           class="nav-link relative px-2 py-2 text-forest-700 hover:text-sage-600 font-medium transition-all duration-300 group"
         >
-          <span class="relative z-10">{t.nav.about}</span>
+          <span class="relative z-10">{t.nav.accommodation}</span>
           <div
             class="absolute inset-0 bg-sage-100 rounded-lg scale-0 group-hover:scale-100 transition-transform duration-300 origin-center"
           >
@@ -158,14 +151,14 @@ const t = getTranslations(locale);
   <!-- Mobile Navigation Menu -->
   <div
     id="mobile-menu"
-    class="lg:hidden absolute top-full left-0 right-0 bg-white/95 backdrop-blur-lg border-b border-sage-200 shadow-lg transform -translate-y-full opacity-0 invisible transition-all duration-500 ease-out"
+    class="lg:hidden absolute top-full left-0 right-0 bg-white/95 border-b border-sage-200 shadow-lg transform -translate-y-full opacity-0 invisible transition-all duration-500 ease-out"
   >
     <div class="px-4 py-6 space-y-4">
       <a
-        href="#about"
+        href="#accommodation"
         class="block py-3 px-4 text-forest-700 hover:text-sage-600 hover:bg-sage-50 rounded-lg transition-all duration-300 font-medium"
       >
-        {t.nav.about}
+        {t.nav.accommodation}
       </a>
       <a
         href="#amenities"
@@ -253,25 +246,7 @@ const t = getTranslations(locale);
     }
 
     setupScrollBehavior() {
-      // Function to update nav background based on scroll position
-      const updateNavBackground = () => {
-        const currentScrollY = window.scrollY;
-
-        // Update background opacity based on scroll position
-        if (currentScrollY > 50) {
-          this.navBg.style.opacity = "1";
-          this.nav.dataset.navState = "scrolled";
-        } else {
-          this.navBg.style.opacity = "0";
-          this.nav.dataset.navState = "transparent";
-        }
-      };
-
-      // Check initial scroll position on page load
-      updateNavBackground();
-
-      // Listen for scroll events
-      window.addEventListener("scroll", updateNavBackground);
+      // No scroll behavior needed for non-sticky nav
     }
 
     setupMobileMenu() {
