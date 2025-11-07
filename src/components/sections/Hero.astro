@@ -33,14 +33,14 @@ const { locale, t } = Astro.props as Props;
     <div
       class="bg-gradient-to-b from-white via-white to-transparent pt-24 pb-18"
     >
-      <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div
-          class="flex flex-col md:flex-row items-center justify-center gap-6 md:gap-8 animate-on-scroll"
+          class="flex flex-col md:flex-row items-center md:items-center md:justify-start gap-6 md:gap-8 animate-on-scroll"
         >
           <img
             src="/logo-asso.jpg"
             alt="Association Lumière dans le Corps"
-            class="w-32 md:w-40 h-auto rounded-2xl border-2 border-sage-300 shadow-lg flex-shrink-0"
+            class="w-32 md:w-40 h-auto rounded-lg border border-forest-700 shadow-lg flex-shrink-0"
           />
           <div class="text-center md:text-left">
             <h1
@@ -48,11 +48,20 @@ const { locale, t } = Astro.props as Props;
             >
               {t.hero.association_name}
             </h1>
-            <p
-              class="text-base md:text-lg lg:text-xl text-sage-700 font-medium mt-1"
-            >
-              {t.hero.association_tagline}
-            </p>
+            <div class="flex flex-col md:flex-row md:items-center gap-2 md:gap-3 mt-1">
+              <p
+                class="text-base md:text-lg lg:text-xl text-sage-700 font-medium"
+              >
+                {t.hero.association_tagline}
+              </p>
+              <span class="hidden md:inline text-sage-600 font-medium text-lg">•</span>
+              <p
+                class="text-base md:text-lg font-semibold italic"
+                style="color: #66aa52;"
+              >
+                {locale === "fr" ? "vous propose" : "offers you"}
+              </p>
+            </div>
           </div>
         </div>
       </div>
@@ -61,12 +70,11 @@ const { locale, t } = Astro.props as Props;
 
   <!-- Main Hero Content -->
   <div
-    class="relative z-10 flex-1 flex items-center w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8"
-    style="margin-top: -15em !important;"
+    class="relative z-10 flex-1 flex items-end w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-12"
   >
     <div class="w-full">
-      <div class="grid lg:grid-cols-[auto_1fr] gap-8">
-        <!-- 2-Star Badge - Left Side on Desktop, Top on Mobile -->
+      <div class="flex flex-col gap-8">
+        <!-- 2-Star Badge - Aligned Left -->
         <div
           class="flex justify-center lg:justify-start animate-on-scroll"
           data-delay="100"
@@ -115,11 +123,12 @@ const { locale, t } = Astro.props as Props;
           >
             <span>1-2 {locale === "fr" ? "personnes" : "people"}</span>
             <span>•</span>
-            <span
-              >65€ / {locale === "fr" ? "nuit" : "night"} (+ {
-                locale === "fr" ? "taxe de séjour" : "tourist tax"
-              })</span
-            >
+            <div class="flex items-baseline gap-1">
+              <span>65€ / {locale === "fr" ? "nuit" : "night"}</span>
+              <span class="text-sm opacity-90">
+                (+ {locale === "fr" ? "90 centimes de taxe de séjour" : "90 cents tourist tax"})
+              </span>
+            </div>
           </div>
 
           <!-- CTA Buttons -->
@@ -168,16 +177,21 @@ const { locale, t } = Astro.props as Props;
           </div>
 
           <!-- Contribution Message -->
-          <div class="pt-4 animate-on-scroll" data-delay="500">
-            <p
-              class="text-white/95 text-base md:text-lg drop-shadow-[0_2px_8px_rgba(0,0,0,0.7)] leading-relaxed text-balance"
-            >
-              {
-                locale === "fr"
-                  ? "Votre séjour contribue directement au développement de notre association de permaculture qui œuvre pour la biodiversité. Nous vous en remercions."
-                  : "Your stay contributes directly to the development of our permaculture association working for biodiversity. Thank you!"
-              }
-            </p>
+          <div class="pt-12 animate-on-scroll" data-delay="500">
+            <div class="flex gap-4 justify-center lg:justify-start">
+              <span class="text-5xl drop-shadow-[0_2px_8px_rgba(0,0,0,0.7)] flex-shrink-0">🌱</span>
+              <div class="flex-1 border-l-4 border-warm-300/60 pl-4 flex items-center">
+                <p
+                  class="text-white text-base md:text-lg drop-shadow-[0_4px_12px_rgba(0,0,0,0.9)] leading-relaxed text-balance font-medium"
+                >
+                  {
+                    locale === "fr"
+                      ? "Votre séjour contribue directement au développement de notre association de permaculture qui œuvre pour la biodiversité. Nous vous en remercions."
+                      : "Your stay contributes directly to the development of our permaculture association working for biodiversity. Thank you!"
+                  }
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </div>

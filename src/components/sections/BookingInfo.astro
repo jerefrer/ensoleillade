@@ -1,0 +1,171 @@
+---
+interface Props {
+  t: any;
+  locale: string;
+}
+const { t, locale } = Astro.props as Props;
+---
+
+<!-- Booking Information Section -->
+<section id="booking-info" class="relative py-24 bg-gradient-to-br from-warm-50 via-white to-sage-50">
+  <div class="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Section Header -->
+    <div class="text-center mb-16 animate-on-scroll">
+      <div
+        class="w-16 h-16 bg-warm-200 rounded-2xl flex items-center justify-center mx-auto mb-4"
+      >
+        <svg
+          class="w-8 h-8 text-warm-700"
+          fill="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"
+          ></path>
+        </svg>
+      </div>
+      <h2 class="text-4xl lg:text-5xl font-serif font-bold text-forest-800">
+        {locale === "fr" ? "À prévoir" : "To plan for"}
+      </h2>
+    </div>
+
+    <!-- Booking Info Cards -->
+    <div class="space-y-4 animate-on-scroll">
+      <!-- Cleaning -->
+      <div
+        class="flex items-center space-x-4 p-6 bg-white rounded-xl border border-sage-200 shadow-soft"
+      >
+        <div
+          class="w-12 h-12 bg-forest-100 rounded-lg flex items-center justify-center flex-shrink-0"
+        >
+          <span class="text-forest-600 text-xl">🧹</span>
+        </div>
+        <div class="flex-1">
+          <div class="font-semibold text-forest-800">
+            {t.amenities.basic_services.cleaning}
+          </div>
+          <div class="text-sm text-forest-600">
+            {t.amenities.basic_services.cleaning_fee}
+          </div>
+        </div>
+      </div>
+
+      <!-- Bed Linen -->
+      <div
+        class="flex items-center space-x-4 p-6 bg-white rounded-xl border border-sage-200 shadow-soft"
+      >
+        <div
+          class="w-12 h-12 bg-warm-100 rounded-lg flex items-center justify-center flex-shrink-0"
+        >
+          <span class="text-warm-600 text-xl">🛏️</span>
+        </div>
+        <div class="flex-1">
+          <div class="font-medium text-forest-800">
+            {t.amenities.basic_services.bed_linen}
+          </div>
+          <div class="text-sm text-forest-600 mt-1">
+            {t.amenities.basic_services.bed_linen_details}
+          </div>
+        </div>
+        <div class="flex items-center gap-2">
+          <div
+            class="px-3 py-1 bg-warm-100 text-warm-700 rounded-lg font-semibold text-sm"
+          >
+            {t.amenities.basic_services.bed_linen_label}
+          </div>
+          <div
+            class="px-3 py-1 bg-blue-50 text-blue-900 border border-blue-200 rounded-lg font-semibold text-sm"
+          >
+            {t.amenities.basic_services.bed_linen_price}
+          </div>
+        </div>
+      </div>
+
+      <!-- Towels -->
+      <div
+        class="flex items-center space-x-4 p-6 bg-white rounded-xl border border-sage-200 shadow-soft"
+      >
+        <div
+          class="w-12 h-12 bg-warm-100 rounded-lg flex items-center justify-center flex-shrink-0"
+        >
+          <span class="text-warm-600 text-xl">🧺</span>
+        </div>
+        <div class="flex-1">
+          <div class="font-medium text-forest-800">
+            {t.amenities.basic_services.towels}
+          </div>
+          <div class="text-sm text-forest-600 mt-1">
+            {t.amenities.basic_services.towels_details}
+          </div>
+        </div>
+        <div class="flex items-center gap-2">
+          <div
+            class="px-3 py-1 bg-warm-100 text-warm-700 rounded-lg font-semibold text-sm"
+          >
+            {t.amenities.basic_services.towels_label}
+          </div>
+          <div
+            class="px-3 py-1 bg-blue-50 text-blue-900 border border-blue-200 rounded-lg font-semibold text-sm"
+          >
+            {t.amenities.basic_services.towels_price}
+          </div>
+        </div>
+      </div>
+
+      <!-- Holiday Insurance -->
+      <div
+        class="flex items-start space-x-4 p-6 bg-white rounded-xl border border-sage-200 shadow-soft"
+      >
+        <div
+          class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0"
+        >
+          <span class="text-blue-600 text-xl">🏖️</span>
+        </div>
+        <div class="flex-1">
+          <div class="font-semibold text-forest-800 mb-1">
+            {locale === "fr" ? "Assurance villégiature" : "Holiday insurance"}
+          </div>
+          <div class="text-sm text-forest-600">
+            {locale === "fr"
+              ? "Il est possible que votre assurance habitation inclut également cette assurance."
+              : "Your home insurance may also include this coverage."}
+          </div>
+        </div>
+      </div>
+
+      <!-- Cancellation Insurance -->
+      <div
+        class="flex items-start space-x-4 p-6 bg-white rounded-xl border border-sage-200 shadow-soft"
+      >
+        <div
+          class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0"
+        >
+          <span class="text-blue-600 text-xl">🛡️</span>
+        </div>
+        <div class="flex-1">
+          <div class="font-semibold text-forest-800 mb-1">
+            {locale === "fr" ? "Assurance annulation" : "Cancellation insurance"}
+          </div>
+          <div class="text-sm text-forest-600 space-y-1">
+            <p>
+              {locale === "fr" ? "Pour votre tranquillité, nous vous conseillons : " : "For your peace of mind, we recommend: "}
+              <a
+                href="https://www.assur-travel.fr/produits/assurance-location-secure/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="text-blue-600 hover:text-blue-800 font-medium underline"
+              >
+                assur-travel.fr
+              </a>
+            </p>
+            <p class="text-xs text-sage-500 italic">
+              {locale === "fr"
+                ? "(Nous ne sommes pas affiliés à ce service)"
+                : "(We are not affiliated with this service)"}
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

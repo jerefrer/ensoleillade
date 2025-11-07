@@ -1,0 +1,116 @@
+---
+interface Props {
+  t: any;
+  locale: string;
+}
+const { t, locale } = Astro.props as Props;
+---
+
+<!-- Garden Section -->
+<section id="garden" class="relative py-24 bg-gradient-to-br from-sage-50 via-white to-warm-50">
+  <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Section Title -->
+    <div class="text-center mb-16 animate-on-scroll">
+      <h2 class="text-4xl lg:text-5xl font-serif font-bold text-forest-800 mb-4">
+        {locale === "fr"
+          ? "Jardin commun, biodiversité et permaculture"
+          : "Common garden, biodiversity and permaculture"}
+      </h2>
+    </div>
+
+    <!-- Garden Gallery -->
+    <div class="max-w-5xl mx-auto">
+      <!-- Garden Photos - 3 images -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16 animate-on-scroll">
+        <div class="rounded-xl overflow-hidden shadow-soft">
+          <img
+            src="/images/accommodation-extracted/media/image16.jpeg"
+            alt={locale === "fr" ? "Jardin en permaculture" : "Permaculture garden"}
+            class="w-full h-full object-cover aspect-square"
+          />
+        </div>
+        <div class="rounded-xl overflow-hidden shadow-soft">
+          <img
+            src="/images/accommodation-extracted/media/image17.jpeg"
+            alt={locale === "fr" ? "Biodiversité au jardin" : "Garden biodiversity"}
+            class="w-full h-full object-cover aspect-square"
+          />
+        </div>
+        <div class="rounded-xl overflow-hidden shadow-soft">
+          <img
+            src="/images/accommodation-extracted/media/image18.jpeg"
+            alt={locale === "fr" ? "Jardin commun" : "Common garden"}
+            class="w-full h-full object-cover aspect-square"
+          />
+        </div>
+      </div>
+
+      <!-- Friends Section Title -->
+      <div class="text-center mb-10 animate-on-scroll">
+        <h3 class="text-3xl font-serif font-semibold text-forest-800">
+          {locale === "fr"
+            ? "Nos amis que vous pouvez rencontrer"
+            : "Our friends you might meet"}
+        </h3>
+      </div>
+
+      <!-- Friends Photos - Top Row: 3 images with centered caption -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12 animate-on-scroll">
+        <div>
+          <div class="rounded-xl overflow-hidden shadow-soft mb-3">
+            <img
+              src="/images/accommodation-extracted/media/image19.jpeg"
+              alt={locale === "fr" ? "Animaux du jardin" : "Garden animals"}
+              class="w-full h-full object-cover aspect-square"
+            />
+          </div>
+        </div>
+        <div>
+          <div class="rounded-xl overflow-hidden shadow-soft mb-3">
+            <img
+              src="/images/accommodation-extracted/media/image20.jpeg"
+              alt="Puce et Bo"
+              class="w-full h-full object-cover aspect-square"
+            />
+          </div>
+          <p class="text-center text-forest-700 font-medium text-lg">Puce et Bo</p>
+        </div>
+        <div>
+          <div class="rounded-xl overflow-hidden shadow-soft mb-3">
+            <img
+              src="/images/accommodation-extracted/media/image21.jpeg"
+              alt="Sweety"
+              class="w-full h-full object-cover aspect-square"
+            />
+          </div>
+          <p class="text-center text-forest-700 font-medium text-lg">Sweety</p>
+        </div>
+      </div>
+
+      <!-- Friends Photos - Bottom Row: 3 images -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 animate-on-scroll">
+        <div class="rounded-xl overflow-hidden shadow-soft">
+          <img
+            src="/images/accommodation-extracted/media/image22.jpeg"
+            alt={locale === "fr" ? "Faune du jardin" : "Garden fauna"}
+            class="w-full h-full object-cover aspect-square"
+          />
+        </div>
+        <div class="rounded-xl overflow-hidden shadow-soft">
+          <img
+            src="/images/accommodation-extracted/media/image23.jpeg"
+            alt={locale === "fr" ? "Biodiversité locale" : "Local biodiversity"}
+            class="w-full h-full object-cover aspect-square"
+          />
+        </div>
+        <div class="rounded-xl overflow-hidden shadow-soft">
+          <img
+            src="/images/accommodation-extracted/media/image24.jpeg"
+            alt={locale === "fr" ? "Nature environnante" : "Surrounding nature"}
+            class="w-full h-full object-cover aspect-square"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

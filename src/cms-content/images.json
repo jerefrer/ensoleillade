@@ -46,8 +46,8 @@
           "/images/accommodation-extracted/media/image11.jpeg"
         ],
         "legend": {
-          "fr": "Vue de l'Intérieur, Terrasse",
-          "en": "Interior View, Terrace"
+          "fr": "Vue de l'intérieur, Terrasse",
+          "en": "Interior view, Terrace"
         }
       },
       {
@@ -63,9 +63,7 @@
       },
       {
         "id": "outdoor_area",
-        "images": [
-          "/images/accommodation-extracted/media/image14.jpeg"
-        ],
+        "images": ["/images/accommodation-extracted/media/image14.jpeg"],
         "legend": {
           "fr": "Votre partie privative avec coin repas extérieur, hamac et fil à linge",
           "en": "Your private area with outdoor dining, hammock and clothesline"
