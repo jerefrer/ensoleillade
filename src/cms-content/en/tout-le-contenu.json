@@ -26,10 +26,26 @@
     "description": "A 19m² wooden cottage with 18m² terrace in a natural setting in Dordogne.",
     "cta": "Book",
     "association_name": "Lumière dans le Corps Association",
-    "association_tagline": "Biodiversity in permaculture"
+    "association_tagline": "Biodiversity in permaculture",
+    "offers_you": "offers you"
+  },
+  "garden": {
+    "title": "Common garden, biodiversity and permaculture",
+    "friends_title": "Our friends you might meet"
   },
   "accommodation": {
     "title": "Your Accommodation",
+    "ecological_construction_title": "Ecological construction",
+    "ecological_construction_intro": "Built with natural, organic and local materials, in a spirit of sustainable development.",
+    "ecological_construction_insulation": "High-density wood wool insulation for optimal thermal comfort.",
+    "ecological_construction_water": "Natural wastewater treatment by phyto-purification for minimal environmental impact.",
+    "water_filter": "Water filter on sink",
+    "led_lighting": "LED lighting",
+    "solar_panels": "Solar panels to offset air conditioning",
+    "organic_products": "Organic cleaning products",
+    "composter": "Composter",
+    "phyto_message": "Please use organic cleaning and hygiene products. Our phyto-purification system thanks you.",
+    "ecological_construction_alt": "Ecological construction",
     "size": "19m² + 18m² terrace",
     "capacity": "1-2 people",
     "total_area": "Total area",
@@ -114,7 +130,12 @@
       "towels": "Towels",
       "towels_details": "1 large towel, 1 small towel, 1 washcloth",
       "towels_label": "On request",
-      "towels_price": "10€ / person"
+      "towels_price": "10€ / person",
+      "holiday_insurance_title": "Holiday insurance",
+      "holiday_insurance_desc": "Your home insurance may also include this coverage.",
+      "cancellation_insurance_title": "Cancellation insurance",
+      "cancellation_insurance_intro": "For your peace of mind, we recommend: ",
+      "cancellation_insurance_disclaimer": "(We are not affiliated with this service)"
     },
     "ancv": {
       "title": "ANCV Holiday Vouchers",

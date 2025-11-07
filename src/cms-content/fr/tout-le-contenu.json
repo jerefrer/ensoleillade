@@ -26,10 +26,26 @@
     "description": "Une maisonnette en bois de 19m² avec terrasse de 18m² dans un cadre naturel en Dordogne.",
     "cta": "Réserver",
     "association_name": "Association Lumière dans le Corps",
-    "association_tagline": "Biodiversité en permaculture"
+    "association_tagline": "Biodiversité en permaculture",
+    "offers_you": "vous propose"
+  },
+  "garden": {
+    "title": "Jardin commun, biodiversité et permaculture",
+    "friends_title": "Nos amis que vous pouvez rencontrer"
   },
   "accommodation": {
     "title": "Votre Hébergement",
+    "ecological_construction_title": "Construction écologique",
+    "ecological_construction_intro": "Construis avec des matériaux naturels biologiques et locaux, dans un esprit de développement durable.",
+    "ecological_construction_insulation": "Isolation en laine de bois haute densité, pour un confort thermique optimal.",
+    "ecological_construction_water": "Traitement naturel des eaux usées par phyto-épuration pour un impact environnemental minimal.",
+    "water_filter": "Filtre à eau sur évier",
+    "led_lighting": "Éclairage LED",
+    "solar_panels": "Panneaux solaires pour compenser la climatisation",
+    "organic_products": "Produits d'entretien biologiques",
+    "composter": "Composteur",
+    "phyto_message": "Merci d'utiliser des produits d'entretien et d'hygiène biologiques. Notre phyto-épuration vous en remercie.",
+    "ecological_construction_alt": "Construction écologique",
     "size": "19m² + terrasse 18m²",
     "capacity": "1-2 personnes",
     "total_area": "Surface totale",
@@ -115,7 +131,12 @@
       "towels": "Linge de toilette",
       "towels_details": "1 grande serviette, 1 petite serviette, 1 gant",
       "towels_label": "Sur demande",
-      "towels_price": "10€ / personne"
+      "towels_price": "10€ / personne",
+      "holiday_insurance_title": "Assurance villégiature",
+      "holiday_insurance_desc": "Il est possible que votre assurance habitation inclut également cette assurance.",
+      "cancellation_insurance_title": "Assurance annulation",
+      "cancellation_insurance_intro": "Pour votre tranquillité, nous vous conseillons : ",
+      "cancellation_insurance_disclaimer": "(Nous ne sommes pas affiliés à ce service)"
     },
     "ancv": {
       "title": "Chèques Vacances ANCV",

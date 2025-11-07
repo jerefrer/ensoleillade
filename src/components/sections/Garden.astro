@@ -12,9 +12,7 @@ const { t, locale } = Astro.props as Props;
     <!-- Section Title -->
     <div class="text-center mb-16 animate-on-scroll">
       <h2 class="text-4xl lg:text-5xl font-serif font-bold text-forest-800 mb-4">
-        {locale === "fr"
-          ? "Jardin commun, biodiversité et permaculture"
-          : "Common garden, biodiversity and permaculture"}
+        {t.garden.title}
       </h2>
     </div>
 
@@ -48,9 +46,7 @@ const { t, locale } = Astro.props as Props;
       <!-- Friends Section Title -->
       <div class="text-center mb-10 animate-on-scroll">
         <h3 class="text-3xl font-serif font-semibold text-forest-800">
-          {locale === "fr"
-            ? "Nos amis que vous pouvez rencontrer"
-            : "Our friends you might meet"}
+          {t.garden.friends_title}
         </h3>
       </div>
 

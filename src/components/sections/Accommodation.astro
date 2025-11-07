@@ -83,54 +83,46 @@ const { t, locale } = Astro.props as Props;
     <div class="grid lg:grid-cols-2 gap-8 mb-16 animate-on-scroll">
       <div class="bg-gradient-to-br from-sage-50 to-warm-50 rounded-xl p-8">
         <h3 class="text-2xl font-serif font-semibold text-forest-800 mb-6">
-          {locale === "fr" ? "Construction écologique" : "Ecological construction"}
+          {t.accommodation.ecological_construction_title}
         </h3>
         <div class="space-y-4 text-forest-700">
           <p>
-            {locale === "fr"
-              ? "Construis avec des matériaux naturels biologiques et locaux, dans un esprit de développement durable."
-              : "Built with natural, organic and local materials, in a spirit of sustainable development."}
+            {t.accommodation.ecological_construction_intro}
           </p>
           <p>
-            {locale === "fr"
-              ? "Isolation en laine de bois haute densité, pour un confort thermique optimal."
-              : "High-density wood wool insulation for optimal thermal comfort."}
+            {t.accommodation.ecological_construction_insulation}
           </p>
           <p>
-            {locale === "fr"
-              ? "Traitement naturel des eaux usées par phyto-épuration pour un impact environnemental minimal."
-              : "Natural wastewater treatment by phyto-purification for minimal environmental impact."}
+            {t.accommodation.ecological_construction_water}
           </p>
         </div>
         <div class="grid grid-cols-1 gap-3 mt-6">
           <div class="flex items-center space-x-2">
             <span class="text-sage-600">✓</span>
-            <span class="text-sm">{locale === "fr" ? "Filtre à eau sur évier" : "Water filter on sink"}</span>
+            <span class="text-sm">{t.accommodation.water_filter}</span>
           </div>
           <div class="flex items-center space-x-2">
             <span class="text-sage-600">✓</span>
-            <span class="text-sm">{locale === "fr" ? "Éclairage LED" : "LED lighting"}</span>
+            <span class="text-sm">{t.accommodation.led_lighting}</span>
           </div>
           <div class="flex items-center space-x-2">
             <span class="text-sage-600">✓</span>
-            <span class="text-sm">{locale === "fr" ? "Panneaux solaires pour compenser la climatisation" : "Solar panels to offset air conditioning"}</span>
+            <span class="text-sm">{t.accommodation.solar_panels}</span>
           </div>
           <div class="flex items-center space-x-2">
             <span class="text-sage-600">✓</span>
-            <span class="text-sm">{locale === "fr" ? "Produits d'entretien biologiques" : "Organic cleaning products"}</span>
+            <span class="text-sm">{t.accommodation.organic_products}</span>
           </div>
           <div class="flex items-center space-x-2">
             <span class="text-sage-600">✓</span>
-            <span class="text-sm">{locale === "fr" ? "Composteur" : "Composter"}</span>
+            <span class="text-sm">{t.accommodation.composter}</span>
           </div>
         </div>
         <div class="mt-6 p-4 bg-white/50 rounded-lg border border-sage-200">
           <div class="flex items-start space-x-2">
             <span class="text-xl">🌿</span>
             <p class="text-forest-700 text-sm">
-              {locale === "fr"
-                ? "Merci d'utiliser des produits d'entretien et d'hygiène biologiques. Notre phyto-épuration vous en remercie."
-                : "Please use organic cleaning and hygiene products. Our phyto-purification system thanks you."}
+              {t.accommodation.phyto_message}
             </p>
           </div>
         </div>
@@ -139,9 +131,7 @@ const { t, locale } = Astro.props as Props;
       <div>
         <img
           src="/images/accommodation-extracted/media/image15.jpeg"
-          alt={locale === "fr"
-            ? "Construction écologique"
-            : "Ecological construction"}
+          alt={t.accommodation.ecological_construction_alt}
           class="w-full h-full object-cover rounded-xl"
         />
       </div>

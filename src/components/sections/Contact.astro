@@ -16,23 +16,23 @@ const { t, locale } = Astro.props as Props;
     </p>
 
     <div class="grid md:grid-cols-2 gap-8 max-w-2xl mx-auto mb-8">
-      <div class="bg-forest-600 p-8 rounded-lg border border-forest-500/20">
+      <div class="bg-white p-8 rounded-lg border-2 border-warm-300 shadow-xl">
         <div class="text-3xl mb-4">📞</div>
-        <h3 class="text-xl font-semibold mb-2">{t.contact.phone}</h3>
+        <h3 class="text-xl font-semibold mb-2 text-forest-800">{t.contact.phone}</h3>
         <a
           href={`tel:${t.contact.phone_number.replace(/\s/g, "")}`}
-          class="text-warm-200 hover:text-warm-100 transition-colors text-lg"
+          class="text-forest-700 hover:text-warm-600 transition-colors text-lg font-medium"
         >
           {t.contact.phone_number}
         </a>
       </div>
 
-      <div class="bg-forest-600 p-8 rounded-lg border border-forest-500/20">
+      <div class="bg-white p-8 rounded-lg border-2 border-warm-300 shadow-xl">
         <div class="text-3xl mb-4">✉️</div>
-        <h3 class="text-xl font-semibold mb-2">{t.contact.email}</h3>
+        <h3 class="text-xl font-semibold mb-2 text-forest-800">{t.contact.email}</h3>
         <a
           href={`mailto:${t.contact.email_address}`}
-          class="text-warm-200 hover:text-warm-100 transition-colors break-all"
+          class="text-forest-700 hover:text-warm-600 transition-colors break-all font-medium"
         >
           {t.contact.email_address}
         </a>
@@ -103,7 +103,7 @@ const { t, locale } = Astro.props as Props;
         </div>
 
         <div
-          class="px-6 py-3 bg-warm-50/90 backdrop-blur-sm border-2 border-warm-200 rounded-xl shadow-sm text-center"
+          class="px-6 py-3 bg-warm-50/90 backdrop-blur-sm border-2 border-warm-200 rounded-xl shadow-sm text-center flex flex-col"
         >
           <div class="flex items-center justify-center mb-2">
             <span class="text-warm-600 mr-2">🕐</span>
@@ -111,9 +111,11 @@ const { t, locale } = Astro.props as Props;
               {t.accommodation.schedule}
             </span>
           </div>
-          <div class="text-sm text-warm-700 space-y-1">
-            <div><span class="font-medium">{t.accommodation.checkin}</span> 17h00 - 21h00</div>
-            <div><span class="font-medium">{t.accommodation.checkout}</span> 08h00 - 10h00</div>
+          <div class="flex-1 flex items-center justify-center">
+            <div class="text-sm text-warm-700 space-y-1">
+              <div><span class="font-medium">{t.accommodation.checkin}</span> 17h00 - 21h00</div>
+              <div><span class="font-medium">{t.accommodation.checkout}</span> 08h00 - 10h00</div>
+            </div>
           </div>
         </div>
       </div>

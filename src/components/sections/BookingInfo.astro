@@ -25,7 +25,7 @@ const { t, locale } = Astro.props as Props;
         </svg>
       </div>
       <h2 class="text-4xl lg:text-5xl font-serif font-bold text-forest-800">
-        {locale === "fr" ? "À prévoir" : "To plan for"}
+        {t.amenities.basic_services.title}
       </h2>
     </div>
 
@@ -123,12 +123,10 @@ const { t, locale } = Astro.props as Props;
         </div>
         <div class="flex-1">
           <div class="font-semibold text-forest-800 mb-1">
-            {locale === "fr" ? "Assurance villégiature" : "Holiday insurance"}
+            {t.amenities.basic_services.holiday_insurance_title}
           </div>
           <div class="text-sm text-forest-600">
-            {locale === "fr"
-              ? "Il est possible que votre assurance habitation inclut également cette assurance."
-              : "Your home insurance may also include this coverage."}
+            {t.amenities.basic_services.holiday_insurance_desc}
           </div>
         </div>
       </div>
@@ -144,11 +142,11 @@ const { t, locale } = Astro.props as Props;
         </div>
         <div class="flex-1">
           <div class="font-semibold text-forest-800 mb-1">
-            {locale === "fr" ? "Assurance annulation" : "Cancellation insurance"}
+            {t.amenities.basic_services.cancellation_insurance_title}
           </div>
           <div class="text-sm text-forest-600 space-y-1">
             <p>
-              {locale === "fr" ? "Pour votre tranquillité, nous vous conseillons : " : "For your peace of mind, we recommend: "}
+              {t.amenities.basic_services.cancellation_insurance_intro}
               <a
                 href="https://www.assur-travel.fr/produits/assurance-location-secure/"
                 target="_blank"
@@ -159,9 +157,7 @@ const { t, locale } = Astro.props as Props;
               </a>
             </p>
             <p class="text-xs text-sage-500 italic">
-              {locale === "fr"
-                ? "(Nous ne sommes pas affiliés à ce service)"
-                : "(We are not affiliated with this service)"}
+              {t.amenities.basic_services.cancellation_insurance_disclaimer}
             </p>
           </div>
         </div>
