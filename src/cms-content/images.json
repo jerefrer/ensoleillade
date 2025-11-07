@@ -14,43 +14,61 @@
     }
   },
   "accommodation": {
-    "primary": "/images/IMG_6096 cropped.webp",
-    "primary_alt": {
-      "fr": "Terrasse avec vue sur la nature",
-      "en": "Terrace with nature view"
-    },
-    "secondary": "/images/5.jpg",
-    "secondary_alt": {
-      "fr": "Vue panoramique du jardin en permaculture",
-      "en": "Panoramic view of the permaculture garden"
-    },
-    "gallery": [
+    "photo_groups": [
       {
-        "image": "/images/IMG_6087-1.webp",
-        "alt": {
-          "fr": "Coin repos avec vue",
-          "en": "Resting area with view"
+        "id": "sleeping",
+        "images": [
+          "/images/accommodation-extracted/media/image4.jpeg",
+          "/images/accommodation-extracted/media/image5.jpeg",
+          "/images/accommodation-extracted/media/image6.jpeg"
+        ],
+        "legend": {
+          "fr": "2 lits 190x90 pouvant être rapprochés",
+          "en": "2 beds 190x90 that can be moved together"
         }
       },
       {
-        "image": "/images/img_5742_ytclc3w-1.webp",
-        "alt": {
-          "fr": "Espace intérieur confortable",
-          "en": "Comfortable interior space"
+        "id": "kitchen_bathroom",
+        "images": [
+          "/images/accommodation-extracted/media/image7.jpeg",
+          "/images/accommodation-extracted/media/image8.jpeg",
+          "/images/accommodation-extracted/media/image9.jpeg"
+        ],
+        "legend": {
+          "fr": "Kitchenette, Salle d'eau, WC",
+          "en": "Kitchenette, Bathroom, Toilet"
         }
       },
       {
-        "image": "/images/IMG_6109.webp",
-        "alt": {
-          "fr": "Espace de vie lumineux",
-          "en": "Bright living space"
+        "id": "interior_terrace1",
+        "images": [
+          "/images/accommodation-extracted/media/image10.jpeg",
+          "/images/accommodation-extracted/media/image11.jpeg"
+        ],
+        "legend": {
+          "fr": "Vue de l'Intérieur, Terrasse",
+          "en": "Interior View, Terrace"
         }
       },
       {
-        "image": "/images/IMG_6091-1.webp",
-        "alt": {
-          "fr": "Jardin et extérieur",
-          "en": "Garden and exterior"
+        "id": "terrace2_entrance",
+        "images": [
+          "/images/accommodation-extracted/media/image12.jpeg",
+          "/images/accommodation-extracted/media/image13.jpeg"
+        ],
+        "legend": {
+          "fr": "Terrasse, Entrée privative avec boîte à clef",
+          "en": "Terrace, Private entrance with key box"
+        }
+      },
+      {
+        "id": "outdoor_area",
+        "images": [
+          "/images/accommodation-extracted/media/image14.jpeg"
+        ],
+        "legend": {
+          "fr": "Votre partie privative avec coin repas extérieur, hamac et fil à linge",
+          "en": "Your private area with outdoor dining, hammock and clothesline"
         }
       }
     ]

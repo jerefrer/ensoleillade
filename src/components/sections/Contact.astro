@@ -39,57 +39,81 @@ const { t, locale } = Astro.props as Props;
       </div>
     </div>
 
-    <!-- Pricing & Minimum Stay -->
-    <div class="flex flex-wrap justify-center gap-4 mb-8">
-      <div
-        class="inline-block text-left px-6 py-3 bg-blue-50/90 backdrop-blur-sm border-2 border-blue-200 rounded-xl shadow-sm"
-      >
-        <div>
-          <span class="font-semibold text-blue-900">
-            {t.pricing.price_per_night}
-          </span>
-          <span
-            class="text-xs text-blue-700/80 font-medium ml-1 align-baseline"
-          >
-            {t.pricing.price_note}
-          </span>
-        </div>
-        <span class="text-sm text-blue-600/70"> {t.pricing.tourist_tax}</span>
-      </div>
-
-      <div
-        class="inline-block px-6 py-3 bg-white/90 backdrop-blur-sm border-2 border-forest-200 rounded-xl shadow-sm text-center"
-      >
-        <div class="flex items-center justify-center mb-1">
-          <span class="text-forest-600 mr-2">🗓️</span>
-          <span class="font-semibold text-forest-800">
-            {t.accommodation.minimum_stay}
-          </span>
-        </div>
-        <div class="text-sm text-forest-700">
-          {t.accommodation.minimum_nights}
-        </div>
-      </div>
-    </div>
-
-    <!-- ANCV Badge -->
-    <div class="flex justify-center mb-8">
-      <div
-        class="inline-flex items-center px-5 py-3 bg-gradient-to-r from-blue-50 to-blue-100 border-2 border-blue-200 rounded-xl shadow-sm"
-      >
-        <div class="w-16 h-12 mr-3 flex items-center justify-center">
-          <img
-            src="/cheque-vacance-logo.webp"
-            alt="ANCV Chèques Vacances"
-            class="w-full object-contain rounded"
-          />
-        </div>
-        <div>
-          <div class="font-bold text-blue-900 text-sm">
-            {t.amenities.ancv.title}
+    <!-- Pricing & Booking Info -->
+    <div class="max-w-3xl mx-auto mb-8">
+      <!-- Row 1: Price & ANCV -->
+      <div class="grid md:grid-cols-2 gap-4 mb-4">
+        <div
+          class="px-6 py-3 bg-blue-50/90 backdrop-blur-sm border-2 border-blue-200 rounded-xl shadow-sm text-center"
+        >
+          <div>
+            <span class="font-semibold text-blue-900">
+              {t.pricing.price_per_night}
+            </span>
+            <span
+              class="text-xs text-blue-700/80 font-medium ml-1 align-baseline"
+            >
+              {t.pricing.price_note}
+            </span>
           </div>
-          <div class="text-left text-xs text-blue-700">
-            {t.amenities.ancv.accepted}
+          <div class="text-xs text-blue-600/70 mt-1">
+            {t.pricing.tourist_tax} : {t.pricing.tourist_tax_amount}
+          </div>
+        </div>
+
+        <div
+          class="flex items-center justify-center px-5 py-3 bg-gradient-to-r from-blue-50 to-blue-100 border-2 border-blue-200 rounded-xl shadow-sm"
+        >
+          <div class="w-16 h-12 mr-3 flex items-center justify-center">
+            <img
+              src="/cheque-vacance-logo.webp"
+              alt="ANCV Chèques Vacances"
+              class="w-full object-contain rounded"
+            />
+          </div>
+          <div>
+            <div class="font-bold text-blue-900 text-sm">
+              {t.amenities.ancv.title}
+            </div>
+            <div class="text-left text-xs text-blue-700">
+              {t.amenities.ancv.accepted}
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Row 2: Minimum Stay & Schedule -->
+      <div class="grid md:grid-cols-2 gap-4">
+        <div
+          class="px-6 py-3 bg-white/90 backdrop-blur-sm border-2 border-forest-200 rounded-xl shadow-sm"
+        >
+          <div class="flex items-center justify-center mb-2">
+            <span class="text-forest-600 mr-2">🗓️</span>
+            <span class="font-semibold text-forest-800">
+              {t.accommodation.minimum_stay}
+            </span>
+          </div>
+          <div class="flex justify-center">
+            <div class="text-sm text-forest-700 space-y-1 text-left">
+              <div>3 nuits (basse saison)</div>
+              <div>5 nuits (vacances scolaires)</div>
+              <div>7 nuits (haute saison)</div>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="px-6 py-3 bg-warm-50/90 backdrop-blur-sm border-2 border-warm-200 rounded-xl shadow-sm text-center"
+        >
+          <div class="flex items-center justify-center mb-2">
+            <span class="text-warm-600 mr-2">🕐</span>
+            <span class="font-semibold text-warm-800">
+              {t.accommodation.schedule}
+            </span>
+          </div>
+          <div class="text-sm text-warm-700 space-y-1">
+            <div><span class="font-medium">{t.accommodation.checkin}</span> 17h00 - 21h00</div>
+            <div><span class="font-medium">{t.accommodation.checkout}</span> 08h00 - 10h00</div>
           </div>
         </div>
       </div>

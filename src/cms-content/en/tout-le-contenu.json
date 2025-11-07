@@ -7,7 +7,8 @@
   "pricing": {
     "price_per_night": "€65 / night",
     "price_note": "(flat rate)",
-    "tourist_tax": "+ tourist tax"
+    "tourist_tax": "Tourist tax",
+    "tourist_tax_amount": "€0.90 / person / night"
   },
   "nav": {
     "home": "Home",
@@ -35,7 +36,7 @@
     "guest_capacity": "Guest capacity",
     "pricing": "Pricing",
     "minimum_stay": "Minimum stay",
-    "minimum_nights": "3 nights (low season) · 7 nights (high season)",
+    "minimum_nights": "3 nights (low season) · 5 nights (school holidays) · 7 nights (high season)",
     "minimum_nights_short": "3-7 nights",
     "interior": "Interior",
     "terrace": "Terrace",
@@ -107,9 +108,11 @@
       "cleaning": "Cleaning",
       "cleaning_fee": "Optional supplement for €40 per stay",
       "bed_linen": "Bed linen",
+      "bed_linen_details": "1 fitted sheet, 1 duvet cover or flat sheet, 1 pillowcase",
       "bed_linen_label": "On request",
       "bed_linen_price": "12€ / person",
       "towels": "Towels",
+      "towels_details": "1 large towel, 1 small towel, 1 washcloth",
       "towels_label": "On request",
       "towels_price": "10€ / person"
     },
@@ -121,7 +124,7 @@
   "location": {
     "title": "Location",
     "subtitle": "Saint-Léon-sur-Vézère, Dordogne",
-    "description": "In the heart of Périgord Noir, access to prehistoric sites and villages of the region.",
+    "description": "Located in the heart of Périgord Noir, L'Ensoleillade offers you privileged access to the treasures of Périgord.",
     "map_url": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2853.5!2d1.064457!3d45.005348!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47ff576265620cb7%3A0xac1b683acce41a52!2sGite%20L'Ensoleillade!5e1!3m2!1sfr!2sfr!4v1234567890",
     "map_title": "Location map",
     "nearest_station": "Nearest train station",

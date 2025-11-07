@@ -14,85 +14,65 @@ const { t, locale } = Astro.props as Props;
     <!-- Section Header -->
     <div class="text-center mb-16 animate-on-scroll">
       <h2
-        class="text-3xl lg:text-4xl font-serif font-bold text-forest-800 mb-4"
+        class="text-3xl lg:text-4xl font-serif font-bold text-forest-800"
       >
         {t.accommodation.title}
       </h2>
-      <p class="text-lg text-forest-700 max-w-2xl mx-auto">
-        {locale === "fr"
-          ? "Une maisonnette en bois de 19m² avec sa terrasse de 18m² et son jardin"
-          : "A 19m² wooden cottage with 18m² terrace and garden"}
-      </p>
     </div>
 
-    <!-- Key Info Grid -->
-    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-4 mb-16 animate-on-scroll">
-      <div class="bg-sage-50 rounded-xl p-6 text-center">
-        <div class="text-3xl mb-2">👥</div>
-        <div class="font-semibold text-forest-800">1-2 {locale === "fr" ? "personnes" : "people"}</div>
-        <div class="text-sm text-sage-600">{locale === "fr" ? "Capacité" : "Capacity"}</div>
-      </div>
-      <div class="bg-blue-50 rounded-xl p-6 text-center">
-        <div class="text-3xl mb-2">💶</div>
-        <div class="font-semibold text-forest-800">65€ / {locale === "fr" ? "nuit" : "night"}</div>
-        <div class="text-sm text-sage-600">+ {locale === "fr" ? "taxe de séjour" : "tourist tax"}</div>
-      </div>
-      <div class="bg-warm-50 rounded-xl p-6 text-center">
-        <div class="text-3xl mb-2">🗓️</div>
-        <div class="font-semibold text-forest-800">{locale === "fr" ? "3-7 nuits" : "3-7 nights"}</div>
-        <div class="text-sm text-sage-600">{locale === "fr" ? "Minimum" : "Minimum stay"}</div>
-      </div>
-      <div class="bg-sage-50 rounded-xl p-6 text-center">
-        <div class="text-3xl mb-2">🎫</div>
-        <div class="font-semibold text-forest-800">{locale === "fr" ? "Chèques Vacances" : "Holiday Vouchers"}</div>
-        <div class="text-sm text-sage-600">ANCV</div>
-      </div>
-    </div>
-
-    <!-- Visual Gallery Grid -->
+    <!-- Photo Gallery with Legends -->
     <div class="mb-20 animate-on-scroll">
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4 md:items-end">
-        <!-- Large Featured Image (2 columns) -->
-        <div class="md:col-span-2">
-          <div
-            class="aspect-[4/3] rounded-2xl overflow-hidden shadow-large group card-hover"
-          >
-            <img
-              src={images.accommodation.primary}
-              alt={locale === "fr"
-                ? images.accommodation.primary_alt.fr
-                : images.accommodation.primary_alt.en}
-              class="w-full h-full object-cover"
-            />
-          </div>
-        </div>
-
-        <!-- Single Right Image -->
-        <div class="md:col-span-1">
-          <div
-            class="aspect-[4/3] rounded-2xl overflow-hidden shadow-large group card-hover"
-          >
-            <img
-              src={images.accommodation.secondary}
-              alt={locale === "fr"
-                ? images.accommodation.secondary_alt.fr
-                : images.accommodation.secondary_alt.en}
-              class="w-full h-full object-cover"
-            />
-          </div>
-        </div>
-      </div>
-
-      <!-- Bottom Row: 4 Images -->
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
         {
-          images.accommodation.gallery.map((item, index) => (
-            <div class="aspect-[4/3] rounded-xl overflow-hidden shadow-soft group card-hover">
-              <img
-                src={item.image}
-                alt={locale === "fr" ? item.alt.fr : item.alt.en}
-                class="w-full h-full object-cover"
-              />
+          images.accommodation.photo_groups.map((group, index) => (
+            <div
+              class={
+                group.images.length > 1 || index === images.accommodation.photo_groups.length - 1
+                  ? "md:col-span-2"
+                  : "md:col-span-1"
+              }
+            >
+              {group.images.length > 1 ? (
+                <div class="mb-8">
+                  <!-- Multi-image group -->
+                  <div
+                    class={`grid gap-4 items-end ${
+                      group.images.length === 2
+                        ? "grid-cols-1 md:grid-cols-2"
+                        : "grid-cols-1 md:grid-cols-3"
+                    }`}
+                  >
+                    {group.images.map((image_path) => (
+                      <div class="flex justify-center items-end">
+                        <img
+                          src={image_path}
+                          alt={locale === "fr" ? group.legend.fr : group.legend.en}
+                          class="rounded-xl shadow-soft w-full h-auto max-h-[500px] object-cover object-center"
+                          style="aspect-ratio: auto;"
+                        />
+                      </div>
+                    ))}
+                  </div>
+                  <p class="text-center text-forest-700 font-medium mt-4 text-base md:text-lg">
+                    {locale === "fr" ? group.legend.fr : group.legend.en}
+                  </p>
+                </div>
+              ) : (
+                <div class="mb-8 flex flex-col items-center">
+                  <!-- Single image -->
+                  <div class="flex justify-center items-end">
+                    <img
+                      src={group.images[0]}
+                      alt={locale === "fr" ? group.legend.fr : group.legend.en}
+                      class="rounded-xl shadow-soft w-full h-auto max-h-[500px] object-cover object-center"
+                      style="aspect-ratio: auto;"
+                    />
+                  </div>
+                  <p class="text-center text-forest-700 font-medium mt-4 text-base md:text-lg">
+                    {locale === "fr" ? group.legend.fr : group.legend.en}
+                  </p>
+                </div>
+              )}
             </div>
           ))
         }
@@ -122,7 +102,7 @@ const { t, locale } = Astro.props as Props;
               : "Natural wastewater treatment by phyto-purification for minimal environmental impact."}
           </p>
         </div>
-        <div class="grid grid-cols-2 gap-3 mt-6">
+        <div class="grid grid-cols-1 gap-3 mt-6">
           <div class="flex items-center space-x-2">
             <span class="text-sage-600">✓</span>
             <span class="text-sm">{locale === "fr" ? "Filtre à eau sur évier" : "Water filter on sink"}</span>
@@ -133,28 +113,42 @@ const { t, locale } = Astro.props as Props;
           </div>
           <div class="flex items-center space-x-2">
             <span class="text-sage-600">✓</span>
-            <span class="text-sm">{locale === "fr" ? "Panneaux solaires" : "Solar panels"}</span>
+            <span class="text-sm">{locale === "fr" ? "Panneaux solaires pour compenser la climatisation" : "Solar panels to offset air conditioning"}</span>
+          </div>
+          <div class="flex items-center space-x-2">
+            <span class="text-sage-600">✓</span>
+            <span class="text-sm">{locale === "fr" ? "Produits d'entretien biologiques" : "Organic cleaning products"}</span>
           </div>
           <div class="flex items-center space-x-2">
             <span class="text-sage-600">✓</span>
             <span class="text-sm">{locale === "fr" ? "Composteur" : "Composter"}</span>
           </div>
         </div>
+        <div class="mt-6 p-4 bg-white/50 rounded-lg border border-sage-200">
+          <div class="flex items-start space-x-2">
+            <span class="text-xl">🌿</span>
+            <p class="text-forest-700 text-sm">
+              {locale === "fr"
+                ? "Merci d'utiliser des produits d'entretien et d'hygiène biologiques. Notre phyto-épuration vous en remercie."
+                : "Please use organic cleaning and hygiene products. Our phyto-purification system thanks you."}
+            </p>
+          </div>
+        </div>
       </div>
 
       <div>
         <img
-          src={images.accommodation.secondary}
+          src="/images/accommodation-extracted/media/image15.jpeg"
           alt={locale === "fr"
-            ? images.accommodation.secondary_alt.fr
-            : images.accommodation.secondary_alt.en}
+            ? "Construction écologique"
+            : "Ecological construction"}
           class="w-full h-full object-cover rounded-xl"
         />
       </div>
     </div>
 
     <!-- Practical Information Grid -->
-    <div class="grid md:grid-cols-3 gap-6 mb-12 animate-on-scroll">
+    <div class="grid md:grid-cols-2 gap-6 mb-12 animate-on-scroll">
       <!-- Check-in/out -->
       <div class="bg-sage-50 rounded-xl p-6">
         <h3 class="font-semibold text-lg text-forest-800 mb-4 flex items-center">
@@ -193,19 +187,6 @@ const { t, locale } = Astro.props as Props;
             <span set:html={t.accommodation.no_parties} />
           </div>
         </div>
-      </div>
-
-      <!-- Eco Request -->
-      <div class="bg-sage-50 rounded-xl p-6">
-        <h3 class="font-semibold text-lg text-forest-800 mb-4 flex items-center">
-          <span class="text-2xl mr-2">🌿</span>
-          {locale === "fr" ? "Produits d'entretien" : "Cleaning products"}
-        </h3>
-        <p class="text-forest-700">
-          {locale === "fr"
-            ? "Merci d'utilisé des produits d'entretien et d'hygiène biologiques. Notre phyto-épuration vous en remercie."
-            : "Please use organic cleaning and hygiene products. Our phyto-purification system thanks you."}
-        </p>
       </div>
     </div>
 
