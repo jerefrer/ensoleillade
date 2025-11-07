@@ -222,6 +222,14 @@ collections:
               - { label: 'Titre', name: 'title', widget: 'string', i18n: true }
               - { label: 'Acceptés', name: 'accepted', widget: 'string', i18n: true }
 
+      - label: 'Section Jardin'
+        name: 'garden'
+        widget: 'object'
+        i18n: true
+        fields:
+          - { label: 'Titre', name: 'title', widget: 'string', i18n: true }
+          - { label: 'Titre des amis', name: 'friends_title', widget: 'string', i18n: true }
+
       - label: 'Section Emplacement'
         name: 'location'
         widget: 'object'
@@ -371,33 +379,49 @@ collections:
             name: 'accommodation'
             widget: 'object'
             fields:
-              - { label: 'Image principale', name: 'primary', widget: 'image', required: false }
-              - label: 'Texte alternatif principal'
-                name: 'primary_alt'
-                widget: 'object'
-                fields:
-                  - { label: 'Français', name: 'fr', widget: 'string' }
-                  - { label: 'Anglais', name: 'en', widget: 'string' }
-              - { label: 'Image secondaire', name: 'secondary', widget: 'image', required: false }
-              - label: 'Texte alternatif secondaire'
-                name: 'secondary_alt'
-                widget: 'object'
-                fields:
-                  - { label: 'Français', name: 'fr', widget: 'string' }
-                  - { label: 'Anglais', name: 'en', widget: 'string' }
-              - label: 'Galerie'
-                name: 'gallery'
+              - label: 'Groupes de photos'
+                name: 'photo_groups'
                 widget: 'list'
                 required: false
+                summary: '{{fields.legend.fr}}'
                 fields:
-                  - { label: 'Image', name: 'image', widget: 'image' }
-                  - label: 'Texte alternatif'
-                    name: 'alt'
+                  - label: 'Images'
+                    name: 'images'
+                    widget: 'list'
+                    field: { label: 'Chemin de l''image', name: 'image', widget: 'image' }
+                  - label: 'Légende'
+                    name: 'legend'
                     widget: 'object'
                     fields:
                       - { label: 'Français', name: 'fr', widget: 'string' }
                       - { label: 'Anglais', name: 'en', widget: 'string' }
           
+          - label: 'Jardin'
+            name: 'garden'
+            widget: 'object'
+            fields:
+              - label: 'Galerie principale (3 images)'
+                name: 'main_gallery'
+                widget: 'list'
+                required: false
+                field: { label: 'Image', name: 'image', widget: 'image' }
+              - label: 'Galerie des amis (6 images)'
+                name: 'friends_gallery'
+                widget: 'list'
+                required: false
+                summary: '{{fields.legend.fr}}'
+                fields:
+                  - label: 'Image'
+                    name: 'image'
+                    widget: 'image'
+                  - label: 'Légende (optionnelle)'
+                    name: 'legend'
+                    widget: 'object'
+                    required: false
+                    fields:
+                      - { label: 'Français', name: 'fr', widget: 'string', required: false }
+                      - { label: 'Anglais', name: 'en', widget: 'string', required: false }
+
           - label: 'Activités'
             name: 'activities'
             widget: 'object'

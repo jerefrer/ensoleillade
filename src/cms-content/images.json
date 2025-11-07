@@ -1,6 +1,6 @@
 {
   "hero": {
-    "primary": "/images/hero.jpg",
+    "primary": "/images/hero.webp",
     "primary_alt": {
       "fr": "L'Ensoleillade - Gîte écologique en Dordogne",
       "en": "L'Ensoleillade - Eco-friendly cottage in Dordogne"
@@ -16,11 +16,10 @@
   "accommodation": {
     "photo_groups": [
       {
-        "id": "sleeping",
         "images": [
-          "/images/accommodation-extracted/media/image4.jpeg",
-          "/images/accommodation-extracted/media/image5.jpeg",
-          "/images/accommodation-extracted/media/image6.jpeg"
+          "/images/accommodation-extracted/media/image4.webp",
+          "/images/accommodation-extracted/media/image5.webp",
+          "/images/accommodation-extracted/media/image6.webp"
         ],
         "legend": {
           "fr": "2 lits 190x90 pouvant être rapprochés",
@@ -28,11 +27,10 @@
         }
       },
       {
-        "id": "kitchen_bathroom",
         "images": [
-          "/images/accommodation-extracted/media/image7.jpeg",
-          "/images/accommodation-extracted/media/image8.jpeg",
-          "/images/accommodation-extracted/media/image9.jpeg"
+          "/images/accommodation-extracted/media/image7.webp",
+          "/images/accommodation-extracted/media/image8.webp",
+          "/images/accommodation-extracted/media/image9.webp"
         ],
         "legend": {
           "fr": "Kitchenette, Salle d'eau, WC",
@@ -40,10 +38,9 @@
         }
       },
       {
-        "id": "interior_terrace1",
         "images": [
-          "/images/accommodation-extracted/media/image10.jpeg",
-          "/images/accommodation-extracted/media/image11.jpeg"
+          "/images/accommodation-extracted/media/image10.webp",
+          "/images/accommodation-extracted/media/image11.webp"
         ],
         "legend": {
           "fr": "Vue de l'intérieur, Terrasse",
@@ -51,10 +48,9 @@
         }
       },
       {
-        "id": "terrace2_entrance",
         "images": [
-          "/images/accommodation-extracted/media/image12.jpeg",
-          "/images/accommodation-extracted/media/image13.jpeg"
+          "/images/accommodation-extracted/media/image12.webp",
+          "/images/accommodation-extracted/media/image13.webp"
         ],
         "legend": {
           "fr": "Terrasse, Entrée privative avec boîte à clef",
@@ -62,8 +58,7 @@
         }
       },
       {
-        "id": "outdoor_area",
-        "images": ["/images/accommodation-extracted/media/image14.jpeg"],
+        "images": ["/images/accommodation-extracted/media/image14.webp"],
         "legend": {
           "fr": "Votre partie privative avec coin repas extérieur, hamac et fil à linge",
           "en": "Your private area with outdoor dining, hammock and clothesline"
@@ -71,23 +66,58 @@
       }
     ]
   },
+  "garden": {
+    "main_gallery": [
+      "/images/accommodation-extracted/media/image16.webp",
+      "/images/accommodation-extracted/media/image17.webp",
+      "/images/accommodation-extracted/media/image18.webp"
+    ],
+    "friends_gallery": [
+      {
+        "image": "/images/accommodation-extracted/media/image19.webp"
+      },
+      {
+        "image": "/images/accommodation-extracted/media/image20.webp",
+        "legend": {
+          "fr": "Puce et Bo",
+          "en": "Puce et Bo"
+        }
+      },
+      {
+        "image": "/images/accommodation-extracted/media/image21.webp",
+        "legend": {
+          "fr": "Sweety",
+          "en": "Sweety"
+        }
+      },
+      {
+        "image": "/images/accommodation-extracted/media/image22.webp"
+      },
+      {
+        "image": "/images/accommodation-extracted/media/image23.webp"
+      },
+      {
+        "image": "/images/accommodation-extracted/media/image24.webp"
+      }
+    ]
+  },
   "activities": {
     "lascaux": {
-      "image": "/images/lascaux.jpg",
+      "image": "/images/lascaux.webp",
       "alt": {
         "fr": "Grottes de Lascaux",
         "en": "Lascaux Caves"
       }
     },
     "canoeing": {
-      "image": "/images/canoe.jpg",
+      "image": "/images/canoe.webp",
       "alt": {
         "fr": "Canoë sur la Dordogne",
         "en": "Canoeing on the Dordogne"
       }
     },
     "castles": {
-      "image": "/images/chateau.jpg",
+      "image": "/images/chateau.webp",
       "alt": {
         "fr": "Châteaux et jardins de la région",
         "en": "Castles and gardens of the region"

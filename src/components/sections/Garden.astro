@@ -1,4 +1,6 @@
 ---
+import images from "../../cms-content/images.json";
+
 interface Props {
   t: any;
   locale: string;
@@ -16,96 +18,72 @@ const { t, locale } = Astro.props as Props;
       </h2>
     </div>
 
-    <!-- Garden Gallery -->
-    <div class="max-w-5xl mx-auto">
-      <!-- Garden Photos - 3 images -->
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16 animate-on-scroll">
-        <div class="rounded-xl overflow-hidden shadow-soft">
-          <img
-            src="/images/accommodation-extracted/media/image16.jpeg"
-            alt={locale === "fr" ? "Jardin en permaculture" : "Permaculture garden"}
-            class="w-full h-full object-cover aspect-square"
-          />
-        </div>
-        <div class="rounded-xl overflow-hidden shadow-soft">
-          <img
-            src="/images/accommodation-extracted/media/image17.jpeg"
-            alt={locale === "fr" ? "Biodiversité au jardin" : "Garden biodiversity"}
-            class="w-full h-full object-cover aspect-square"
-          />
-        </div>
-        <div class="rounded-xl overflow-hidden shadow-soft">
-          <img
-            src="/images/accommodation-extracted/media/image18.jpeg"
-            alt={locale === "fr" ? "Jardin commun" : "Common garden"}
-            class="w-full h-full object-cover aspect-square"
-          />
-        </div>
+    <!-- Main Garden Gallery - 3 images without legends -->
+    <div class="mb-20">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {
+          images.garden.main_gallery.map((image_path) => (
+            <div class="flex justify-center items-end">
+              <img
+                src={image_path}
+                alt={t.garden.title}
+                class="rounded-xl shadow-soft w-full h-auto max-h-[500px] object-cover object-center"
+                style="aspect-ratio: auto;"
+              />
+            </div>
+          ))
+        }
       </div>
+    </div>
 
-      <!-- Friends Section Title -->
-      <div class="text-center mb-10 animate-on-scroll">
-        <h3 class="text-3xl font-serif font-semibold text-forest-800">
+    <!-- Friends Section -->
+    <div>
+      <div class="text-center mb-12 animate-on-scroll">
+        <h3 class="text-3xl lg:text-4xl font-serif font-bold text-forest-800">
           {t.garden.friends_title}
         </h3>
       </div>
 
-      <!-- Friends Photos - Top Row: 3 images with centered caption -->
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12 animate-on-scroll">
-        <div>
-          <div class="rounded-xl overflow-hidden shadow-soft mb-3">
-            <img
-              src="/images/accommodation-extracted/media/image19.jpeg"
-              alt={locale === "fr" ? "Animaux du jardin" : "Garden animals"}
-              class="w-full h-full object-cover aspect-square"
-            />
-          </div>
-        </div>
-        <div>
-          <div class="rounded-xl overflow-hidden shadow-soft mb-3">
-            <img
-              src="/images/accommodation-extracted/media/image20.jpeg"
-              alt="Puce et Bo"
-              class="w-full h-full object-cover aspect-square"
-            />
-          </div>
-          <p class="text-center text-forest-700 font-medium text-lg">Puce et Bo</p>
-        </div>
-        <div>
-          <div class="rounded-xl overflow-hidden shadow-soft mb-3">
-            <img
-              src="/images/accommodation-extracted/media/image21.jpeg"
-              alt="Sweety"
-              class="w-full h-full object-cover aspect-square"
-            />
-          </div>
-          <p class="text-center text-forest-700 font-medium text-lg">Sweety</p>
-        </div>
+      <!-- First row: 3 images -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+        {
+          images.garden.friends_gallery.slice(0, 3).map((item) => (
+            <div class="flex flex-col items-center">
+              <img
+                src={item.image}
+                alt={item.legend ? (locale === "fr" ? item.legend.fr : item.legend.en) : ""}
+                class="rounded-xl shadow-soft w-full h-auto max-h-[500px] object-cover object-center"
+                style="aspect-ratio: auto;"
+              />
+              {item.legend && (
+                <p class="text-center text-forest-700 font-medium mt-4 text-base md:text-lg">
+                  {locale === "fr" ? item.legend.fr : item.legend.en}
+                </p>
+              )}
+            </div>
+          ))
+        }
       </div>
 
-      <!-- Friends Photos - Bottom Row: 3 images -->
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 animate-on-scroll">
-        <div class="rounded-xl overflow-hidden shadow-soft">
-          <img
-            src="/images/accommodation-extracted/media/image22.jpeg"
-            alt={locale === "fr" ? "Faune du jardin" : "Garden fauna"}
-            class="w-full h-full object-cover aspect-square"
-          />
-        </div>
-        <div class="rounded-xl overflow-hidden shadow-soft">
-          <img
-            src="/images/accommodation-extracted/media/image23.jpeg"
-            alt={locale === "fr" ? "Biodiversité locale" : "Local biodiversity"}
-            class="w-full h-full object-cover aspect-square"
-          />
-        </div>
-        <div class="rounded-xl overflow-hidden shadow-soft">
-          <img
-            src="/images/accommodation-extracted/media/image24.jpeg"
-            alt={locale === "fr" ? "Nature environnante" : "Surrounding nature"}
-            class="w-full h-full object-cover aspect-square"
-          />
-        </div>
+      <!-- Second row: 3 images -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {
+          images.garden.friends_gallery.slice(3, 6).map((item) => (
+            <div class="flex flex-col items-center">
+              <img
+                src={item.image}
+                alt={item.legend ? (locale === "fr" ? item.legend.fr : item.legend.en) : ""}
+                class="rounded-xl shadow-soft w-full h-auto max-h-[500px] object-cover object-center"
+                style="aspect-ratio: auto;"
+              />
+              {item.legend && (
+                <p class="text-center text-forest-700 font-medium mt-4 text-base md:text-lg">
+                  {locale === "fr" ? item.legend.fr : item.legend.en}
+                </p>
+              )}
+            </div>
+          ))
+        }
       </div>
     </div>
   </div>
