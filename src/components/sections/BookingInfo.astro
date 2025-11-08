@@ -7,7 +7,10 @@ const { t, locale } = Astro.props as Props;
 ---
 
 <!-- Booking Information Section -->
-<section id="booking-info" class="relative py-24 bg-gradient-to-br from-warm-50 via-white to-sage-50">
+<section
+  id="booking-info"
+  class="relative py-16 md:py-24 bg-gradient-to-br from-warm-50 via-white to-sage-50"
+>
   <div class="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
     <!-- Section Header -->
     <div class="text-center mb-16 animate-on-scroll">
@@ -52,22 +55,24 @@ const { t, locale } = Astro.props as Props;
 
       <!-- Bed Linen -->
       <div
-        class="flex items-center space-x-4 p-6 bg-white rounded-xl border border-sage-200 shadow-soft"
+        class="flex flex-col md:flex-row md:items-center space-y-3 md:space-y-0 md:space-x-4 p-6 bg-white rounded-xl border border-sage-200 shadow-soft"
       >
-        <div
-          class="w-12 h-12 bg-warm-100 rounded-lg flex items-center justify-center flex-shrink-0"
-        >
-          <span class="text-warm-600 text-xl">🛏️</span>
-        </div>
-        <div class="flex-1">
-          <div class="font-medium text-forest-800">
-            {t.amenities.basic_services.bed_linen}
+        <div class="flex items-center space-x-4 flex-1">
+          <div
+            class="w-12 h-12 bg-warm-100 rounded-lg flex items-center justify-center flex-shrink-0"
+          >
+            <span class="text-warm-600 text-xl">🛏️</span>
           </div>
-          <div class="text-sm text-forest-600 mt-1">
-            {t.amenities.basic_services.bed_linen_details}
+          <div class="flex-1">
+            <div class="font-medium text-forest-800">
+              {t.amenities.basic_services.bed_linen}
+            </div>
+            <div class="text-sm text-forest-600 mt-1">
+              {t.amenities.basic_services.bed_linen_details}
+            </div>
           </div>
         </div>
-        <div class="flex items-center gap-2">
+        <div class="flex items-center gap-2 md:ml-0 pl-16 md:pl-0">
           <div
             class="px-3 py-1 bg-warm-100 text-warm-700 rounded-lg font-semibold text-sm"
           >
@@ -83,22 +88,24 @@ const { t, locale } = Astro.props as Props;
 
       <!-- Towels -->
       <div
-        class="flex items-center space-x-4 p-6 bg-white rounded-xl border border-sage-200 shadow-soft"
+        class="flex flex-col md:flex-row md:items-center space-y-3 md:space-y-0 md:space-x-4 p-6 bg-white rounded-xl border border-sage-200 shadow-soft"
       >
-        <div
-          class="w-12 h-12 bg-warm-100 rounded-lg flex items-center justify-center flex-shrink-0"
-        >
-          <span class="text-warm-600 text-xl">🧺</span>
-        </div>
-        <div class="flex-1">
-          <div class="font-medium text-forest-800">
-            {t.amenities.basic_services.towels}
+        <div class="flex items-center space-x-4 flex-1">
+          <div
+            class="w-12 h-12 bg-warm-100 rounded-lg flex items-center justify-center flex-shrink-0"
+          >
+            <span class="text-warm-600 text-xl">🧺</span>
           </div>
-          <div class="text-sm text-forest-600 mt-1">
-            {t.amenities.basic_services.towels_details}
+          <div class="flex-1">
+            <div class="font-medium text-forest-800">
+              {t.amenities.basic_services.towels}
+            </div>
+            <div class="text-sm text-forest-600 mt-1">
+              {t.amenities.basic_services.towels_details}
+            </div>
           </div>
         </div>
-        <div class="flex items-center gap-2">
+        <div class="flex items-center gap-2 md:ml-0 pl-16 md:pl-0">
           <div
             class="px-3 py-1 bg-warm-100 text-warm-700 rounded-lg font-semibold text-sm"
           >

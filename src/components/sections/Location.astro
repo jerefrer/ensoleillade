@@ -7,7 +7,7 @@ const { t, locale } = Astro.props as Props;
 ---
 
 <!-- Modern Location & Activities Section -->
-<section id="location" class="relative py-32 overflow-hidden">
+<section id="location" class="relative py-16 md:py-32 overflow-hidden">
   <!-- Background Elements -->
   <div
     class="absolute inset-0 bg-gradient-to-br from-forest-50 via-white to-earth-50"
@@ -37,7 +37,7 @@ const { t, locale } = Astro.props as Props;
 
     <!-- Location Highlight -->
     <div
-      class="bg-gradient-to-r from-sage-50 via-white to-forest-50 rounded-2xl p-8 border border-sage-200 shadow-large mb-20 animate-on-scroll"
+      class="bg-gradient-to-r from-sage-50 via-white to-forest-50 rounded-2xl p-8 border border-sage-200 shadow-large animate-on-scroll"
     >
       <div class="grid lg:grid-cols-2 gap-8 items-center">
         <!-- Location Info -->
@@ -106,8 +106,7 @@ const { t, locale } = Astro.props as Props;
             allowfullscreen=""
             loading="lazy"
             referrerpolicy="no-referrer-when-downgrade"
-            title={t.location.map_title}
-          ></iframe>
+            title={t.location.map_title}></iframe>
         </div>
       </div>
     </div>

@@ -15,10 +15,12 @@ const { t, locale } = Astro.props as Props;
       {t.contact.subtitle}
     </p>
 
-    <div class="grid md:grid-cols-2 gap-8 max-w-2xl mx-auto mb-8">
+    <div class="grid md:grid-cols-2 gap-4 md:gap-8 max-w-2xl mx-auto mb-8">
       <div class="bg-white p-8 rounded-lg border-2 border-warm-300 shadow-xl">
         <div class="text-3xl mb-4">📞</div>
-        <h3 class="text-xl font-semibold mb-2 text-forest-800">{t.contact.phone}</h3>
+        <h3 class="text-xl font-semibold mb-2 text-forest-800">
+          {t.contact.phone}
+        </h3>
         <a
           href={`tel:${t.contact.phone_number.replace(/\s/g, "")}`}
           class="text-forest-700 hover:text-warm-600 transition-colors text-lg font-medium"
@@ -29,7 +31,9 @@ const { t, locale } = Astro.props as Props;
 
       <div class="bg-white p-8 rounded-lg border-2 border-warm-300 shadow-xl">
         <div class="text-3xl mb-4">✉️</div>
-        <h3 class="text-xl font-semibold mb-2 text-forest-800">{t.contact.email}</h3>
+        <h3 class="text-xl font-semibold mb-2 text-forest-800">
+          {t.contact.email}
+        </h3>
         <a
           href={`mailto:${t.contact.email_address}`}
           class="text-forest-700 hover:text-warm-600 transition-colors break-all font-medium"
@@ -113,8 +117,14 @@ const { t, locale } = Astro.props as Props;
           </div>
           <div class="flex-1 flex items-center justify-center">
             <div class="text-sm text-warm-700 space-y-1">
-              <div><span class="font-medium">{t.accommodation.checkin}</span> 17h00 - 21h00</div>
-              <div><span class="font-medium">{t.accommodation.checkout}</span> 08h00 - 10h00</div>
+              <div>
+                <span class="font-medium">{t.accommodation.checkin}</span> 17h00
+                - 21h00
+              </div>
+              <div>
+                <span class="font-medium">{t.accommodation.checkout}</span> 08h00
+                - 10h00
+              </div>
             </div>
           </div>
         </div>
