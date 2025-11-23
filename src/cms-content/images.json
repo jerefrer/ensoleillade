@@ -17,9 +17,27 @@
     "photo_groups": [
       {
         "images": [
-          "/images/accommodation-extracted/media/image4.webp",
-          "/images/accommodation-extracted/media/image5.webp",
-          "/images/accommodation-extracted/media/image6.webp"
+          {
+            "image": "/images/accommodation-extracted/media/image4.webp",
+            "mobileTitle": {
+              "fr": "2 lits 190x90 pouvant être rapprochés",
+              "en": "2 beds 190x90 that can be moved together"
+            }
+          },
+          {
+            "image": "/images/accommodation-extracted/media/image5.webp",
+            "mobileTitle": {
+              "fr": "2 lits 190x90 pouvant être rapprochés",
+              "en": "2 beds 190x90 that can be moved together"
+            }
+          },
+          {
+            "image": "/images/accommodation-extracted/media/image6.webp",
+            "mobileTitle": {
+              "fr": "2 lits 190x90 pouvant être rapprochés",
+              "en": "2 beds 190x90 that can be moved together"
+            }
+          }
         ],
         "legend": {
           "fr": "2 lits 190x90 pouvant être rapprochés",
@@ -28,9 +46,27 @@
       },
       {
         "images": [
-          "/images/accommodation-extracted/media/image7.webp",
-          "/images/accommodation-extracted/media/image8.webp",
-          "/images/accommodation-extracted/media/image9.webp"
+          {
+            "image": "/images/accommodation-extracted/media/image7.webp",
+            "mobileTitle": {
+              "fr": "Kitchenette",
+              "en": "Kitchenette"
+            }
+          },
+          {
+            "image": "/images/accommodation-extracted/media/image8.webp",
+            "mobileTitle": {
+              "fr": "Kitchenette",
+              "en": "Kitchenette"
+            }
+          },
+          {
+            "image": "/images/accommodation-extracted/media/image9.webp",
+            "mobileTitle": {
+              "fr": "Salle d'eau, WC",
+              "en": "Bathroom, Toilet"
+            }
+          }
         ],
         "legend": {
           "fr": "Kitchenette, Salle d'eau, WC",
@@ -39,8 +75,20 @@
       },
       {
         "images": [
-          "/images/accommodation-extracted/media/image10.webp",
-          "/images/accommodation-extracted/media/image11.webp"
+          {
+            "image": "/images/accommodation-extracted/media/image10.webp",
+            "mobileTitle": {
+              "fr": "Vue de l'intérieur",
+              "en": "Interior view"
+            }
+          },
+          {
+            "image": "/images/accommodation-extracted/media/image11.webp",
+            "mobileTitle": {
+              "fr": "Terrasse",
+              "en": "Terrace"
+            }
+          }
         ],
         "legend": {
           "fr": "Vue de l'intérieur, Terrasse",
@@ -49,8 +97,20 @@
       },
       {
         "images": [
-          "/images/accommodation-extracted/media/image12.webp",
-          "/images/accommodation-extracted/media/image13.webp"
+          {
+            "image": "/images/accommodation-extracted/media/image12.webp",
+            "mobileTitle": {
+              "fr": "Terrasse",
+              "en": "Terrace"
+            }
+          },
+          {
+            "image": "/images/accommodation-extracted/media/image13.webp",
+            "mobileTitle": {
+              "fr": "Entrée privative avec boîte à clef",
+              "en": "Private entrance with key box"
+            }
+          }
         ],
         "legend": {
           "fr": "Terrasse, Entrée privative avec boîte à clef",
@@ -58,7 +118,11 @@
         }
       },
       {
-        "images": ["/images/accommodation-extracted/media/image14.webp"],
+        "images": [
+          {
+            "image": "/images/accommodation-extracted/media/image14.webp"
+          }
+        ],
         "legend": {
           "fr": "Votre partie privative avec coin repas extérieur, hamac et fil à linge",
           "en": "Your private area with outdoor dining, hammock and clothesline"

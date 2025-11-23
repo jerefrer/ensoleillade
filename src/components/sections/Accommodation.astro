@@ -6,6 +6,28 @@ interface Props {
   locale: string;
 }
 const { t, locale } = Astro.props as Props;
+
+type GalleryImage = {
+  image: string;
+  mobileTitle?: {
+    fr?: string;
+    en?: string;
+  };
+};
+
+type PhotoGroup = {
+  images: (string | GalleryImage)[];
+  legend: {
+    fr: string;
+    en: string;
+  };
+};
+
+const isImageObject = (
+  img: string | GalleryImage
+): img is GalleryImage => typeof img === "object" && img !== null && "image" in img;
+
+const accommodationGroups = images.accommodation.photo_groups as PhotoGroup[];
 ---
 
 <!-- Simplified Accommodation Section -->
@@ -24,10 +46,10 @@ const { t, locale } = Astro.props as Props;
     <div class="mb-20 animate-on-scroll">
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
         {
-          images.accommodation.photo_groups.map((group, index) => (
+          accommodationGroups.map((group, index) => (
             <div
               class={
-                group.images.length > 1 || index === images.accommodation.photo_groups.length - 1
+                group.images.length > 1 || index === accommodationGroups.length - 1
                   ? "md:col-span-2"
                   : "md:col-span-1"
               }
@@ -42,18 +64,30 @@ const { t, locale } = Astro.props as Props;
                         : "grid-cols-1 md:grid-cols-3"
                     }`}
                   >
-                    {group.images.map((image_path) => (
-                      <div class="flex justify-center items-end">
-                        <img
-                          src={image_path}
-                          alt={locale === "fr" ? group.legend.fr : group.legend.en}
-                          class="rounded-xl shadow-soft w-full h-auto max-h-[500px] object-cover object-center"
-                          style="aspect-ratio: auto;"
-                        />
+                    {group.images.map((image) => (
+                      <div class="flex flex-col items-center">
+                        <div class="flex justify-center items-end w-full">
+                          <img
+                            src={isImageObject(image) ? image.image : image}
+                            alt={locale === "fr" ? group.legend.fr : group.legend.en}
+                            class="rounded-xl shadow-soft w-full h-auto max-h-[500px] object-cover object-center"
+                            style="aspect-ratio: auto;"
+                            loading="lazy"
+                          />
+                        </div>
+                        <p class="text-center text-forest-700 font-medium mt-4 text-base md:text-lg md:hidden">
+                          {isImageObject(image) && image.mobileTitle
+                            ? locale === "fr"
+                              ? image.mobileTitle.fr
+                              : image.mobileTitle.en
+                            : locale === "fr"
+                              ? group.legend.fr
+                              : group.legend.en}
+                        </p>
                       </div>
                     ))}
                   </div>
-                  <p class="text-center text-forest-700 font-medium mt-4 text-base md:text-lg">
+                  <p class="text-center text-forest-700 font-medium mt-4 text-base md:text-lg hidden md:block">
                     {locale === "fr" ? group.legend.fr : group.legend.en}
                   </p>
                 </div>
@@ -62,13 +96,22 @@ const { t, locale } = Astro.props as Props;
                   <!-- Single image -->
                   <div class="flex justify-center items-end">
                     <img
-                      src={group.images[0]}
+                      src={isImageObject(group.images[0]) ? group.images[0].image : group.images[0]}
                       alt={locale === "fr" ? group.legend.fr : group.legend.en}
                       class="rounded-xl shadow-soft w-full h-auto max-h-[500px] object-cover object-center"
                       style="aspect-ratio: auto;"
                     />
                   </div>
-                  <p class="text-center text-forest-700 font-medium mt-4 text-base md:text-lg">
+                  <p class="text-center text-forest-700 font-medium mt-4 text-base md:text-lg md:hidden">
+                    {isImageObject(group.images[0]) && group.images[0].mobileTitle
+                      ? locale === "fr"
+                        ? group.images[0].mobileTitle.fr
+                        : group.images[0].mobileTitle.en
+                      : locale === "fr"
+                        ? group.legend.fr
+                        : group.legend.en}
+                  </p>
+                  <p class="text-center text-forest-700 font-medium mt-4 text-base md:text-lg hidden md:block">
                     {locale === "fr" ? group.legend.fr : group.legend.en}
                   </p>
                 </div>

@@ -12,9 +12,9 @@ backend:
 publish_mode: editorial_workflow
 
 slug:
-  encoding: 'ascii'
+  encoding: "ascii"
   clean_accents: true
-  sanitize_replacement: '-'
+  sanitize_replacement: "-"
 
 media_folder: "public/images"
 public_folder: "/images"
@@ -40,422 +40,1050 @@ i18n:
 
 collections:
   # Site Content with i18n support
-  - name: 'site_content'
-    label: 'Contenu du Site'
-    label_singular: 'Contenu'
-    folder: 'src/cms-content'
-    slug: 'tout-le-contenu'
+  - name: "site_content"
+    label: "Contenu du Site"
+    label_singular: "Contenu"
+    folder: "src/cms-content"
+    slug: "tout-le-contenu"
     extension: json
     i18n: true
     create: false
     fields:
-      - label: 'Informations du Site'
-        name: 'site'
-        widget: 'object'
+      - label: "Informations du Site"
+        name: "site"
+        widget: "object"
         i18n: true
         fields:
-          - { label: 'Titre', name: 'title', widget: 'string', i18n: true }
-          - { label: 'Description', name: 'description', widget: 'text', i18n: true }
-          - { label: 'Mots-clés', name: 'keywords', widget: 'string', i18n: true }
+          - { label: "Titre", name: "title", widget: "string", i18n: true }
+          - {
+              label: "Description",
+              name: "description",
+              widget: "text",
+              i18n: true,
+            }
+          - {
+              label: "Mots-clés",
+              name: "keywords",
+              widget: "string",
+              i18n: true,
+            }
 
-      - label: 'Tarifs'
-        name: 'pricing'
-        widget: 'object'
+      - label: "Tarifs"
+        name: "pricing"
+        widget: "object"
         i18n: true
         fields:
-          - { label: 'Prix par nuit', name: 'price_per_night', widget: 'string', i18n: true }
-          - { label: 'Note sur le prix', name: 'price_note', widget: 'string', i18n: true }
-          - { label: 'Taxe de séjour', name: 'tourist_tax', widget: 'string', i18n: true }
+          - {
+              label: "Prix par nuit",
+              name: "price_per_night",
+              widget: "string",
+              i18n: true,
+            }
+          - {
+              label: "Note sur le prix",
+              name: "price_note",
+              widget: "string",
+              i18n: true,
+            }
+          - {
+              label: "Taxe de séjour",
+              name: "tourist_tax",
+              widget: "string",
+              i18n: true,
+            }
 
-      - label: 'Navigation'
-        name: 'nav'
-        widget: 'object'
+      - label: "Navigation"
+        name: "nav"
+        widget: "object"
         i18n: true
         fields:
-          - { label: 'Accueil', name: 'home', widget: 'string', i18n: true }
-          - { label: 'À propos', name: 'about', widget: 'string', i18n: true }
-          - { label: 'Équipements', name: 'amenities', widget: 'string', i18n: true }
-          - { label: 'Emplacement', name: 'location', widget: 'string', i18n: true }
-          - { label: 'Activités', name: 'activities', widget: 'string', i18n: true }
-          - { label: 'Disponibilités', name: 'availability', widget: 'string', i18n: true }
-          - { label: 'Contact', name: 'contact', widget: 'string', i18n: true }
+          - { label: "Accueil", name: "home", widget: "string", i18n: true }
+          - { label: "À propos", name: "about", widget: "string", i18n: true }
+          - {
+              label: "Équipements",
+              name: "amenities",
+              widget: "string",
+              i18n: true,
+            }
+          - {
+              label: "Emplacement",
+              name: "location",
+              widget: "string",
+              i18n: true,
+            }
+          - {
+              label: "Activités",
+              name: "activities",
+              widget: "string",
+              i18n: true,
+            }
+          - {
+              label: "Disponibilités",
+              name: "availability",
+              widget: "string",
+              i18n: true,
+            }
+          - { label: "Contact", name: "contact", widget: "string", i18n: true }
 
-      - label: 'Section Hero'
-        name: 'hero'
-        widget: 'object'
+      - label: "Section Hero"
+        name: "hero"
+        widget: "object"
         i18n: true
         fields:
-          - { label: 'Titre', name: 'title', widget: 'string', i18n: true }
-          - { label: 'Sous-titre', name: 'subtitle', widget: 'string', i18n: true }
-          - { label: 'Description', name: 'description', widget: 'text', i18n: true }
-          - { label: "Appel à l'action", name: 'cta', widget: 'string', i18n: true }
+          - { label: "Titre", name: "title", widget: "string", i18n: true }
+          - {
+              label: "Sous-titre",
+              name: "subtitle",
+              widget: "string",
+              i18n: true,
+            }
+          - {
+              label: "Description",
+              name: "description",
+              widget: "text",
+              i18n: true,
+            }
+          - {
+              label: "Appel à l'action",
+              name: "cta",
+              widget: "string",
+              i18n: true,
+            }
 
-      - label: 'Section À propos'
-        name: 'about'
-        widget: 'object'
+      - label: "Section À propos"
+        name: "about"
+        widget: "object"
         i18n: true
         fields:
-          - { label: 'Titre', name: 'title', widget: 'string', i18n: true }
-          - { label: 'Sous-titre', name: 'subtitle', widget: 'string', i18n: true }
-          - { label: 'Description', name: 'description', widget: 'text', i18n: true }
-          - label: 'Caractéristiques'
-            name: 'features'
-            widget: 'object'
+          - { label: "Titre", name: "title", widget: "string", i18n: true }
+          - {
+              label: "Sous-titre",
+              name: "subtitle",
+              widget: "string",
+              i18n: true,
+            }
+          - {
+              label: "Description",
+              name: "description",
+              widget: "text",
+              i18n: true,
+            }
+          - label: "Caractéristiques"
+            name: "features"
+            widget: "object"
             i18n: true
             fields:
-              - { label: 'Construction écologique', name: 'eco', widget: 'string', i18n: true }
-              - { label: 'Bois & Isolation', name: 'wood', widget: 'string', i18n: true }
-              - { label: 'Phyto-épuration', name: 'phyto', widget: 'string', i18n: true }
-              - { label: 'Permaculture', name: 'permaculture', widget: 'string', i18n: true }
-              - { label: 'Biodiversité', name: 'biodiversity', widget: 'string', i18n: true }
+              - {
+                  label: "Construction écologique",
+                  name: "eco",
+                  widget: "string",
+                  i18n: true,
+                }
+              - {
+                  label: "Bois & Isolation",
+                  name: "wood",
+                  widget: "string",
+                  i18n: true,
+                }
+              - {
+                  label: "Phyto-épuration",
+                  name: "phyto",
+                  widget: "string",
+                  i18n: true,
+                }
+              - {
+                  label: "Permaculture",
+                  name: "permaculture",
+                  widget: "string",
+                  i18n: true,
+                }
+              - {
+                  label: "Biodiversité",
+                  name: "biodiversity",
+                  widget: "string",
+                  i18n: true,
+                }
 
-      - label: 'Section Hébergement'
-        name: 'accommodation'
-        widget: 'object'
+      - label: "Section Hébergement"
+        name: "accommodation"
+        widget: "object"
         i18n: true
         collapsed: true
         fields:
-          - { label: 'Titre', name: 'title', widget: 'string', i18n: true }
-          - { label: 'Taille', name: 'size', widget: 'string', i18n: true }
-          - { label: 'Capacité', name: 'capacity', widget: 'string', i18n: true }
-          - { label: 'Surface totale', name: 'total_area', widget: 'string', i18n: true }
-          - { label: "Capacité d'accueil", name: 'guest_capacity', widget: 'string', i18n: true }
-          - { label: 'Tarif', name: 'pricing', widget: 'string', i18n: true }
-          - { label: 'Séjour minimum', name: 'minimum_stay', widget: 'string', i18n: true }
-          - { label: 'Nuits minimum', name: 'minimum_nights', widget: 'string', i18n: true }
-          - { label: 'Nuits minimum (court)', name: 'minimum_nights_short', widget: 'string', i18n: true }
-          - { label: 'Intérieur', name: 'interior', widget: 'string', i18n: true }
-          - { label: 'Terrasse', name: 'terrace', widget: 'string', i18n: true }
-          - { label: 'Espace nuit', name: 'sleeping_area', widget: 'string', i18n: true }
-          - { label: 'Intérieur du gîte', name: 'cottage_interior', widget: 'string', i18n: true }
-          - { label: 'Horaires', name: 'schedule', widget: 'string', i18n: true }
-          - { label: 'Arrivée', name: 'checkin', widget: 'string', i18n: true }
-          - { label: 'Départ', name: 'checkout', widget: 'string', i18n: true }
-          - { label: 'Règlement', name: 'house_rules', widget: 'string', i18n: true }
-          - { label: 'Non fumeur', name: 'non_smoking', widget: 'string', i18n: true }
-          - { label: 'Animaux non acceptés', name: 'no_pets', widget: 'string', i18n: true }
-          - { label: 'Soirées non autorisées', name: 'no_parties', widget: 'string', i18n: true }
-          - { label: 'Titre écologie', name: 'ecology_title', widget: 'string', i18n: true }
-          - { label: 'Auto-construit', name: 'self_built', widget: 'string', i18n: true }
-          - { label: 'Matériaux biologiques', name: 'organic_materials', widget: 'string', i18n: true }
-          - { label: 'Phytoépuration', name: 'phytopurification', widget: 'string', i18n: true }
-          - { label: 'Éclairage LED', name: 'led_lighting', widget: 'string', i18n: true }
-          - { label: 'Panneaux solaires', name: 'solar_panels', widget: 'string', i18n: true }
-          - { label: 'Titre canards', name: 'ducks_title', widget: 'string', i18n: true }
-          - { label: 'Message canards', name: 'ducks_message', widget: 'text', i18n: true }
-          - { label: 'Titre proximité hôte', name: 'host_proximity_title', widget: 'string', i18n: true }
-          - { label: 'Message proximité hôte', name: 'host_proximity_message', widget: 'text', i18n: true }
-          - { label: 'Télécharger contrat', name: 'download_contract', widget: 'string', i18n: true }
+          - { label: "Titre", name: "title", widget: "string", i18n: true }
+          - { label: "Taille", name: "size", widget: "string", i18n: true }
+          - {
+              label: "Capacité",
+              name: "capacity",
+              widget: "string",
+              i18n: true,
+            }
+          - {
+              label: "Surface totale",
+              name: "total_area",
+              widget: "string",
+              i18n: true,
+            }
+          - {
+              label: "Capacité d'accueil",
+              name: "guest_capacity",
+              widget: "string",
+              i18n: true,
+            }
+          - { label: "Tarif", name: "pricing", widget: "string", i18n: true }
+          - {
+              label: "Séjour minimum",
+              name: "minimum_stay",
+              widget: "string",
+              i18n: true,
+            }
+          - {
+              label: "Nuits minimum",
+              name: "minimum_nights",
+              widget: "string",
+              i18n: true,
+            }
+          - {
+              label: "Nuits minimum (court)",
+              name: "minimum_nights_short",
+              widget: "string",
+              i18n: true,
+            }
+          - {
+              label: "Intérieur",
+              name: "interior",
+              widget: "string",
+              i18n: true,
+            }
+          - { label: "Terrasse", name: "terrace", widget: "string", i18n: true }
+          - {
+              label: "Espace nuit",
+              name: "sleeping_area",
+              widget: "string",
+              i18n: true,
+            }
+          - {
+              label: "Intérieur du gîte",
+              name: "cottage_interior",
+              widget: "string",
+              i18n: true,
+            }
+          - {
+              label: "Horaires",
+              name: "schedule",
+              widget: "string",
+              i18n: true,
+            }
+          - { label: "Arrivée", name: "checkin", widget: "string", i18n: true }
+          - { label: "Départ", name: "checkout", widget: "string", i18n: true }
+          - {
+              label: "Règlement",
+              name: "house_rules",
+              widget: "string",
+              i18n: true,
+            }
+          - {
+              label: "Non fumeur",
+              name: "non_smoking",
+              widget: "string",
+              i18n: true,
+            }
+          - {
+              label: "Animaux non acceptés",
+              name: "no_pets",
+              widget: "string",
+              i18n: true,
+            }
+          - {
+              label: "Soirées non autorisées",
+              name: "no_parties",
+              widget: "string",
+              i18n: true,
+            }
+          - {
+              label: "Titre écologie",
+              name: "ecology_title",
+              widget: "string",
+              i18n: true,
+            }
+          - {
+              label: "Auto-construit",
+              name: "self_built",
+              widget: "string",
+              i18n: true,
+            }
+          - {
+              label: "Matériaux biologiques",
+              name: "organic_materials",
+              widget: "string",
+              i18n: true,
+            }
+          - {
+              label: "Phytoépuration",
+              name: "phytopurification",
+              widget: "string",
+              i18n: true,
+            }
+          - {
+              label: "Éclairage LED",
+              name: "led_lighting",
+              widget: "string",
+              i18n: true,
+            }
+          - {
+              label: "Panneaux solaires",
+              name: "solar_panels",
+              widget: "string",
+              i18n: true,
+            }
+          - {
+              label: "Titre canards",
+              name: "ducks_title",
+              widget: "string",
+              i18n: true,
+            }
+          - {
+              label: "Message canards",
+              name: "ducks_message",
+              widget: "text",
+              i18n: true,
+            }
+          - {
+              label: "Titre proximité hôte",
+              name: "host_proximity_title",
+              widget: "string",
+              i18n: true,
+            }
+          - {
+              label: "Message proximité hôte",
+              name: "host_proximity_message",
+              widget: "text",
+              i18n: true,
+            }
+          - {
+              label: "Télécharger contrat",
+              name: "download_contract",
+              widget: "string",
+              i18n: true,
+            }
 
-      - label: 'Section Équipements'
-        name: 'amenities'
-        widget: 'object'
+      - label: "Section Équipements"
+        name: "amenities"
+        widget: "object"
         i18n: true
         collapsed: true
         fields:
-          - { label: 'Titre', name: 'title', widget: 'string', i18n: true }
-          - { label: 'Sous-titre', name: 'subtitle', widget: 'string', i18n: true }
-          - label: 'Confort'
-            name: 'comfort'
-            widget: 'object'
+          - { label: "Titre", name: "title", widget: "string", i18n: true }
+          - {
+              label: "Sous-titre",
+              name: "subtitle",
+              widget: "string",
+              i18n: true,
+            }
+          - label: "Confort"
+            name: "comfort"
+            widget: "object"
             i18n: true
             fields:
-              - { label: 'Titre', name: 'title', widget: 'string', i18n: true }
-              - { label: 'Chauffage', name: 'heating', widget: 'string', i18n: true }
-              - { label: 'Description chauffage', name: 'heating_desc', widget: 'string', i18n: true }
-              - { label: 'Climatisation', name: 'ac', widget: 'string', i18n: true }
-              - { label: 'Description climatisation', name: 'ac_desc', widget: 'string', i18n: true }
-              - { label: 'Lits', name: 'beds', widget: 'string', i18n: true }
-              - { label: 'Description lits', name: 'beds_desc', widget: 'string', i18n: true }
-              - { label: 'TV', name: 'tv', widget: 'string', i18n: true }
-              - { label: 'Description TV', name: 'tv_desc', widget: 'string', i18n: true }
-              - { label: 'WiFi', name: 'wifi', widget: 'string', i18n: true }
-              - { label: 'Description WiFi', name: 'wifi_desc', widget: 'string', i18n: true }
-              - { label: 'Livres', name: 'books', widget: 'string', i18n: true }
-              - { label: 'Description livres', name: 'books_desc', widget: 'string', i18n: true }
-          - label: 'Extérieur'
-            name: 'outdoor'
-            widget: 'object'
+              - { label: "Titre", name: "title", widget: "string", i18n: true }
+              - {
+                  label: "Chauffage",
+                  name: "heating",
+                  widget: "string",
+                  i18n: true,
+                }
+              - {
+                  label: "Description chauffage",
+                  name: "heating_desc",
+                  widget: "string",
+                  i18n: true,
+                }
+              - {
+                  label: "Climatisation",
+                  name: "ac",
+                  widget: "string",
+                  i18n: true,
+                }
+              - {
+                  label: "Description climatisation",
+                  name: "ac_desc",
+                  widget: "string",
+                  i18n: true,
+                }
+              - { label: "Lits", name: "beds", widget: "string", i18n: true }
+              - {
+                  label: "Description lits",
+                  name: "beds_desc",
+                  widget: "string",
+                  i18n: true,
+                }
+              - { label: "TV", name: "tv", widget: "string", i18n: true }
+              - {
+                  label: "Description TV",
+                  name: "tv_desc",
+                  widget: "string",
+                  i18n: true,
+                }
+              - { label: "WiFi", name: "wifi", widget: "string", i18n: true }
+              - {
+                  label: "Description WiFi",
+                  name: "wifi_desc",
+                  widget: "string",
+                  i18n: true,
+                }
+              - { label: "Livres", name: "books", widget: "string", i18n: true }
+              - {
+                  label: "Description livres",
+                  name: "books_desc",
+                  widget: "string",
+                  i18n: true,
+                }
+          - label: "Extérieur"
+            name: "outdoor"
+            widget: "object"
             i18n: true
             fields:
-              - { label: 'Titre', name: 'title', widget: 'string', i18n: true }
-              - { label: 'Terrasse', name: 'terrace', widget: 'string', i18n: true }
-              - { label: 'Terrasse couverte', name: 'terrace_covered', widget: 'string', i18n: true }
-              - { label: 'Barbecue', name: 'bbq', widget: 'string', i18n: true }
-              - { label: 'Description barbecue', name: 'bbq_desc', widget: 'string', i18n: true }
-              - { label: 'Hamac', name: 'hammock', widget: 'string', i18n: true }
-              - { label: 'Jardin', name: 'garden', widget: 'string', i18n: true }
-              - { label: 'Description jardin', name: 'garden_desc', widget: 'string', i18n: true }
-              - { label: 'Parking', name: 'parking', widget: 'string', i18n: true }
-          - label: 'Cuisine'
-            name: 'kitchen'
-            widget: 'object'
+              - { label: "Titre", name: "title", widget: "string", i18n: true }
+              - {
+                  label: "Terrasse",
+                  name: "terrace",
+                  widget: "string",
+                  i18n: true,
+                }
+              - {
+                  label: "Terrasse couverte",
+                  name: "terrace_covered",
+                  widget: "string",
+                  i18n: true,
+                }
+              - { label: "Barbecue", name: "bbq", widget: "string", i18n: true }
+              - {
+                  label: "Description barbecue",
+                  name: "bbq_desc",
+                  widget: "string",
+                  i18n: true,
+                }
+              - {
+                  label: "Hamac",
+                  name: "hammock",
+                  widget: "string",
+                  i18n: true,
+                }
+              - {
+                  label: "Jardin",
+                  name: "garden",
+                  widget: "string",
+                  i18n: true,
+                }
+              - {
+                  label: "Description jardin",
+                  name: "garden_desc",
+                  widget: "string",
+                  i18n: true,
+                }
+              - {
+                  label: "Parking",
+                  name: "parking",
+                  widget: "string",
+                  i18n: true,
+                }
+          - label: "Cuisine"
+            name: "kitchen"
+            widget: "object"
             i18n: true
             fields:
-              - { label: 'Titre', name: 'title', widget: 'string', i18n: true }
-              - { label: 'Équipée', name: 'equipped', widget: 'string', i18n: true }
-              - { label: 'Description équipée', name: 'equipped_desc', widget: 'string', i18n: true }
-              - { label: 'Ustensiles', name: 'utensils', widget: 'string', i18n: true }
-              - { label: 'Description ustensiles', name: 'utensils_desc', widget: 'string', i18n: true }
-              - { label: 'Coin repas', name: 'dining', widget: 'string', i18n: true }
-              - { label: 'Description coin repas', name: 'dining_desc', widget: 'string', i18n: true }
-          - label: 'Services de base'
-            name: 'basic_services'
-            widget: 'object'
+              - { label: "Titre", name: "title", widget: "string", i18n: true }
+              - {
+                  label: "Équipée",
+                  name: "equipped",
+                  widget: "string",
+                  i18n: true,
+                }
+              - {
+                  label: "Description équipée",
+                  name: "equipped_desc",
+                  widget: "string",
+                  i18n: true,
+                }
+              - {
+                  label: "Ustensiles",
+                  name: "utensils",
+                  widget: "string",
+                  i18n: true,
+                }
+              - {
+                  label: "Description ustensiles",
+                  name: "utensils_desc",
+                  widget: "string",
+                  i18n: true,
+                }
+              - {
+                  label: "Coin repas",
+                  name: "dining",
+                  widget: "string",
+                  i18n: true,
+                }
+              - {
+                  label: "Description coin repas",
+                  name: "dining_desc",
+                  widget: "string",
+                  i18n: true,
+                }
+          - label: "Services de base"
+            name: "basic_services"
+            widget: "object"
             i18n: true
             fields:
-              - { label: 'Titre', name: 'title', widget: 'string', i18n: true }
-              - { label: 'Sous-titre', name: 'subtitle', widget: 'string', i18n: true }
-              - { label: 'Ménage', name: 'cleaning', widget: 'string', i18n: true }
-              - { label: 'Frais de ménage', name: 'cleaning_fee', widget: 'string', i18n: true }
-              - { label: 'Linge de lit', name: 'bed_linen', widget: 'string', i18n: true }
-              - { label: 'Label linge de lit', name: 'bed_linen_label', widget: 'string', i18n: true }
-              - { label: 'Prix linge de lit', name: 'bed_linen_price', widget: 'string', i18n: true }
-              - { label: 'Linge de toilette', name: 'towels', widget: 'string', i18n: true }
-              - { label: 'Label linge de toilette', name: 'towels_label', widget: 'string', i18n: true }
-              - { label: 'Prix linge de toilette', name: 'towels_price', widget: 'string', i18n: true }
-          - label: 'ANCV'
-            name: 'ancv'
-            widget: 'object'
+              - { label: "Titre", name: "title", widget: "string", i18n: true }
+              - {
+                  label: "Sous-titre",
+                  name: "subtitle",
+                  widget: "string",
+                  i18n: true,
+                }
+              - {
+                  label: "Ménage",
+                  name: "cleaning",
+                  widget: "string",
+                  i18n: true,
+                }
+              - {
+                  label: "Frais de ménage",
+                  name: "cleaning_fee",
+                  widget: "string",
+                  i18n: true,
+                }
+              - {
+                  label: "Linge de lit",
+                  name: "bed_linen",
+                  widget: "string",
+                  i18n: true,
+                }
+              - {
+                  label: "Label linge de lit",
+                  name: "bed_linen_label",
+                  widget: "string",
+                  i18n: true,
+                }
+              - {
+                  label: "Prix linge de lit",
+                  name: "bed_linen_price",
+                  widget: "string",
+                  i18n: true,
+                }
+              - {
+                  label: "Linge de toilette",
+                  name: "towels",
+                  widget: "string",
+                  i18n: true,
+                }
+              - {
+                  label: "Label linge de toilette",
+                  name: "towels_label",
+                  widget: "string",
+                  i18n: true,
+                }
+              - {
+                  label: "Prix linge de toilette",
+                  name: "towels_price",
+                  widget: "string",
+                  i18n: true,
+                }
+          - label: "ANCV"
+            name: "ancv"
+            widget: "object"
             i18n: true
             fields:
-              - { label: 'Titre', name: 'title', widget: 'string', i18n: true }
-              - { label: 'Acceptés', name: 'accepted', widget: 'string', i18n: true }
+              - { label: "Titre", name: "title", widget: "string", i18n: true }
+              - {
+                  label: "Acceptés",
+                  name: "accepted",
+                  widget: "string",
+                  i18n: true,
+                }
 
-      - label: 'Section Jardin'
-        name: 'garden'
-        widget: 'object'
+      - label: "Section Jardin"
+        name: "garden"
+        widget: "object"
         i18n: true
         fields:
-          - { label: 'Titre', name: 'title', widget: 'string', i18n: true }
-          - { label: 'Titre des amis', name: 'friends_title', widget: 'string', i18n: true }
+          - { label: "Titre", name: "title", widget: "string", i18n: true }
+          - {
+              label: "Titre des amis",
+              name: "friends_title",
+              widget: "string",
+              i18n: true,
+            }
 
-      - label: 'Section Emplacement'
-        name: 'location'
-        widget: 'object'
+      - label: "Section Emplacement"
+        name: "location"
+        widget: "object"
         i18n: true
         fields:
-          - { label: 'Titre', name: 'title', widget: 'string', i18n: true }
-          - { label: 'Sous-titre', name: 'subtitle', widget: 'string', i18n: true }
-          - { label: 'Description', name: 'description', widget: 'text', i18n: true }
-          - { label: 'URL carte', name: 'map_url', widget: 'string', i18n: duplicate }
-          - { label: 'Gare la plus proche', name: 'nearest_station', widget: 'string', i18n: true }
-          - { label: 'Nom de la gare', name: 'station_name', widget: 'string', i18n: true }
-          - { label: 'Service de ramassage', name: 'pickup_service', widget: 'string', i18n: true }
-          - { label: 'Alt Lascaux', name: 'lascaux_alt', widget: 'string', i18n: true }
-          - { label: 'Description Lascaux', name: 'lascaux_desc', widget: 'string', i18n: true }
-          - { label: 'Alt Canoë', name: 'canoeing_alt', widget: 'string', i18n: true }
-          - { label: 'Description Canoë', name: 'canoeing_desc', widget: 'string', i18n: true }
-          - { label: 'Alt Châteaux', name: 'castles_alt', widget: 'string', i18n: true }
-          - { label: 'Description Châteaux', name: 'castles_desc', widget: 'string', i18n: true }
+          - { label: "Titre", name: "title", widget: "string", i18n: true }
+          - {
+              label: "Sous-titre",
+              name: "subtitle",
+              widget: "string",
+              i18n: true,
+            }
+          - {
+              label: "Description",
+              name: "description",
+              widget: "text",
+              i18n: true,
+            }
+          - {
+              label: "URL carte",
+              name: "map_url",
+              widget: "string",
+              i18n: duplicate,
+            }
+          - {
+              label: "Gare la plus proche",
+              name: "nearest_station",
+              widget: "string",
+              i18n: true,
+            }
+          - {
+              label: "Nom de la gare",
+              name: "station_name",
+              widget: "string",
+              i18n: true,
+            }
+          - {
+              label: "Service de ramassage",
+              name: "pickup_service",
+              widget: "string",
+              i18n: true,
+            }
+          - {
+              label: "Alt Lascaux",
+              name: "lascaux_alt",
+              widget: "string",
+              i18n: true,
+            }
+          - {
+              label: "Description Lascaux",
+              name: "lascaux_desc",
+              widget: "string",
+              i18n: true,
+            }
+          - {
+              label: "Alt Canoë",
+              name: "canoeing_alt",
+              widget: "string",
+              i18n: true,
+            }
+          - {
+              label: "Description Canoë",
+              name: "canoeing_desc",
+              widget: "string",
+              i18n: true,
+            }
+          - {
+              label: "Alt Châteaux",
+              name: "castles_alt",
+              widget: "string",
+              i18n: true,
+            }
+          - {
+              label: "Description Châteaux",
+              name: "castles_desc",
+              widget: "string",
+              i18n: true,
+            }
 
-      - label: 'Section Activités'
-        name: 'activities'
-        widget: 'object'
+      - label: "Section Activités"
+        name: "activities"
+        widget: "object"
         i18n: true
         collapsed: true
         fields:
-          - { label: 'Titre', name: 'title', widget: 'string', i18n: true }
-          - { label: 'Description', name: 'description', widget: 'string', i18n: true }
-          - label: 'Éléments'
-            name: 'items'
-            widget: 'object'
+          - { label: "Titre", name: "title", widget: "string", i18n: true }
+          - {
+              label: "Description",
+              name: "description",
+              widget: "string",
+              i18n: true,
+            }
+          - label: "Éléments"
+            name: "items"
+            widget: "object"
             i18n: true
             fields:
-              - label: 'Sites préhistoriques'
-                name: 'prehistoric'
-                widget: 'object'
+              - label: "Sites préhistoriques"
+                name: "prehistoric"
+                widget: "object"
                 i18n: true
                 fields:
-                  - { label: 'Titre', name: 'title', widget: 'string', i18n: true }
-                  - { label: 'Éléments', name: 'items', widget: 'list', i18n: true }
-              - label: 'Jardins'
-                name: 'gardens'
-                widget: 'object'
+                  - {
+                      label: "Titre",
+                      name: "title",
+                      widget: "string",
+                      i18n: true,
+                    }
+                  - {
+                      label: "Éléments",
+                      name: "items",
+                      widget: "list",
+                      i18n: true,
+                    }
+              - label: "Jardins"
+                name: "gardens"
+                widget: "object"
                 i18n: true
                 fields:
-                  - { label: 'Titre', name: 'title', widget: 'string', i18n: true }
-                  - { label: 'Éléments', name: 'items', widget: 'list', i18n: true }
-              - label: 'Parapente'
-                name: 'paragliding'
-                widget: 'object'
+                  - {
+                      label: "Titre",
+                      name: "title",
+                      widget: "string",
+                      i18n: true,
+                    }
+                  - {
+                      label: "Éléments",
+                      name: "items",
+                      widget: "list",
+                      i18n: true,
+                    }
+              - label: "Parapente"
+                name: "paragliding"
+                widget: "object"
                 i18n: true
                 fields:
-                  - { label: 'Titre', name: 'title', widget: 'string', i18n: true }
-                  - { label: 'Éléments', name: 'items', widget: 'list', i18n: true }
-              - label: 'Centres bouddhistes'
-                name: 'buddhist'
-                widget: 'object'
+                  - {
+                      label: "Titre",
+                      name: "title",
+                      widget: "string",
+                      i18n: true,
+                    }
+                  - {
+                      label: "Éléments",
+                      name: "items",
+                      widget: "list",
+                      i18n: true,
+                    }
+              - label: "Centres bouddhistes"
+                name: "buddhist"
+                widget: "object"
                 i18n: true
                 fields:
-                  - { label: 'Titre', name: 'title', widget: 'string', i18n: true }
-                  - { label: 'Éléments', name: 'items', widget: 'list', i18n: true }
-              - label: 'Gastronomie'
-                name: 'gastronomy'
-                widget: 'object'
+                  - {
+                      label: "Titre",
+                      name: "title",
+                      widget: "string",
+                      i18n: true,
+                    }
+                  - {
+                      label: "Éléments",
+                      name: "items",
+                      widget: "list",
+                      i18n: true,
+                    }
+              - label: "Gastronomie"
+                name: "gastronomy"
+                widget: "object"
                 i18n: true
                 fields:
-                  - { label: 'Titre', name: 'title', widget: 'string', i18n: true }
-                  - { label: 'Éléments', name: 'items', widget: 'list', i18n: true }
-              - label: 'Vignobles'
-                name: 'vineyards'
-                widget: 'object'
+                  - {
+                      label: "Titre",
+                      name: "title",
+                      widget: "string",
+                      i18n: true,
+                    }
+                  - {
+                      label: "Éléments",
+                      name: "items",
+                      widget: "list",
+                      i18n: true,
+                    }
+              - label: "Vignobles"
+                name: "vineyards"
+                widget: "object"
                 i18n: true
                 fields:
-                  - { label: 'Titre', name: 'title', widget: 'string', i18n: true }
-                  - { label: 'Éléments', name: 'items', widget: 'list', i18n: true }
-              - label: 'Villages'
-                name: 'villages'
-                widget: 'object'
+                  - {
+                      label: "Titre",
+                      name: "title",
+                      widget: "string",
+                      i18n: true,
+                    }
+                  - {
+                      label: "Éléments",
+                      name: "items",
+                      widget: "list",
+                      i18n: true,
+                    }
+              - label: "Villages"
+                name: "villages"
+                widget: "object"
                 i18n: true
                 fields:
-                  - { label: 'Titre', name: 'title', widget: 'string', i18n: true }
-                  - { label: 'Éléments', name: 'items', widget: 'list', i18n: true }
+                  - {
+                      label: "Titre",
+                      name: "title",
+                      widget: "string",
+                      i18n: true,
+                    }
+                  - {
+                      label: "Éléments",
+                      name: "items",
+                      widget: "list",
+                      i18n: true,
+                    }
 
-      - label: 'Section Calendrier'
-        name: 'calendar'
-        widget: 'object'
+      - label: "Section Calendrier"
+        name: "calendar"
+        widget: "object"
         i18n: true
         fields:
-          - { label: 'Titre', name: 'title', widget: 'string', i18n: true }
-          - { label: 'Sous-titre', name: 'subtitle', widget: 'string', i18n: true }
-          - { label: 'Texte de chargement', name: 'loading', widget: 'string', i18n: true }
-          - { label: 'Disponible', name: 'available', widget: 'string', i18n: true }
-          - { label: 'Indisponible', name: 'unavailable', widget: 'string', i18n: true }
+          - { label: "Titre", name: "title", widget: "string", i18n: true }
+          - {
+              label: "Sous-titre",
+              name: "subtitle",
+              widget: "string",
+              i18n: true,
+            }
+          - {
+              label: "Texte de chargement",
+              name: "loading",
+              widget: "string",
+              i18n: true,
+            }
+          - {
+              label: "Disponible",
+              name: "available",
+              widget: "string",
+              i18n: true,
+            }
+          - {
+              label: "Indisponible",
+              name: "unavailable",
+              widget: "string",
+              i18n: true,
+            }
 
-      - label: 'Section Contact'
-        name: 'contact'
-        widget: 'object'
+      - label: "Section Contact"
+        name: "contact"
+        widget: "object"
         i18n: true
         fields:
-          - { label: 'Titre', name: 'title', widget: 'string', i18n: true }
-          - { label: 'Sous-titre', name: 'subtitle', widget: 'string', i18n: true }
-          - { label: 'Label téléphone', name: 'phone', widget: 'string', i18n: true }
-          - { label: 'Numéro de téléphone', name: 'phone_number', widget: 'string', i18n: duplicate }
-          - { label: 'Label email', name: 'email', widget: 'string', i18n: true }
-          - { label: 'Adresse email', name: 'email_address', widget: 'string', i18n: duplicate }
+          - { label: "Titre", name: "title", widget: "string", i18n: true }
+          - {
+              label: "Sous-titre",
+              name: "subtitle",
+              widget: "string",
+              i18n: true,
+            }
+          - {
+              label: "Label téléphone",
+              name: "phone",
+              widget: "string",
+              i18n: true,
+            }
+          - {
+              label: "Numéro de téléphone",
+              name: "phone_number",
+              widget: "string",
+              i18n: duplicate,
+            }
+          - {
+              label: "Label email",
+              name: "email",
+              widget: "string",
+              i18n: true,
+            }
+          - {
+              label: "Adresse email",
+              name: "email_address",
+              widget: "string",
+              i18n: duplicate,
+            }
 
-      - label: 'Sélecteur de langue'
-        name: 'lang'
-        widget: 'object'
+      - label: "Sélecteur de langue"
+        name: "lang"
+        widget: "object"
         i18n: true
         fields:
-          - { label: 'Basculer vers', name: 'switch', widget: 'string', i18n: true }
-          - { label: 'Langue actuelle', name: 'current', widget: 'string', i18n: true }
+          - {
+              label: "Basculer vers",
+              name: "switch",
+              widget: "string",
+              i18n: true,
+            }
+          - {
+              label: "Langue actuelle",
+              name: "current",
+              widget: "string",
+              i18n: true,
+            }
 
   # Site Images
-  - name: 'site_images'
-    label: 'Images du Site'
+  - name: "site_images"
+    label: "Images du Site"
     files:
-      - name: 'images'
-        label: 'Toutes les Images'
-        file: 'src/cms-content/images.json'
+      - name: "images"
+        label: "Toutes les Images"
+        file: "src/cms-content/images.json"
         fields:
-          - label: 'Section Hero'
-            name: 'hero'
-            widget: 'object'
+          - label: "Section Hero"
+            name: "hero"
+            widget: "object"
             fields:
-              - { label: 'Image principale', name: 'primary', widget: 'image', required: false }
-              - label: 'Texte alternatif principal'
-                name: 'primary_alt'
-                widget: 'object'
+              - {
+                  label: "Image principale",
+                  name: "primary",
+                  widget: "image",
+                  required: false,
+                }
+              - label: "Texte alternatif principal"
+                name: "primary_alt"
+                widget: "object"
                 fields:
-                  - { label: 'Français', name: 'fr', widget: 'string' }
-                  - { label: 'Anglais', name: 'en', widget: 'string' }
-          
-          - label: 'Section À propos'
-            name: 'about'
-            widget: 'object'
+                  - { label: "Français", name: "fr", widget: "string" }
+                  - { label: "Anglais", name: "en", widget: "string" }
+
+          - label: "Section À propos"
+            name: "about"
+            widget: "object"
             fields:
-              - { label: 'Image principale', name: 'primary', widget: 'image', required: false }
-              - label: 'Texte alternatif principal'
-                name: 'primary_alt'
-                widget: 'object'
+              - {
+                  label: "Image principale",
+                  name: "primary",
+                  widget: "image",
+                  required: false,
+                }
+              - label: "Texte alternatif principal"
+                name: "primary_alt"
+                widget: "object"
                 fields:
-                  - { label: 'Français', name: 'fr', widget: 'string' }
-                  - { label: 'Anglais', name: 'en', widget: 'string' }
-          
-          - label: 'Hébergement'
-            name: 'accommodation'
-            widget: 'object'
+                  - { label: "Français", name: "fr", widget: "string" }
+                  - { label: "Anglais", name: "en", widget: "string" }
+
+          - label: "Hébergement"
+            name: "accommodation"
+            widget: "object"
             fields:
-              - label: 'Groupes de photos'
-                name: 'photo_groups'
-                widget: 'list'
+              - label: "Groupes de photos"
+                name: "photo_groups"
+                widget: "list"
                 required: false
-                summary: '{{fields.legend.fr}}'
+                summary: "{{fields.legend.fr}}"
                 fields:
-                  - label: 'Images'
-                    name: 'images'
-                    widget: 'list'
-                    field: { label: 'Chemin de l''image', name: 'image', widget: 'image' }
-                  - label: 'Légende'
-                    name: 'legend'
-                    widget: 'object'
+                  - label: "Images"
+                    name: "images"
+                    widget: "list"
                     fields:
-                      - { label: 'Français', name: 'fr', widget: 'string' }
-                      - { label: 'Anglais', name: 'en', widget: 'string' }
-          
-          - label: 'Jardin'
-            name: 'garden'
-            widget: 'object'
+                      - { label: "Image", name: "image", widget: "image" }
+                      - label: "Titre détaillé (mobile)"
+                        name: "mobileTitle"
+                        widget: "object"
+                        required: false
+                        fields:
+                          - {
+                              label: "Français",
+                              name: "fr",
+                              widget: "string",
+                              required: false,
+                            }
+                          - {
+                              label: "Anglais",
+                              name: "en",
+                              widget: "string",
+                              required: false,
+                            }
+                  - label: "Légende"
+                    name: "legend"
+                    widget: "object"
+                    fields:
+                      - { label: "Français", name: "fr", widget: "string" }
+                      - { label: "Anglais", name: "en", widget: "string" }
+
+          - label: "Jardin"
+            name: "garden"
+            widget: "object"
             fields:
-              - label: 'Galerie principale (3 images)'
-                name: 'main_gallery'
-                widget: 'list'
+              - label: "Galerie principale (3 images)"
+                name: "main_gallery"
+                widget: "list"
                 required: false
-                field: { label: 'Image', name: 'image', widget: 'image' }
-              - label: 'Galerie des amis (6 images)'
-                name: 'friends_gallery'
-                widget: 'list'
+                field: { label: "Image", name: "image", widget: "image" }
+              - label: "Galerie des amis (6 images)"
+                name: "friends_gallery"
+                widget: "list"
                 required: false
-                summary: '{{fields.legend.fr}}'
+                summary: "{{fields.legend.fr}}"
                 fields:
-                  - label: 'Image'
-                    name: 'image'
-                    widget: 'image'
-                  - label: 'Légende (optionnelle)'
-                    name: 'legend'
-                    widget: 'object'
+                  - label: "Image"
+                    name: "image"
+                    widget: "image"
+                  - label: "Légende (optionnelle)"
+                    name: "legend"
+                    widget: "object"
                     required: false
                     fields:
-                      - { label: 'Français', name: 'fr', widget: 'string', required: false }
-                      - { label: 'Anglais', name: 'en', widget: 'string', required: false }
+                      - {
+                          label: "Français",
+                          name: "fr",
+                          widget: "string",
+                          required: false,
+                        }
+                      - {
+                          label: "Anglais",
+                          name: "en",
+                          widget: "string",
+                          required: false,
+                        }
 
-          - label: 'Activités'
-            name: 'activities'
-            widget: 'object'
+          - label: "Activités"
+            name: "activities"
+            widget: "object"
             fields:
-              - label: 'Lascaux'
-                name: 'lascaux'
-                widget: 'object'
+              - label: "Lascaux"
+                name: "lascaux"
+                widget: "object"
                 fields:
-                  - { label: 'Image', name: 'image', widget: 'image', required: false }
-                  - label: 'Texte alternatif'
-                    name: 'alt'
-                    widget: 'object'
+                  - {
+                      label: "Image",
+                      name: "image",
+                      widget: "image",
+                      required: false,
+                    }
+                  - label: "Texte alternatif"
+                    name: "alt"
+                    widget: "object"
                     fields:
-                      - { label: 'Français', name: 'fr', widget: 'string' }
-                      - { label: 'Anglais', name: 'en', widget: 'string' }
-              - label: 'Canoë'
-                name: 'canoeing'
-                widget: 'object'
+                      - { label: "Français", name: "fr", widget: "string" }
+                      - { label: "Anglais", name: "en", widget: "string" }
+              - label: "Canoë"
+                name: "canoeing"
+                widget: "object"
                 fields:
-                  - { label: 'Image', name: 'image', widget: 'image', required: false }
-                  - label: 'Texte alternatif'
-                    name: 'alt'
-                    widget: 'object'
+                  - {
+                      label: "Image",
+                      name: "image",
+                      widget: "image",
+                      required: false,
+                    }
+                  - label: "Texte alternatif"
+                    name: "alt"
+                    widget: "object"
                     fields:
-                      - { label: 'Français', name: 'fr', widget: 'string' }
-                      - { label: 'Anglais', name: 'en', widget: 'string' }
-              - label: 'Châteaux'
-                name: 'castles'
-                widget: 'object'
+                      - { label: "Français", name: "fr", widget: "string" }
+                      - { label: "Anglais", name: "en", widget: "string" }
+              - label: "Châteaux"
+                name: "castles"
+                widget: "object"
                 fields:
-                  - { label: 'Image', name: 'image', widget: 'image', required: false }
-                  - label: 'Texte alternatif'
-                    name: 'alt'
-                    widget: 'object'
+                  - {
+                      label: "Image",
+                      name: "image",
+                      widget: "image",
+                      required: false,
+                    }
+                  - label: "Texte alternatif"
+                    name: "alt"
+                    widget: "object"
                     fields:
-                      - { label: 'Français', name: 'fr', widget: 'string' }
-                      - { label: 'Anglais', name: 'en', widget: 'string' }
+                      - { label: "Français", name: "fr", widget: "string" }
+                      - { label: "Anglais", name: "en", widget: "string" }
