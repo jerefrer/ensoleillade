@@ -1,5 +1,9 @@
 ---
-import { getTranslations, getLocaleFromUrl, getAlternateUrls } from '../utils/i18n.js';
+import {
+  getTranslations,
+  getLocaleFromUrl,
+  getAlternateUrls,
+} from "../utils/i18n.js";
 
 interface Props {
   title?: string;
@@ -15,119 +19,141 @@ const alternateUrls = getAlternateUrls(Astro.url.pathname, currentLocale);
 
 const siteTitle = title || t.site.title;
 const siteDescription = description || t.site.description;
-const siteImage = image || '/og-image.jpg';
+const siteImage = image || "/og-image.jpg";
 const canonicalUrl = new URL(Astro.url.pathname, Astro.site);
 ---
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang={currentLocale} class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="generator" content={Astro.generator} />
-    
+
     <!-- Primary Meta Tags -->
     <title>{siteTitle}</title>
     <meta name="title" content={siteTitle} />
     <meta name="description" content={siteDescription} />
     <meta name="keywords" content={t.site.keywords} />
     <link rel="canonical" href={canonicalUrl} />
-    
+
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content={canonicalUrl} />
     <meta property="og:title" content={siteTitle} />
     <meta property="og:description" content={siteDescription} />
     <meta property="og:image" content={new URL(siteImage, Astro.site)} />
-    <meta property="og:locale" content={currentLocale === 'fr' ? 'fr_FR' : 'en_US'} />
-    
+    <meta
+      property="og:locale"
+      content={currentLocale === "fr" ? "fr_FR" : "en_US"}
+    />
+
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image" />
     <meta property="twitter:url" content={canonicalUrl} />
     <meta property="twitter:title" content={siteTitle} />
     <meta property="twitter:description" content={siteDescription} />
     <meta property="twitter:image" content={new URL(siteImage, Astro.site)} />
-    
+
     <!-- Alternate languages -->
-    {Object.entries(alternateUrls).map(([lang, url]) => (
-      <link rel="alternate" hreflang={lang} href={new URL(url, Astro.site)} />
-    ))}
-    
+    {
+      Object.entries(alternateUrls).map(([lang, url]) => (
+        <link rel="alternate" hreflang={lang} href={new URL(url, Astro.site)} />
+      ))
+    }
+
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="/logo.png" />
     <link rel="apple-touch-icon" href="/logo.png" />
-    
+
     <!-- Preload critical resources -->
-    <link rel="preload" href="/fonts/inter-var.woff2" as="font" type="font/woff2" crossorigin />
-    
+    <link
+      rel="preload"
+      href="/fonts/inter-var.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+
     <!-- Structured Data -->
-    <script type="application/ld+json" set:html={JSON.stringify({
-      "@context": "https://schema.org",
-      "@type": "LodgingBusiness",
-      "name": "L'Ensoleillade",
-      "description": siteDescription,
-      "url": canonicalUrl.toString(),
-      "image": new URL(siteImage, Astro.site).toString(),
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Saint-Léon-sur-Vézère",
-        "addressRegion": "Dordogne",
-        "addressCountry": "FR"
-      },
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": "45.015",
-        "longitude": "1.095"
-      },
-      "amenityFeature": [
-        { "@type": "LocationFeatureSpecification", "name": "Free WiFi" },
-        { "@type": "LocationFeatureSpecification", "name": "Free Parking" },
-        { "@type": "LocationFeatureSpecification", "name": "Air Conditioning" },
-        { "@type": "LocationFeatureSpecification", "name": "Kitchenette" },
-        { "@type": "LocationFeatureSpecification", "name": "Terrace" },
-        { "@type": "LocationFeatureSpecification", "name": "Garden View" }
-      ],
-      "checkinTime": "15:00",
-      "checkoutTime": "11:00",
-      "numberOfRooms": 1,
-      "maximumAttendeeCapacity": 2
-    })} />
-    
+    <script
+      type="application/ld+json"
+      set:html={JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "LodgingBusiness",
+        name: "L'Ensoleillade",
+        description: siteDescription,
+        url: canonicalUrl.toString(),
+        image: new URL(siteImage, Astro.site).toString(),
+        address: {
+          "@type": "PostalAddress",
+          addressLocality: "Saint-Léon-sur-Vézère",
+          addressRegion: "Dordogne",
+          addressCountry: "FR",
+        },
+        geo: {
+          "@type": "GeoCoordinates",
+          latitude: "45.015",
+          longitude: "1.095",
+        },
+        amenityFeature: [
+          { "@type": "LocationFeatureSpecification", name: "Free WiFi" },
+          { "@type": "LocationFeatureSpecification", name: "Free Parking" },
+          { "@type": "LocationFeatureSpecification", name: "Air Conditioning" },
+          { "@type": "LocationFeatureSpecification", name: "Kitchenette" },
+          { "@type": "LocationFeatureSpecification", name: "Terrace" },
+          { "@type": "LocationFeatureSpecification", name: "Garden View" },
+        ],
+        checkinTime: "15:00",
+        checkoutTime: "11:00",
+        numberOfRooms: 1,
+        maximumAttendeeCapacity: 2,
+      })}
+    />
+
     <style>
       /* Critical CSS for font loading */
       @font-face {
-        font-family: 'Inter';
+        font-family: "Inter";
         font-style: normal;
         font-weight: 100 900;
         font-display: swap;
-        src: url('/fonts/inter-var.woff2') format('woff2');
+        src: url("/fonts/inter-var.woff2") format("woff2");
       }
-      
+
       /* Prevent layout shift and enhanced typography */
       html {
         font-family: Inter, system-ui, sans-serif;
         scroll-behavior: smooth;
         overflow-x: hidden;
       }
-      
+
       /* Enhanced smooth transitions */
       * {
-        transition: color 0.3s cubic-bezier(0.4, 0, 0.2, 1), 
-                    background-color 0.3s cubic-bezier(0.4, 0, 0.2, 1),
-                    transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
-                    opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1),
-                    box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        transition:
+          color 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+          background-color 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+          transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+          opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+          box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
       }
-      
+
       /* Modern typography enhancements */
       body {
-        font-feature-settings: 'kern' 1, 'liga' 1, 'calt' 1, 'pnum' 1, 'tnum' 0, 'onum' 1, 'lnum' 0, 'dlig' 0;
+        font-feature-settings:
+          "kern" 1,
+          "liga" 1,
+          "calt" 1,
+          "pnum" 1,
+          "tnum" 0,
+          "onum" 1,
+          "lnum" 0,
+          "dlig" 0;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
         text-rendering: optimizeLegibility;
       }
-      
-      
+
       /* Glass morphism utility */
       .glass {
         background: rgba(255, 255, 255, 0.85);
@@ -135,32 +161,32 @@ const canonicalUrl = new URL(Astro.url.pathname, Astro.site);
         -webkit-backdrop-filter: blur(12px);
         border: 1px solid rgba(255, 255, 255, 0.2);
       }
-      
+
       /* Modern card hover effects */
       .card-hover {
         transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
       }
-      
+
       .card-hover:hover {
         transform: translateY(-8px) scale(1.02);
         box-shadow: 0 20px 40px -12px rgba(0, 0, 0, 0.15);
       }
-      
+
       /* Intersection Observer animation classes */
       .animate-on-scroll {
         opacity: 0;
         transform: translateY(30px);
         transition: all 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
       }
-      
+
       .animate-on-scroll.is-visible {
         opacity: 1;
         transform: translateY(0);
       }
-      
+
       /* Organic shapes and curved sections */
       .section-curve::before {
-        content: '';
+        content: "";
         position: absolute;
         top: -50px;
         left: 0;
@@ -171,31 +197,63 @@ const canonicalUrl = new URL(Astro.url.pathname, Astro.site);
       }
     </style>
   </head>
-  
+
   <body class="bg-warm-50 text-earth-900 antialiased">
-    
     <!-- Skip to main content for accessibility -->
-    <a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-earth-800 text-warm-50 px-4 py-2 rounded-md z-50">
-      {currentLocale === 'fr' ? 'Aller au contenu principal' : 'Skip to main content'}
+    <a
+      href="#main"
+      class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-earth-800 text-warm-50 px-4 py-2 rounded-md z-50"
+    >
+      {
+        currentLocale === "fr"
+          ? "Aller au contenu principal"
+          : "Skip to main content"
+      }
     </a>
-    
+
     <div class="min-h-screen flex flex-col">
       <main id="main" class="flex-1">
         <slot />
       </main>
-      
+
       <!-- Footer -->
       <footer class="bg-forest-800 text-warm-100 py-12">
         <div class="max-w-6xl mx-auto px-4">
           <div class="text-center">
             <p class="text-xs opacity-75">
-              © {new Date().getFullYear()} L'Ensoleillade - {currentLocale === 'fr' ? 'Tous droits réservés' : 'All rights reserved'}
+              © {new Date().getFullYear()} L'Ensoleillade - {
+                currentLocale === "fr"
+                  ? "Tous droits réservés"
+                  : "All rights reserved"
+              }
             </p>
           </div>
         </div>
       </footer>
     </div>
-    
+
+    <button
+      id="scroll-to-top"
+      class="fixed bottom-6 right-4 sm:right-6 w-12 h-12 rounded-full bg-sage-500 text-white shadow-lg shadow-sage/40 flex items-center justify-center transition-all duration-300 opacity-0 pointer-events-none translate-y-4 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-sage-300"
+      aria-label={currentLocale === "fr"
+        ? "Retour en haut de page"
+        : "Back to top"}
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="w-5 h-5"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <path d="M5 12l7-7 7 7"></path>
+        <path d="M12 5v14"></path>
+      </svg>
+    </button>
+
     <script>
       // Modern scroll progress and animation system
       class ModernAnimations {
@@ -211,18 +269,23 @@ const canonicalUrl = new URL(Astro.url.pathname, Astro.site);
 
         initScrollAnimations() {
           // Smooth anchor scrolling with offset for fixed header
-          document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
+          document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+            anchor.addEventListener("click", (e) => {
               e.preventDefault();
-              const target = document.querySelector(this.getAttribute('href'));
+              const href = anchor.getAttribute("href");
+              if (!href) {
+                return;
+              }
+              const target = document.querySelector(href);
               if (target) {
                 const headerOffset = 80;
                 const elementPosition = target.getBoundingClientRect().top;
-                const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+                const offsetPosition =
+                  elementPosition + window.pageYOffset - headerOffset;
 
                 window.scrollTo({
                   top: offsetPosition,
-                  behavior: 'smooth'
+                  behavior: "smooth",
                 });
               }
             });
@@ -232,45 +295,108 @@ const canonicalUrl = new URL(Astro.url.pathname, Astro.site);
         initIntersectionObserver() {
           const observerOptions = {
             threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
+            rootMargin: "0px 0px -50px 0px",
           };
 
           const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-              if (entry.isIntersecting) {
-                entry.target.classList.add('is-visible');
-                // Add staggered delay for multiple elements
-                const delay = entry.target.dataset.delay || 0;
-                setTimeout(() => {
-                  entry.target.style.transitionDelay = '0ms';
-                }, delay);
+            entries.forEach((entry) => {
+              if (
+                !entry.isIntersecting ||
+                !(entry.target instanceof HTMLElement)
+              ) {
+                return;
               }
+              const target = entry.target;
+              target.classList.add("is-visible");
+              const delay = target.dataset.delay || "0ms";
+              const delayMs =
+                typeof delay === "string" ? parseInt(delay, 10) || 0 : delay;
+              setTimeout(() => {
+                target.style.transitionDelay = "0ms";
+              }, delayMs);
             });
           }, observerOptions);
 
           // Observe all elements with animation class
-          document.querySelectorAll('.animate-on-scroll').forEach((el, index) => {
-            el.dataset.delay = `${index * 100}ms`;
-            el.style.transitionDelay = `${index * 100}ms`;
-            observer.observe(el);
-          });
+          document
+            .querySelectorAll(".animate-on-scroll")
+            .forEach((el, index) => {
+              if (!(el instanceof HTMLElement)) {
+                return;
+              }
+              el.dataset.delay = `${index * 100}ms`;
+              el.style.transitionDelay = `${index * 100}ms`;
+              observer.observe(el);
+            });
 
           // Observe card hover elements for enhanced interactions
-          document.querySelectorAll('.card-hover').forEach(card => {
-            card.addEventListener('mouseenter', () => {
-              card.style.transform = 'translateY(-8px) scale(1.02)';
+          document.querySelectorAll(".card-hover").forEach((card) => {
+            if (!(card instanceof HTMLElement)) {
+              return;
+            }
+            card.addEventListener("mouseenter", () => {
+              card.style.transform = "translateY(-8px) scale(1.02)";
             });
-            
-            card.addEventListener('mouseleave', () => {
-              card.style.transform = 'translateY(0) scale(1)';
+
+            card.addEventListener("mouseleave", () => {
+              card.style.transform = "translateY(0) scale(1)";
             });
           });
         }
       }
 
+      class ScrollToTopButton {
+        button: HTMLButtonElement | null;
+
+        constructor() {
+          this.button = document.getElementById(
+            "scroll-to-top"
+          ) as HTMLButtonElement | null;
+          if (!this.button) {
+            return;
+          }
+          this.handleScroll = this.handleScroll.bind(this);
+          window.addEventListener("scroll", this.handleScroll);
+          this.button.addEventListener("click", () => {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+          });
+          this.handleScroll();
+        }
+
+        handleScroll() {
+          if (!this.button) {
+            return;
+          }
+          if (window.scrollY > 400) {
+            this.button.classList.remove(
+              "opacity-0",
+              "pointer-events-none",
+              "translate-y-4"
+            );
+            this.button.classList.add(
+              "opacity-100",
+              "pointer-events-auto",
+              "translate-y-0"
+            );
+          } else {
+            this.button.classList.add(
+              "opacity-0",
+              "pointer-events-none",
+              "translate-y-4"
+            );
+            this.button.classList.remove(
+              "opacity-100",
+              "pointer-events-auto",
+              "translate-y-0"
+            );
+          }
+        }
+      }
+
       // Initialize when DOM is loaded
-      document.addEventListener('DOMContentLoaded', () => {
+      document.addEventListener("DOMContentLoaded", () => {
         new ModernAnimations();
+        new ScrollToTopButton();
       });
     </script>
   </body>
