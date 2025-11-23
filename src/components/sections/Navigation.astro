@@ -151,7 +151,7 @@ const t = getTranslations(locale);
   <!-- Mobile Navigation Menu -->
   <div
     id="mobile-menu"
-    class="lg:hidden absolute top-full left-0 right-0 bg-white/95 border-b border-sage-200 shadow-lg transform -translate-y-full opacity-0 invisible transition-all duration-500 ease-out"
+    class="lg:hidden absolute top-full left-0 right-0 bg-white/95 border-b border-sage-200 shadow-lg transform -translate-y-full opacity-0 invisible transition-all duration-500 ease-out z-50"
   >
     <div class="px-4 py-6 space-y-4">
       <a
@@ -192,18 +192,46 @@ const t = getTranslations(locale);
       </a>
     </div>
   </div>
+
+  <div
+    id="mobile-menu-overlay"
+    class="lg:hidden fixed inset-0 z-40 bg-forest-900/20 opacity-0 pointer-events-none transition-opacity duration-500"
+  >
+  </div>
 </nav>
 
 <script>
+  const MOBILE_MENU_TRANSITION_MS = 500;
+  let preventImmediateReopen = false;
+  let reopenTimeout: ReturnType<typeof setTimeout> | null = null;
+
   class ModernNavigation {
+    nav: HTMLElement | null;
+    navBg: HTMLElement | null;
+    mobileButton: HTMLButtonElement | null;
+    mobileMenu: HTMLElement | null;
+    menuIcon: SVGSVGElement | null;
+    closeIcon: SVGSVGElement | null;
+    isMenuOpen: boolean;
+    menuHideTimeout: ReturnType<typeof setTimeout> | null;
+    menuShowTimeout: ReturnType<typeof setTimeout> | null;
+    isMenuClosing: boolean;
+    overlay: HTMLElement | null;
+
     constructor() {
       this.nav = document.getElementById("main-navigation");
       this.navBg = document.getElementById("nav-bg");
-      this.mobileButton = document.getElementById("mobile-menu-button");
+      this.mobileButton = document.getElementById(
+        "mobile-menu-button"
+      ) as HTMLButtonElement;
       this.mobileMenu = document.getElementById("mobile-menu");
-      this.menuIcon = document.getElementById("menu-icon");
-      this.closeIcon = document.getElementById("close-icon");
+      this.menuIcon = document.querySelector<SVGSVGElement>("#menu-icon");
+      this.closeIcon = document.querySelector<SVGSVGElement>("#close-icon");
+      this.overlay = document.getElementById("mobile-menu-overlay");
       this.isMenuOpen = false;
+      this.menuHideTimeout = null;
+      this.menuShowTimeout = null;
+      this.isMenuClosing = false;
 
       this.init();
     }
@@ -223,8 +251,7 @@ const t = getTranslations(locale);
         link.addEventListener("click", (e) => {
           const href = link.getAttribute("href");
 
-          // Handle scroll to top for # or empty href
-          if (href === "#" || href === "") {
+          if (!href || href === "#") {
             e.preventDefault();
             window.scrollTo({
               top: 0,
@@ -250,22 +277,47 @@ const t = getTranslations(locale);
     }
 
     setupMobileMenu() {
+      if (!this.mobileButton || !this.mobileMenu) {
+        return;
+      }
+
       this.mobileButton.addEventListener("click", () => {
+        if (!this.isMenuOpen && preventImmediateReopen) {
+          return;
+        }
         this.toggleMobileMenu();
       });
 
       // Close mobile menu when clicking on links
       this.mobileMenu.querySelectorAll("a").forEach((link) => {
-        link.addEventListener("click", () => {
+        link.addEventListener("click", (event) => {
+          if (this.isMenuClosing) {
+            event.preventDefault();
+            event.stopPropagation();
+            return;
+          }
           if (this.isMenuOpen) {
             this.closeMobileMenu();
           }
         });
       });
 
+      if (this.overlay) {
+        this.overlay.addEventListener("click", () => {
+          if (this.isMenuOpen) {
+            this.closeMobileMenu();
+          }
+        });
+      }
+
       // Close menu when clicking outside
       document.addEventListener("click", (e) => {
-        if (this.isMenuOpen && !this.nav.contains(e.target)) {
+        if (
+          this.isMenuOpen &&
+          this.nav &&
+          e.target instanceof Node &&
+          !this.nav.contains(e.target)
+        ) {
           this.closeMobileMenu();
         }
       });
@@ -280,7 +332,25 @@ const t = getTranslations(locale);
     }
 
     openMobileMenu() {
+      if (
+        !this.mobileMenu ||
+        !this.menuIcon ||
+        !this.closeIcon ||
+        !this.mobileButton
+      ) {
+        return;
+      }
+      if (this.menuHideTimeout) {
+        clearTimeout(this.menuHideTimeout);
+        this.menuHideTimeout = null;
+      }
+      if (this.menuShowTimeout) {
+        clearTimeout(this.menuShowTimeout);
+        this.menuShowTimeout = null;
+      }
       this.isMenuOpen = true;
+      this.isMenuClosing = false;
+      this.setMenuInteractivity(false);
       this.mobileMenu.classList.remove(
         "invisible",
         "-translate-y-full",
@@ -290,22 +360,83 @@ const t = getTranslations(locale);
       this.menuIcon.classList.add("hidden");
       this.closeIcon.classList.remove("hidden");
       this.mobileButton.setAttribute("aria-expanded", "true");
+      this.showOverlay();
+      this.menuShowTimeout = setTimeout(() => {
+        this.setMenuInteractivity(true);
+        this.menuShowTimeout = null;
+      }, MOBILE_MENU_TRANSITION_MS);
 
       // Prevent nav from hiding when menu is open
-      this.nav.style.transform = "translateY(0)";
+      if (this.nav) {
+        this.nav.style.transform = "translateY(0)";
+      }
     }
 
     closeMobileMenu() {
+      if (
+        !this.mobileMenu ||
+        !this.menuIcon ||
+        !this.closeIcon ||
+        !this.mobileButton
+      ) {
+        return;
+      }
+      if (!this.isMenuOpen) {
+        return;
+      }
+      if (this.menuShowTimeout) {
+        clearTimeout(this.menuShowTimeout);
+        this.menuShowTimeout = null;
+      }
+      this.isMenuClosing = true;
+      this.setMenuInteractivity(false);
       this.isMenuOpen = false;
-      this.mobileMenu.classList.add(
-        "invisible",
-        "-translate-y-full",
-        "opacity-0"
-      );
+      this.mobileMenu.classList.add("-translate-y-full", "opacity-0");
       this.mobileMenu.classList.remove("translate-y-0", "opacity-100");
       this.menuIcon.classList.remove("hidden");
       this.closeIcon.classList.add("hidden");
       this.mobileButton.setAttribute("aria-expanded", "false");
+      startReopenCooldown();
+      this.scheduleMenuHide();
+    }
+
+    scheduleMenuHide() {
+      if (this.menuHideTimeout) {
+        clearTimeout(this.menuHideTimeout);
+      }
+      this.menuHideTimeout = setTimeout(() => {
+        if (this.mobileMenu) {
+          this.mobileMenu.classList.add("invisible");
+        }
+        this.isMenuClosing = false;
+        this.menuHideTimeout = null;
+        this.hideOverlay();
+      }, MOBILE_MENU_TRANSITION_MS);
+    }
+
+    showOverlay() {
+      if (!this.overlay) {
+        return;
+      }
+      this.overlay.classList.remove("opacity-0");
+      this.overlay.classList.add("opacity-100");
+      this.overlay.style.pointerEvents = "auto";
+    }
+
+    hideOverlay() {
+      if (!this.overlay) {
+        return;
+      }
+      this.overlay.classList.remove("opacity-100");
+      this.overlay.classList.add("opacity-0");
+      this.overlay.style.pointerEvents = "none";
+    }
+
+    setMenuInteractivity(isEnabled: boolean) {
+      if (!this.mobileMenu) {
+        return;
+      }
+      this.mobileMenu.style.pointerEvents = isEnabled ? "auto" : "none";
     }
 
     setupActiveLinks() {
@@ -327,7 +458,10 @@ const t = getTranslations(locale);
               const activeLink = document.querySelector(`a[href="#${id}"]`);
               if (activeLink && activeLink.classList.contains("nav-link")) {
                 activeLink.classList.add("text-sage-600");
-                activeLink.querySelector("div").classList.add("scale-100");
+                const highlight = activeLink.querySelector("div");
+                if (highlight) {
+                  highlight.classList.add("scale-100");
+                }
               }
             }
           });
@@ -343,6 +477,17 @@ const t = getTranslations(locale);
       });
     }
   }
+
+  const startReopenCooldown = () => {
+    preventImmediateReopen = true;
+    if (reopenTimeout) {
+      clearTimeout(reopenTimeout);
+    }
+    reopenTimeout = setTimeout(() => {
+      preventImmediateReopen = false;
+      reopenTimeout = null;
+    }, MOBILE_MENU_TRANSITION_MS);
+  };
 
   // Initialize navigation when DOM is loaded
   document.addEventListener("DOMContentLoaded", () => {
