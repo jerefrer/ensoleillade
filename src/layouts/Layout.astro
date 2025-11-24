@@ -278,7 +278,7 @@ const canonicalUrl = new URL(Astro.url.pathname, Astro.site);
               }
               const target = document.querySelector(href);
               if (target) {
-                const headerOffset = 80;
+                const headerOffset = 0;
                 const elementPosition = target.getBoundingClientRect().top;
                 const offsetPosition =
                   elementPosition + window.pageYOffset - headerOffset;
