@@ -268,7 +268,16 @@ const canonicalUrl = new URL(Astro.url.pathname, Astro.site);
         }
 
         initScrollAnimations() {
-          // Smooth anchor scrolling with offset for fixed header
+          const getHeaderOffset = () => {
+            const nav = document.getElementById("main-navigation");
+            if (!nav) {
+              return 0;
+            }
+            const position = window.getComputedStyle(nav).position;
+            const isOverlaying = position === "fixed" || position === "sticky";
+            return isOverlaying ? nav.offsetHeight : 0;
+          };
+
           document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
             anchor.addEventListener("click", (e) => {
               e.preventDefault();
@@ -277,17 +286,19 @@ const canonicalUrl = new URL(Astro.url.pathname, Astro.site);
                 return;
               }
               const target = document.querySelector(href);
-              if (target) {
-                const headerOffset = 80;
-                const elementPosition = target.getBoundingClientRect().top;
-                const offsetPosition =
-                  elementPosition + window.pageYOffset - headerOffset;
-
-                window.scrollTo({
-                  top: offsetPosition,
-                  behavior: "smooth",
-                });
+              if (!target) {
+                return;
               }
+
+              const headerOffset = getHeaderOffset();
+              const elementPosition = target.getBoundingClientRect().top;
+              const offsetPosition =
+                elementPosition + window.pageYOffset - headerOffset;
+
+              window.scrollTo({
+                top: offsetPosition,
+                behavior: "smooth",
+              });
             });
           });
         }
