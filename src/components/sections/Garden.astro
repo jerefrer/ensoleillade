@@ -9,11 +9,16 @@ const { t, locale } = Astro.props as Props;
 ---
 
 <!-- Garden Section -->
-<section id="garden" class="relative py-16 md:py-24 bg-gradient-to-br from-sage-50 via-white to-warm-50">
+<section
+  id="garden"
+  class="relative py-16 md:py-20 bg-gradient-to-br from-sage-50 via-white to-warm-50"
+>
   <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <!-- Section Title -->
     <div class="text-center mb-16 animate-on-scroll">
-      <h2 class="text-4xl lg:text-5xl font-serif font-bold text-forest-800 mb-4">
+      <h2
+        class="text-4xl lg:text-5xl font-serif font-bold text-forest-800 mb-4"
+      >
         {t.garden.title}
       </h2>
     </div>
@@ -51,7 +56,13 @@ const { t, locale } = Astro.props as Props;
             <div class="flex flex-col items-center">
               <img
                 src={item.image}
-                alt={item.legend ? (locale === "fr" ? item.legend.fr : item.legend.en) : ""}
+                alt={
+                  item.legend
+                    ? locale === "fr"
+                      ? item.legend.fr
+                      : item.legend.en
+                    : ""
+                }
                 class="rounded-xl shadow-soft w-full h-auto max-h-[500px] object-cover object-center"
                 style="aspect-ratio: auto;"
               />
@@ -72,7 +83,13 @@ const { t, locale } = Astro.props as Props;
             <div class="flex flex-col items-center">
               <img
                 src={item.image}
-                alt={item.legend ? (locale === "fr" ? item.legend.fr : item.legend.en) : ""}
+                alt={
+                  item.legend
+                    ? locale === "fr"
+                      ? item.legend.fr
+                      : item.legend.en
+                    : ""
+                }
                 class="rounded-xl shadow-soft w-full h-auto max-h-[500px] object-cover object-center"
                 style="aspect-ratio: auto;"
               />

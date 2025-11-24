@@ -244,22 +244,31 @@ const t = getTranslations(locale);
     }
 
     setupLogoScroll() {
-      // Only intercept the logo link that points to the top of the page
-      const logoLink = this.nav?.querySelector('a[href="#"]');
-      if (!logoLink) {
-        return;
-      }
+      // Get all links that should trigger smooth scroll
+      const scrollLinks = document.querySelectorAll('a[href^="#"]');
 
-      logoLink.addEventListener("click", (e) => {
-        e.preventDefault();
-        window.scrollTo({
-          top: 0,
-          behavior: "smooth",
+      scrollLinks.forEach((link) => {
+        link.addEventListener("click", (e) => {
+          const href = link.getAttribute("href");
+
+          if (!href || href === "#") {
+            e.preventDefault();
+            window.scrollTo({
+              top: 0,
+              behavior: "smooth",
+            });
+          } else {
+            // Handle scroll to section
+            const target = document.querySelector(href);
+            if (target) {
+              e.preventDefault();
+              target.scrollIntoView({
+                behavior: "smooth",
+                block: "start",
+              });
+            }
+          }
         });
-
-        if (this.isMenuOpen) {
-          this.closeMobileMenu();
-        }
       });
     }
 

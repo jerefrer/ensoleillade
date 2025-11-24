@@ -7,7 +7,7 @@ const { t, locale } = Astro.props as Props;
 ---
 
 <!-- Modern Interactive Amenities Section -->
-<section id="amenities" class="relative py-16 md:py-32 overflow-hidden">
+<section id="amenities" class="relative py-16 md:py-20 overflow-hidden">
   <!-- Background Elements -->
   <div
     class="absolute inset-0 bg-gradient-to-br from-warm-50 via-white to-sage-50"
@@ -39,9 +39,11 @@ const { t, locale } = Astro.props as Props;
         <div class="flex items-center space-x-4">
           <span class="text-3xl">🌳</span>
           <p class="text-forest-700 flex-1">
-            {locale === "fr"
-              ? "Sur la terrasse et dans le jardin : Coins repas, transat, hamac, fil à linge, mini barbecue."
-              : "On the terrace and in the garden: Dining areas, deck chair, hammock, clothesline, mini barbecue."}
+            {
+              locale === "fr"
+                ? "Sur la terrasse et dans le jardin : Coins repas, transat, hamac, fil à linge, mini barbecue."
+                : "On the terrace and in the garden: Dining areas, deck chair, hammock, clothesline, mini barbecue."
+            }
           </p>
         </div>
       </div>
@@ -51,9 +53,11 @@ const { t, locale } = Astro.props as Props;
         <div class="flex items-center space-x-4">
           <span class="text-3xl">🛏️</span>
           <p class="text-forest-700 flex-1">
-            {locale === "fr"
-              ? "Couchage : 2 lits 190x90 pouvant être rapprochés, 2 couettes, 2 couvertures, 2 oreillers 60x60"
-              : "Sleeping: 2 beds 190x90 that can be moved together, 2 duvets, 2 blankets, 2 pillows 60x60"}
+            {
+              locale === "fr"
+                ? "Couchage : 2 lits 190x90 pouvant être rapprochés, 2 couettes, 2 couvertures, 2 oreillers 60x60"
+                : "Sleeping: 2 beds 190x90 that can be moved together, 2 duvets, 2 blankets, 2 pillows 60x60"
+            }
           </p>
         </div>
       </div>
@@ -63,9 +67,11 @@ const { t, locale } = Astro.props as Props;
         <div class="flex items-center space-x-4">
           <span class="text-3xl">🍳</span>
           <p class="text-forest-700 flex-1">
-            {locale === "fr"
-              ? "Kitchenette équipée : Filtre à eau sur évier, frigo top avec freezer, 2 plaques gaz, mini four, cafetière, bouilloire, grille-pain, 2 casseroles, 1 faitout, 1 poêle, 1 moule à tarte, plats, vaisselle, verres et couverts, équipement complet pour 4 personnes."
-              : "Equipped kitchenette: Water filter on sink, top fridge with freezer, 2 gas burners, mini oven, coffee maker, kettle, toaster, 2 saucepans, 1 casserole, 1 frying pan, 1 pie pan, dishes, tableware, glasses and cutlery, complete equipment for 4 people."}
+            {
+              locale === "fr"
+                ? "Kitchenette équipée : Filtre à eau sur évier, frigo top avec freezer, 2 plaques gaz, mini four, cafetière, bouilloire, grille-pain, 2 casseroles, 1 faitout, 1 poêle, 1 moule à tarte, plats, vaisselle, verres et couverts, équipement complet pour 4 personnes."
+                : "Equipped kitchenette: Water filter on sink, top fridge with freezer, 2 gas burners, mini oven, coffee maker, kettle, toaster, 2 saucepans, 1 casserole, 1 frying pan, 1 pie pan, dishes, tableware, glasses and cutlery, complete equipment for 4 people."
+            }
           </p>
         </div>
       </div>
@@ -75,9 +81,11 @@ const { t, locale } = Astro.props as Props;
         <div class="flex items-center space-x-4">
           <span class="text-3xl">🔌</span>
           <p class="text-forest-700 flex-1">
-            {locale === "fr"
-              ? "Sèche-cheveux, fer à repasser et sa mini planche, aspirateur, produits d'entretien écologiques"
-              : "Hair dryer, iron and mini ironing board, vacuum cleaner, ecological cleaning products"}
+            {
+              locale === "fr"
+                ? "Sèche-cheveux, fer à repasser et sa mini planche, aspirateur, produits d'entretien écologiques"
+                : "Hair dryer, iron and mini ironing board, vacuum cleaner, ecological cleaning products"
+            }
           </p>
         </div>
       </div>
@@ -87,9 +95,11 @@ const { t, locale } = Astro.props as Props;
         <div class="flex items-center space-x-4">
           <span class="text-3xl">📺</span>
           <p class="text-forest-700 flex-1">
-            {locale === "fr"
-              ? "TV avec lecteur DVD, radio CD, livres, jeux de cartes"
-              : "TV with DVD player, CD radio, books, card games"}
+            {
+              locale === "fr"
+                ? "TV avec lecteur DVD, radio CD, livres, jeux de cartes"
+                : "TV with DVD player, CD radio, books, card games"
+            }
           </p>
         </div>
       </div>
@@ -99,9 +109,11 @@ const { t, locale } = Astro.props as Props;
         <div class="flex items-center space-x-4">
           <span class="text-3xl">🧺</span>
           <p class="text-forest-700 flex-1">
-            {locale === "fr"
-              ? "Fourni pour votre séjour : 1 torchon, 1 essuie-main, 1 tapis salle d'eau, 1 éponge, 1 microfibre, 2 sacs poubelles, 1 rouleau papier WC."
-              : "Provided for your stay: 1 dish towel, 1 hand towel, 1 bathroom mat, 1 sponge, 1 microfiber cloth, 2 garbage bags, 1 roll of toilet paper."}
+            {
+              locale === "fr"
+                ? "Fourni pour votre séjour : 1 torchon, 1 essuie-main, 1 tapis salle d'eau, 1 éponge, 1 microfibre, 2 sacs poubelles, 1 rouleau papier WC."
+                : "Provided for your stay: 1 dish towel, 1 hand towel, 1 bathroom mat, 1 sponge, 1 microfiber cloth, 2 garbage bags, 1 roll of toilet paper."
+            }
           </p>
         </div>
       </div>
